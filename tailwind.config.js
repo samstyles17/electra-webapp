@@ -11,7 +11,12 @@ export default {
       current: 'currentColor',
       'orange': '#FF6B2B',
       'white': '#ffffff',
-      'black': '#000000'
+      'black': '#000000',
+      'orangetext':'#F1761D',
+      'bluetext':'#1A86E0',
+      'blacktext': '#262626',
+      'greybtn': '#F2F2F2',
+      'darkgreytext':'#444444'
       
     },
   },
