@@ -1,11 +1,11 @@
 import React from 'react'
-import
+import banner1 from "../assets/img/bannerimg1.png"
 
 function Banner() {
   return (
     <>
         <div>
-            <img src="" alt="" />
+            <img src={banner1} alt="" />
         </div>
     </>
   )
