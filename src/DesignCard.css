@@ -3,7 +3,7 @@
   }
   
   .card {
-    position: relative;
+    position: absolute;
     width: 327px; /* Fixed width */
     height: 340px; /* Fixed height */
     border-radius: 24px; /* Fixed border radius */
@@ -34,7 +34,7 @@
     padding: 10px; /* Padding to make content section larger */
     gap: 10px; /* Space between number and title */
     display: flex;
-    flex-direction: column;
+    align-items: center;
   }
 
   .card-number {
@@ -51,9 +51,7 @@
   }
   
   .card-title {
-    font-size: 0.9em; /* Adjusted font size */
-    width: calc(100% - 51.12px); /* Adjust width to avoid overflow */
-    word-wrap: break-word; /* Allow title to wrap to next line */
+    font-size: 0.9em; /* Adjust width to avoid overflow */
   }
 
   hr.solid{

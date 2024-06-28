@@ -41,7 +41,7 @@ function ImageSlider(){
               </div>
             </div>           
             <div className="card-more-info">
-            <hr className="solid"></hr>
+              <hr className="solid"></hr>
               <span className="montserrat-regular more-info-text">More Info</span>
               {/* <img src="src/assets/img/next.png" alt="More Info" className="more-info-icon" onClick={() => handleMoreInfo(1)} /> */}
             </div>
