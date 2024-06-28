@@ -29,14 +29,21 @@ function ImageSlider(){
   return (
     <div className="carousel-container">
       <Carousel responsive={responsive}>      
-        <div className="card">
+      <div className="card">
           <img src="src/assets/img/sliding_image1.png" alt="Design and Consulting" className="card-image"/>
           <div className="card-content">
-            <div className="card-number">
-              <span className="montserrat-regular">1</span>
-            </div>
-            <div className="card-title">
-              <span className="montserrat-regular">Design & Consulting</span>
+            <div className="card-top">
+              <div className="card-number">
+                <span className="montserrat-regular">1</span>
+              </div>
+              <div className="card-title">
+                <span className="montserrat-regular">Design & Consulting</span>
+              </div>
+            </div>           
+            <div className="card-more-info">
+            <hr className="solid"></hr>
+              <span className="montserrat-regular more-info-text">More Info</span>
+              <img src="src/assets/img/next.png" alt="More Info" className="more-info-icon" onClick={() => handleMoreInfo(1)} />
             </div>
           </div>
         </div>
@@ -49,6 +56,11 @@ function ImageSlider(){
             <div className="card-title">
               <span className="montserrat-regular">Installation and Commisioning</span>
             </div>
+            <div className="card-more-info">
+              <hr className="solid"></hr>
+              <p><span className="montserrat-regular">More Info</span></p>
+              <img src="src/assets/img/next.png" alt="More Info" className="more-info-icon" onClick={() => handleMoreInfo(1)} />
+            </div>
           </div>
         </div>
         <div className="card">
@@ -57,6 +69,10 @@ function ImageSlider(){
             <div className="card-number">3</div>
             <div className="card-title">
               <span className="montserrat-regular">Panel Board and Control Systems</span>
+            </div>
+            <div className="card-more-info">
+              <hr className="solid"></hr>
+              <p><span className="montserrat-regular">More Info</span></p>
             </div>
           </div>
         </div>
@@ -67,6 +83,10 @@ function ImageSlider(){
             <div className="card-title">
               <span className="montserrat-regular">Statuory Approvals and Compliances</span>
             </div>
+            <div className="card-more-info">
+              <hr className="solid"></hr>
+              <p><span className="montserrat-regular">More Info</span></p>
+            </div>
           </div>
         </div>
         <div className="card">
@@ -76,20 +96,33 @@ function ImageSlider(){
             <div className="card-title">
               <span className="montserrat-regular">Maintenance and Repair</span>
             </div>
+            <div className="card-more-info">
+              <hr className="solid"></hr>
+              <p><span className="montserrat-regular">More Info</span></p>
+            </div>
           </div>
         </div>
         <div className="card">
           <img src="src/assets/img/sliding_image6.png" alt="Design and Consulting" className="card-image"/>
           <div className="card-content">
-            <div className="card-number">5</div>
+            <div className="card-number">6</div>
             <div className="card-title">
               <span className="montserrat-regular">Value-Added Services/ Other Services</span>
+            </div>          
+            <div className="card-more-info">
+              <hr className="solid"></hr>
+              <p><span className="montserrat-regular">More Info</span></p>
             </div>
-          </div>
+            </div>          
         </div>
     </Carousel>
     </div>
   );
+}
+
+function handleMoreInfo(cardIndex) {
+  // Add your logic here for what should happen when the icon is clicked
+  console.log(`More info clicked for card ${cardIndex}`);
 }
 
 export default ImageSlider;

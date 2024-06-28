@@ -14,23 +14,13 @@
     opacity: 1; /* Default opacity */
   }
   
-  .card.not-visible {
-    opacity: 0.5; /* Reduced opacity for not visible cards */
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
+ 
   .card-image {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
   }
   
-  .card:hover .card-image {
-    transform: scale(1.1);
-  }
   
   .card-content {
     position: absolute;
@@ -42,11 +32,11 @@
     width: 100%; /* Use full width of the card */
     height: 103px; /* Fixed height for the rectangle holding text and number */
     padding: 10px; /* Padding to make content section larger */
-    display: flex;
-    align-items: center;
     gap: 10px; /* Space between number and title */
+    display: flex;
+    flex-direction: column;
   }
-  
+
   .card-number {
     font-size: 1em; /* Adjusted font size */
     /*font-weight: normal; /* Removed boldness */
@@ -65,4 +55,37 @@
     width: calc(100% - 51.12px); /* Adjust width to avoid overflow */
     word-wrap: break-word; /* Allow title to wrap to next line */
   }
+
+  hr.solid{
+    width: 95%;
+    border-top: 3px solid #f6f1f1;
+    margin: 10px auto;
+    margin-bottom: 15px;
+  }
+
+  
+  .card-more-info{
+    visibility: hidden;
+    font-size: 0.9em;
+  }
+
+  .card:hover{
+    cursor: pointer;
+  }
+
+  .card:hover .card-content{
+    height: 170px;
+    background: rgba(13, 13, 13, 0.47);
+  }
+
+  .card:hover .card-more-info{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .card:hover img{
+    transform: scale(1.1);
+  }
+
+  
   
