@@ -1,0 +1,68 @@
+.carousel-container {
+    margin-left: 95px; /* Set a left margin for the component */
+  }
+  
+  .card {
+    position: relative;
+    width: 327px; /* Fixed width */
+    height: 340px; /* Fixed height */
+    border-radius: 24px; /* Fixed border radius */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Include opacity transition */
+    margin: 5px; /* Reduced margin between cards */
+    opacity: 1; /* Default opacity */
+  }
+  
+  .card.not-visible {
+    opacity: 0.5; /* Reduced opacity for not visible cards */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .card-image {
+    transform: scale(1.1);
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    color: white;
+    width: 100%; /* Use full width of the card */
+    height: 103px; /* Fixed height for the rectangle holding text and number */
+    padding: 10px; /* Padding to make content section larger */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between number and title */
+  }
+  
+  .card-number {
+    font-size: 1em; /* Adjusted font size */
+    /*font-weight: normal; /* Removed boldness */
+    background: rgba(0, 0, 0, 0.6); /* Match background color */
+    color: white; /* White text */
+    border-radius: 27px; /* Fixed border radius for the circle */
+    width: 41.12px; /* Fixed width for the circle */
+    height: 41px; /* Fixed height for the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-title {
+    font-size: 0.9em; /* Adjusted font size */
+    width: calc(100% - 51.12px); /* Adjust width to avoid overflow */
+    word-wrap: break-word; /* Allow title to wrap to next line */
+  }
+  

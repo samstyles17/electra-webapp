@@ -6,7 +6,7 @@ import "../styles.css";
 function Navbar() {
   return (
     <>
-      <div>
+      <div className="sticky-navbar">
         <div className="navbar bg-base-100 mt-2">
           <div className="navbar-start">
             <div className="dropdown">
