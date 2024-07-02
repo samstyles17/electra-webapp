@@ -1,10 +1,10 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css'; // Import carousel styles
-import img1 from '../assets/img/img1.png'; // Import your images
+import 'react-multi-carousel/lib/styles.css';
+import img1 from '../assets/img/img1.png';
 import img2 from '../assets/img/img2.png';
 import img3 from '../assets/img/img3.png';
-import '../styles.css'; // Ensure the path is correct for your custom styles
+import '../styles.css';
 
 const responsive = {
   superLargeDesktop: {
@@ -25,7 +25,7 @@ const responsive = {
   },
 };
 
-const images = [img1, img2, img3]; // Array of image paths
+const images = [img1, img2, img3];
 
 const ImageCarousel = () => {
   return (
@@ -35,11 +35,19 @@ const ImageCarousel = () => {
         infinite={true}
         autoPlay={true}
         autoPlaySpeed={3000}
-        customTransition="all 1s"
+        customTransition="transform 1000ms ease-in-out"
         transitionDuration={1000}
+        containerClass="carousel-container"
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-40-px"
+        arrows={false}
+        showDots={false}
+        pauseOnHover={false}
+        rtl={false}
       >
         {images.map((src, index) => (
-          <div key={index}>
+          <div key={index} className="carousel-item">
             <img src={src} alt={`Slide ${index + 1}`} className="slider-image" />
           </div>
         ))}

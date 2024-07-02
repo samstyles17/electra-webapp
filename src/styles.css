@@ -12,6 +12,8 @@
   font-weight: 500;
 }
 
+
+
 .sticky-navbar {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
@@ -24,25 +26,37 @@
   background-color: #1d2b36;
   color: white;
   padding: 40px;
+  margin-top: 80px;
 }
 
 .slider-container {
-  display: flex;
   width: 50%;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  max-width: 800px; /* Adjust as needed */
+  margin-left: -60px;
+  margin-right: 45px;
 }
 
-.slider-image-container {
+.carousel-item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .slider-image {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+}
+
+.slider-container .react-multi-carousel-item {
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-container .react-multi-carousel-item--active {
+  opacity: 1;
+}
+
+.slider-container .react-multi-carousel-item:not(.react-multi-carousel-item--active) {
+  opacity: 0;
 }
 
 .text-container {
@@ -50,15 +64,25 @@
   padding: 20px;
 }
 
-.text-container h2 {
-  font-size: 2em;
+.text-container h3 span {
   color: #f29c29;
   margin-bottom: 10px;
 }
 
+.text-container h3 {
+  font-size: 30px;
+  
+  margin-bottom: 10px;
+}
+
 .text-container p {
-  font-size: 1.1em;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height:2.2;
+}
+
+.text-container p span {
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .bullets-container {
@@ -82,20 +106,27 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 2px solid #f29c29; /* Border to look like radio button */
+  padding: 10px;
+  border: 2px solid #a9a9a9; /* Border to look like radio button */
   background-color: #1d2b36; /* Match background color */
+  opacity: 50%;
 }
 
 .bullet-point::after {
-  content: '';
+  content: '  ';
   position: absolute;
   left: 4px;
   top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
+  transform: translateY(-50%) translateX(100%);
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background-color: #f29c29; /* Filled dot inside */
+  background-color: #a9a9a9; /* Filled dot inside */
+  opacity: 50%;
+}
+
+hr{
+  width: 40px;
 }
 
 .bottom-text {
@@ -103,6 +134,13 @@
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
+  
+}
+
+.bottom-text h4{
+  line-height: 2.2;
+  text-align: justify;
+  font-size: 13px;
 }
 
 
