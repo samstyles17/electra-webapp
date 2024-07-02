@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Banner from "./components/Banner";
 import ImageSlider from "./components/ImageSlider";
 import About from "./components/About";
+import Vision from "./components/Vision";
 export default function App() {
   return (
     <>
@@ -12,6 +13,7 @@ export default function App() {
       <Hero />
       <ImageSlider />
       <About/>
+      <Vision/>
     </>
   );
 }
