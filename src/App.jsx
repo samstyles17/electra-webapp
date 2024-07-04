@@ -1,19 +1,15 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Banner from "./components/Banner";
-import ImageSlider from "./components/ImageSlider";
-import About from "./components/About";
-import Vision from "./components/Vision";
+import Home from "./home/Home";
+import Aboutus from "./about/Aboutus";
+import { Route, Routes } from "react-router-dom";
+
 export default function App() {
   return (
     <>
-      <Navbar />
-      <Banner />
-      <Hero />
-      <ImageSlider />
-      <About/>
-      <Vision/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/aboutus" element={<Aboutus/>}/>
+      </Routes>
     </>
   );
 }
