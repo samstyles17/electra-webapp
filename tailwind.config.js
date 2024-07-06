@@ -16,7 +16,9 @@ export default {
       'bluetext':'#1A86E0',
       'blacktext': '#262626',
       'greybtn': '#F2F2F2',
-      'darkgreytext':'#444444'
+      'darkgreytext':'#444444',
+      'lightgreybg': '#FAFAFA',
+      'featureblue': '#1468A1'
       
     },
   },
