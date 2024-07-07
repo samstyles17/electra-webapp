@@ -5,7 +5,8 @@ import Banner from "../components/Banner";
 import ImageSlider from "../components/ImageSlider";
 import About from "../components/About";
 import Vision from "../components/Vision";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import Connect from "../components/Connect";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <ImageSlider />
       <About/>
       <Vision/>
+      <Connect />
       <Footer />
     </>
   )
