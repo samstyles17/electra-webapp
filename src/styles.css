@@ -272,9 +272,52 @@ hr{
   margin-bottom: 2px;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .vision-container {
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0;
+  }
+
+  .text-section {
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  .heading, .sub-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .vision-section {
+    justify-content: flex-start;
+  }
+
+  .vision-box {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .vision-title {
+    font-size: 1rem;
+  }
+
+  .vision-paragraph {
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 /*Aboutus page section1*/
 
+/*Aboutus page section1*/
 .aboutus-container {
   display: flex;
   justify-content: space-between;
@@ -282,7 +325,7 @@ hr{
   background-color: #fff;
   font-family: 'Montserrat', sans-serif;
   align-items: center;
-  margin-right:25px ;
+  margin-right: 25px;
   margin-left: 25px;
 }
 
@@ -292,7 +335,7 @@ hr{
 }
 
 .aboutus-image {
-  max-width:800px;
+  max-width: 800px;
   width: 600px;
   border-radius: 10px; /* Rounded corners */
 }
@@ -329,12 +372,37 @@ hr{
   line-height: 1.8;
   color: #333;
   margin-bottom: 20px;
-  
 }
 
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .aboutus-container {
+    flex-direction: column;
+    padding: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .aboutus-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .aboutus-text-section {
+    padding-left: 0;
+  }
+
+  .aboutus-title {
+    font-size: 1.8rem;
+  }
+
+  .aboutus-heading,
+  .aboutus-paragraph {
+    font-size: 0.9rem;
+  }
+}
 
 /*AboutUs Page section3*/
-
 .mission-container {
   display: flex;
   flex-direction: row;
@@ -413,6 +481,43 @@ hr{
   background-color: #007bff;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .mission-container {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  .mission-box {
+    flex: 1;
+    margin-left: 0;
+    max-width: 100%;
+    margin-top: -300px;
+  }
+
+  .stats-container {
+    flex-direction: row;
+    margin-left: 0;
+  }
+
+  .stat-item {
+    margin-bottom: 20px;
+    
+  }
+
+  .stat-number {
+    font-size: 24px;
+    color: #007bff;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+}
+
 /* Why Choose Section */
 .why-choose-section {
   background-color: #1c1c1c;
@@ -448,7 +553,7 @@ hr{
   color: #ccc;
   margin: 20px 0;
   max-width: 800px;
-  line-height: 2.2
+  line-height: 2.2;
 }
 
 .portfolio-button {
@@ -483,7 +588,6 @@ hr{
   text-align: left;
 }
 
-
 .highlight-blue-box {
   background-color: #1468A1;
 }
@@ -503,7 +607,7 @@ hr{
   color: #bbb;
 }
 
-.lowp{
+.lowp {
   font-size: 1.1rem;
 }
 
@@ -524,16 +628,46 @@ hr{
 }
 
 .tech-icon::before {
-  content: url('../src/assets/img/icon_4.png'); 
+  content: url('../src/assets/img/icon_4.png');
 }
 
 .track-record-icon::before {
   content: url('../src/assets/img/icon_5.png');
 }
 
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .why-choose-section {
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .why-choose-heading {
+    font-size: 1.8rem;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .why-choose-paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 20px 0;
+  }
+
+  .portfolio-button {
+    float: none;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 /*Our Team AboutUs Page*/
-
 .our-team-container {
   padding: 30px 30px;
   background-color: #ffffff;
@@ -549,7 +683,6 @@ hr{
   color: #1a73e8;
   margin-bottom: 20px;
   margin-right: 200px;
-  
 }
 
 .our-team-highlight {
@@ -561,7 +694,7 @@ hr{
   color: #333;
   line-height: 1.6;
   margin-bottom: 20px;
-  margin-right: 350px;  
+  margin-right: 350px;
 }
 
 .our-team-experience {
@@ -576,7 +709,6 @@ hr{
 }
 
 .carousel-image {
- /* Adjust based on your needs */
   width: 100%;
   height: 600px;
   object-fit: fill;
@@ -628,4 +760,323 @@ background-color: orange;
 }
 .semi-hover:hover .semi-image {
  width: 70%;
+}
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .our-team-container {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  .our-team-title {
+    font-size: 1.6rem;
+    margin-right: 0;
+  }
+
+  .our-team-description {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+
+  .carousel-image {
+    margin-top: 25px;
+    height: auto;
+  }
+
+  .our-team-experience {
+    font-size: 1rem; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    margin-top: 10px; /* Adjust top margin to create spacing */
+    margin-right: 0; /* Remove right margin */
+    float: none; /* Remove float */
+  }
+  
+}
+
+/*Our People section*/
+.our-people-section {
+  background-color: #ffffff;
+  padding: 50px 20px;
+}
+
+.our-people-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.people-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.people-image {
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 400px;
+  height: auto;
+}
+
+.people-text {
+  flex: 1;
+  margin-left: 55px;
+}
+
+.people-text hr {
+  width: 110%;
+  color: #383838;
+  opacity: 0.1;
+  margin-bottom: 25px;
+}
+
+.people-title {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.people-paragraph {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+.route-content {
+  text-align: left;
+}
+
+.route-title {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.route-paragraph {
+  font-size: 0.95rem;
+  color: #333;
+  max-width: 1000px;
+  margin-left: 5px;
+  line-height: 1.8;
+}
+
+.highlight-blue {
+  color: #007BFF;
+}
+
+.highlight-orange {
+  color: #FF6600;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .people-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .people-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .people-text {
+    margin-left: 0;
+  }
+
+  .people-title {
+    font-size: 2rem;
+  }
+
+  .people-paragraph,
+  .route-paragraph {
+    font-size: 1rem;
+  }
+
+  .route-title {
+    font-size: 2rem;
+  }
+}
+
+/* Integrity Carousel Section */
+.integrity-carousel-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #ffffff;
+  margin-left: 80px;
+  pointer-events: none;
+}
+
+.integrity-carousel-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.integrity-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: 50px;
+}
+
+.integrity-item {
+  font-size: 1.5rem;
+  color: #888888;
+  margin-bottom: 20px;
+  transition: color 0.5s ease, font-weight 0.5s ease;
+}
+
+.integrity-menu hr {
+  width: 400px;
+  color: #383838;
+  opacity: 0.1;
+  margin-top: 25px;
+}
+
+.integrity-item.active {
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.integrity-carousel {
+  flex: 2;
+  position: relative;
+}
+
+.carousel-slide {
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Keyframes for the animation */
+@keyframes highlight {
+  0% {
+    color: #888888;
+    font-weight: normal;
+  }
+  16.66% {
+    color: #007BFF;
+    font-weight: normal;
+  }
+  33.32% {
+    color: #888888;
+    font-weight: normal;
+  }
+  100% {
+    color: #888888;
+    font-weight: normal;
+  }
+}
+
+/* Apply animation to each item with a delay */
+.integrity-item-0 {
+  animation: highlight 9s infinite;
+}
+.integrity-item-1 {
+  animation: highlight 9s infinite;
+  animation-delay: 1.5s;
+}
+.integrity-item-2 {
+  animation: highlight 9s infinite;
+  animation-delay: 3s;
+}
+.integrity-item-3 {
+  animation: highlight 9s infinite;
+  animation-delay: 4.5s;
+}
+.integrity-item-4 {
+  animation: highlight 9s infinite;
+  animation-delay: 6s;
+}
+.integrity-item-5 {
+  animation: highlight 9s infinite;
+  animation-delay: 7.5s;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .integrity-carousel-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    margin-left: 55px;
+  }
+
+  .integrity-menu {
+    width: 100%;
+    text-align: left;
+    margin-top: auto; /* Push menu items to the bottom */
+    padding-bottom: 20px; /* Optional: Add some space between menu and carousel */
+  }
+
+  .integrity-menu hr {
+    width: 250px;
+    margin: 15px auto;
+    opacity: 0.1;
+  }
+
+  .integrity-item {
+    font-size: 1.2rem;
+    color: #888888;
+    transition: color 0.5s ease, font-weight 0.5s ease;
+    margin-bottom: 10px; /* Optional: add margin between menu items */
+  }
+
+  .integrity-item.active {
+    color: #007BFF;
+    font-weight: bold;
+  }
+
+  .integrity-carousel {
+    width: 100%;
+    display: flex;
+    
+   
+    /* Add space between the menu and carousel */
+  }
+
+  .carousel-slide {
+    width: 100%; /* Ensure slides take full width */
+    margin-bottom: 20px; /* Optional: add margin between slides */
+  }
+}
+
+
+
+
+/*Partner Section*/
+.partner-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.partner-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .partner-section {
+    padding: 0px; /* Adjust padding for smaller screens */
+    margin-left: 45px;
+  }
 }
