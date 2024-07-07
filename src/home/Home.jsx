@@ -5,8 +5,10 @@ import Banner from "../components/Banner";
 import ImageSlider from "../components/ImageSlider";
 import About from "../components/About";
 import Vision from "../components/Vision";
-import Footer from "../components/Footer";
+import HomeTestimonial from  "../components/HomeTestimonials"
 import Connect from "../components/Connect";
+import Footer from "../components/Footer";
+
 
 function Home() {
   return (
@@ -17,6 +19,7 @@ function Home() {
       <ImageSlider />
       <About/>
       <Vision/>
+      <HomeTestimonial />
       <Connect />
       <Footer />
     </>

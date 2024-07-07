@@ -3,6 +3,8 @@ import React from 'react';
 import { Grid, Box, Button, Typography, TextField } from '@mui/material';
 import { useTheme } from '@mui/system';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import mobileImage from '../assets/img/connect_mobile_image.png';
 import backgroundImage from '../assets/img/connect_bg.png';
 import rightImage from '../assets/img/connect_image.png'; // Ensure you have the additional image in the img folder
@@ -10,10 +12,32 @@ import vectorImage from '../assets/img/connect_vector.png'; // Ensure you have t
 import arrowIcon from '../assets/img/connect_button_arrow.png';
 import '../styles.css';
 
+
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Montserrat',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+});
+
+
 const LandingPage = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
+    <ThemeProvider theme={theme}>
+    <CssBaseline />
     <Box
       sx={{
         display: 'flex',
@@ -49,7 +73,7 @@ const LandingPage = () => {
             <Box position="relative">
               <img src={vectorImage} alt="Vector" style={{ position: 'absolute', top: '-10px', left: '0' }} />
               {!isMobile && (
-                <Typography variant="h4" className="montserrat-regular" sx={{ fontSize: '43px' }}>
+                <Typography variant="h4" sx={{ fontSize: '43px' }}>
                 Let’s <span style={{ color: '#FF7F45' }}>connect and</span> <br /><span style={{ color: '#337AB7' }}>power up</span>
               </Typography>
               )}
@@ -132,6 +156,7 @@ const LandingPage = () => {
         </Grid>
       </Box>
     </Box>
+    </ThemeProvider>
   );
 };
 
