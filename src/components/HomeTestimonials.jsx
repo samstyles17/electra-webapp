@@ -4,6 +4,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Import images
 import mapWithAvatars from '../assets/img/home_testimonial_map.png';
@@ -64,31 +65,30 @@ const PowerfulInsights = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <ThemeProvider theme={theme}>
     <CssBaseline />
     <Box sx={{ marginLeft: '95px', display: 'flex', padding: 4, alignItems: 'center' }}>
-      <Box sx={{ 
-        position: 'relative', 
-        flex: 1, 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center'
-      }}>
-        <img 
-          src={mapWithAvatars} 
-          alt="World Map with Avatars" 
-          style={{ 
-            width: '80%', // Adjust this value to make the image smaller
-            height: 'auto',
-            maxHeight: '100%',
-            objectFit: 'contain'
-          }} 
-        />
+        <Box sx={{ 
+            position: 'relative', 
+            flex: 1, 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center'
+          }}>
+            <img 
+              src={mapWithAvatars} 
+              alt="World Map with Avatars" 
+              style={{ 
+                width: '80%', // Adjust this value to make the image smaller
+                height: 'auto',
+                maxHeight: '100%',
+                objectFit: 'contain'
+              }} 
+            />
       </Box>
-      
       <Box sx={{ flex: 1 }}>
       <Box 
           sx={{ 
