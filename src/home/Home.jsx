@@ -6,6 +6,7 @@ import ImageSlider from "../components/ImageSlider";
 import About from "../components/About";
 import Vision from "../components/Vision";
 import SuccessCards from "../components/SuccessCards";
+import HomePortfolio from "../components/HomePortfolio";
 import HomeClient from "../components/HomeClient";
 import HomeTestimonial from  "../components/HomeTestimonials"
 import Connect from "../components/Connect";
@@ -22,6 +23,7 @@ function Home() {
       <About/>
       <Vision/>
       <SuccessCards />
+      <HomePortfolio />
       <HomeClient />
       <HomeTestimonial />
       <Connect />
