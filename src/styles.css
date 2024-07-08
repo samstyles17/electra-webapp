@@ -7,6 +7,10 @@
   100% { color: #3a3a3a; }
 }
 
+body{
+  overflow-x:hidden;
+  
+}
 
 
 /* src/styles.css or the relevant CSS file */
@@ -25,7 +29,9 @@
   position: sticky;
   top: 0;
   z-index: 1000; /* Adjust as needed to ensure the navbar stays on top */
+  
 }
+
 
 .banner-container {
   width: 100%;
@@ -379,8 +385,8 @@ hr{
   .aboutus-container {
     flex-direction: column;
     padding: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: -15px;
+    margin-left: 15px;
   }
 
   .aboutus-image {
@@ -977,7 +983,7 @@ hr{
     align-items: center;
     padding: 30px 20px;
     background-color: #ffffff;
-    margin-left: 55px;
+    margin-left: 15px;
   }
 
   .integrity-menu {
@@ -1040,6 +1046,6 @@ hr{
 @media (max-width: 600px) {
   .partner-section {
     padding: 0px; /* Adjust padding for smaller screens */
-    margin-left: 45px;
+    margin-left: 5px;
   }
 }
