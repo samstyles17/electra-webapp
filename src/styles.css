@@ -14,9 +14,9 @@ body{
 
 
 /* src/styles.css or the relevant CSS file */
+
 .montserrat-regular {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
 }
 
 .montserrat-medium {
@@ -730,6 +730,137 @@ hr{
   bottom: 20px;
 }
 
+/* our route to success */
+.route-to-success {
+  margin-left: 95px;
+  display: flex;
+  align-items: center;
+}
+
+.route-to-success img {
+  margin-right: 10px;
+}
+
+.route-to-success h1 {
+  font-size: 30px;
+  color: #333;
+  margin: 0;
+}
+
+.route-to-success h1 span {
+  color: #ed5802;
+}
+
+
+.cardgg {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+  padding-left: 100px;
+}
+
+.semi-hover {
+  height: 120px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 60px 0 0 60px;
+  margin-left: -150px;
+  border: 1px solid #ddd;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+.semi-hover:first-child {
+  margin-left: 0;
+}
+
+.semi-hover:last-child {
+  border-right: none;
+}
+
+.semi-hover.active {
+  background-color: #ff6600;
+  color: white;
+  width: 300px; /* Same width as others */
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  width: 150px; /* Half the width of semi-hover */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 75px; /* Half of content width */
+}
+
+.item-text {
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+.item-number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  opacity: 0.1;
+  font-weight: bold;
+  color: inherit;
+  z-index: 1;
+}
+
+.semi-hover:hover {
+  width: 300px;
+  z-index: 3;
+}
+
+.image-container {
+  position: absolute;
+  right: -60px;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #00008B; /* Dark blue background */
+  z-index: 4;
+}
+
+.hover-image {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1200px) {
+  .cardgg {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .semi-hover {
+    margin-left: 0;
+    margin-bottom: 10px;
+    border-radius: 60px 0 0 60px;
+  }
+}
 /* Mobile responsiveness */
 @media (max-width: 600px) {
   .our-team-container {
