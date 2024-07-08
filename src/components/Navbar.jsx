@@ -47,12 +47,12 @@ function Navbar() {
                 </li>
 
                 <li>
-                  <a className="montserrat-medium">All Project</a>
+                  <a href="/allprojects" className="montserrat-medium">All Project</a>
                 </li>
               </ul>
             </div>
             <div className="ml-8">
-            <img src={logo} alt="logo" />
+            <a href="/"><img src={logo} alt="logo" /></a>
             </div>
             
             <div className="mx-5">
