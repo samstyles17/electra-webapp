@@ -60,7 +60,7 @@ const PortfolioSection = () => {
 
     const cardWidth = 330; // Increased card width
     const cardHeight = 413;
-    const imageHeight = 315;
+    const imageHeight = 315;fix
     const textHeight = 98;
     const cardSpacing = 20; // Increased spacing between cards
     const partialCardWidth = 50; // Width of partially visible cards on each side
