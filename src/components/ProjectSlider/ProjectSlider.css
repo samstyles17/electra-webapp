@@ -4,7 +4,7 @@
 }
 
 .slider-image {
-    width: 465px;
+    width: 475px;
     height: 300px;
     background-size: cover;
     border-top-left-radius: 16px;
@@ -15,7 +15,7 @@
     position: absolute;
     bottom: 0;
     height: 70px;
-    width: 465px;
+    width: 475px;
     background: #474D4E;
     color: #ffffff;
     border-bottom-left-radius: 16px;

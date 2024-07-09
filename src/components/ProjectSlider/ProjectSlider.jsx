@@ -11,7 +11,7 @@ import { MdWindPower } from 'react-icons/md';
 const responsive = {
 
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 900 },
     items: 1,
     partialVisibilityGutter: 350
   },
@@ -43,7 +43,7 @@ const ProjectSlider = ({ images }) => {
               return (
                 <div className='slider-card'>
                   <img src={element.image_url} alt="" className='slider-image' />
-                  <div className="slider-rectangle flex   items-center gap-5 px-5">
+                  <div className="slider-rectangle flex   items-center gap-5 px-5 ">
                     <span className='slider-index flex justify-center items-center'>
                       {index + 1}
                     </span>
