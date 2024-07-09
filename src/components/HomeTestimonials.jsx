@@ -69,10 +69,17 @@ const PowerfulInsights = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Box sx={{ marginLeft: '95px', display: 'flex', padding: 4, alignItems: 'center' }}>
-        <Box sx={{ 
-            position: 'relative', 
+      <CssBaseline />
+      <Box sx={{ 
+        padding: isMobile ? 4 : '4px 14px', 
+        display: 'flex', 
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: 'center',
+        marginLeft: isMobile ? 2 : '30px',
+        gap: 4
+      }}>
+        {!isMobile && (
+          <Box sx={{ 
             flex: 1, 
             display: 'flex', 
             justifyContent: 'center', 
@@ -82,72 +89,99 @@ const PowerfulInsights = () => {
               src={mapWithAvatars} 
               alt="World Map with Avatars" 
               style={{ 
-                width: '80%', // Adjust this value to make the image smaller
-                height: 'auto',
-                maxHeight: '100%',
+                width: '545.6px',
+                height: '403.44px',
                 objectFit: 'contain'
               }} 
             />
-      </Box>
-      <Box sx={{ flex: 1 }}>
-      <Box 
-          sx={{ 
-            display: 'inline-block', 
-            backgroundColor: '#E6F0FF', // Very light shade of blue
-            borderRadius: '20px', 
-            padding: '4px 12px',
-            marginBottom: 1
-          }}
-        >
-          <Typography 
-            variant="subtitle2" 
-            sx={{ color: '#0000FF' }} 
+          </Box>
+        )}
+
+        <Box sx={{ flex: 1 , marginLeft: '30px'}}>
+          <Box 
+            sx={{ 
+              display: 'inline-block', 
+              backgroundColor: '#F7F7F7',
+              borderRadius: '20px', 
+              padding: '4px 12px',
+              marginBottom: 1
+            }}
           >
-            ELECTRA POWER ENGINEERING COMMUNITY
+            <Typography 
+              variant="subtitle2" 
+              sx={{ color: '#2489DE' }} 
+            >
+              ELECTRA POWER ENGINEERING COMMUNITY
+            </Typography>
+          </Box>
+          <Typography variant="h2" component="h1" sx={{ marginTop: '30px'}} >
+            Powerful <span style={{ color: '#FF6B00' }}>Insights</span>
           </Typography>
-        </Box>
-        <Typography variant="h2" component="h1" sx={{ marginTop: '30px'}} >
-          Powerful <span style={{ color: '#FF6B00' }}>Insights</span>
-        </Typography>
-        <Typography variant="subtitle1" sx={{ mb: 3, color: '#555', marginTop: '20px'}} className="montserrat-regular">
-          Get an insight into the valuable and impactful thoughts direct from our clients.
-        </Typography>
-        
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-          <Typography  className="montserrat-regular">REVIEWS & TESTIMONIALS</Typography>
-          <Box>
-            <IconButton size="small" onClick={handlePrev}><ArrowBackIosNewIcon /></IconButton>
-            <IconButton size="small" onClick={handleNext}><ArrowForwardIosIcon /></IconButton>
+          <Typography variant="subtitle1" sx={{ mb: 3, color: '#555', marginTop: '20px'}} className="montserrat-regular">
+            Get an insight into the valuable and impactful thoughts direct from our clients.
+          </Typography>
+          
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Typography className="montserrat-regular">REVIEWS & TESTIMONIALS</Typography>
+            <Box>
+              <IconButton size="small" onClick={handlePrev}><ArrowBackIosNewIcon /></IconButton>
+              <IconButton size="small" onClick={handleNext}><ArrowForwardIosIcon /></IconButton>
+            </Box>
+          </Box>
+          
+          <Box sx={{ display: 'flex', overflow: 'hidden' }}>
+            {testimonials.map((testimonial, index) => (
+              <Card 
+                key={index} 
+                elevation={3} 
+                sx={{ 
+                  borderRadius: 2, 
+                  minWidth: '75%', 
+                  marginRight: 2,
+                  transform: `translateX(${-100 * currentTestimonial}%)`,
+                  transition: 'transform 0.3s ease-in-out'
+                }}
+              >
+                <CardContent sx={{ display: 'flex', gap: 2 }}>
+                  <Avatar src={testimonial.image} sx={{ width: 34, height: 34 }} />
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                    <Typography className="montserrat-regular">{testimonial.name}</Typography>
+                    <Typography variant="body2" sx={{ color: '#555' }} className="montserrat-regular">{testimonial.position}</Typography>
+                    <img src={cardDivider} alt="Divider" style={{ width: '100%', height: 'auto', margin: '8px 0' }} />
+                    <Typography variant="body2" className="montserrat-regular">
+                      {isMobile 
+                        ? testimonial.text.slice(0, 100) + '...' 
+                        : testimonial.text}
+                    </Typography>
+                  </Box>
+                </CardContent>
+              </Card>
+            ))}
           </Box>
         </Box>
         
-        <Box sx={{ display: 'flex', overflow: 'hidden' }}>
-          {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index} 
-              elevation={3} 
-              sx={{ 
-                borderRadius: 2, 
-                minWidth: '75%', 
-                marginRight: 2,
-                transform: `translateX(${-100 * currentTestimonial}%)`,
-                transition: 'transform 0.3s ease-in-out'
-              }}
-            >
-              <CardContent sx={{ display: 'flex', gap: 2 }}>
-                <Avatar src={testimonial.image} sx={{ width: 34, height: 34 }} />
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                  <Typography  className="montserrat-regular">{testimonial.name}</Typography>
-                  <Typography variant="body2" sx={{ color: '#555', }} className="montserrat-regular">{testimonial.position}</Typography>
-                  <img src={cardDivider} alt="Divider" style={{ width: '100%', height: 'auto', margin: '8px 0' }} />
-                  <Typography variant="body2" className="montserrat-regular">{testimonial.text}</Typography>
-                </Box>
-              </CardContent>
-            </Card>
-          ))}
-        </Box>
+        {isMobile && (
+          <Box sx={{ 
+            marginTop: 4,
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center',
+            width: '100%'
+          }}>
+            <img 
+              src={mapWithAvatars} 
+              alt="World Map with Avatars" 
+              style={{ 
+                width: '100%',
+                maxWidth: '545.6px',
+                height: 'auto',
+                maxHeight: '403.44px',
+                objectFit: 'contain'
+              }} 
+            />
+          </Box>
+        )}
       </Box>
-    </Box>
     </ThemeProvider>
   );
 };
