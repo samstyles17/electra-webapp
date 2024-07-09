@@ -68,13 +68,13 @@ const PortfolioSection = () => {
 
     const handleCardNav = (direction) => {
       if (direction === 'next') {
-        setCardIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - 3));
+        setCardIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - 1));
       } else {
         setCardIndex((prevIndex) => Math.max(prevIndex - 1, 0));
       }
     };
     
-    const carouselWidth = cardWidth * visibleCards + cardSpacing * (visibleCards - 1) + partialCardWidth * 2;
+    // const carouselWidth = cardWidth * visibleCards + cardSpacing * (visibleCards - 1) + partialCardWidth * 2;
     
     const [headlineIndex, setHeadlineIndex] = useState(0);
   
@@ -118,16 +118,18 @@ const PortfolioSection = () => {
       </Box>
   
       <Box className="portfolio-card-carousel" sx={{ 
-          position: 'relative',
-          width: '100%',
-          maxWidth: `${carouselWidth}px`,
-          margin: '20px auto',
-          overflow: 'hidden',
-        }}>
+        position: 'relative',
+        width: '100vw',
+        margin: '65px 0',
+        overflow: 'hidden',
+        left: '50%',
+        transform: 'translateX(-50%)',
+      }}>
+          
           <Box sx={{
             display: 'flex',
             transition: 'transform 0.5s ease-in-out',
-            transform: `translateX(${-cardIndex * (cardWidth + cardSpacing) + partialCardWidth}px)`
+            transform: `translateX(calc(${-cardIndex * (cardWidth + cardSpacing)}px + ${(window.innerWidth - cardWidth) / 2}px))`,
           }}>
             {cards.map((card, index) => (
               <Box key={index} sx={{
@@ -135,12 +137,16 @@ const PortfolioSection = () => {
                 height: cardHeight,
                 flexShrink: 0,
                 marginRight: `${cardSpacing}px`,
-                border: '1px solid white',
-                borderRadius: borderRadius,
-                overflow: 'hidden',
-                display: 'grid',
-                gridTemplateRows: `${imageHeight}px ${textHeight}px`,
               }}>
+                <Box sx={{
+                  border: '1px solid white',
+                  borderRadius: borderRadius,
+                  overflow: 'hidden',
+                  height: '100%',
+                  display: 'grid',
+                  gridTemplateRows: `${imageHeight}px ${textHeight}px`,
+                }}>
+    
                 <img 
                   src={card.image} 
                   alt={card.description}
@@ -160,20 +166,21 @@ const PortfolioSection = () => {
                   <Typography variant="body2">{card.description}</Typography>
                 </Box>
               </Box>
-            ))}
-          </Box>
+            </Box>
+          ))}
         </Box>
 
-        
-        
-        
-        
-        
+
+        </Box>    
+   
         <Box className="portfolio-headline-carousel" sx={{ 
           position: 'relative', 
-          marginTop: '100px',
+          marginTop: '50px',
           overflow: 'hidden',
           height: '50px',
+          width: '100vw',
+          left: '50%',
+          transform: 'translateX(-50%)',
           '&::before, &::after': {
             content: '""',
             position: 'absolute',
@@ -186,10 +193,9 @@ const PortfolioSection = () => {
           '&::after': { bottom: 0 }
         }}>
           <Box sx={{ 
-            marginTop: '5px',
-            marginBottom:'-5px',
             display: 'flex', 
             alignItems: 'center',
+            height: '100%',  // This ensures the box takes full height of its parent
             animation: 'moveLeft 30s linear infinite',
             whiteSpace: 'nowrap'
           }}>
