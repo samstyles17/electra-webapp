@@ -4,6 +4,7 @@ import Header from '../components/Header/Header';
 import ProjectRow from '../components/ProjectRow/ProjectRow';
 import "./AllProjects.css";
 import Connect from "../components/Connect/Connect";
+import Footer from "../components/Footer";
 const data = [
     {
         title: "Incheon Motors Pvt, Ltd ",
@@ -280,6 +281,7 @@ const AllProjects = () => {
                 <ProjectRow data={data} />
             </div>
             <Connect />
+            <Footer />
         </div>
     );
 }
