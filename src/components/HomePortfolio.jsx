@@ -53,20 +53,28 @@ const headlines = [
 
 const PortfolioSection = () => {
     const [cardIndex, setCardIndex] = useState(2);
-    const cardWidth = 310; // Width of each card
-    const cardSpacing = 10; // Space between cards
-    const visibleCards = 3; // Number of fully visible cards
-    const partialCardWidth = 50;
+    const isSmallScreen = useMediaQuery('(max-width:960px)');
+    const isMediumScreen = useMediaQuery('(max-width:1280px)');
+  
+    const visibleCards = isSmallScreen ? 1 : (isMediumScreen ? 2 : 3);
+
+    const cardWidth = 330; // Increased card width
+    const cardHeight = 413;
+    const imageHeight = 315;
+    const textHeight = 98;
+    const cardSpacing = 20; // Increased spacing between cards
+    const partialCardWidth = 50; // Width of partially visible cards on each side
+    const borderRadius = '15px'; 
 
     const handleCardNav = (direction) => {
-        if (direction === 'next') {
-          setCardIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - visibleCards));
-        } else {
-          setCardIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-        }
-      };
+      if (direction === 'next') {
+        setCardIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - 1));
+      } else {
+        setCardIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+      }
+    };
     
-    const carouselWidth = cardWidth * visibleCards + cardSpacing * (visibleCards - 1) + partialCardWidth * 2;
+    // const carouselWidth = cardWidth * visibleCards + cardSpacing * (visibleCards - 1) + partialCardWidth * 2;
     
     const [headlineIndex, setHeadlineIndex] = useState(0);
   
@@ -78,26 +86,7 @@ const PortfolioSection = () => {
       return () => clearInterval(headlineInterval);
     }, []);
   
-    const cardElements = cards.map((card, index) => (
-        <Card key={index} sx={{
-          width: cardWidth,
-          height: 413,
-          flexShrink: 0,
-          marginRight: `${cardSpacing}px`,
-          border: '1px solid white',
-        }}>
-          <CardMedia
-            component="img"
-            height="315"
-            image={card.image}
-          />
-          <CardContent sx={{ padding: '16px', height: '98px', overflow: 'hidden' }}>
-            <Typography variant="body2">{card.description}</Typography>
-          </CardContent>
-        </Card>
-      ));
     
-
   return (
     <ThemeProvider theme={theme}>
     <CssBaseline />
@@ -129,24 +118,69 @@ const PortfolioSection = () => {
       </Box>
   
       <Box className="portfolio-card-carousel" sx={{ 
-          position: 'relative',
-          width: `${carouselWidth}px`,
-          margin: '20px auto',
-          overflow: 'hidden'
-        }}>
+        position: 'relative',
+        width: '100vw',
+        margin: '65px 0',
+        overflow: 'hidden',
+        left: '50%',
+        transform: 'translateX(-50%)',
+      }}>
+          
           <Box sx={{
             display: 'flex',
             transition: 'transform 0.5s ease-in-out',
-            transform: `translateX(${-cardIndex * (cardWidth + cardSpacing) + partialCardWidth}px)`
+            transform: `translateX(calc(${-cardIndex * (cardWidth + cardSpacing)}px + ${(window.innerWidth - cardWidth) / 2}px))`,
           }}>
-            {cardElements}
-          </Box>
+            {cards.map((card, index) => (
+              <Box key={index} sx={{
+                width: cardWidth,
+                height: cardHeight,
+                flexShrink: 0,
+                marginRight: `${cardSpacing}px`,
+              }}>
+                <Box sx={{
+                  border: '1px solid white',
+                  borderRadius: borderRadius,
+                  overflow: 'hidden',
+                  height: '100%',
+                  display: 'grid',
+                  gridTemplateRows: `${imageHeight}px ${textHeight}px`,
+                }}>
+    
+                <img 
+                  src={card.image} 
+                  alt={card.description}
+                  style={{
+                    width: '100%',
+                    height: `${imageHeight}px`,
+                    objectFit: 'cover',
+                  }}
+                />
+                <Box sx={{ 
+                  padding: '16px', 
+                  height: `${textHeight}px`, 
+                  overflow: 'hidden',
+                  backgroundColor: 'white',
+                  color: 'black',
+                }}>
+                  <Typography variant="body2">{card.description}</Typography>
+                </Box>
+              </Box>
+            </Box>
+          ))}
         </Box>
+
+
+        </Box>    
+   
         <Box className="portfolio-headline-carousel" sx={{ 
           position: 'relative', 
-          marginTop: '100px',
+          marginTop: '50px',
           overflow: 'hidden',
           height: '50px',
+          width: '100vw',
+          left: '50%',
+          transform: 'translateX(-50%)',
           '&::before, &::after': {
             content: '""',
             position: 'absolute',
@@ -159,10 +193,9 @@ const PortfolioSection = () => {
           '&::after': { bottom: 0 }
         }}>
           <Box sx={{ 
-            marginTop: '5px',
-            marginBottom:'-5px',
             display: 'flex', 
             alignItems: 'center',
+            height: '100%',  // This ensures the box takes full height of its parent
             animation: 'moveLeft 30s linear infinite',
             whiteSpace: 'nowrap'
           }}>
