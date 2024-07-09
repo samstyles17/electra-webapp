@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/img/logo.png";
 import divider from "../assets/img/divider1.png";
 import "../styles.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -76,7 +77,7 @@ function Navbar() {
               </li>
 
               <li>
-                <a className="montserrat-medium">Portfolio Projects</a>
+                <Link to='/projectsectorial' className="montserrat-medium">Portfolio Projects</Link>
               </li>
 
               <li>
