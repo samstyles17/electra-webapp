@@ -97,7 +97,9 @@ const PowerfulInsights = () => {
           </Box>
         )}
 
-        <Box sx={{ flex: 1 , marginLeft: '30px'}}>
+        {
+          !isMobile && (
+            <Box sx={{ flex: 1 , marginLeft: '30px'}}>
           <Box 
             sx={{ 
               display: 'inline-block', 
@@ -159,6 +161,81 @@ const PowerfulInsights = () => {
             ))}
           </Box>
         </Box>
+          )
+        }
+
+        {
+          isMobile && (
+            <Box sx={{
+              marginTop: 4,
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'center',
+              width: '100%'
+            }}>
+              <Box 
+                sx={{ 
+                  display: 'inline-block', 
+                  backgroundColor: '#F7F7F7',
+                  borderRadius: '20px', 
+                  padding: '4px 12px',
+                  marginBottom: 1
+                }}
+              >
+                <Typography 
+                  variant="subtitle2" 
+                  sx={{ color: '#2489DE' }} 
+                >
+                  ELECTRA POWER ENGINEERING COMMUNITY
+                </Typography>
+              </Box>
+              <Typography variant="h2" component="h1" sx={{ marginTop: '30px'}} >
+                Powerful <span style={{ color: '#FF6B00' }}>Insights</span>
+              </Typography>
+              <Typography variant="subtitle1" sx={{ mb: 3, color: '#555', marginTop: '20px'}} className="montserrat-regular">
+                Get an insight into the valuable and impactful thoughts direct from our clients.
+              </Typography>
+              
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                <Typography className="montserrat-regular">REVIEWS & TESTIMONIALS</Typography>
+                <Box>
+                  <IconButton size="small" onClick={handlePrev}><ArrowBackIosNewIcon /></IconButton>
+                  <IconButton size="small" onClick={handleNext}><ArrowForwardIosIcon /></IconButton>
+                </Box>
+              </Box>
+              
+              <Box sx={{ display: 'flex', overflow: 'hidden' }}>
+                {testimonials.map((testimonial, index) => (
+                  <Card 
+                    key={index} 
+                    elevation={3} 
+                    sx={{ 
+                      borderRadius: 2, 
+                      minWidth: '75%', 
+                      marginRight: 2,
+                      transform: `translateX(${-100 * currentTestimonial}%)`,
+                      transition: 'transform 0.3s ease-in-out'
+                    }}
+                  >
+                    <CardContent sx={{ display: 'flex', gap: 2 }}>
+                      <Avatar src={testimonial.image} sx={{ width: 34, height: 34 }} />
+                      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                        <Typography className="montserrat-regular">{testimonial.name}</Typography>
+                        <Typography variant="body2" sx={{ color: '#555' }} className="montserrat-regular">{testimonial.position}</Typography>
+                        <img src={cardDivider} alt="Divider" style={{ width: '100%', height: 'auto', margin: '8px 0' }} />
+                        <Typography variant="body2" className="montserrat-regular">
+                          {isMobile 
+                            ? testimonial.text.slice(0, 100) + '...' 
+                            : testimonial.text}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                ))}
+              </Box>
+          </Box>
+          )
+        }
         
         {isMobile && (
           <Box sx={{ 
@@ -181,6 +258,8 @@ const PowerfulInsights = () => {
             />
           </Box>
         )}
+
+
       </Box>
     </ThemeProvider>
   );
