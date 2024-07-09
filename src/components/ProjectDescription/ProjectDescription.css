@@ -1,0 +1,22 @@
+.project-description {
+    background-color: #5793ED;
+    border-radius: 25px;
+}
+.rotate-inverse {
+    writing-mode:vertical-rl;
+    rotate: 180deg;
+    height: fit-content;
+}
+
+.project-description-text {
+    background-color: #fff;
+    margin: auto 0;
+    border-radius: 25px;
+}
+
+.blue-rectangle {
+    position: absolute;
+    top: 0;
+    left: 82%;
+}
+
