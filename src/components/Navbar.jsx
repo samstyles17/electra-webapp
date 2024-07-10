@@ -42,7 +42,7 @@ function Navbar() {
                     className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow right-0" // Adjusted position
                   >
                     <li>
-                      <a href="/aboutus" className="montserrat-medium">About</a>
+                      <Link to='/aboutus' className="montserrat-medium"> About</Link>
                     </li>
                     <li>
                       <a className="montserrat-medium">Services</a>
@@ -51,7 +51,7 @@ function Navbar() {
                       <Link to='/projectsectorial' className="montserrat-medium">Portfolio Projects</Link>
                     </li>
                     <li>
-                      <a href="/allprojects" className="montserrat-medium">All Project</a>
+                      <Link to='/allprojects' className="montserrat-medium">All Project</Link>
                     </li>
                     <li>
                       <a href="/contact" className="montserrat-medium">Contact</a>
