@@ -4,7 +4,7 @@ import "./ProjectDescription.css";
 const ProjectDescription = ({description_one, description_two}) => {
    
     return (
-        <div className="project-description flex flex-row items-center h-80 my-20">
+        <div className="project-description flex  items-center h-80">
             <span className="rotate-inverse h-fit h-80 text-xl uppercase montserrat-regular tracking-wider px-2 py-5  text text-white ">
                project description
             </span>
