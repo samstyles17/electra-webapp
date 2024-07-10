@@ -15,9 +15,9 @@ function Navbar() {
           {isMobile ? (
             <>
               <div className="navbar-start">
-                <a href="/" className="ml-4">
+                <Link to="/" className="ml-4">
                   <img src={logo} alt="logo" className="h-8 w-auto" /> {/* Adjusted logo size */}
-                </a>
+                </Link>
               </div>
               <div className="navbar-end mr-4">
                 <div className="dropdown">
@@ -54,10 +54,10 @@ function Navbar() {
                       <Link to='/allprojects' className="montserrat-medium">All Project</Link>
                     </li>
                     <li>
-                      <a href="/contact" className="montserrat-medium">Contact</a>
+                      <Link to="/contact" className="montserrat-medium">Contact</Link>
                     </li>
                     <li>
-                      <a href="/enquire" className="montserrat-medium">Enquire</a>
+                      <Link to="/enquire" className="montserrat-medium">Enquire</Link>
                     </li>
                   </ul>
                 </div>
@@ -92,21 +92,21 @@ function Navbar() {
                     className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
                   >
                     <li>
-                      <a href="/aboutus" className="montserrat-medium">About</a>
+                      <Link to="/aboutus" className="montserrat-medium">About</Link>
                     </li>
                     <li>
-                      <a className="montserrat-medium">Services</a>
+                      <Link className="montserrat-medium">Services</Link>
                     </li>
                     <li>
-                      <a className="montserrat-medium">Portfolio Projects</a>
+                      <Link className="montserrat-medium">Portfolio Projects</Link>
                     </li>
                     <li>
-                      <a href="/allprojects" className="montserrat-medium">All Project</a>
+                      <Link to="/allprojects" className="montserrat-medium">All Project</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="ml-8">
-                  <a href="/"><img src={logo} alt="logo" /></a>
+                  <Link to="/"><img src={logo} alt="logo" /></Link>
                 </div>
                 <div className="mx-5">
                   <img src={divider} alt="divider" />
@@ -125,16 +125,16 @@ function Navbar() {
               <div className="navbar-right hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                   <li>
-                    <a href="/aboutus" className="montserrat-medium">About</a>
+                    <Link to="/aboutus" className="montserrat-medium">About</Link>
                   </li>
                   <li>
-                    <a className="montserrat-medium">Services</a>
+                    <Link className="montserrat-medium">Services</Link>
                   </li>
                   <li>
                     <Link to='/projectsectorial' className="montserrat-medium">Portfolio Projects</Link>
                   </li>
                   <li>
-                    <a href="/allprojects" className="montserrat-medium">All Project</a>
+                    <Link to="/allprojects" className="montserrat-medium">All Project</Link>
                   </li>
                 </ul>
               </div>
