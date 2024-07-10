@@ -17,7 +17,7 @@ import transformingMobility from '../assets/img/portfolio_card5.png';
 // Import your divider and separator images
 import textDivider from '../assets/img/portfolio_text_divider.png';
 import textSeparator from '../assets/img/portfolio_text_separator.png';
-import { color } from 'framer-motion';
+// import { color } from 'framer-motion';
 
 
 const theme = createTheme({
@@ -107,7 +107,8 @@ const PortfolioSection = () => {
         <Typography sx={{ flex: 1, marginRight: '20px' }}>
           We deliver comprehensive electrical solutions that encompass innovative design, seamless installation, robust liaisoning, and proactive maintenance. Our projects highlight our technical excellence, reliability, and adherence to the highest industry standards, ensuring safety and sustainability. Trust us to empower your industry with tailored, cutting-edge electrical solutions that surpass expectations.
         </Typography>
-        <Box sx={{marginLeft: '120px'}}>
+        {!isSmallScreen && (
+          <Box sx={{marginLeft: '120px'}}>
           <IconButton onClick={() => handleCardNav('prev')} sx={{ color: 'white' }}>
             <ArrowBackIosNewIcon />
           </IconButton>
@@ -115,6 +116,7 @@ const PortfolioSection = () => {
             <ArrowForwardIosIcon />
           </IconButton>
         </Box>
+        )}
       </Box>
   
       <Box className="portfolio-card-carousel" sx={{ 
@@ -171,7 +173,18 @@ const PortfolioSection = () => {
         </Box>
 
 
-        </Box>    
+      </Box> 
+
+      {isSmallScreen && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+        <IconButton onClick={() => handleCardNav('prev')} sx={{ color: 'white' }}>
+          <ArrowBackIosNewIcon />
+        </IconButton>
+        <IconButton onClick={() => handleCardNav('next')} sx={{ color: 'white' }}>
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Box>
+      )}   
    
         <Box className="portfolio-headline-carousel" sx={{ 
           position: 'relative', 
