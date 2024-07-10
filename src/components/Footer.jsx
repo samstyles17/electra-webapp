@@ -29,9 +29,9 @@ const OrangeTypography = styled(StyledTypography)(({ theme }) => ({
 const Footer = () => {
   return (
     <Box sx={{ backgroundColor: '#333', color: 'white', py: 4, width: '100%', boxSizing: 'border-box' }} className="montserrat-regular">
-      <Container maxWidth="lg" sx={{ px: 1 }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 1, md: 1 } }}>
         <Grid container spacing={2} alignItems="flex-start">
-          <Grid item xs={12} md={3} sx={{ width: '100%', boxSizing: 'border-box' }}>
+          <Grid item xs={12} md={4} sx={{ width: '100%', boxSizing: 'border-box' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'center', md: 'flex-start' }, width: '100%', boxSizing: 'border-box' }}>
               <img 
                 src={electrapowerLogo} 
@@ -74,8 +74,8 @@ const Footer = () => {
             <img src={LargeDivider} style={{ margin: '0 8px', height: '100%' }} />
           </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+          <Grid item xs={12} md={3} sx={{ textAlign: 'left' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
               <Box component="img" src={LocationIcon} sx={{ color: '#FF6B2B', mr: 1 }} />
               <OrangeTypography variant="subtitle1" className="montserrat-medium">
                 Address
