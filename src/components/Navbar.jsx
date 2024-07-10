@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="sticky-navbar">
+      <div className="sticky-navbar z-[999]">
         <div className="navbar bg-base-100 mt-2">
           {isMobile ? (
             <>

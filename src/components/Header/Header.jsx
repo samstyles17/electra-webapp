@@ -3,7 +3,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div className='header'>
+    <div className='header montserrat-regular'>
       <div className="header-body">
         <h3 className='heading-secondary uppercase  text text-blacktext'>ELECTRA POWER ENGINEERING</h3>
         <div className='heading-primary'>
