@@ -74,6 +74,45 @@
   margin-top: 80px;
 }
 
+@media (max-width: 960px) {
+  .section-container.mobile {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .section-container.mobile .slider-container {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 20px 0;
+  }
+
+  .section-container.mobile .text-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .section-container.mobile .text-container h3 {
+    font-size: 24px;
+  }
+
+  .section-container.mobile .text-container p,
+  .section-container.mobile .text-container p span {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .section-container.mobile .bullet-point {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .section-container.mobile .bottom-text h4 {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+
 .slider-container {
   width: 50%;
   max-width: 800px; /* Adjust as needed */
