@@ -95,27 +95,25 @@ const CarouselCard = ({ card, isFullyVisible, isPartiallyVisible}) => {
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
           <Box
             sx={{
-              width: 32,
-              height: 32,
+              width: 44,
+              height: 44,
               borderRadius: '50%',
-              border: '1px solid grey',
               bgcolor: 'grey',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              mr: 2,
+              mr: 1,
               fontSize: '1rem',
-              fontWeight: 'bold',
             }}
           >
             {card.id}
           </Box>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>{card.title}</Typography>
+          <Typography variant="string" sx={{ flexGrow: 1 }}>{card.title}</Typography>
         </Box>
         {isHovered && isFullyVisible && (
           <>
-            <Divider sx={{ bgcolor: 'white',width:'80%', ml:5 }} />
-            <Box sx={{ display: 'flex', alignItems: 'center',ml:5, mb:6, paddingTop:2 }}>
+            <Divider sx={{ bgcolor: 'white',width:'70%', ml:6.5 }} />
+            <Box sx={{ display: 'flex', alignItems: 'center',ml:6.5, mb:6, paddingTop:2 }}>
               <Typography variant="body1">{card.description}</Typography>
               <ChevronRight fontSize="small" sx={{ ml: 1 }} />
             </Box>
@@ -142,7 +140,7 @@ const Carousel = () => {
 
   const showLeftArrow = currentIndex > 0;
   const showRightArrow = currentIndex < cards.length - visibleCards;
-
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -150,7 +148,7 @@ const Carousel = () => {
         position: 'relative', 
         width: '100%', 
         maxWidth: '1200px', 
-        margin: '0 auto',
+        margin: isMobile ? 1 : '0 auto',
         overflow: 'hidden'
       }}>
         <Box sx={{ 
