@@ -284,7 +284,7 @@ const data = [
 const ProjectSectorial = () => {
     return (
         <div className="project-sectorial">
-            <Navbar />
+            {/* <Navbar /> */}
             <ProjectInfo data={data} />
             <Footer />
         </div>

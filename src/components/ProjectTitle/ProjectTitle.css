@@ -1,0 +1,25 @@
+.project-title >span {
+border-color: #bebebe;
+}
+
+@media (max-width:768px) {
+    .project-title > span{
+ padding: 20px;
+        }
+        
+}
+@media (max-width: 460px) {
+    .project-title {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .project-title > .ml-8 {
+        margin-left: 0;
+        font-size: 14px;
+    }
+    .project-title > span {
+        width: 44px;
+        height: 33px;
+        font-size: 16px;
+    }
+}
