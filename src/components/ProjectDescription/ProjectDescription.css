@@ -56,5 +56,8 @@
         font-size: 14px !important;
         padding: 10px 0 !important;
     }
+    .project-image{
+        width: fit-content;
+    }
     
 }
