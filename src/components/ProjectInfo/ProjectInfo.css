@@ -2,26 +2,31 @@
     margin: 0 1rem;
     padding: 3rem;
 }
+
 .border-top-svg {
     margin: 1rem auto 4rem auto;
     width: 100%;
 }
+
 .border-top-sm {
 
     display: none;
 }
+
 @media (max-width: 475px) {
     .projectinfo {
         padding: 0 1rem;
         margin: 0 10px;
     }
+
     .border-top-svg {
-       display: none;
-       
+        display: none;
+
     }
+
     .border-top-sm {
         text-align: center;
         display: block;
-        margin: 30px 0;
+        margin: 30px auto;
     }
 }

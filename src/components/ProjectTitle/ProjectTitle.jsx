@@ -9,17 +9,81 @@ const ProjectTitle = ({ index, title }) => {
         const coloredWords = words.map((word, i) => {
             let colorClass = '';
 
-            if (i < 3) {
-                colorClass = 'text-orangetext'; 
-            } else if (i >= wordCount - 3) {
-                colorClass = 'text-bluetext'; 
-            } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
-                colorClass = 'text-blacktext'; 
+            if (index == 0) {
+                if (i < 3) {
+                    colorClass = 'text-orangetext';
+                } else if (i >= wordCount - 3) {
+                    colorClass = 'text-bluetext';
+                } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
+                    colorClass = 'text-blacktext';
+                }
             }
-
+            if (index == 1) {
+                if (i < 2) {
+                    colorClass = 'text-orangetext';
+                } else if (i >= wordCount - 2) {
+                    colorClass = 'text-bluetext';
+                } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
+                    colorClass = 'text-blacktext';
+                }
+            }
+            if (index == 2) {
+                if (i < 4) {
+                    colorClass = 'text-blacktext';
+                } else if (i >= wordCount - 4) {
+                    colorClass = 'text-bluetext';
+                } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
+                    colorClass = 'text-orangetext';
+                }
+            }
+            if (index == 3) {
+                if (i < 4) {
+                    colorClass = 'text-orangetext';
+                } else if (i >= wordCount - 5) {
+                    colorClass = 'text-bluetext';
+                } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
+                    colorClass = 'text-blacktext';
+                }
+            }
+            if (index == 4) {
+                if (i < 3) {
+                    colorClass = 'text-orangetext';
+                } else if (i >= wordCount - 2) {
+                    colorClass = 'text-bluetext';
+                } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
+                    colorClass = 'text-blacktext';
+                }
+            }
+            if (index == 5) {
+                if (i < 3) {
+                    colorClass = 'text-orangetext';
+                } else if (i >= wordCount - 1) {
+                    colorClass = 'text-bluetext';
+                } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
+                    colorClass = 'text-blacktext';
+                }
+            }
+            if (index == 6) {
+                if (i < 2) {
+                    colorClass = 'text-orangetext';
+                } else if (i >= wordCount - 4) {
+                    colorClass = 'text-bluetext';
+                } else if (i >= Math.floor(wordCount / 2) - 1 && i <= Math.floor(wordCount / 2) + 1) {
+                    colorClass = 'text-blacktext';
+                }
+            }
+            if (index == 7) {
+                if (i < 3) {
+                    colorClass = 'text-orangetext';
+                } else if (i >= 3 && i <= 7) {
+                    colorClass = 'text-bluetext';
+                } else {
+                    colorClass = 'text-blacktext';
+                }
+            }
             return (
                 <span key={i} className={colorClass}>
-                    {word} {}
+                    {word} { }
                 </span>
             );
         });
@@ -32,7 +96,7 @@ const ProjectTitle = ({ index, title }) => {
             <span className="border border-solid flex items-center justify-center text-2xl h-16 w-12 montserrat-regular">
                 0{index + 1}
             </span>
-            <p className="text-xl montserrat-regular tracking-wide ml-8 inline">
+            <p className="text-xl montserrat-regular tracking-wide ml-8 inline capitalize ">
                 {applyColors(words)}
             </p>
         </div>

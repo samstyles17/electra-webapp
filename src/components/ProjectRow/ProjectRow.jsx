@@ -10,10 +10,10 @@ const ProjectRow = ({ data }) => {
             {
                 data.map((e, i) => {
                     return (
-                        <div className='row '>
+                        <div className='row' key={i}>
                             <div className='col-1'>
                                 <svg className="border-right" width="2" height="363" viewBox="0 0 2 363" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.23" d="M1 0.5V362.5" stroke="black" stroke-dasharray="4 4" />
+                                    <path opacity="0.23" d="M1 0.5V362.5" stroke="black" strokeDasharray="4 4" />
                                 </svg>
                                 <div className="card-h flex flex-col justify-between gap-5 ">
                                     <img src={e.img} alt="img1" className="card-h-img rounded-2xl" />

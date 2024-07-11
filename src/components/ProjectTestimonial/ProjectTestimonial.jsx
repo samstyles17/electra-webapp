@@ -1,6 +1,5 @@
 import React from 'react';
 import "./ProjectTestimonial.css"
-import kia_logo from "../../assets/img/logo/kia_logo.png"
 import logo_circle from "../../assets/img/logo-circle.png";
 
 const ProjectTestimonial = ({ image, title, info }) => {
