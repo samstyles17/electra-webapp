@@ -19,8 +19,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const CustomButton = styled(Button)(({ theme }) => ({
-  width: '256px',
-  height: '48px',
+  width: '250px',
+  height: '45px',
   borderRadius: '24px',
   margin: '8px',
   display: 'flex',
@@ -38,8 +38,8 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
   '& .MuiButton-startIcon': {
     marginRight: '8px',
-    width: '20px', // Adjusted icon size
-    height: '20px', // Adjusted icon size
+    width: '18px', // Adjusted icon size
+    height: '18px', // Adjusted icon size
   },
 }));
 
@@ -57,12 +57,11 @@ const ResponsiveButtonGroup = () => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 1.5,
+    slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
-    arrows: false,
   };
 
   return (
@@ -73,28 +72,36 @@ const ResponsiveButtonGroup = () => {
         alignItems: 'center',
         justifyContent: 'center',
         flexWrap: { xs: 'nowrap', md: 'wrap' },
-        width: { xs: 'calc(100vw - 20px)', md: '1200px' },
-        height: { xs: '36px', md: '130px' },
+        width: { xs: '100%', md: '1200px' },
+        height: { xs: 'auto', md: '130px' },
         margin: '20px auto',
-        overflowX: { xs: 'scroll', md: 'hidden' },
       }}
     >
       {isMobile ? (
         <Slider {...settings}>
           {buttons.map((button, index) => (
-            <CustomButton
-              key={index}
-              startIcon={<img src={button.icon} alt={button.text} />}
-              component={Link}
-              to={button.link}
-              sx={{
-                width: '382px', // Ensure the button is wide enough
-                height: '36px', // Button height for mobile
-                whiteSpace: 'nowrap', // Ensures text stays on one line
-              }}
-            >
-              {button.text}
-            </CustomButton>
+            <Box key={index} sx={{ padding: '0 16px' }}> {/* Adjusted spacing */}
+              <CustomButton
+                startIcon={<img src={button.icon} alt={button.text} />}
+                component={Link}
+                to={button.link}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  '& img': {
+                    marginRight: '8px',
+                  },
+                  '& .MuiButton-startIcon': {
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }
+                }}
+              >
+                {button.text}
+              </CustomButton>
+            </Box>
           ))}
         </Slider>
       ) : (
@@ -105,9 +112,9 @@ const ResponsiveButtonGroup = () => {
             component={Link}
             to={button.link}
             sx={{
-              width: { xs: '382px', md: '256px' },
-              height: { xs: '36px', md: '48px' },
-              whiteSpace: 'nowrap', // Ensures text stays on one line
+              width: { xs: '250px', md: '256px' },
+              height: { xs: '45px', md: '48px' },
+              whiteSpace: 'nowrap',
             }}
           >
             {button.text}
@@ -124,7 +131,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#1976d2', // Adjust the color as per your design
+      main: '#1976d2',
     },
     text: {
       primary: '#000',
