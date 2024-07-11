@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <>
       <div className="sticky-navbar z-[999]">
-        <div className="navbar bg-base-100 mt-2">
+        <div className="navbar bg-base-100 mt-2 w-full"> {/* Added w-full */}
           {isMobile ? (
             <>
               <div className="navbar-start">

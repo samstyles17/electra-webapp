@@ -16,7 +16,7 @@ function Hero() {
             <h1 className={`mb-6 montserrat-medium ${isMobile ? 'text-xl' : 'text-3xl'}`}>
               <span className="text-blacktext">LOOK NO FURTHER FOR </span>
               <span className="text-orangetext">YOUR ULTIMATE ELECTRICAL </span>
-              <span className="text-bluetext">PROJECT SOLUTIONS!</span>
+              <span style={{ fontSize: isMobile ? '1.25rem' : '2rem', color: '#0000FF' }}>PROJECT SOLUTIONS!</span>
             </h1>
             <p className={`montserrat-regular text-darkgreytext ${isMobile ? 'text-sm' : 'text-base mr-8 pr-8'}`}>
               Our commitment to electrical expertise extends beyond mere
