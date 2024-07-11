@@ -45,7 +45,7 @@ function Navbar() {
                       <Link to='/aboutus' className="montserrat-medium"> About</Link>
                     </li>
                     <li>
-                      <a className="montserrat-medium">Services</a>
+                      <Link to ='/designconsultingservice' className="montserrat-medium"> Services </Link>
                     </li>
                     <li>
                       <Link to='/projectsectorial' className="montserrat-medium">Portfolio Projects</Link>
@@ -95,10 +95,10 @@ function Navbar() {
                       <Link to="/aboutus" className="montserrat-medium">About</Link>
                     </li>
                     <li>
-                      <Link className="montserrat-medium">Services</Link>
+                      <Link to="/designconsultingservice" className="montserrat-medium">Services</Link>
                     </li>
                     <li>
-                      <Link className="montserrat-medium">Portfolio Projects</Link>
+                      <Link to= "/projectsectorial"className="montserrat-medium">Portfolio Projects</Link>
                     </li>
                     <li>
                       <Link to="/allprojects" className="montserrat-medium">All Project</Link>
@@ -128,7 +128,7 @@ function Navbar() {
                     <Link to="/aboutus" className="montserrat-medium">About</Link>
                   </li>
                   <li>
-                    <Link className="montserrat-medium">Services</Link>
+                    <Link to="/designconsultingservice"className="montserrat-medium">Services</Link>
                   </li>
                   <li>
                     <Link to='/projectsectorial' className="montserrat-medium">Portfolio Projects</Link>
