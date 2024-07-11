@@ -3,7 +3,7 @@ import '../styles.css';
 import map from '../assets/img/map.png';
 import img1 from '../assets/img/enquiryimg.png';
 import img2 from '../assets/img/headofficeimg.png';
-import img3 from '../assets/img/callimg.png';
+// import img3 from '../assets/img/callimg.png';
 
 const ContactInfo = () => {
   return (
