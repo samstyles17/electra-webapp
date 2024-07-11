@@ -87,15 +87,23 @@ body{
   margin-right: 45px;
 }
 
+
 .carousel-item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.slider-image {
-  max-width: 100%;
-  height: auto;
+/* .slider-image{
+  width: 100%;
+  height:auto;  
+} */
+
+/*New code for adjusting slider image*/
+
+.carousel-item img{
+  width: 80%;
+  height:auto
 }
 
 .slider-container .react-multi-carousel-item {
@@ -179,6 +187,47 @@ body{
 hr{
   width: 40px;
 }
+
+
+@media (max-width: 960px) {
+  .section-container.mobile {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .section-container.mobile .slider-container {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 20px 0;
+  }
+
+  .section-container.mobile .text-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .section-container.mobile .text-container h3 {
+    font-size: 24px;
+  }
+
+  .section-container.mobile .text-container p,
+  .section-container.mobile .text-container p span {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .section-container.mobile .bullet-point {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .section-container.mobile .bottom-text h4 {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+
 
 .bottom-text {
   background-color: rgba(255, 255, 255, 0.1);
@@ -1051,7 +1100,6 @@ hr{
 }
 
 /*Contact Info Section*/
-
 .contact-info-container {
   display: flex;
   justify-content: space-between;
@@ -1060,6 +1108,7 @@ hr{
   color: #fff;
   padding: 20px;
   border-radius: 10px;
+  margin: 15px;
 }
 
 .map-section {
@@ -1087,18 +1136,27 @@ hr{
 
 .info-section {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   flex: 2;
   padding-left: 20px;
+}
+
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .info-box {
   background-color: #383838;
   padding: 15px;
   border-radius: 10px;
-  margin-bottom: 10px;
-  width: 50%;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.info-box:last-child {
+  margin-right: 0;
 }
 
 .info-box h3 {
@@ -1115,6 +1173,10 @@ hr{
 }
 
 .phone-section {
+  background-color: #383838;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1126,6 +1188,11 @@ hr{
   justify-content: space-between;
   align-items: center;
   margin-right: 20px;
+  margin-left: 20px;
+}
+
+.phone-box:last-child {
+  margin-right: 0;
 }
 
 .call-button {
@@ -1135,6 +1202,7 @@ hr{
   border-radius: 20px;
   padding: 5px 10px;
   cursor: pointer;
+  margin-left: 25px;
 }
 
 @media (max-width: 768px) {
@@ -1144,7 +1212,15 @@ hr{
 
   .info-section {
     padding-left: 0;
-    padding-top: 20px;
+  }
+
+  .top-info {
+    flex-direction: column;
+  }
+
+  .info-box {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .phone-section {
@@ -1154,5 +1230,222 @@ hr{
   .phone-box {
     margin-right: 0;
     margin-bottom: 10px;
+  }
+}
+
+/* Work Together Form Section */
+.work-together-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.illustration-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  margin-right: 50px;
+}
+
+.illustration-image {
+  margin-top: 15px;
+  width: 100%;
+  height: auto;
+  max-width: 550px;
+  margin-bottom: 20px;
+}
+
+
+
+.illustration-section h1 {
+  font-size: 3rem;
+  color: #000; /* Adjust the color to match the image */
+  text-align: left;
+}
+
+.illustration-section hr{
+  margin-left: 5px;
+  width: 50px;
+}
+
+.illustration-section span {
+  color: #ff6600; /* Adjust the color to match the image */
+}
+
+.illustration-section .blue{
+  color: #198AD7;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-input {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.half-width {
+  width: 48%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.textarea-input {
+  height: 100px;
+}
+
+.submit-button {
+  background-color: #034470; /* Adjust the color to match the image */
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 63px;
+  width: 85%; /* Ensure the button spans the full width */
+}
+
+.submit-button:hover {
+  background-color: #034470; /* Adjust the color to match the image */
+}
+
+@media (max-width: 768px) {
+  .work-together-container {
+    flex-direction: column;
+  }
+
+  .illustration-section h1 {
+    font-size: 2rem;
+    color: #000; /* Adjust the color to match the image */
+    text-align: left;
+  }
+
+  .illustration-section span {
+    font-size: 2rem;
+   
+  }
+
+  .illustration-section .blue {
+    font-size: 2rem;
+   
+  }
+
+
+
+  .illustration-section {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .half-width {
+    width: 100%;
+  }
+
+  .submit-button{
+    margin-left: 25px;
+  }
+}
+
+/* FAQ section */
+
+.faq-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.faq-highlight {
+  color: #ff6600;
+}
+
+.faq-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+.faq-item {
+  margin: 10px 0;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.faq-arrow {
+  font-size: 12px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .faq-title {
+    font-size: 20px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+
+  .faq-arrow {
+    font-size: 10px;
   }
 }

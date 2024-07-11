@@ -1,0 +1,48 @@
+.project-highlight-list {
+  margin-left: 5rem;
+  padding: 1.25rem;
+  position: relative;
+}
+.list-svg {
+  position: absolute;
+  top: 45px;
+  left: -30px;
+}
+.animated-path {
+  animation: loadAnimation 10s ease-out forwards;
+}
+
+@media (max-width:768px) {
+  .project-highlight-list > li > h4 {
+    font-size: 13px;
+    margin: 10px 0;
+  }
+  .project-highlight-list > li > p {
+    font-size: 12px;
+  }
+}
+@media (max-width:475px) {
+  
+  .project-highlight-list {
+    margin-left: 0 ;
+    padding: 0 ;
+  }
+  .project-highlight-list > li > h4 {
+    font-size: 13px;
+  }
+  .project-highlight-list > li > p {
+    font-size: 12px;
+  }
+  .project-images {
+    flex-direction: column;
+  }
+}
+
+@keyframes loadAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

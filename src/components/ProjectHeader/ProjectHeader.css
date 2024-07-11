@@ -1,0 +1,115 @@
+.project-header-title {
+    color: #bebebe;
+    border: 1px solid #bebebe;
+    width: 375px;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+.project-header > div {
+    padding: 0 4.5rem;
+}
+.circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    border: 4px solid #fff;
+}
+
+.circle-1 {
+    background-color: #FF6725;
+}
+
+.circle-2 {
+    background-color: #0C5587;
+    margin-left: -30px;
+}
+.project-header-bg {
+    height: 324px;
+    width: 100%;
+}
+.project-header-span > span:last-child {
+    display: none;
+}
+
+@media (max-width:768px) {
+
+.circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    border: 4px solid #fff;
+}
+.circle-2 {
+    margin-left: -20px;
+}
+.project-header-span > span:nth-child(4), span:nth-child(3) {
+    font-size: 11px;
+}
+.project-header-span {
+    width: 250px;
+    margin-top: -50px;
+    margin-right: -50px;
+}
+}
+
+
+
+@media (max-width:475px) {
+     .project-header > div> div {
+        flex-direction: column;
+        align-items: flex-start;
+     }
+     .project-header > div> div >h2 {
+        font-size: 18px;
+        width: 180px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+     }
+     .project-header > div> div >h2 > span:first-of-type
+      {
+        color: #FF6725;
+     }
+     .project-header > div> div >h2 > span:last-of-type
+     {
+       color: #0C5587;
+    }
+     .project-header > div  {
+        margin-top: 10px;
+        flex-direction: column-reverse;
+        gap: 40px;
+        padding: 0 30px;
+     }
+     .project-header > div > p  {
+       margin-left: 0px;
+     }
+     .project-header-title {
+        width: 255px;
+        font-size: 11px !important;
+        padding: 8px 2px;
+        border-radius: 30px;
+    }
+    .circle {
+        width: 34px;
+        height: 34px;
+        border-radius: 100%;
+        border: 4px solid #fff;
+    }
+    .circle-2 {
+        margin-left: -25px;
+    }
+    .project-header-span > span:nth-child(3) {
+        display: none;
+    }
+    .project-header-span > span:nth-child(4) {
+        display: none;
+    }
+    .project-header-span > span:last-child {
+        display: block;
+        color: #6A6A73;
+        font-size: 12px;
+    }
+    .project-header-span {
+        margin-right: 0;
+        margin-top: 0;
+    }
+}

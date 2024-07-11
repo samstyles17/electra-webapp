@@ -1,0 +1,46 @@
+.allprojects {
+    background-color: #f7f7f7;
+}
+
+.wrapper {
+    margin: 60px 0;
+}
+
+.semi-hover {
+    height: 200px;
+    width: 350px;
+    background-color: #fff;
+    border-top-left-radius: 14rem;
+    border-bottom-left-radius: 14rem;
+    margin-left: -200px;
+    border: 1px solid #333;
+
+}
+
+.semi-hover:nth-child(4) {
+    background-color: orange;
+}
+
+.cardgg {
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.semi-image {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    float: right;
+    border-top-left-radius: 14rem;
+    border-bottom-left-radius: 14rem;
+
+}
+
+.semi-hover:hover {
+    width: 40%;
+}
+
+.semi-hover:hover .semi-image {
+    width: 70%;
+}
