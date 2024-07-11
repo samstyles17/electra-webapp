@@ -145,7 +145,7 @@ function Navbar() {
               </div>
               <div className="">
                 <button className="btn btn-md px-8 bg-orange rounded-full">
-                  <h3 className="montserrat-regular text-white">Enquire</h3>
+                  <h3 className="montserrat-regular text-white"><Link to="/enquire" className="montserrat-medium">Enquire</Link></h3>
                 </button>
               </div>
             </>

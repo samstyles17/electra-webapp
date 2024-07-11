@@ -8,6 +8,7 @@ import DesignConsultingService from "./servicedesginandconsulting/DesignConsulti
 import InstallationCommisioningService from "./serviceinstallationandcommisioning/InstallationCommisioningService";
 import PanelBoardControlSystem from "./servicepanelboardcontrolsystem/PanelBoardControlSystem";
 import ApprovalComplianceService from "./serviceapprovalcompliance/ApprovalCompliance";
+import Enquire from "./enquire/Enquire";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/approvalcomplianceservice" element={<ApprovalComplianceService/>}/>
         <Route path="/projectsectorial" element={<ProjectSectorial />} />
         <Route path="/allprojects" element={<AllProjects/>}/>
+        <Route path="/enquire" element={<Enquire/>} />
       </Routes>
     </>
   );
