@@ -48,9 +48,9 @@ const ResponsiveButtonGroup = () => {
   
   const buttons = [
     { icon: DesignIcon, text: 'Design And Consulting', link: '/designconsultingservice' },
-    { icon: InstallationIcon, text: 'Installation & Commissioning', link: '/installation-commissioning' },
-    { icon: PanelIcon, text: 'Panel Board & Control Systems', link: '/panel-board-control' },
-    { icon: ComplianceIcon, text: 'Statutory Approvals & Compliance', link: '/approvals-compliance' },
+    { icon: InstallationIcon, text: 'Installation & Commissioning', link: "/installationcommisioningservice"},
+    { icon: PanelIcon, text: 'Panel Board & Control Systems', link: "/panelboardcontrolservice" },
+    { icon: ComplianceIcon, text: 'Statutory Approvals & Compliance', link: "/approvalcomplianceservice" },
     { icon: MaintenanceIcon, text: 'Maintenance & Repair', link: '/maintenance-repair' },
     { icon: ValueAddedIcon, text: 'Value-Added Services', link: '/value-added-services' },
   ];
