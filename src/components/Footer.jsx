@@ -75,7 +75,7 @@ const Footer = () => {
           </Grid>
 
           <Grid item xs={12} md={3} sx={{ textAlign: 'left' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'flex-start', md: 'flex-start' } }}>
               <Box component="img" src={LocationIcon} sx={{ color: '#FF6B2B', mr: 1 }} />
               <OrangeTypography variant="subtitle1" className="montserrat-medium">
                 Address
