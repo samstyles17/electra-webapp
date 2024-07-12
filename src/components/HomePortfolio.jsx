@@ -95,7 +95,7 @@ const PortfolioSection = () => {
         backgroundSize: 'cover',
         padding: '40px',
         color: 'white',
-        marginTop: '50px'
+        marginTop: '90px'
       }}>
         <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
         <img src={textDivider} alt="divider" style={{ marginRight: '10px' }} />
@@ -121,7 +121,7 @@ const PortfolioSection = () => {
   
       <Box className="portfolio-card-carousel" sx={{ 
         position: 'relative',
-        width: '100vw',
+        width: '99vw',
         margin: '65px 0',
         overflow: 'hidden',
         left: '50%',
@@ -191,7 +191,7 @@ const PortfolioSection = () => {
           marginTop: '50px',
           overflow: 'hidden',
           height: '50px',
-          width: '100vw',
+          width: '99vw',
           left: '50%',
           transform: 'translateX(-50%)',
           '&::before, &::after': {
