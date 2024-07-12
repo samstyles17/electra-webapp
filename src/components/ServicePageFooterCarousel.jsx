@@ -87,7 +87,7 @@ const PortfolioComponent = () => {
               sx={{ 
                 flexShrink: 0,
                 width: '242px',
-                height: '300px',
+                height: '328px',
                 marginRight: '10px',
               }}
             >

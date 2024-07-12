@@ -6,8 +6,18 @@ function Hero() {
   const isMobile = useMediaQuery('(max-width:960px)'); // md breakpoint is 960px in MUI
 
   return (
-    <div className="bg-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div 
+      style={{
+        padding: '4rem 1rem'
+      }} 
+      className="bg-white"
+    >
+      <div 
+        style={{
+          maxWidth: '90rem'
+        }}
+        className="mx-auto"
+      >
         <div className={`flex ${isMobile ? 'flex-col items-start' : 'items-start'}`}>
           <div className={`mr-4 flex-shrink-0 ${isMobile ? 'transform rotate-90 mb-1 ml-4' : ''}`}>
             <img src={divider} alt="divider" />

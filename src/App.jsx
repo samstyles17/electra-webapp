@@ -7,7 +7,9 @@ import ProjectSectorial from "./projectsectorial/ProjectSectorial";
 import DesignConsultingService from "./servicedesginandconsulting/DesignConsultingService";
 import InstallationCommisioningService from "./serviceinstallationandcommisioning/InstallationCommisioningService";
 import PanelBoardControlSystem from "./servicepanelboardcontrolsystem/PanelBoardControlSystem";
-import ApprovalComplianceService from "./serviceapprovalcompliance/ApprovalCompliance";
+import ApprovalComplianceService from "./serviceapprovalcompliance/ApprovalComplianceService";
+import MaintenaceRepairService from "./servicemaintenancerepair/MaintenaceRepairService";
+import ValueAddedService from "./servicevalueaddedservice/ValueAddedService";
 import Enquire from "./enquire/Enquire";
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
         <Route path="/installationcommisioningservice" element={<InstallationCommisioningService/>}/>
         <Route path="/panelboardcontrolservice" element={<PanelBoardControlSystem/>}/>
         <Route path="/approvalcomplianceservice" element={<ApprovalComplianceService/>}/>
+        <Route path="/maintenacerepairservice" element={<MaintenaceRepairService/>}/>
+        <Route path="/valueaddedservice" element= {<ValueAddedService/>}/>
         <Route path="/projectsectorial" element={<ProjectSectorial />} />
         <Route path="/allprojects" element={<AllProjects/>}/>
         <Route path="/enquire" element={<Enquire/>} />

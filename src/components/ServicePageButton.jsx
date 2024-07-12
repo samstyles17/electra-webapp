@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { styled } from '@mui/system';
 import Slider from 'react-slick';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -44,15 +44,16 @@ const CustomButton = styled(Button)(({ theme }) => ({
 }));
 
 const ResponsiveButtonGroup = () => {
+  const location = useLocation();
   const isMobile = useMediaQuery('(max-width:980px)');
-  
+
   const buttons = [
     { icon: DesignIcon, text: 'Design And Consulting', link: '/designconsultingservice' },
-    { icon: InstallationIcon, text: 'Installation & Commissioning', link: "/installationcommisioningservice"},
-    { icon: PanelIcon, text: 'Panel Board & Control Systems', link: "/panelboardcontrolservice" },
-    { icon: ComplianceIcon, text: 'Statutory Approvals & Compliance', link: "/approvalcomplianceservice" },
-    { icon: MaintenanceIcon, text: 'Maintenance & Repair', link: '/maintenance-repair' },
-    { icon: ValueAddedIcon, text: 'Value-Added Services', link: '/value-added-services' },
+    { icon: InstallationIcon, text: 'Installation & Commissioning', link: '/installationcommisioningservice' },
+    { icon: PanelIcon, text: 'Panel Board & Control Systems', link: '/panelboardcontrolservice' },
+    { icon: ComplianceIcon, text: 'Statutory Approvals & Compliance', link: '/approvalcomplianceservice' },
+    { icon: MaintenanceIcon, text: 'Maintenance & Repair', link: '/maintenacerepairservice' },
+    { icon: ValueAddedIcon, text: 'Value-Added Services', link: "/valueaddedservice" },
   ];
 
   const settings = {
@@ -89,6 +90,8 @@ const ResponsiveButtonGroup = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  backgroundColor: location.pathname === button.link ? theme.palette.primary.main : 'transparent',
+                  color: location.pathname === button.link ? theme.palette.common.white : theme.palette.text.primary,
                   '& img': {
                     marginRight: '8px',
                   },
@@ -115,6 +118,8 @@ const ResponsiveButtonGroup = () => {
               width: { xs: '250px', md: '256px' },
               height: { xs: '45px', md: '48px' },
               whiteSpace: 'nowrap',
+              backgroundColor: location.pathname === button.link ? theme.palette.primary.main : 'transparent',
+              color: location.pathname === button.link ? theme.palette.common.white : theme.palette.text.primary,
             }}
           >
             {button.text}

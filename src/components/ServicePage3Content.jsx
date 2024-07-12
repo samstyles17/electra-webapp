@@ -67,6 +67,7 @@ const MainComponent = () => {
             <Box
               sx={{
                 flex: 1,
+                margin: '40px',
                 padding: '20px',
                 display: 'flex',
                 flexDirection: 'column',

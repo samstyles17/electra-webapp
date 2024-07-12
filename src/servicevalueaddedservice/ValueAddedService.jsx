@@ -1,0 +1,24 @@
+import React from 'react'
+import Navbar from "../components/Navbar";
+import ServicePageText  from '../components/ServicePageText';
+import ServicePageButton from "../components/ServicePageButton";
+import ServicePage6Content from "../components/ServicePage6Content";
+import ServicePageBottomButton from "../components/ServicePageBottomButton";
+import ServiceFooterCarousel from "../components/ServicePageFooterCarousel";
+import Footer from "../components/Footer";
+
+function MaintenaceRepairService () {
+    return(
+        <>
+            <Navbar/>
+            <ServicePageText/>
+            <ServicePageButton />
+            <ServicePage6Content />
+            <ServicePageBottomButton />
+            <ServiceFooterCarousel/>
+            <Footer/>
+        </>
+    )
+}
+
+export default MaintenaceRepairService;
