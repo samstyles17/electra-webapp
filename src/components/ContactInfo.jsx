@@ -29,8 +29,8 @@ const ContactInfo = () => {
         </div>
         <div className="phone-section">
           <div className="phone-box">
-            <h3 className='montserrat-regular'>PHONE NUMBER</h3>
-            <p className='montserrat-regular'>+91 940 098 9363 <button className="call-button">Call</button></p>
+            <h3 className='montserrat-regular'><img src={img3} alt="" />PHONE NUMBER</h3>
+            <p className='montserrat-regular ml-7'>+91 940 098 9363 <button className="call-button">Call</button></p>
           </div>
           <div className="phone-box">
             <p className='montserrat-regular'>+91 920 738 9111 <button className="call-button">Call</button></p>

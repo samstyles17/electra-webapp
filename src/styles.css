@@ -1426,26 +1426,3 @@ hr{
   font-size: 12px;
   color: #999;
 }
-
-@media (max-width: 768px) {
-  .faq-container {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .faq-title {
-    font-size: 20px;
-  }
-
-  .faq-question {
-    font-size: 16px;
-  }
-
-  .faq-answer {
-    font-size: 14px;
-  }
-
-  .faq-arrow {
-    font-size: 10px;
-  }
-}
