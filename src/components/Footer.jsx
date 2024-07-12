@@ -29,7 +29,7 @@ const OrangeTypography = styled(StyledTypography)(({ theme }) => ({
 const Footer = () => {
   return (
     <Box sx={{ backgroundColor: '#333', color: 'white', py: 4, width: '100%', boxSizing: 'border-box' }} className="montserrat-regular">
-      <Container maxWidth="lg" sx={{ px: { xs: 1, md: 1 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 1, md: 0.5 } }}> {/* Adjust padding here */}
         <Grid container spacing={2} alignItems="flex-start">
           <Grid item xs={12} md={4} sx={{ width: '100%', boxSizing: 'border-box' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'center', md: 'flex-start' }, width: '100%', boxSizing: 'border-box' }}>

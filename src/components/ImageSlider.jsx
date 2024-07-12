@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Card, CardContent, CardMedia, Typography, IconButton, Divider } from '@mui/material';
-import { ChevronLeft, ChevronRight} from '@mui/icons-material';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -11,7 +11,6 @@ import panelImage from '../assets/img/sliding_image3.png';
 import auditImage from '../assets/img/sliding_image4.png';
 import testingImage from '../assets/img/sliding_image5.png';
 import maintenanceImage from '../assets/img/sliding_image6.png';
-import dividerImage from "../assets/img/slider_divider.png";
 
 const cards = [
   { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' },
@@ -21,7 +20,6 @@ const cards = [
   { id: 5, title: 'Testing And Inspection', image: testingImage, description: 'More About' },
   { id: 6, title: 'Maintenance And Support', image: maintenanceImage, description: 'More About' },
 ];
-
 
 const theme = createTheme({
   typography: {
@@ -41,14 +39,14 @@ const theme = createTheme({
   },
 });
 
-const CarouselCard = ({ card, isFullyVisible, isPartiallyVisible}) => {
+const CarouselCard = ({ card, isFullyVisible }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Card 
       sx={{ 
-        width: 327,
-        height: 369,
+        width: 327, // Updated width
+        height: 369, // Updated height
         position: 'relative',
         overflow: 'hidden',
         opacity: isFullyVisible ? 1 : 0.5,
@@ -56,7 +54,7 @@ const CarouselCard = ({ card, isFullyVisible, isPartiallyVisible}) => {
         borderRadius: '16px',
         '&:hover': isFullyVisible ? {
           '& .MuiCardMedia-root': {
-            transform: 'scale(1.1)',
+            transform: 'scale(1.05)', // slight scale to maintain fit
           },
           '& .MuiCardContent-root': {
             height: '50%',
@@ -69,10 +67,12 @@ const CarouselCard = ({ card, isFullyVisible, isPartiallyVisible}) => {
     >
       <CardMedia
         component="img"
-        height="369"
         image={card.image}
         alt={card.title}
         sx={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
           transition: 'transform 0.3s',
         }}
       />
@@ -82,7 +82,7 @@ const CarouselCard = ({ card, isFullyVisible, isPartiallyVisible}) => {
           bottom: 0,
           left: 0,
           right: 0,
-          height: isHovered && isFullyVisible ? '50%%' : '80px',
+          height: isHovered && isFullyVisible ? '50%' : '80px',
           background: 'rgba(0,0,0,0.5)',
           color: 'white',
           transition: 'all 0.3s',
@@ -112,8 +112,8 @@ const CarouselCard = ({ card, isFullyVisible, isPartiallyVisible}) => {
         </Box>
         {isHovered && isFullyVisible && (
           <>
-            <Divider sx={{ bgcolor: 'white',width:'70%', ml:6.5 }} />
-            <Box sx={{ display: 'flex', alignItems: 'center',ml:6.5, mb:6, paddingTop:2 }}>
+            <Divider sx={{ bgcolor: 'white', width: '70%', ml: 6.5 }} />
+            <Box sx={{ display: 'flex', alignItems: 'center', ml: 6.5, mb: 6, paddingTop: 2 }}>
               <Typography variant="body1">{card.description}</Typography>
               <ChevronRight fontSize="small" sx={{ ml: 1 }} />
             </Box>
@@ -126,9 +126,9 @@ const CarouselCard = ({ card, isFullyVisible, isPartiallyVisible}) => {
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardWidth = 327; // Width of each card
-  const cardSpacing = 18; // Spacing between cards
-  const visibleCards = 3; // Number of fully visible cards
+  const cardWidth = 327; // Updated width of each card
+  const cardSpacing = 20; // Spacing between cards
+  const visibleCards = 4.1; // Number of fully visible cards
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
@@ -141,28 +141,32 @@ const Carousel = () => {
   const showLeftArrow = currentIndex > 0;
   const showRightArrow = currentIndex < cards.length - visibleCards;
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ 
-        position: 'relative', 
-        width: '100%', 
-        maxWidth: '1200px', 
-        margin: isMobile ? 1 : '0 auto',
-        overflow: 'hidden'
-      }}>
-        <Box sx={{ 
-          display: 'flex', 
-          transition: 'transform 0.3s ease-in-out',
-          transform: `translateX(-${currentIndex * (cardWidth + cardSpacing)}px)`,
-          gap: `${cardSpacing}px`
-        }}>
+      <Box 
+        sx={{ 
+          position: 'relative', 
+          width: '100%', 
+          maxWidth: isMobile ? '100%' : `${visibleCards * (cardWidth + cardSpacing) - cardSpacing}px`, 
+          margin: isMobile ? 1 : '0 0 0 2.5rem',
+          overflow: 'hidden'
+        }}
+      >
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            transition: 'transform 0.3s ease-in-out',
+            transform: `translateX(-${currentIndex * (cardWidth + cardSpacing)}px)`,
+            gap: `${cardSpacing}px`
+          }}
+        >
           {cards.map((card, index) => (
             <Box key={card.id} sx={{ flexShrink: 0, width: cardWidth }}>
               <CarouselCard 
                 card={card} 
                 isFullyVisible={index >= currentIndex && index < currentIndex + visibleCards}
-                isPartiallyVisible={index === currentIndex + visibleCards}
               />
             </Box>
           ))}
