@@ -95,7 +95,6 @@
    
   }
   .css-1xga0wj {
-    width:600px !important;
     margin-top: 20px ;
     margin-bottom: 20px !important;
   }
@@ -126,5 +125,8 @@ width: 500px !important
 }
 .btn-ghost  {
     font-size: 10rem;
+}
+.css-1psarwr {
+    max-width: 70% !important;
 }
 }
