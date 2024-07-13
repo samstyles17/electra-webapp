@@ -13,7 +13,6 @@ const OurPeople = () => {
             className="people-image" 
           />
           <div className="people-text">
-            <hr />
             <h2 className="people-title montserrat-regular">
               <h2 className="highlight-orange">Our {" "}<span className="highlight-blue">People</span></h2>
             </h2>

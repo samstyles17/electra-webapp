@@ -16,7 +16,8 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
-      <Navbar />
+          <Navbar />
+      <div className="home">
       <Banner />
       <Hero />
       <ImageSlider />
@@ -28,7 +29,9 @@ function Home() {
       <HomeTestimonial />
       <Connect />
       <Footer />
+    </div>
     </>
+
   )
 }
 

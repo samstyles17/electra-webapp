@@ -1,11 +1,12 @@
 import React from 'react';
 import "./ProjectHeader.css"
-import header_bg from "../../assets/img/project_header-bg.png"
 const ProjectHeader = () => {
 
     return (
         <div className="project-header">
-            <img src={header_bg} alt="" className="project-header-bg" />
+            <span>
+         
+            </span>
             <div className="mt-12 mb-4 flex flex-col">
                 <div className="flex items-center justify-between">
                     <h2 className="text-[38px] -tracking-[0.03em]">Powerfully placed <span>success </span><span>Stories</span></h2>

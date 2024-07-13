@@ -76,7 +76,7 @@ const data = [
                 image_url: kia6,
             },
             {
-                title: "Nettor",
+                title: "Nettor EV Chargin Station",
                 image_url: kia3,
             },
             {
@@ -106,7 +106,7 @@ const data = [
                 image_url: tata2,
             },
             {
-                title: "Nettor",
+                title: "Irumpanam",
                 image_url: tata3,
             },
             {
@@ -136,7 +136,7 @@ const data = [
                 image_url: toyota2,
             },
             {
-                title: "Nettor",
+                title: "Enchakkal",
                 image_url: toyota3,
             },
             {
@@ -155,11 +155,11 @@ const data = [
         img: hhys1,
         images: [
             {
-                title: "Ernakulum",
+                title: "Pranthangamood, Kayamkulam",
                 image_url: hhys2
             },
             {
-                title: "Nettor",
+                title: "Mukkavala, Kayamkulam",
                 image_url: hhys3,
             },
             {
@@ -190,11 +190,11 @@ const data = [
         img: app1,
         images: [
             {
-                title: "Ernakulum",
+                title: "RDS Realities",
                 image_url: app2,
             },
             {
-                title: "Nettor",
+                title: "Napier Horitage, Fortkochi",
                 image_url: app3,
             },
             {
@@ -222,11 +222,11 @@ const data = [
         img: ip1,
         images: [
             {
-                title: "Ernakulum",
+                title: "Eastern Contiments, Kothamanglam",
                 image_url: ip2,
             },
             {
-                title: "Nettor",
+                title: "Eastern Contiments, Adimaly",
                 image_url: ip3,
             },
             {
@@ -254,11 +254,11 @@ const data = [
         img: cp1,
         images: [
             {
-                title: "Ernakulum",
+                title: "ST Joseph Bhavan, hospital, Chalakkudy",
                 image_url: cp2,
             },
             {
-                title: "Nettor",
+                title: "Ather Showroom, Aluva",
                 image_url: cp3,
             },
             {
@@ -305,11 +305,11 @@ const data = [
         img: lh1,
         images: [
             {
-                title: "Ernakulum",
+                title: "DIY Imaging, Padivattom",
                 image_url: lh2,
             },
             {
-                title: "Nettor",
+                title: "Kinder Women Hospital, Ernakulam",
                 image_url: lh3,
             },
             {
@@ -333,10 +333,11 @@ const data = [
 ]
 
 const AllProjects = () => {
-    console.log(data)
     return (
+        <>
+        <Navbar />
         <div className="allprojects">
-            <Navbar />
+           
             <Header />
             <div className="wrapper">
                 <ProjectRow data={data} />
@@ -344,6 +345,7 @@ const AllProjects = () => {
             <Connect />
             <Footer />
         </div>
+        </>
     );
 }
 
