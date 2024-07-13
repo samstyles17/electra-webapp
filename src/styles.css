@@ -1575,3 +1575,8 @@ hr{
     font-size: 10px;
   }
 }
+/** fix about page **/ 
+.people-title {
+  padding-top: 10px;
+  border-top: 1px solid #333;
+}
