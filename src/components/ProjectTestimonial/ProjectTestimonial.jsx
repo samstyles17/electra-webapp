@@ -14,10 +14,9 @@ const ProjectTestimonial = ({ image, title, info }) => {
             </span>
             <div className="h-64 project-testimonial-info text-lg montserrat-regular flex  justify-center items-center  bg-white  shadow-outline">
                 <div className="project-testimonial-logo flex px-6">
+                    <span style={{backgroundImage: `url(${image})`}} className="project-round-image rounded-full z-20"> 
 
-                    <img src={image} alt="" className="rounded-full z-20" />
-
-
+                    </span>
                     <img src={logo_circle} alt="" className="rounded-full z-10" />
                 </div>
                 <div className="project-testimonial-text ">

@@ -15,8 +15,9 @@ import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <div className="home">
-      <Navbar />
+    <>
+          <Navbar />
+      <div className="home">
       <Banner />
       <Hero />
       <ImageSlider />
@@ -29,6 +30,8 @@ function Home() {
       <Connect />
       <Footer />
     </div>
+    </>
+
   )
 }
 

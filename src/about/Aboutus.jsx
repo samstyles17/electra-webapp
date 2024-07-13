@@ -14,8 +14,8 @@ import Footer from "../components/Footer";
 function Aboutus() {
   return (
     <>
-      <div className="aboutus">
         <Navbar />
+        <div className="aboutus">
         <AboutSec1 />
         <Vision />
         <Mission />

@@ -10,14 +10,17 @@ import Footer from "../components/Footer";
 function MaintenaceRepairService () {
     return(
         <>
-            <Navbar/>
+        <Navbar/>
+        <div className="service-all-width">
             <ServicePageText/>
             <ServicePageButton />
             <ServicePage4Content />
             <ServicePageBottomButton />
             <ServiceFooterCarousel/>
             <Footer/>
+        </div>
         </>
+ 
     )
 }
 
