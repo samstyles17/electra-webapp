@@ -14,6 +14,14 @@
     width : 224px;
     height: 160px;
 }
+.project-round-image {
+display: block;
+height: 160px;
+width: 224px;
+background-repeat: no-repeat;
+background-position: center;
+background-size: auto;
+}
 .project-testimonial-logo > img:last-of-type {
     margin-left: -20px;
 }
