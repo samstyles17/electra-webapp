@@ -58,7 +58,8 @@ const MainComponent = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ padding: '20px' }}>
+      <div className='section-1'>
+      <Box sx={{ padding: '20px' }} class="gg">
         {sections.map((section, index) => (
           <Box
             key={index}
@@ -106,6 +107,8 @@ const MainComponent = () => {
           </Box>
         ))}
       </Box>
+      </div>
+      
     </ThemeProvider>
   );
 };

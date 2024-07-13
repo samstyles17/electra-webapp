@@ -10,13 +10,15 @@ import Footer from "../components/Footer";
 function PanelBoardControlSystemService () {
     return(
         <>
-            <Navbar/>
+        <Navbar/>
+        <div className='service-all-width'>
             <ServicePageText/>
             <ServicePageButton />
             <ServicePage3Content />
             <ServicePageBottomButton />
             <ServiceFooterCarousel/>
             <Footer/>
+        </div>
         </>
     )
 }

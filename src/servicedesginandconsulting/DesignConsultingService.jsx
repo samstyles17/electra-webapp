@@ -11,12 +11,14 @@ function DesignConsultingService () {
     return(
         <>
             <Navbar/>
+            <div className="service-all-width">
             <ServicePageText/>
             <ServicePageButton />
             <ServicePage1Content />
             <ServicePageBottomButton />
             <ServiceFooterCarousel/>
             <Footer/>
+            </div>
         </>
     )
 }

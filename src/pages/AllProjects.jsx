@@ -334,8 +334,10 @@ const data = [
 
 const AllProjects = () => {
     return (
+        <>
+        <Navbar />
         <div className="allprojects">
-            <Navbar />
+           
             <Header />
             <div className="wrapper">
                 <ProjectRow data={data} />
@@ -343,6 +345,7 @@ const AllProjects = () => {
             <Connect />
             <Footer />
         </div>
+        </>
     );
 }
 

@@ -52,7 +52,14 @@
 }
 }
 
-
+.project-header > span {
+    background-image: url("../../assets//img/project_header-bg.png");
+    display: block;
+    height: 324px;
+    background-repeat: no-repeat;
+    width: 100vw;
+    background-size: cover;
+}
 
 @media (max-width:475px) {
      .project-header > div> div {
@@ -112,4 +119,9 @@
         margin-right: 0;
         margin-top: 0;
     }
+    .project-header > span {
+      background-position: center;
+    }
+    
+
 }
