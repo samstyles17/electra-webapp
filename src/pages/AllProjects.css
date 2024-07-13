@@ -108,4 +108,32 @@
   .css-qw60dt {
     margin: 0px !important; 
   }
+  .css-qw60dt {
+   max-width: auto !important;
+   padding:  0 !important;
+   letter-spacing: 0.2em;
+   
+  }
+  .css-1xga0wj {
+    width:600px !important;
+    margin-top: 20px ;
+    margin-bottom: 20px !important;
+  }
+  .css-css-1xga0wj > div {
+width: 500px !important
+  }
+  .css-105cb5d {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .css-qw60dt > h6 {
+    font-size: 14px !important;
+  }
+  .css-qw60dt > p {
+    font-size: 12px;
+  }
+  .MuiListItem-root > div > span {
+    font-size: 12px !important;
+  }
+
 }
