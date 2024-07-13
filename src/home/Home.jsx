@@ -16,18 +16,22 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
-      <Navbar />
+          <Navbar />
+      <div className="home">
       <Banner />
       <Hero />
       <ImageSlider />
       <About/>
       <Vision/>
+      <SuccessCards/>
       <HomePortfolio />
       <HomeClient />
       <HomeTestimonial />
       <Connect />
       <Footer />
+    </div>
     </>
+
   )
 }
 

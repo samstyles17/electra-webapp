@@ -6,8 +6,18 @@ function Hero() {
   const isMobile = useMediaQuery('(max-width:960px)'); // md breakpoint is 960px in MUI
 
   return (
-    <div className="bg-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div 
+      style={{
+        padding: '4rem 1rem'
+      }} 
+      className="bg-white"
+    >
+      <div 
+        style={{
+          maxWidth: '90rem'
+        }}
+        className="mx-auto"
+      >
         <div className={`flex ${isMobile ? 'flex-col items-start' : 'items-start'}`}>
           <div className={`mr-4 flex-shrink-0 ${isMobile ? 'transform rotate-90 mb-1 ml-4' : ''}`}>
             <img src={divider} alt="divider" />
@@ -16,7 +26,7 @@ function Hero() {
             <h1 className={`mb-6 montserrat-medium ${isMobile ? 'text-xl' : 'text-3xl'}`}>
               <span className="text-blacktext">LOOK NO FURTHER FOR </span>
               <span className="text-orangetext">YOUR ULTIMATE ELECTRICAL </span>
-              <span className="text-bluetext">PROJECT SOLUTIONS!</span>
+              <span style={{ fontSize: isMobile ? '1.25rem' : '2rem', color: '#0000FF' }}>PROJECT SOLUTIONS!</span>
             </h1>
             <p className={`montserrat-regular text-darkgreytext ${isMobile ? 'text-sm' : 'text-base mr-8 pr-8'}`}>
               Our commitment to electrical expertise extends beyond mere

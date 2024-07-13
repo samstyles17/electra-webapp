@@ -28,28 +28,28 @@ const OrangeTypography = styled(StyledTypography)(({ theme }) => ({
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: '#333', color: 'white', py: 4 , width: '100%', boxSizing: 'border-box'}} className="montserrat-regular">
-      <Container maxWidth="lg" sx={{width:'100%', boxSizing:'border-box'}}>
-        <Grid container spacing={2} alignItems="flex-start" sx={{ width: '100%', boxSizing: 'border-box' }}>
-          <Grid item xs={12} md={3} sx={{ width: '100%', boxSizing: 'border-box' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 , justifyContent: { xs: 'center', md: 'flex-start' }, width: '100%', boxSizing: 'border-box' }}>
+    <Box sx={{ backgroundColor: '#333', color: 'white', py: 4, width: '100%', boxSizing: 'border-box' }} className="montserrat-regular">
+      <Container maxWidth="lg" sx={{ px: { xs: 1, md: 0.5 } }}> {/* Adjust padding here */}
+        <Grid container spacing={2} alignItems="flex-start">
+          <Grid item xs={12} md={4} sx={{ width: '100%', boxSizing: 'border-box' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'center', md: 'flex-start' }, width: '100%', boxSizing: 'border-box' }}>
               <img 
                 src={electrapowerLogo} 
                 alt="Electrapower Engineering Logo" 
                 style={{ width: '150px', height: 'auto', marginRight: '16px' }}
               />
             </Box>
-            <StyledTypography variant="body2" >
+            <StyledTypography variant="body2">
               Electra Power Engineering founded in 2013 is the brainchild of a group of skilled and experienced engineers who are proven game changers in the electrical engineering industry.
             </StyledTypography>
           </Grid>
 
-          <Grid item xs={12} md={1} sx={{ display: {xs:'none',md:'flex'}, justifyContent: 'center', alignItems: 'center' }}>
+          <Grid item xs={12} md={1} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
             <img src={LargeDivider} style={{ margin: '0 8px', height: '100%' }} />
           </Grid>
 
-          <Box sx={{ my: 4, display:{xs:'inline', md:'none'} }}>
-          <img src={HorizontalDivider} style={{ width: '100%' }} />
+          <Box sx={{ my: 4, display: { xs: 'inline', md: 'none' } }}>
+            <img src={HorizontalDivider} style={{ width: '100%' }} />
           </Box>
 
           <Grid item xs={12} md={3}>
@@ -70,12 +70,12 @@ const Footer = () => {
             <StyledTypography variant="body2">office@electrapower.in</StyledTypography>
           </Grid>
 
-          <Grid item xs={12} md={1} sx={{ display: {xs:'none',md:'flex'}, justifyContent: 'center', alignItems: 'center' }}>
+          <Grid item xs={12} md={1} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
             <img src={LargeDivider} style={{ margin: '0 8px', height: '100%' }} />
           </Grid>
 
-          <Grid item xs={12} md={3}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+          <Grid item xs={12} md={3} sx={{ textAlign: 'left' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'flex-start', md: 'flex-start' } }}>
               <Box component="img" src={LocationIcon} sx={{ color: '#FF6B2B', mr: 1 }} />
               <OrangeTypography variant="subtitle1" className="montserrat-medium">
                 Address
@@ -125,8 +125,8 @@ const Footer = () => {
               ))}
             </Box>
           </Grid>
-          <Grid item sx={{display:{xs:'none', md:'block'}}}>
-            <StyledTypography variant="body2" component="span" sx={{ mr: 2 ,display:{xs:'none', md:'inline'}}}>
+          <Grid item sx={{ display: { xs: 'none', md: 'block' } }}>
+            <StyledTypography variant="body2" component="span" sx={{ mr: 2, display: { xs: 'none', md: 'inline' } }}>
               Connect with us
             </StyledTypography>
             {[LinkedInIcon, InstagramIcon, FacebookIcon, TwitterIcon].map((Icon, index) => (

@@ -13,7 +13,6 @@ const OurPeople = () => {
             className="people-image" 
           />
           <div className="people-text">
-            <hr />
             <h2 className="people-title montserrat-regular">
               <h2 className="highlight-orange">Our {" "}<span className="highlight-blue">People</span></h2>
             </h2>
@@ -24,6 +23,7 @@ const OurPeople = () => {
             </p>
           </div>
         </div>
+        <hr style={{ width: '100%', height: '2px', backgroundColor: '#333', border: 'none', marginBottom: '20px' }} />
         <div className="route-content">
           <h2 className="route-title montserrat-regular">
             <h2 className="highlight-blue">OUR ROUTE <span className="highlight-orange">TO SUCCESS</span></h2> 

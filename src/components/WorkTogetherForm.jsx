@@ -43,8 +43,11 @@ const WorkTogetherForm = () => {
           placeholder="Enter Phone Number"
           className="form-input full-width montserrat-medium"
         />
-        <select className="form-input full-width montserrat-medium">
-          <option>Your Requesting as - DIRECTOR</option>
+        <select className="form-input full-width montserrat-medium ">
+          <option>Your Requesting as - DIRECTOR1</option>
+          <option>Your Requesting as - DIRECTOR2</option>
+          <option>Your Requesting as - DIRECTOR3</option>
+          <option>Your Requesting as - DIRECTOR4</option>
           {/* Add more options as needed */}
         </select>
         <textarea
