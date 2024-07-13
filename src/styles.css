@@ -799,13 +799,13 @@ hr{
 }
 
 .semi-hover {
-  height: 200px;
-  width: 400px;
+  height: 220px;
+  width: 420px;
   background-color: #FAFAFA;
   border-top-left-radius: 15rem;
   border-bottom-left-radius: 15rem;
   margin-left: -180px;
-  border: 1px solid #ddd;
+  border: 1px solid #c9c9c9;
   position: relative;
   display: flex;
   align-items: center;
@@ -824,6 +824,27 @@ hr{
 
 .semi-hover:last-child {
   border-right: none;
+  width: 320px;
+}
+
+.semi-hover:last-child:hover {
+  width: 30%;
+}
+
+.semi-hover:last-child:hover .content {
+  margin-left: -80px;
+}
+
+.semi-hover:last-child .content {
+  margin-left: 40px;
+}
+
+.semi-hover:last-child:hover .image-container {
+  width: 290px;
+}
+
+.semi-hover:last-child:hover .image-container .hover-image {
+  margin-left: 20px;
 }
 
 .semi-hover.active {
@@ -833,6 +854,24 @@ hr{
 
 .semi-hover:nth-child(4) {
   background: #FF631E;
+  border: 1px solid #c9c9c9;
+}
+
+.semi-hover:nth-child(4):hover {
+  background: #FAFAFA;
+  border: 1px solid #c9c9c9;
+}
+
+.semi-hover:nth-child(4):hover .content .item-text {
+  color: #22242F !important;
+}
+
+.semi-hover:nth-child(4):hover .content .item-number {
+  color: #d1c0c0 !important;
+}
+
+.semi-hover:nth-child(4) .content .item-number {
+  color: #f1f1f1 !important;
 }
 
 .semi-hover:nth-child(4) .content .item-text  {
@@ -845,19 +884,15 @@ hr{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 60px;
-  /* Half of content width */
+  margin-left: 25px;
 }
 
 .semi-hover.active .content {
-  margin-left: 0px;
-}
-
-.semi-hover.active .content, .semi-hover.active .image-container {
-  width: 300px;
+  margin-left: -160px;
 }
 
 .semi-hover.active .image-container  {
+  width: 370px;
   visibility: visible;
 }
 
@@ -877,15 +912,6 @@ hr{
 }
 
 .item-number {
-  /* position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 100px;
-  opacity: 0.1;
-  font-weight: bold;
-  color: inherit;
-  z-index: 1; */
   position: absolute;
   width: 130px;
   text-align: center;
@@ -900,27 +926,27 @@ hr{
 }
 
 .semi-hover:hover {
-  width: 400px;
+  width: 35%;
   z-index: 3;
 }
 
+	
+.semi-hover.active + .semi-hover {
+  z-index: 3;
+}
+
+.semi-hover.active + .semi-hover  ~ .semi-hover {
+  z-index: 4;
+}
+
 .image-container {
-  /* position: absolute;
-  right: -60px;
-  top: 0;
-  width: 120px;
-  height: 120px;
-  overflow: hidden;
-  border-radius: 50%;
-  background-color: #00008B;
-  z-index: 4; */
   position: absolute;
-  right: -60px;
+  right: 0px;
   top: 0;
   width: 200px;
-  height: 200px;
+  height: 219px;
   overflow: hidden;
-  visibility: hiidden;
+  visibility: hidden;
   border-top-left-radius: 15rem;
   border-bottom-left-radius: 15rem;
   background-color: #337ab7; /* Dark blue background */
@@ -939,15 +965,53 @@ hr{
 
 @media (max-width: 1200px) {
   .cardgg {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
+    flex-direction: column;
+    margin-top: 350px;
+    position : relative;
   }
 
   .semi-hover {
-    margin-left: 0;
-    margin-bottom: 10px;
-    border-radius: 60px 0 0 60px;
+    position : relative;
+    margin-left:0;
+    margin-bottom: 0;
+    border-radius: 55px;
+    border: 1px solid #c9c9c9 !important;
+    width: 90% !important;
+    margin-top: -300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition : 0.3s ease-in-out;
+    z-index: 4;
+  }
+  .content {
+    justify-content: center;
+    margin-left: 0 !important;
+    height: 100px;
+  }
+
+  .semi-hover .image-container, .semi-hover:hover .image-container {
+    width: 100% !important;
+    height: 300px;
+    position: relative;
+    border-radius: 55px;
+  }
+
+  .semi-hover:last-child .image-container {
+    visibility: visible !important;
+  }
+
+  .cardgg:hover .semi-hover:not(:last-child):hover ~ .semi-hover:last-child .image-container {
+    visibility: hidden !important;
+  }
+  .semi-hover:hover .image-container .hover-image {
+    margin-left: 0 !important;
+    left: 50%;
+  }
+  .semi-hover:hover {
+    z-index: 10;
+    transform: translateY(-10%);
   }
 }
 /* Mobile responsiveness */

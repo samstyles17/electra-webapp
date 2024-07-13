@@ -220,8 +220,8 @@ const PortfolioSection = () => {
             ))}
           </Box>
         </Box>
-  
-        <style jsx global>{`
+            
+        <style jsx="true" global="true">{`
           @keyframes moveLeft {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
