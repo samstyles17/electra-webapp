@@ -322,11 +322,14 @@ const data = [
 ]
 const ProjectSectorial = () => {
     return (
+        <>
+        <Navbar />
         <div className="project-sectorial">
-            <Navbar />
             <ProjectInfo data={data} />
             <Footer />
         </div>
+        </>
+
     );
 }
 
