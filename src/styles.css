@@ -241,7 +241,6 @@ hr{
   background-color: #fff;
   color: #333;
   font-family: 'Montserrat', sans-serif;
-  margin-left: 55px;
 }
 
 .text-section {
@@ -329,11 +328,16 @@ hr{
   .text-section {
     margin-right: 0;
     margin-top: 20px;
+    text-align: left;
+  }
+
+  .sub-heading{
+    margin-top: 2.5px;
   }
 
   .heading, .sub-heading {
     font-size: 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .paragraph {
@@ -969,10 +973,12 @@ hr{
 
 /* our route to success */
 .route-to-success {
-  margin-left: 95px;
+  margin-left: 40px;
   display: flex;
   align-items: center;
 }
+
+
 
 .route-to-success img {
   margin-right: 10px;
@@ -989,13 +995,11 @@ hr{
 }
 
 .cardgg {
-  width: 100%;
   margin-top: 80px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   overflow: visible;
-  margin-left: 0px;
 }
 
 .semi-hover {
@@ -1168,6 +1172,26 @@ hr{
 }
 
 @media (max-width: 1200px) {
+
+  .route-to-success {
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+
+  .route-to-success img {
+    margin-right: 10px;
+    height: 25px
+  }
+
+  .route-to-success h1 {
+    font-size: 20px; /* Adjust this value as needed for smaller font size */
+    white-space: nowrap; /* Ensures the text stays on a single line */
+    overflow: hidden; /* Hides any overflow */
+    text-overflow: ellipsis; /* Adds an ellipsis if the text overflows */
+  }
+
+
   .cardgg {
     flex-direction: column;
     margin-top: 350px;

@@ -21,11 +21,11 @@ const theme = createTheme({
 
 const items = [
   { text: "Expertise", number: 1, image: img1 },
-  { text: "Agility", number: 2, image: img1 },
-  { text: "Integrity", number: 3, image: img1 },
-  { text: "Innovative", number: 4, image: img1 },
-  { text: "Client Centric", number: 5, image: img1 },
-  { text: "Collaboration", number: 6, image: img1 },
+  { text: "Agility", number: 2, image: img2 },
+  { text: "Integrity", number: 3, image: img3 },
+  { text: "Innovative", number: 4, image: img4 },
+  { text: "Client Centric", number: 5, image: img5 },
+  { text: "Collaboration", number: 6, image: img6 },
 ];
 
 function SuccessCards() {

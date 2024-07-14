@@ -1,12 +1,12 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel';
+import { Link } from 'react-router-dom';
 import 'react-multi-carousel/lib/styles.css';
-import banner1 from "../assets/img/Banner2.png"
-import banner2 from "../assets/img/Banner3.png"
-import banner3 from "../assets/img/Banner4.png"
-import banner4 from "../assets/img/Banner5.png"
-import banner5 from "../assets/img/Banner6.png"
-
+import banner1 from "../assets/img/banner1.png"
+import banner2 from "../assets/img/banner2.png"
+import banner3 from "../assets/img/banner3.png"
+import banner4 from "../assets/img/banner4.png"
+import banner5 from "../assets/img/banner5.png"
 
 const responsive = {
   all: {
@@ -15,9 +15,15 @@ const responsive = {
   }
 };
 
-const images = [banner1, banner2, banner3, banner4, banner5];
+const images = [
+  { src: banner1, route: '/enquire' },
+  { src: banner2, route: '/aboutus' },
+  { src: banner3, route: '/allprojects' },
+  { src: banner4, route: '/projectsectorial' },
+  { src: banner5, route: "/designconsultingservice" },
+];
 
-  function Banner() {
+function Banner() {
   return (
     <div className='banner-container'>
       <Carousel
@@ -36,13 +42,14 @@ const images = [banner1, banner2, banner3, banner4, banner5];
         pauseOnHover={false}
         rtl={true}>
         
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <div key={index} className="banner-item">
-            <img src={src} alt={`Slide ${index + 1}`} className="banner-image" />
+            <Link to={image.route}>
+              <img src={image.src} alt={`Slide ${index + 1}`} className="banner-image" />
+            </Link>
           </div>
         ))}
       </Carousel>
-
     </div>
   )
 }

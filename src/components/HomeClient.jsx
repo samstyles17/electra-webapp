@@ -44,7 +44,7 @@ const ClientsCarousel = () => {
           margin: isMobile ? '20px' : '90px', 
           flexDirection: isMobile ? 'column' : 'row',
           borderRadius: isMobile ? '0' : '25px',
-          border: isMobile ? 'none' : '0.5px solid grey',
+          border: isMobile ? 'none' : '0.1px solid grey',
           padding: isMobile ? '0' : '30px 40px',
           backgroundColor: isMobile ? 'transparent' : '#fff',
           width: isMobile ? '100%' : 'auto',
