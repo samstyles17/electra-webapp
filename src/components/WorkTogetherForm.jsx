@@ -25,7 +25,7 @@ const WorkTogetherForm = () => {
           <input
             type="text"
             placeholder="Enter Your Name"
-            className="form-input half-width montserrat-medium"
+            className="form-input half-width  montserrat-medium"
           />
           <input
             type="text"

@@ -13,6 +13,7 @@ const OurPeople = () => {
             className="people-image" 
           />
           <div className="people-text">
+            <hr />
             <h2 className="people-title montserrat-regular">
               <h2 className="highlight-orange">Our {" "}<span className="highlight-blue">People</span></h2>
             </h2>
@@ -21,9 +22,10 @@ const OurPeople = () => {
               project managers, and support staff. Passionate and dedicated, our team operates in unison, 
               driven by commitment to quality, reliability, and customer satisfaction.
             </p>
+            <hr  />
           </div>
         </div>
-        <hr style={{ width: '100%', height: '1px', backgroundColor: '#333', border: 'none', marginBottom: '20px', opacity:'75%' }} />
+        
         <div className="route-content">
           <h2 className="route-title montserrat-regular">
             <h2 className="highlight-blue">OUR ROUTE <span className="highlight-orange">TO SUCCESS</span></h2> 

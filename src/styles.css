@@ -260,11 +260,19 @@ hr{
   color: #f0f0f0;
   margin-top: -20px;
   margin-bottom: 20px;
-  transition: color 1s ease-in-out;
+  animation: colorChange 5s infinite;
 }
 
-.sub-heading:hover {
-  color: #000; /* Change text color to black on hover */
+@keyframes colorChange {
+  0% {
+    color: #f0f0f0;
+  }
+  50% {
+    color: #3a3a3a;
+  }
+  100% {
+    color: #f0f0f0;
+  }
 }
 
 .paragraph {
@@ -316,6 +324,7 @@ hr{
   margin-right: 15px;
   margin-bottom: 2px;
 }
+
 
 /* Mobile responsiveness */
 @media (max-width: 600px) {
@@ -955,23 +964,23 @@ hr{
 }
 
 .star-icon::before {
-  content: url('../src/assets/img/icon_1.png');
+  content: url('../src/assets/img/icon1.svg');
 }
 
 .cost-icon::before {
-  content: url('../src/assets/img/icon_2.png');
+  content: url('../src/assets/img/icon2.svg');
 }
 
 .trust-icon::before {
-  content: url('../src/assets/img/icon_3.png');
+  content: url('../src/assets/img/icon3.svg');
 }
 
 .tech-icon::before {
-  content: url('../src/assets/img/icon_4.png');
+  content: url('../src/assets/img/icon4.svg');
 }
 
 .track-record-icon::before {
-  content: url('../src/assets/img/icon_5.png');
+  content: url('../src/assets/img/icon5.svg');
 }
 
 /* Mobile responsiveness */
@@ -1003,6 +1012,18 @@ hr{
   .features-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .low{
+    font-size: 1.2rem;
+  }
+
+  .lowp{
+    font-size: 1rem;
+  }
+
+  .highlight-blue-box {
+    background-color: #2e2e2e;
   }
 }
 
@@ -1407,10 +1428,11 @@ hr{
   margin-left: 55px;
 }
 
-.people-text hr {
-  width: 110%;
-  color: #383838;
-  opacity: 0.1;
+
+.people-text hr{
+  width: 100%;
+  color: #333;
+  opacity: 20%;
   margin-bottom: 25px;
 }
 
@@ -1420,12 +1442,14 @@ hr{
   color: #333;
   display: flex;
   align-items: center;
+  
 }
 
 .people-paragraph {
   font-size: 1.1rem;
   color: #333;
   line-height: 1.8;
+  margin-bottom: 65px;
 }
 
 .route-content {
@@ -1968,29 +1992,38 @@ hr{
 
   .illustration-section span {
     font-size: 2rem;
-   
+  }
+
+  .form-section{
+    width: 100%;
+  }
+
+  .form-input {
+    font-size: 14px;
   }
 
   .illustration-section .blue {
     font-size: 2rem;
-   
   }
-
-
 
   .illustration-section {
     margin-right: 0;
     margin-bottom: 20px;
   }
 
+  .input-group {
+    flex-direction: column;
+  }
+
   .half-width {
     width: 100%;
   }
 
-  .submit-button{
+  .submit-button {
     margin-left: 25px;
   }
 }
+
 
 /* FAQ section */
 
@@ -2072,10 +2105,7 @@ hr{
   }
 }
 /** fix about page **/ 
-.people-title {
-  padding-top: 10px;
-  border-top: 1px solid #333;
-}
+
 
 @media (max-width:475px) {
   .aboutus {
