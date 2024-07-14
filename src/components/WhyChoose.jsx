@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles.css';
+import { Link } from 'react-router-dom';
 
 const WhyChoose = () => {
   return (
@@ -16,7 +17,9 @@ const WhyChoose = () => {
             expectations while fostering trust and integrity.
           </p>
         </div>
-        <button className="portfolio-button montserrat-regular">PORTFOLIO PROJECTS {"-->"}</button>
+        <Link to="/projectsectorial">
+          <button className="portfolio-button montserrat-regular">PORTFOLIO PROJECTS {"-->"}</button>
+        </Link>
         <div className="features-container">
           <div className="feature-box">
             <div className="feature-icon star-icon"></div>
