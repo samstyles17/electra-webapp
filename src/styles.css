@@ -232,6 +232,8 @@ hr{
   font-size: 13px;
 }
 
+/*Vison section*/
+
 .vision-container {
   display: flex;
   justify-content: space-between;
@@ -359,7 +361,204 @@ hr{
   }
 }
 
-/*Aboutus page section1*/
+/*Aboutus page section2*/
+/* Section Component Styles */
+.section-component-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-left: 35px;
+  background-color: #fff;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-component-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.section-component-text-section {
+  flex: 1;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.section-component-heading {
+  font-size: 3.5rem;
+  color: #3a3a3a;
+  transition: color 0.3s ease-in-out;
+}
+
+.section-component-sub-heading {
+  font-size: 3.5rem;
+  color: #f0f0f0;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  transition: color 1s ease-in-out;
+}
+
+.section-component-sub-heading:hover{
+  color: #000; 
+}
+
+.section-component-paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section-component-vision-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-component-vision-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: left;
+}
+
+.section-component-vision-title {
+  font-size: 1.2rem;
+  color: #ff6600;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.section-component-vision-paragraph {
+  font-size: 0.9rem;
+  line-height: 2.5;
+  color: #3a3a3a;
+  text-align: justify;
+}
+
+.section-component-stats-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  width: 150px;
+  height: 120px;
+}
+
+.section-component-stat-item {
+  text-align: center;
+  margin: 0 25px;
+}
+
+.section-component-stat-number {
+  font-size: 34px;
+  color: #007bff;
+  margin: 0;
+  font-weight: 500;
+}
+
+.section-component-stat-description {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.section-component-stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #ccc;
+}
+
+.section-component-dot {
+  background-color: #ff5733;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.section-component-mission-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-component-mission-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: left;
+  margin-right: 15px;
+}
+
+.section-component-mission-title {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.section-component-mission-list {
+  font-size: 0.9rem;
+  line-height: 2.5;
+  color: #3a3a3a;
+  text-align: justify;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.section-component-blue-dot {
+  background-color: #007bff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .section-component-container {
+    margin: 0;
+  }
+
+  .section-component-row {
+    flex-direction: column;
+  }
+
+  .section-component-heading,
+  .section-component-sub-heading {
+    font-size: 2rem;
+    margin-top: 1px;
+  }
+
+  .section-component-stats-container {
+    order: -1; /* Move the stats container up */
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .section-component-vision-container {
+    margin-top: 15px;
+  }
+ 
+  .section-component-mission-box{
+    flex: 1;
+    margin: 0;
+    max-width: 100%;
+  }
+  
+}
+
+
 
 /*Aboutus page section1*/
 .aboutus-container {
@@ -1251,27 +1450,27 @@ hr{
 
 /* Apply animation to each item with a delay */
 .integrity-item-0 {
-  animation: highlight 9s infinite;
+  animation: highlight 18s infinite;
 }
 .integrity-item-1 {
-  animation: highlight 9s infinite;
-  animation-delay: 1.5s;
-}
-.integrity-item-2 {
-  animation: highlight 9s infinite;
+  animation: highlight 18s infinite;
   animation-delay: 3s;
 }
-.integrity-item-3 {
-  animation: highlight 9s infinite;
-  animation-delay: 4.5s;
-}
-.integrity-item-4 {
-  animation: highlight 9s infinite;
+.integrity-item-2 {
+  animation: highlight 18s infinite;
   animation-delay: 6s;
 }
+.integrity-item-3 {
+  animation: highlight 18s infinite;
+  animation-delay: 9s;
+}
+.integrity-item-4 {
+  animation: highlight 18s infinite;
+  animation-delay: 12s;
+}
 .integrity-item-5 {
-  animation: highlight 9s infinite;
-  animation-delay: 7.5s;
+  animation: highlight 18s infinite;
+  animation-delay: 15s;
 }
 
 /* Mobile responsiveness */

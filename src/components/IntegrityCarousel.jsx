@@ -53,7 +53,7 @@ const IntegrityCarousel = () => {
       <Carousel
         responsive={responsive}
         autoPlay
-        autoPlaySpeed={1500}
+        autoPlaySpeed={3200}
         infinite
         arrows={false}
         containerClass="integrity-carousel"

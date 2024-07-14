@@ -9,6 +9,7 @@ import OurPeople from "../components/OurPeople";
 import IntegrityCarousel from "../components/IntegrityCarousel";
 import PartnerSection from "../components/PartnerSection";
 import Footer from "../components/Footer";
+import SectionComponent from "../components/SectionComponent";
 
 
 function Aboutus() {
@@ -17,8 +18,7 @@ function Aboutus() {
         <Navbar />
         <div className="aboutus">
         <AboutSec1 />
-        <Vision />
-        <Mission />
+        <SectionComponent/>
         <WhyChoose />
         <OurTeam />
         <OurPeople/>
