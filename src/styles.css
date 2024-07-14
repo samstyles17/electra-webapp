@@ -796,6 +796,7 @@ hr{
   justify-content: flex-end;
   align-items: center;
   overflow: visible;
+  margin-left: 0px;
 }
 
 .semi-hover {
@@ -810,8 +811,12 @@ hr{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  overflow: visible;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.semi-hover content {
+  z-index: 4;
 }
 
 .semi-hover content {
@@ -828,11 +833,11 @@ hr{
 }
 
 .semi-hover:last-child:hover {
-  width: 30%;
+  width: 470px;
 }
 
 .semi-hover:last-child:hover .content {
-  margin-left: -80px;
+  margin-left: -50px;
 }
 
 .semi-hover:last-child .content {
@@ -840,7 +845,7 @@ hr{
 }
 
 .semi-hover:last-child:hover .image-container {
-  width: 290px;
+  width: 260px;
 }
 
 .semi-hover:last-child:hover .image-container .hover-image {
@@ -892,7 +897,7 @@ hr{
 }
 
 .semi-hover.active .image-container  {
-  width: 370px;
+  width: 350px;
   visibility: visible;
 }
 
@@ -926,7 +931,7 @@ hr{
 }
 
 .semi-hover:hover {
-  width: 35%;
+  width: 600px;
   z-index: 3;
 }
 
@@ -982,8 +987,7 @@ hr{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    transition : 0.3s ease-in-out;
-    z-index: 4;
+    transition: 0.5s;
   }
   .content {
     justify-content: center;
@@ -991,6 +995,9 @@ hr{
     height: 100px;
   }
 
+  .semi-hover:hover .content {
+    font-size: 16px;
+  }
   .semi-hover .image-container, .semi-hover:hover .image-container {
     width: 100% !important;
     height: 300px;
@@ -1010,8 +1017,16 @@ hr{
     left: 50%;
   }
   .semi-hover:hover {
-    z-index: 10;
-    transform: translateY(-10%);
+    margin-bottom: 150px;
+  }
+
+
+  .cardgg .semi-hover:hover:last-child {
+    margin-bottom: -10px;
+  }
+  
+  .semi-hover:not(:hover) {
+    margin-top: -300px;
   }
 }
 /* Mobile responsiveness */
