@@ -17,14 +17,6 @@
 
 }
 
-.semi-hover:hover {
-    width: 30%;
-}
-
-.semi-hover:hover .semi-image {
-    width: 70%;
-}
-
 @media (max-width:475px) {
     .allprojects {
         width: auto;
