@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Grid, Button, Container, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom';
 import PhoneIcon from '../assets/img/footer_phone_logo.png';
 import MailIcon from '../assets/img/footer_mail_logo.png';
 import LocationIcon from '../assets/img/footer_map_logo.png';
@@ -134,14 +135,24 @@ const Footer = () => {
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>
             <Box component="nav" sx={{ display: 'flex', alignItems: 'center' }}>
-              {['Home', 'About', 'Services', 'Blogs'].map((item, index) => (
-                <React.Fragment key={item}>
-                  <Button sx={{ 
-                    color: 'white', 
-                    textTransform: 'none',
-                    fontFamily: 'inherit',
-                  }} className="montserrat-regular">
-                    {item}
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About', path: "/aboutus" },
+                { name: 'Services', path: "/designconsultingservice" },
+                { name: 'Blogs', path: '/' }
+              ].map((item, index) => (
+                <React.Fragment key={item.name}>
+                  <Button 
+                    component={Link} // Use Link component for navigation
+                    to={item.path} // Set the path
+                    sx={{ 
+                      color: 'white', 
+                      textTransform: 'none',
+                      fontFamily: 'inherit',
+                    }} 
+                    className="montserrat-regular"
+                  >
+                    {item.name}
                   </Button>
                   {index < 3 && (
                     <img src={SmallDivider} style={{ margin: '0 8px' }} />

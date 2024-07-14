@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import Carousel from '../components/ServicePage3dCarousel';
 import CssBaseline from '@mui/material/CssBaseline';
 import '../styles.css';
@@ -20,11 +20,22 @@ import img10 from "../assets/img/service1/service1_carousel4_img1.png";
 import img11 from "../assets/img/service1/service1_carousel4_img2.png";
 import img12 from "../assets/img/service1/service1_carousel4_img2.png";
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
+    h6: {
+      letterSpacing: 'normal',
+    },
+    body1: {
+      letterSpacing: 'normal',
+    },
+    body2: {
+      letterSpacing: 'normal',
+    },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 const sections = [
   {
@@ -59,56 +70,87 @@ const MainComponent = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className='section-1'>
-      <Box sx={{ padding: '20px' }} class="gg">
-        {sections.map((section, index) => (
-          <Box
-            key={index}
-            sx={{
-              display: 'flex',
-              flexDirection: index % 2 === 0 ? 'row-reverse' : 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '80px',
-            }}
-          >
+        <Box sx={{ padding: '20px' }}>
+          {sections.map((section, index) => (
             <Box
+              key={index}
               sx={{
-                flex: 1,
-                margin:'40px',
-                padding: '20px',
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                maxWidth: '40%',
-                minWidth: '300px',
-                textAlign: 'left',
+                flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row-reverse' : 'row' },
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                textAlign: { xs: 'justify', md: 'left' },
+                marginBottom: '80px',
+                px: { xs: 2, md: 0 },
+                width: '100%', // Occupy full width
               }}
             >
-              <Typography variant="h6" gutterBottom sx={{  }}>
-                {section.heading}
-              </Typography>
-              <Box component="img" src={titleDivider} alt="Divider" sx={{ width: '15%', height: '2px', marginBottom: '20px' }} />
-              <Typography variant="string" gutterBottom>
-                {section.description}
-              </Typography>
-              {section.bullets && (
-                <List sx={{ listStyleType: 'disc', pl: 2 }}>
-                  {section.bullets.map((bullet, i) => (
-                    <ListItem key={i} disablePadding sx={{ display: 'list-item' }}>
-                      <ListItemText primary={bullet} />
-                    </ListItem>
-                  ))}
-                </List>
-              )}
+              <Box
+                sx={{
+                  flex: 1,
+                  margin: { xs: '0', md: '40px' },
+                  padding: { xs: '0', md: '20px' },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: { xs: 'center', md: 'flex-start' },
+                  maxWidth: { md: '40%' },
+                  minWidth: '300px',
+                  textAlign: { xs: 'justify', md: 'left' }, // Text alignment
+                }}
+              >
+                <Typography 
+                  variant="h6" 
+                  gutterBottom 
+                  sx={{ fontSize: { xs: '1.2rem', md: '1.5rem' } }} // Adjust font size
+                >
+                  {section.heading}
+                </Typography>
+                <Box 
+                  component="img" 
+                  src={titleDivider} 
+                  alt="Divider" 
+                  sx={{ 
+                    width: '15%', 
+                    height: '2px', 
+                    marginBottom: '20px' 
+                  }} 
+                />
+                <Typography 
+                  variant="body1" 
+                  gutterBottom 
+                  sx={{ fontSize: { xs: '0.875rem', md: '1rem' }, textAlign: 'justify' }} // Adjust font size and text alignment
+                >
+                  {section.description}
+                </Typography>
+                {section.bullets && (
+                  <List sx={{ listStyleType: 'disc', pl: 2 }}>
+                    {section.bullets.map((bullet, i) => (
+                      <ListItem key={i} disablePadding sx={{ display: 'list-item' }}>
+                        <ListItemText 
+                          primary={bullet} 
+                          sx={{ fontSize: { xs: '0.875rem', md: '1rem' } }} // Adjust font size
+                        />
+                      </ListItem>
+                    ))}
+                  </List>
+                )}
+              </Box>
+              <Box 
+                sx={{ 
+                  flex: 1, 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  width: '100%', // Full width
+                }}
+              >
+                <Carousel images={section.images} />
+              </Box>
             </Box>
-            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth: '50%' }}>
-              <Carousel images={section.images} />
-            </Box>
-          </Box>
-        ))}
-      </Box>
+          ))}
+        </Box>
       </div>
-      
     </ThemeProvider>
   );
 };
