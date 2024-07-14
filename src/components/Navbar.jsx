@@ -18,6 +18,18 @@ function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const isServicesActive = () => {
+    const servicesRoutes = [
+      "/designconsultingservice",
+      "/installationcommisioningservice",
+      "/panelboardcontrolservice",
+      "/approvalcomplianceservice",
+      "/maintenacerepairservice",
+      "/valueaddedservice",
+    ];
+    return servicesRoutes.includes(location.pathname) ? "text-orange" : "";
+  };
+
   return (
     <>
       <div className="sticky-navbar z-[999]">
@@ -63,7 +75,7 @@ function Navbar() {
                         </Link>
                       </li>
                       <li>
-                        <Link to='/designconsultingservice' className={`montserrat-medium ${isActive('/designconsultingservice')}`} onClick={toggleMenu}>
+                        <Link to='/designconsultingservice' className={`montserrat-medium ${isServicesActive()}`} onClick={toggleMenu}>
                           Services
                         </Link>
                       </li>
@@ -117,7 +129,7 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/designconsultingservice" className={`montserrat-medium ${isActive('/designconsultingservice')}`}>
+                    <Link to="/designconsultingservice" className={`montserrat-medium ${isServicesActive()}`}>
                       Services
                     </Link>
                   </li>
