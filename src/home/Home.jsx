@@ -23,7 +23,7 @@ function Home() {
       <ImageSlider />
       <About/>
       <Vision/>
-      <SuccessCards />
+      <SuccessCards/>
       <HomePortfolio />
       <HomeClient />
       <HomeTestimonial />

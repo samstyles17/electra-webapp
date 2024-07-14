@@ -87,7 +87,6 @@
    
   }
   .css-1xga0wj {
-    width:600px !important;
     margin-top: 20px ;
     margin-bottom: 20px !important;
   }
@@ -107,5 +106,19 @@ width: 500px !important
   .MuiListItem-root > div > span {
     font-size: 12px !important;
   }
-
+.css-1s50f5r {
+    max-width: 100% !important;
+}
+.css-9vulm7 {
+    margin-bottom: 10px !important;
+}
+.portfolio-container > div > img {
+    display: none;
+}
+.btn-ghost  {
+    font-size: 10rem;
+}
+.css-1psarwr {
+    max-width: 70% !important;
+}
 }
