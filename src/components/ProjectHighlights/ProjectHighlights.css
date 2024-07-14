@@ -38,6 +38,11 @@
 
   .project-highlight-list>li>p {
     font-size: 12px;
+    border-left: 1px solid #5793ED;
+    margin-left: -11.5px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .project-images {
@@ -50,8 +55,6 @@
 
   .project-highlight-list {
     list-style-image: url("../../assets/list-style-sm.svg");
-    list-style-position: outside;
-
   }
 
 }
