@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import Carousel from '../components/ServicePage3dCarousel';
 import CssBaseline from '@mui/material/CssBaseline';
 import '../styles.css';
@@ -20,11 +20,22 @@ import img10 from "../assets/img/service2/service2_carousel4_img1.png";
 import img11 from "../assets/img/service2/service2_carousel4_img2.png";
 import img12 from "../assets/img/service2/service2_carousel4_img3.png";
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
+    h6: {
+      letterSpacing: 'normal',
+    },
+    body1: {
+      letterSpacing: 'normal',
+    },
+    body2: {
+      letterSpacing: 'normal',
+    },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 const sections = [
   {
@@ -34,18 +45,18 @@ const sections = [
   },
   {
     heading: "Internal Electrification:",
-    description: "We offer comprehensive internal electrification solutions for residential,commercial, industrial and infrastructure projects of any scale. Our services include wiring, lighting installations, outlet and switch installations, and integration with automation systems.",
+    description: "We offer comprehensive internal electrification solutions for residential, commercial, industrial and infrastructure projects of any scale. Our services include wiring, lighting installations, outlet and switch installations, and integration with automation systems.",
     images: [img4, img5, img6]
   },
   {
     heading: "Specialised Installations",
     description: "Electra Power Engineering specialises in the installation of complex electrical systems, including:",
     bullets: [
-        "Generators and Backup Power Systems",
-        "Solar Power Systems (Rooftop and Ground-Mounted)",
-        "Electric Vehicle (EV) Charging Stations",
-         "Fire Alarm Systems and Emergency Lighting"
-      ],
+      "Generators and Backup Power Systems",
+      "Solar Power Systems (Rooftop and Ground-Mounted)",
+      "Electric Vehicle (EV) Charging Stations",
+      "Fire Alarm Systems and Emergency Lighting"
+    ],
     images: [img7, img8, img9]
   },
   {
@@ -65,43 +76,76 @@ const MainComponent = () => {
             key={index}
             sx={{
               display: 'flex',
-              flexDirection: index % 2 === 0 ? 'row-reverse' : 'row',
+              flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row-reverse' : 'row' },
               alignItems: 'center',
               justifyContent: 'space-between',
+              textAlign: { xs: 'justify', md: 'left' },
               marginBottom: '80px',
+              px: { xs: 2, md: 0 },
+              width: '100%', // Occupy full width
             }}
           >
             <Box
               sx={{
                 flex: 1,
-                margin: '40px',
-                padding: '20px',
+                margin: { xs: '0 0 20px 0', md: '40px' }, // Increased bottom margin for mobile
+                padding: { xs: '0', md: '20px' },
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                maxWidth: '40%',
+                alignItems: { xs: 'flex-start', md: 'flex-start' },
+                maxWidth: { md: '40%' },
                 minWidth: '300px',
-                textAlign: 'left',
+                textAlign: { xs: 'justify', md: 'left' }, // Text alignment
               }}
             >
-              <Typography variant="h6" gutterBottom sx={{  }}>
+              <Typography 
+                variant="h6" 
+                gutterBottom 
+                sx={{ fontSize: { xs: '1.2rem', md: '1.5rem' } }} // Adjust font size
+              >
                 {section.heading}
               </Typography>
-              <Box component="img" src={titleDivider} alt="Divider" sx={{ width: '15%', height: '2px', marginBottom: '20px' }} />
-              <Typography variant="string" gutterBottom>
+              <Box 
+                component="img" 
+                src={titleDivider} 
+                alt="Divider" 
+                sx={{ 
+                  width: '15%', 
+                  height: '2px', 
+                  marginBottom: '20px' 
+                }} 
+              />
+              <Typography 
+                variant="body1" 
+                gutterBottom 
+                sx={{ fontSize: { xs: '0.875rem', md: '1rem' }, textAlign: 'justify' }} // Adjust font size and text alignment
+              >
                 {section.description}
               </Typography>
               {section.bullets && (
                 <List sx={{ listStyleType: 'disc', pl: 2 }}>
                   {section.bullets.map((bullet, i) => (
                     <ListItem key={i} disablePadding sx={{ display: 'list-item' }}>
-                      <ListItemText primary={bullet} />
+                      <ListItemText 
+                        primary={bullet} 
+                        sx={{ fontSize: { xs: '0.875rem', md: '1rem' } }} // Adjust font size
+                      />
                     </ListItem>
                   ))}
                 </List>
               )}
             </Box>
-            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth: '50%' }}>
+            <Box 
+              sx={{ 
+                flex: 1, 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                width: '100%', // Full width
+                mt: { xs: '20px', md: '0' } // Increased top margin for mobile
+              }}
+            >
               <Carousel images={section.images} />
             </Box>
           </Box>

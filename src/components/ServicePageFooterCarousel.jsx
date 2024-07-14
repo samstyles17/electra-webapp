@@ -3,6 +3,7 @@ import { Box, Typography, Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ArrowForward } from '@mui/icons-material';
 import { keyframes } from '@mui/system';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
 import dividerImage from '../assets/img/service_footer_vector.png';
 
@@ -128,24 +129,26 @@ const PortfolioComponent = () => {
             <Typography variant="body1" gutterBottom>
               Explore our diverse portfolio of high-tension electrical contracting projects, showcasing innovation, safety, and sustainability. Our dedicated team delivers tailored solutions that exceed client expectations, driving progress and fostering sustainable development.
             </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: '#FF6B00',
-                width: '275px',
-                height: '44px',
-                marginTop: '20px',
-                color: '#fff',
-                textTransform: 'none',
-                fontWeight: 'bold',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '30px',
-              }}
-            >
-              EXPLORE PORTFOLIO <ArrowForward sx={{ marginLeft: '10px' }} />
-            </Button>
+            <Link to="/projectsectorial">
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: '#FF6B00',
+                  width: '275px',
+                  height: '44px',
+                  marginTop: '20px',
+                  color: '#fff',
+                  textTransform: 'none',
+                  fontWeight: 'bold',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: '30px',
+                }}
+              >
+                EXPLORE PORTFOLIO <ArrowForward sx={{ marginLeft: '10px' }} />
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>

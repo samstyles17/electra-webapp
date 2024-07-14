@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText, Grid } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider , responsiveFontSizes} from '@mui/material/styles';
 import Carousel from '../components/ServicePage3dCarousel';
 import CssBaseline from '@mui/material/CssBaseline';
 import '../styles.css';
@@ -19,11 +19,22 @@ import img9 from "../assets/img/service3/service3_carousel4_img2.png";
 import img10 from "../assets/img/service3/service3_carousel4_img3.png";
 import img11 from "../assets/img/service3/service3_carousel4_img4.png";
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
+    h6: {
+      letterSpacing: 'normal',
+    },
+    body1: {
+      letterSpacing: 'normal',
+    },
+    body2: {
+      letterSpacing: 'normal',
+    },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 const sections = [
   {
@@ -75,39 +86,71 @@ const MainComponent = () => {
               borderRadius: index === 3 ? '8px' : 'none',
               border: index === 3 ? '2px solid gray' : 'none',
               padding: index === 3 ? '20px' : 'none',
-              marginX: index === 3 ? '40px' : 'none', // Increase left and right margins for the fourth section
+              marginX: index === 3 ? { xs: '20px', md: '40px' } : 'none',
             }}
           >
             <Box
               sx={{
                 display: 'flex',
-                flexDirection: index % 2 === 0 ? 'row-reverse' : 'row',
+                flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row-reverse' : 'row' },
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                textAlign: { xs: 'justify', md: 'left' },
+                marginBottom: '80px',
+                px: { xs: 2, md: 0 },
+                width: '100%',
               }}
             >
               <Box
                 sx={{
                   flex: 1,
-                  margin: '40px',
-                  padding: '20px',
+                  margin: { xs: '0 0 20px 0', md: '40px' },
+                  padding: { xs: '0', md: '20px' },
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  maxWidth: '40%',
+                  alignItems: { xs: 'flex-start', md: 'flex-start' },
+                  maxWidth: { md: '40%' },
                   minWidth: '300px',
-                  textAlign: 'left',
+                  textAlign: { xs: 'left', md: 'left' },
                 }}
               >
-                <Typography variant="h6" gutterBottom>
+                <Typography 
+                  variant="h6" 
+                  gutterBottom
+                  sx={{ fontSize: { xs: '1.2rem', md: '1.5rem' }, textAlign:'left' }}
+                >
                   {section.heading}
                 </Typography>
-                <Box component="img" src={titleDivider} alt="Divider" sx={{ width: '15%', height: '2px', marginBottom: '20px' }} />
-                <Typography variant="body1" gutterBottom>
+                <Box 
+                  component="img" 
+                  src={titleDivider} 
+                  alt="Divider" 
+                  sx={{ 
+                    width: '15%', 
+                    height: '2px', 
+                    marginBottom: '20px' 
+                  }} 
+                />
+                <Typography 
+                  variant="body1" 
+                  gutterBottom
+                  sx={{ fontSize: { xs: '0.875rem', md: '1rem' }, textAlign: 'left' }}
+                >
                   {section.description}
                 </Typography>
               </Box>
-              <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth: '50%' }}>
+              <Box 
+                sx={{ 
+                  flex: 1, 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  width: '100%',
+                  maxWidth: { xs: '100%', md: '50%' },
+                  mt: { xs: '20px', md: '0' }
+                }}
+              >
                 <Carousel images={section.images} />
               </Box>
             </Box>

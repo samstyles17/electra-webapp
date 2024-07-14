@@ -88,21 +88,21 @@ const MainComponent = () => {
               <Box
                 sx={{
                   flex: 1,
-                  margin: { xs: '0', md: '40px' },
+                  margin: { xs: '0 0 20px 0', md: '40px' }, // Increased bottom margin for mobile
                   padding: { xs: '0', md: '20px' },
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  alignItems: { xs: 'center', md: 'flex-start' },
+                  alignItems: { xs: 'flex-start', md: 'flex-start' },
                   maxWidth: { md: '40%' },
                   minWidth: '300px',
-                  textAlign: { xs: 'justify', md: 'left' }, // Text alignment
+                  textAlign: { xs: 'left', md: 'left' }, // Text alignment
                 }}
               >
                 <Typography 
                   variant="h6" 
                   gutterBottom 
-                  sx={{ fontSize: { xs: '1.2rem', md: '1.5rem' } }} // Adjust font size
+                  sx={{ fontSize: { xs: '1.2rem', md: '1.5rem' }, textAlign:'left' }} // Adjust font size
                 >
                   {section.heading}
                 </Typography>
@@ -119,7 +119,7 @@ const MainComponent = () => {
                 <Typography 
                   variant="body1" 
                   gutterBottom 
-                  sx={{ fontSize: { xs: '0.875rem', md: '1rem' }, textAlign: 'justify' }} // Adjust font size and text alignment
+                  sx={{ fontSize: { xs: '0.875rem', md: '1rem' }, textAlign: 'left' }} // Adjust font size and text alignment
                 >
                   {section.description}
                 </Typography>
@@ -143,6 +143,7 @@ const MainComponent = () => {
                   justifyContent: 'center', 
                   alignItems: 'center', 
                   width: '100%', // Full width
+                  mt: { xs: '20px', md: '0' } // Increased top margin for mobile
                 }}
               >
                 <Carousel images={section.images} />

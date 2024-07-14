@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSprings, animated } from 'react-spring';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const Carousel = ({ images }) => {
   const [index, setIndex] = useState(0);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -16,23 +19,24 @@ const Carousel = ({ images }) => {
     images.length,
     images.map((_, i) => ({
       opacity: i === index ? 1 : 0.5,
-      transform: `translateX(${(i - index) * 250}px)`,
+      transform: `translateX(${(i - index) * (isMobile ? 100 : 250)}px)`,
       zIndex: i === index ? 2 : 1,
-      width: i === index ? '400px' : '250px', // Original dimensions for web
-      height: i === index ? '270px' : '170px', // Original dimensions for web
+      width: isMobile
+        ? (i === index ? '200px' : '150px')
+        : (i === index ? '400px' : '250px'),
+      height: isMobile
+        ? (i === index ? '300px' : '225px')
+        : (i === index ? '270px' : '170px'),
       borderRadius: '15px',
-      marginLeft: i === index ? '0px' : '-20px', // Overlap effect for mobile view
-      '@media (max-width: 600px)': { // Adjust for mobile view
-        width: i === index ? '90%' : '70%',
-      }
+      marginLeft: i === index ? '0px' : '-20px',
     }))
   );
 
   return (
     <Box
       sx={{
-        height: '270px',
-        width: '100%', // Full width for mobile view
+        height: isMobile ? '300px' : '270px',
+        width: '100%',
         position: 'relative',
         perspective: '1000px',
         overflow: 'hidden',
@@ -51,7 +55,6 @@ const Carousel = ({ images }) => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             transition: 'all 0.5s ease-in-out',
-            borderRadius: '15px', // Ensure border-radius is applied on mobile view
           }}
         />
       ))}

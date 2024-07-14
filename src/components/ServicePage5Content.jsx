@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import Carousel from '../components/ServicePage3dCarousel';
 import CssBaseline from '@mui/material/CssBaseline';
 import '../styles.css';
@@ -23,11 +23,22 @@ import img13 from "../assets/img/service4/service4_carousel3_img1.png";
 import img14 from "../assets/img/service4/service4_carousel3_img2.png";
 
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
+    h6: {
+      letterSpacing: 'normal',
+    },
+    body1: {
+      letterSpacing: 'normal',
+    },
+    body2: {
+      letterSpacing: 'normal',
+    },
   },
 });
+
+theme = responsiveFontSizes(theme)
 
 const sections = [
   {
@@ -58,7 +69,7 @@ const MainComponent = () => {
             key={index}
             sx={{
               display: 'flex',
-              flexDirection: index % 2 === 0 ? 'row-reverse' : 'row',
+              flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row-reverse' : 'row' },
               alignItems: 'center',
               justifyContent: 'space-between',
               marginBottom: '80px',
@@ -67,12 +78,12 @@ const MainComponent = () => {
             <Box
               sx={{
                 flex: 1,
-                margin: '40px',
-                padding: '20px',
+                margin: { xs: '0 0 20px 0', md: '40px' },
+                padding: { xs: '0', md: '20px' },
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                maxWidth: '40%',
+                maxWidth: { xs: '100%', md: '40%' },
                 minWidth: '300px',
                 textAlign: 'left',
               }}
@@ -81,7 +92,7 @@ const MainComponent = () => {
                 {section.heading}
               </Typography>
               <Box component="img" src={titleDivider} alt="Divider" sx={{ width: '15%', height: '2px', marginBottom: '20px' }} />
-              <Typography variant="string" gutterBottom>
+              <Typography variant="body1" gutterBottom>
                 {section.description}
               </Typography>
               {section.bullets && (
@@ -94,7 +105,17 @@ const MainComponent = () => {
                 </List>
               )}
             </Box>
-            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth: '50%' }}>
+            <Box 
+              sx={{ 
+                flex: 1, 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                width: '100%',
+                maxWidth: { xs: '100%', md: '50%' },
+                mt: { xs: '20px', md: '0' }
+              }}
+            >
               <Carousel images={section.images} />
             </Box>
           </Box>

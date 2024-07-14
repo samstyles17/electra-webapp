@@ -8,12 +8,12 @@ import Slider from 'react-slick';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Importing icons
-import DesignIcon from '../assets/img/service_button_icon1.png';
-import InstallationIcon from '../assets/img/service_button_icon2.png';
-import PanelIcon from '../assets/img/service_button_icon3.png';
-import ComplianceIcon from '../assets/img/service_button_icon4.png';
-import MaintenanceIcon from '../assets/img/service_button_icon5.png';
-import ValueAddedIcon from '../assets/img/service_button_icon6.png';
+import DesignIcon from '../assets/img/service_icon1.svg';
+import InstallationIcon from '../assets/img/service_icon2.svg';
+import PanelIcon from '../assets/img/service_icon3.svg';
+import ComplianceIcon from '../assets/img/service_icon4.svg';
+import MaintenanceIcon from '../assets/img/service_icon5.svg';
+import ValueAddedIcon from '../assets/img/service_icon6.svg';
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
