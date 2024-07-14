@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -38,14 +38,16 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
   '& .MuiButton-startIcon': {
     marginRight: '8px',
-    width: '18px', // Adjusted icon size
-    height: '18px', // Adjusted icon size
+    width: '18px',
+    height: '18px',
   },
 }));
 
 const ResponsiveButtonGroup = () => {
   const location = useLocation();
   const isMobile = useMediaQuery('(max-width:980px)');
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const sliderRef = React.useRef(null);
 
   const buttons = [
     { icon: DesignIcon, text: 'Design And Consulting', link: '/designconsultingservice' },
@@ -56,6 +58,14 @@ const ResponsiveButtonGroup = () => {
     { icon: ValueAddedIcon, text: 'Value-Added Services', link: "/valueaddedservice" },
   ];
 
+  useEffect(() => {
+    const index = buttons.findIndex(button => button.link === location.pathname);
+    setActiveIndex(index !== -1 ? index : 0);
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(index !== -1 ? index : 0);
+    }
+  }, [location.pathname]);
+
   const settings = {
     dots: false,
     infinite: false,
@@ -63,6 +73,9 @@ const ResponsiveButtonGroup = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
+    centerMode: true,
+    centerPadding: '0px',
+    focusOnSelect: true,
   };
 
   return (
@@ -79,9 +92,9 @@ const ResponsiveButtonGroup = () => {
       }}
     >
       {isMobile ? (
-        <Slider {...settings}>
+        <Slider ref={sliderRef} {...settings}>
           {buttons.map((button, index) => (
-            <Box key={index} sx={{ padding: '0 16px' }}> {/* Adjusted spacing */}
+            <Box key={index} sx={{ padding: '0 8px' }}>
               <CustomButton
                 startIcon={<img src={button.icon} alt={button.text} />}
                 component={Link}
