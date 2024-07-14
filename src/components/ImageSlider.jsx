@@ -128,7 +128,8 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardWidth = 327; // Updated width of each card
   const cardSpacing = 20; // Spacing between cards
-  const visibleCards = 4.1; // Number of fully visible cards
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const visibleCards = isMobile ? 1 : 4.1; // Number of fully visible cards based on screen size
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
@@ -140,7 +141,6 @@ const Carousel = () => {
 
   const showLeftArrow = currentIndex > 0;
   const showRightArrow = currentIndex < cards.length - visibleCards;
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <ThemeProvider theme={theme}>
