@@ -24,7 +24,25 @@ const StyledTypography = styled(Typography)({
 
 const OrangeTypography = styled(StyledTypography)(({ theme }) => ({
   color: '#FF6B2B',
+  fontSize: '0.875rem', // Reduced font size
 }));
+
+const IconTextContainer = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: '8px', // Add margin between icon and text
+  
+});
+
+const IconWrapper = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginRight: '8px', // Add space between icon and text
+  width: '24px', // Fixed width to ensure proper alignment
+  height: '24px', // Fixed height to ensure proper alignment
+  marginBottom: '8px',
+});
 
 const Footer = () => {
   return (
@@ -53,20 +71,25 @@ const Footer = () => {
           </Box>
 
           <Grid item xs={12} md={3}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <Box component="img" src={PhoneIcon} sx={{ color: '#FF6B2B', mr: 1 }} />
+            <IconTextContainer>
+              <IconWrapper>
+                <img src={PhoneIcon} alt="Phone Icon" />
+              </IconWrapper>
               <OrangeTypography variant="subtitle1" className="montserrat-medium">
                 Phone number
               </OrangeTypography>
-            </Box>
+            </IconTextContainer>
             <StyledTypography variant="body2">+91 940 098 9363</StyledTypography>
             <StyledTypography variant="body2" gutterBottom>+91 920 738 9111</StyledTypography>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, mt: 2 }}>
-              <Box component="img" src={MailIcon} sx={{ color: '#FF6B2B', mr: 1 }} />
+            
+            <IconTextContainer>
+              <IconWrapper>
+                <img src={MailIcon} alt="Mail Icon" />
+              </IconWrapper>
               <OrangeTypography variant="subtitle1" className="montserrat-medium">
                 For Enquiries
               </OrangeTypography>
-            </Box>
+            </IconTextContainer>
             <StyledTypography variant="body2">office@electrapower.in</StyledTypography>
           </Grid>
 
@@ -75,12 +98,14 @@ const Footer = () => {
           </Grid>
 
           <Grid item xs={12} md={3} sx={{ textAlign: 'left' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'flex-start', md: 'flex-start' } }}>
-              <Box component="img" src={LocationIcon} sx={{ color: '#FF6B2B', mr: 1 }} />
+            <IconTextContainer>
+              <IconWrapper>
+                <img src={LocationIcon} alt="Location Icon" />
+              </IconWrapper>
               <OrangeTypography variant="subtitle1" className="montserrat-medium">
                 Address
               </OrangeTypography>
-            </Box>
+            </IconTextContainer>
             <StyledTypography variant="body2">Electra Power Engineering</StyledTypography>
             <StyledTypography variant="body2">'A' grade Electrical Contractors & Engineers</StyledTypography>
             <StyledTypography variant="body2">33/1305-A1, Chalikkavattom, Vennala P.O,</StyledTypography>
@@ -95,7 +120,7 @@ const Footer = () => {
                 fontFamily: 'inherit',
               }} 
               className="montserrat-medium"
-              startIcon={<Box component="img" src={MapIcon} sx={{ color: '#FF6B2B' }} />}
+              startIcon={<Box component="img" src={MapIcon} sx={{ color: '#FF6B2B', height: '24px' }} />}
             >
               Locate in map
             </Button>

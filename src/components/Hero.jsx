@@ -1,5 +1,6 @@
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Link } from "react-router-dom";
 import divider from "../assets/img/divider2.png";
 
 function Hero() {
@@ -37,15 +38,19 @@ function Hero() {
             </p>
           </div>
           {!isMobile && (
-            <button className="btn btn-md btn-greybtn rounded-full whitespace-nowrap ml-4">
-              <h3 className="montserrat-medium px-3 text-lg">OUR SERVICES →</h3>
-            </button>
+            <Link to="/designconsultingservice">
+              <button className="btn btn-md rounded-full whitespace-nowrap ml-4 bg-[#F2F2F2]">
+                <h3 className="montserrat-medium px-3 text-lg">OUR SERVICES →</h3>
+              </button>
+            </Link>
           )}
         </div>
         {isMobile && (
-          <button className="btn btn-md btn-greybtn rounded-full whitespace-nowrap mt-4">
-            <h3 className="montserrat-medium px-3 text-lg">OUR SERVICES →</h3>
-          </button>
+          <Link to="/designconsultingservice">
+            <button className="btn btn-md rounded-full whitespace-nowrap mt-4 bg-[#F2F2F2]">
+              <h3 className="montserrat-medium px-3 text-lg">OUR SERVICES →</h3>
+            </button>
+          </Link>
         )}
       </div>
     </div>
