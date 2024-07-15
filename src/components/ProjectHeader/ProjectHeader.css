@@ -125,6 +125,14 @@
     .project-header > span {
       background-position: center;
     }
-    
+}
 
+@media (max-width: 320px) {
+    .project-header-title {
+        width: 100% !important;
+        padding: 8px 20px !important;
+        border-radius: 30px !important;
+        font-size: 11px !important;
+       
+    }
 }
