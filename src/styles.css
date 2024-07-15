@@ -1270,7 +1270,7 @@ hr{
   visibility: hidden;
   border-top-left-radius: 15rem;
   border-bottom-left-radius: 15rem;
-  background-color: #337ab7; /* Dark blue background */
+  background-color: #1467A0; /* Dark blue background */
   z-index: 4;
 }
 
@@ -1329,6 +1329,11 @@ hr{
     justify-content: center;
     margin-left: 0 !important;
     height: 100px;
+  }
+
+  .hover-image {
+    width: 100%;
+    height: 100%;
   }
 
   .semi-hover:hover .content {
