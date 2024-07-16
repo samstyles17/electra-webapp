@@ -1,16 +1,22 @@
 .projectinfo {
     margin: 0 1rem;
-    padding: 3rem;
+    padding: 1.5rem 3rem;
+    font-family: 'Montserrat, sans-serif' !important;
 }
 
 .border-top-svg {
-    margin: 1rem auto 4rem auto;
-    width: 100%;
+    margin: 0.8rem auto 3rem auto;
 }
 
 .border-top-sm {
-
     display: none;
+}
+
+.project-image {
+    width: 100%;
+}
+.project-image:last-of-type {
+    width: fit-content;
 }
 
 @media (max-width: 475px) {

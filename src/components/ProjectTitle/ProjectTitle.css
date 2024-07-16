@@ -1,7 +1,9 @@
 .project-title >span {
 border-color: #bebebe;
 }
-
+.project-title > p {
+    font-weight: 450;
+}
 @media (max-width:768px) {
     .project-title > span{
  padding: 20px;

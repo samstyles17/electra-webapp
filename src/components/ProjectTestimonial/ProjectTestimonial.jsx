@@ -14,10 +14,13 @@ const ProjectTestimonial = ({ image, title, info }) => {
             </span>
             <div className="h-64 project-testimonial-info text-lg montserrat-regular flex  justify-center items-center  bg-white  shadow-outline">
                 <div className="project-testimonial-logo flex px-6">
-                    <span style={{backgroundImage: `url(${image})`}} className="project-round-image rounded-full z-20"> 
+                    <span style={{backgroundImage: `url(${image})`}} className="project-round-image z-20"> 
 
                     </span>
-                    <img src={logo_circle} alt="" className="rounded-full z-10" />
+                    <span style={{backgroundImage: `url(${logo_circle})`}} className="project-round-image z-2">
+
+                    </span>
+                   
                 </div>
                 <div className="project-testimonial-text ">
                     <h4 className="text-orangetext text-sm ml-6 mb-8">{title}</h4>
