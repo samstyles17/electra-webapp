@@ -12,8 +12,8 @@ const ProjectTestimonial = ({ image, title, info }) => {
             <span className=" rotate-inverse  h-64 text-xl uppercase montserrat-regular tracking-wider px-2 text-center  text-white ">
                 testimonials
             </span>
-            <div className="h-64 project-testimonial-info text-lg montserrat-regular flex  justify-center items-center  bg-white  shadow-outline">
-                <div className="project-testimonial-logo flex px-6">
+            <div className="h-64 project-testimonial-info text-lg montserrat-regular flex  gap-2 items-center  bg-white  shadow-outline">
+                <div className="project-testimonial-logo flex gap-6  px-6">
                     <span style={{backgroundImage: `url(${image})`}} className="project-round-image z-20"> 
 
                     </span>

@@ -18,11 +18,8 @@ display: block;
 background-repeat: no-repeat;
 background-position: center;
 background-size: contain;
-border-radius: 50%;
 }
-.project-testimonial-logo > span:last-of-type {
-    margin-left: -20px;
-}
+
 @media (max-width: 768px) {
     .project-testimonial-text > p {
         font-size: 12px;
