@@ -15,8 +15,8 @@ const ProjectInfo = ({ data }) => {
                 data.map((e, i) => {
                     return (
                         <div className="projectinfo" key={i}>
-                            <svg className="border-top-svg" width="1294" height="1" viewBox="0 0 1294 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.35" d="M0 0.5H1294" stroke="black" strokeDasharray="6 6" />
+                            <svg className="border-top-svg" width="1650" height="1" viewBox="0 0 1650 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.35" d="M0 0.5H1650" stroke="black" strokeDasharray="6 6" />
                             </svg>
                             <svg width="280" className="border-top-sm" height="2" viewBox="0 0 280 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.39" d="M0 1H320" stroke="black" strokeWidth="1" strokeDasharray="3 3" />

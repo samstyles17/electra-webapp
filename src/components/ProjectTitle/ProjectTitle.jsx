@@ -92,11 +92,11 @@ const ProjectTitle = ({ index, title }) => {
     };
 
     return (
-        <div className="project-title flex gap-5 items-center mb-4">
+        <div className="project-title flex gap-8 items-center mb-4">
             <span className="border border-solid flex items-center justify-center text-2xl h-16 w-12 montserrat-regular">
                 0{index + 1}
             </span>
-            <p className="text-xl montserrat-regular tracking-wide ml-8 inline capitalize ">
+            <p className="text-xl montserrat-regular tracking-wide  inline capitalize ">
                 {applyColors(words)}
             </p>
         </div>

@@ -10,21 +10,16 @@
     border-radius: 25px;
     gap: 5rem;
 }
-.project-testimonial-logo > img {
-    width : 224px;
-    height: 160px;
-}
+
 .project-round-image {
+height: 154px;
+width: 154.13px;
 display: block;
-height: 160px;
-width: 300px;
 background-repeat: no-repeat;
 background-position: center;
 background-size: contain;
 }
-.project-testimonial-logo > img:last-of-type {
-    margin-left: -20px;
-}
+
 @media (max-width: 768px) {
     .project-testimonial-text > p {
         font-size: 12px;
