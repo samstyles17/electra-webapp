@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 const ProjectImage = ({ images }) => {
     const settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,

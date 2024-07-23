@@ -77,5 +77,6 @@
     }
     .project-images-slider {
         display: block;
+        margin-bottom: 40px;
     }
 }

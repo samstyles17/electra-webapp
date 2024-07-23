@@ -19,6 +19,12 @@ background-repeat: no-repeat;
 background-position: center;
 background-size: contain;
 }
+.project-testimonial-logo {
+    width: 58rem;
+}
+.project-testimonial-logo > img:last-child {
+    display: none;
+}
 
 @media (max-width: 768px) {
     .project-testimonial-text > p {
@@ -32,18 +38,14 @@ background-size: contain;
     .project-testimonial-info {
         gap: 2rem;
     }
-    .project-testimonial-logo > img {
-        width : 250px;
-        height: 100px;
-    }
-    .project-testimonial-logo > img:last-of-type {
-        margin-left: -10px;
-    }
+ 
+ 
     
 }
 @media (max-width: 475px) {
     .project-testimonial {
         flex-direction: column;
+        margin-bottom: 20px;
     }
     .project-testimonial > .blue-rectangle  {
         display: none;
@@ -55,8 +57,12 @@ background-size: contain;
         flex-direction: column;
         gap: 2rem;
     }
+    .project-testimonial-logo {
+        width: auto;
+        margin-bottom: 20px;
+    }
     .project-testimonial-logo > img {
-        width : 113px;
+
         height: 113px;
         margin-top: 30px;
     }
@@ -67,12 +73,11 @@ background-size: contain;
     .project-testimonial-text > h4 {
         margin-bottom: 10px;
     }
-    .project-round-image {
-        display: block;
-        height: 160px;
-        width: 100px ;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
+        .project-testimonial-logo > img:nth-child(2) {
+            display: none;
+        }
+        .project-testimonial-logo > img:last-child {
+            display: block;
+        
         }
 }
