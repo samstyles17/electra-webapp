@@ -1517,7 +1517,7 @@ hr{
   align-items: center;
   padding: 50px 20px;
   background-color: #ffffff;
-  margin-left: 80px;
+  margin-left: 150px;
 }
 
 .integrity-carousel-container {
@@ -1697,18 +1697,18 @@ hr{
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative; /* Enable positioning for description overlap */
-    margin-bottom: 90px;
-    width: 100%;
+    margin-bottom: 60px;
+    width: 90%; /* Adjust the width as needed */
     height: auto;
-     /* Adjust the width as needed */
-     /* Ensure no overflow from the image */
+    /* Ensure no overflow from the image */
   }
 
   .card-image {
-    width: 100%;
-    height: auto ;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    width: auto; /* Set width to auto */
+    height: 350px; /* Set a fixed height to make it portrait */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border-radius: 20px;
+
     margin-bottom: -25px;
   }
 
@@ -1722,14 +1722,13 @@ hr{
     padding: 15px 20px; /* Adjust padding to control overlap */
     border-radius: 20px;
     text-align: left;
-    opacity: 1 ; /* Optional: Adjust opacity if needed */
+    opacity: 1; /* Optional: Adjust opacity if needed */
     transform: translateY(28px); /* Overlap the bottom of the image */
   }
 
   .card-description h2 {
     font-size: 14px;
     margin-bottom: 5px;
-
   }
 
   .card-description p {
@@ -1766,8 +1765,7 @@ hr{
     padding: 20px; /* Adjust padding for smaller screens */
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 0;
-    margin-right: 0;
+    
   }
 
   .partner-image {
