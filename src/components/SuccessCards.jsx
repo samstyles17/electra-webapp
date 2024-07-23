@@ -10,13 +10,6 @@ import img3 from '../assets/img/integrity_alt.png';
 import img4 from '../assets/img/innovative_alt.png';
 import img5 from '../assets/img/client_alt.png';
 import img6 from '../assets/img/collab_alt.png';
-// mobile view images
-import img7 from '../assets/img/expertise_alt_mobile.png';
-import img8 from '../assets/img/agility_alt_mobile.png';
-import img9 from '../assets/img/integrity_alt_mobile.png';
-import img10 from '../assets/img/innovative_alt_mobile.png';
-import img11 from '../assets/img/client_alt_mobile.png';
-import img12 from '../assets/img/collab_alt_mobile.png';
 
 
 const theme = createTheme({
@@ -67,15 +60,6 @@ function SuccessCards() {
       content: `We believe in teamwork and foster a collaborative environment where everyone's ideas are valued.` 
     },
   ];
-
-  // const mobileImg = [
-  //   { text: "Expertise", number: 1, image: img7 },
-  //   { text: "Agility", number: 2, image: img8 },
-  //   { text: "Integrity", number: 3, image: img9 },
-  //   { text: "Innovative", number: 4, image: img10 },
-  //   { text: "Client Centric", number: 5, image: img11 },
-  //   { text: "Collaboration", number: 6, image: img12 },
-  // ];
 
   const [isMobileView, setIsMobileView] = useState(false);
 
