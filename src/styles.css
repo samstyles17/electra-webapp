@@ -1311,6 +1311,16 @@ hr{
     position : relative;
   }
 
+  .image-container {
+    background-color: rgba(245, 245, 245, 1);
+    font-family: Montserrat;
+    text-align: center;
+    font-weight: 400;
+    size: 13px;
+    padding: 40px 20px;
+    color: rgba(34, 36, 47, 1);
+  }
+
   .semi-hover {
     position : relative;
     margin-left:0;
@@ -1358,7 +1368,7 @@ hr{
     left: 50%;
   }
   .semi-hover:hover {
-    margin-bottom: 150px;
+    margin-bottom: 170px;
   }
 
 

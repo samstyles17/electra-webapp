@@ -30,31 +30,61 @@ const theme = createTheme({
 function SuccessCards() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const desktopImg = [
-    { text: "Expertise", number: 1, image: img1 },
-    { text: "Agility", number: 2, image: img2 },
-    { text: "Integrity", number: 3, image: img3 },
-    { text: "Innovative", number: 4, image: img4 },
-    { text: "Client Centric", number: 5, image: img5 },
-    { text: "Collaboration", number: 6, image: img6 },
+    { 
+      text: "Expertise", 
+      number: 1, 
+      image: img1,
+      content: `Benefit from our team's extensive knowledge and skills in electrical engineering, ensuring proficient and reliable solutions.`
+    },
+    { 
+      text: "Agility", 
+      number: 2, 
+      image: img2,
+      content: `Experience our quick and flexible response to your needs, adapting swiftly to changing project requirements and timelines.` 
+    },
+    { 
+      text: "Integrity", 
+      number: 3, 
+      image: img3,
+      content: `Trust in our commitment to honesty, transparency, and ethical conduct in all aspects of our work, fostering long-term partnerships based on integrity.` 
+    },
+    { 
+      text: "Innovative", 
+      number: 4, 
+      image: img4,
+      content: `Access cutting-edge solutions and technologies as we continuously explore new ideas and approaches to enhance efficiency and effectiveness.`
+    },
+    { 
+      text: "Client Centric", 
+      number: 5, 
+      image: img5,
+      content: `Enjoy personalised attention and tailored solutions that prioritise your unique requirements, ensuring your satisfaction and success.`
+    },
+    { 
+      text: "Collaboration", 
+      number: 6, 
+      image: img6,
+      content: `We believe in teamwork and foster a collaborative environment where everyone's ideas are valued.` 
+    },
   ];
 
-  const mobileImg = [
-    { text: "Expertise", number: 1, image: img7 },
-    { text: "Agility", number: 2, image: img8 },
-    { text: "Integrity", number: 3, image: img9 },
-    { text: "Innovative", number: 4, image: img10 },
-    { text: "Client Centric", number: 5, image: img11 },
-    { text: "Collaboration", number: 6, image: img12 },
-  ];
+  // const mobileImg = [
+  //   { text: "Expertise", number: 1, image: img7 },
+  //   { text: "Agility", number: 2, image: img8 },
+  //   { text: "Integrity", number: 3, image: img9 },
+  //   { text: "Innovative", number: 4, image: img10 },
+  //   { text: "Client Centric", number: 5, image: img11 },
+  //   { text: "Collaboration", number: 6, image: img12 },
+  // ];
 
-  const [items, setItems] = useState([]);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 1200) {
-        setItems([...mobileImg]);
+        setIsMobileView(true);
       } else {
-        setItems([...desktopImg]);
+        setIsMobileView(false);
       }
     };
     handleResize();
@@ -72,7 +102,7 @@ function SuccessCards() {
         <h1>OUR ROUTE <span className='orange-text'>TO SUCCESS</span> </h1>
       </div>
       <div className='cardgg'>
-        {items.map((item, index) => (
+        {desktopImg.map((item, index) => (
           <div 
             key={index} 
             className={`semi-hover ${index === hoveredIndex ? 'active' : ''}`}
@@ -83,9 +113,21 @@ function SuccessCards() {
               <span className="item-number">{item.number}</span>
               <span className="item-text">{item.text}</span>
             </div>
-            <div className="image-container">
-              <img src={item.image} alt="" className="hover-image" />
-            </div>
+            {
+              isMobileView 
+              ? (
+                  <div className='image-container'>
+                    {
+                      item.content
+                    }
+                  </div>
+                )
+              : (
+                  <div className="image-container">
+                    <img src={item.image} alt="" className="hover-image" />
+                  </div>
+                )
+            }
           </div>
         ))}
       </div> 
