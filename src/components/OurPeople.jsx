@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles.css';
 import peopleImage from '../assets/img/peopleimg.png'; // Replace with the correct path
 
 const OurPeople = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Check the initial screen size
+    handleResize();
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section className="our-people-section">
       <div className="our-people-container">
@@ -15,21 +33,25 @@ const OurPeople = () => {
           <div className="people-text">
             <hr />
             <h2 className="people-title montserrat-regular">
-              <h2 className="highlight-orange">Our {" "}<span className="highlight-blue">People</span></h2>
+              <span className="highlight-orange">Our </span>
+              <span className="highlight-blue">People</span>
             </h2>
             <p className="people-paragraph montserrat-regular">
               Our greatest asset is our people, including experienced engineers, skilled technicians, 
               project managers, and support staff. Passionate and dedicated, our team operates in unison, 
               driven by commitment to quality, reliability, and customer satisfaction.
             </p>
-            <hr  />
+            <hr />
           </div>
         </div>
         
         <div className="route-content">
           <h2 className="route-title montserrat-regular">
-            <h2 className="highlight-blue">OUR ROUTE <span className="highlight-orange">TO SUCCESS</span></h2> 
-          </h2>
+            <span className="highlight-blue">
+              {isMobile ? 'Our ' : 'OUR ROUTE '}
+            </span>
+            <span className="highlight-orange">{isMobile ? 'Expertise ' : 'TO SUCCESS '}</span>
+          </h2> 
           <p className="route-paragraph montserrat-regular">
             Discover our expertise in electrical engineering, where innovation meets reliability. With a focus 
             on cutting-edge solutions, we specialise in delivering seamless integration and Industry standard 

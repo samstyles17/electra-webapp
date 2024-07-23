@@ -3,10 +3,10 @@ import Carousel from 'react-multi-carousel';
 import { Link } from 'react-router-dom';
 import 'react-multi-carousel/lib/styles.css';
 import banner1 from "../assets/img/banner1.png"
-import banner2 from "../assets/img/banner2.png"
+import banner2 from "../assets/img/Banner2.png"
 import banner3 from "../assets/img/banner3.png"
 import banner4 from "../assets/img/banner4.png"
-import banner5 from "../assets/img/banner5.png"
+import banner5 from "../assets/img/Banner5.png"
 
 const responsive = {
   all: {
