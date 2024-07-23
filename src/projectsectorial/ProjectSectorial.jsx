@@ -35,14 +35,14 @@ import napier3 from '../assets/img/east_napier/napier3.png';
 
 import tata1 from '../assets/img/tata/tata1.png';
 
-import kiaLogo from '../assets/img/logo/kia_logo.png';
-import hhysLogo from '../assets/img/logo/hhys_logo.png';
-import appLogo from '../assets/img/logo/app_logo.png';
-import hosLogo from '../assets/img/logo/hos_logo.png';
-import cocoLogo from '../assets/img/logo/coco_logo.png';
-import ecLogo from '../assets/img/logo/ec_logo.png';
-import napierLogo from '../assets/img/logo/napier_logo.png';
-import tataLogo from '../assets/img/logo/tata_logo.png';
+import kiaLogo from '../assets/img/logo/kia_logo.svg';
+import hhysLogo from '../assets/img/logo/hhys_logo.svg';
+import appLogo from '../assets/img/logo/app_logo.svg';
+import hosLogo from '../assets/img/logo/hos_logo.svg';
+import cocoLogo from '../assets/img/logo/coco_logo.svg';
+import ecLogo from '../assets/img/logo/ec_logo.svg';
+import napierLogo from '../assets/img/logo/napier_logo.svg';
+import tataLogo from '../assets/img/logo/tata_logo.svg';
 
 
 const data = [

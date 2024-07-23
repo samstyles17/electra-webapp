@@ -18,7 +18,7 @@ const ProjectHeader = () => {
                         <span>120+ satisfied client</span>
                    </div>
                 </div>
-                <p className="project-header-title border text-base tracking-[0.2em] text-center py-2.5 px-1.5 rounded-[13px] mt-10 ">
+                <p className="project-header-title border text-base tracking-[0.2em] text-center rounded-[13px] mt-10 ">
                 ELECTRA POWER ENGINEERING
                 </p>
             </div>
