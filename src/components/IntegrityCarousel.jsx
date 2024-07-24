@@ -94,7 +94,7 @@ const IntegrityCarousel = () => {
             containerClass="integrity-carousel"
             afterChange={handleAfterChange}
             customTransition="transform 500ms ease-in-out"
-            transitionDuration={500}
+            
             keyBoardControl
             ref={carouselRef}
           >
