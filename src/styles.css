@@ -1506,6 +1506,7 @@ hr{
   .people-image {
     width: 100%;
     margin-bottom: 20px;
+    order: 2;
   }
 
   .people-text {
@@ -1526,6 +1527,7 @@ hr{
   }
 }
 
+
 /* Integrity Carousel Section */
 .integrity-carousel-section {
   display: flex;
@@ -1533,8 +1535,7 @@ hr{
   align-items: center;
   padding: 50px 20px;
   background-color: #ffffff;
-  margin-left: 80px;
-  pointer-events: none;
+  margin-left: 150px;
 }
 
 .integrity-carousel-container {
@@ -1557,18 +1558,45 @@ hr{
   color: #888888;
   margin-bottom: 20px;
   transition: color 0.5s ease, font-weight 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  margin-right: -50px;
 }
 
-.integrity-menu hr {
+.integrity-item hr {
   width: 400px;
-  color: #383838;
-  opacity: 0.1;
+  border: 1px solid #383838;
+  opacity: 0;
   margin-top: 25px;
 }
 
 .integrity-item.active {
   color: #007BFF;
-  font-weight: bold;
+}
+
+.integrity-item.active::after {
+  content: '';
+  position: absolute;
+  right: -50px;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #007BFF;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.integrity-item.active::before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 250px;
+  height: 1px;
+  background-color: #007BFF;
+  margin-left: -200px;
 }
 
 .integrity-carousel {
@@ -1586,49 +1614,26 @@ hr{
   border-radius: 10px;
 }
 
-/* Keyframes for the animation */
-@keyframes highlight {
-  0% {
-    color: #888888;
-    font-weight: normal;
-  }
-  16.66% {
-    color: #007BFF;
-    font-weight: normal;
-  }
-  33.32% {
-    color: #888888;
-    font-weight: normal;
-  }
-  100% {
-    color: #888888;
-    font-weight: normal;
-  }
+.carousel-description {
+  width: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #313131b4;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Apply animation to each item with a delay */
-.integrity-item-0 {
-  animation: highlight 18s infinite;
+.carousel-description h2{
+  font-size: 18px;
+  font-weight: 500;
 }
-.integrity-item-1 {
-  animation: highlight 18s infinite;
-  animation-delay: 3s;
-}
-.integrity-item-2 {
-  animation: highlight 18s infinite;
-  animation-delay: 6s;
-}
-.integrity-item-3 {
-  animation: highlight 18s infinite;
-  animation-delay: 9s;
-}
-.integrity-item-4 {
-  animation: highlight 18s infinite;
-  animation-delay: 12s;
-}
-.integrity-item-5 {
-  animation: highlight 18s infinite;
-  animation-delay: 15s;
+
+.carousel-slide:hover .carousel-description {
+  opacity: 1;
 }
 
 /* Mobile responsiveness */
@@ -1662,16 +1667,33 @@ hr{
     margin-bottom: 10px; /* Optional: add margin between menu items */
   }
 
-  .integrity-item.active {
-    color: #007BFF;
-    font-weight: bold;
+  .integrity-item.active::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  }
+
+  .integrity-item.active::before {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: #007BFF;
   }
 
   .integrity-carousel {
     width: 100%;
     display: flex;
-    
-   
     /* Add space between the menu and carousel */
   }
 
@@ -1679,7 +1701,60 @@ hr{
     width: 100%; /* Ensure slides take full width */
     margin-bottom: 20px; /* Optional: add margin between slides */
   }
+
+  /* Card View for Mobile */
+  .integrity-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .integrity-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Enable positioning for description overlap */
+    margin-bottom: 60px;
+    width: 90%; /* Adjust the width as needed */
+    height: auto;
+    /* Ensure no overflow from the image */
+  }
+
+  .card-image {
+    width: auto; /* Set width to auto */
+    height: 350px; /* Set a fixed height to make it portrait */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border-radius: 20px;
+
+    margin-bottom: -25px;
+  }
+
+  .card-description {
+    position: absolute; /* Position description over the image */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #515151ef;
+    color: #ffffff;
+    padding: 15px 20px; /* Adjust padding to control overlap */
+    border-radius: 20px;
+    text-align: left;
+    opacity: 1; /* Optional: Adjust opacity if needed */
+    transform: translateY(28px); /* Overlap the bottom of the image */
+  }
+
+  .card-description h2 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .card-description p {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
 }
+
 
 /*Partner Section*/
 .partner-section {
@@ -1708,8 +1783,7 @@ hr{
     padding: 20px; /* Adjust padding for smaller screens */
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 0;
-    margin-right: 0;
+    
   }
 
   .partner-image {
