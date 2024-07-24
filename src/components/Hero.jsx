@@ -9,19 +9,23 @@ function Hero() {
   return (
     <div 
       style={{
-        padding: '4rem 1rem'
+        padding: '69px 1rem',
+        marginLeft: isMobile ? '1rem' : '60px',  // Adjust left margin
+        marginRight: isMobile ? '1rem' : '60px'  // Adjust right margin
       }} 
       className="bg-white"
     >
       <div 
         style={{
-          maxWidth: '90rem'
+          maxWidth: '90rem',
+          marginLeft: isMobile ? 'auto' : '0.5rem',  // Adjust left margin for this div
+          marginRight: isMobile ? 'auto' : '3rem'  // Adjust right margin for this div
         }}
         className="mx-auto"
       >
         <div className={`flex ${isMobile ? 'flex-col items-start' : 'items-start'}`}>
           <div className={`mr-4 flex-shrink-0 ${isMobile ? 'transform rotate-90 mb-1 ml-4' : ''}`}>
-            <img src={divider} alt="divider" />
+            <img src={divider} alt="divider" style={{height:'33px', marginRight:'10px', paddingRight:'5px'}} />
           </div>
           <div className={`flex-grow ${isMobile ? 'pr-0' : 'pr-11'}`}>
             <h1 className={`mb-6 montserrat-medium ${isMobile ? 'text-xl' : 'text-3xl'}`}>
@@ -39,7 +43,7 @@ function Hero() {
           </div>
           {!isMobile && (
             <Link to="/designconsultingservice">
-              <button className="btn btn-md rounded-full whitespace-nowrap ml-4 bg-[#F2F2F2]">
+              <button className="btn btn-md rounded-full whitespace-nowrap ml-7 bg-[#F2F2F2]">
                 <h3 className="montserrat-medium px-3 text-lg">OUR SERVICES →</h3>
               </button>
             </Link>
