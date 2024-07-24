@@ -14,6 +14,9 @@ import hardwareTrading from '../assets/img/portfolio_card2.png';
 import luxuryLiving from '../assets/img/portfolio_card3.png';
 import healthcareCenter from '../assets/img/portfolio_card4.png';
 import transformingMobility from '../assets/img/portfolio_card5.png';
+import spicingProduction from "../assets/img/portfolio_card6.png";
+import preservingHeritage from "../assets/img/portfolio_card7.png";
+import evTata from "../assets/img/portfolio_card8.png";
 
 // Import your divider and separator images
 import textDivider from '../assets/img/portfolio_text_divider.png';
@@ -38,11 +41,14 @@ const theme = createTheme({
 });
 
 const cards = [
-  { id:'project1',image: kiaShowroom, description: "Kia showroom and Incheon Motors featuring EV charging station" },
+  { image: kiaShowroom, description: "Kia showroom and Incheon Motors featuring EV charging station" },
   { image: hardwareTrading, description: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart" },
   { image: luxuryLiving, description: "Luxury living redefined through reliable electrical innovations with RDS Legacy Apartments" },
   { image: healthcareCenter, description: "Empowering healthcare with cutting-edge electrical infrastructure for Kerala's First Nuclear Medicine Center" },
   { image: transformingMobility, description: " Transforming mobility with advanced electrical solutions for Travancore electric vehicle charging station" },
+  { image: spicingProduction, description: " Spicing up production with enhanced electrical infrastructure for Eastern Condiments" },
+  { image: preservingHeritage, description: "Preserving heritage with electrifying solutions at Chungath Group's luxury resort, Napier Heritage" },
+  { image: evTata, description: " Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd" },
 ];
 
 const headlines = [

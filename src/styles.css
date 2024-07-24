@@ -1309,6 +1309,7 @@ hr{
 
 
   .cardgg {
+    margin-left: 0px;
     flex-direction: column;
     margin-top: 350px;
     position : relative;
