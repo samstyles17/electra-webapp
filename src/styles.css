@@ -241,6 +241,8 @@ hr{
   background-color: #fff;
   color: #333;
   font-family: 'Montserrat', sans-serif;
+  margin-left: 80px;
+  margin-right: 40px;
 }
 
 .text-section {
@@ -290,7 +292,7 @@ hr{
 }
 
 .vision-box {
-  background: #ffffff;
+  background: #ededed61;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -1086,7 +1088,7 @@ hr{
 
 /* our route to success */
 .route-to-success {
-  margin-left: 40px;
+  margin-left: 120px;
   display: flex;
   align-items: center;
 }
@@ -1113,6 +1115,7 @@ hr{
   justify-content: flex-end;
   align-items: center;
   overflow: visible;
+  margin-left: 100px;
 }
 
 .semi-hover {

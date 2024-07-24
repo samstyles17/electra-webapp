@@ -5,6 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { styled } from '@mui/material/styles';
 
 // Import your images
 import backgroundImage from '../assets/img/portfolio_bg.png';
@@ -17,28 +18,27 @@ import transformingMobility from '../assets/img/portfolio_card5.png';
 // Import your divider and separator images
 import textDivider from '../assets/img/portfolio_text_divider.png';
 import textSeparator from '../assets/img/portfolio_text_separator.png';
-// import { color } from 'framer-motion';
-
 
 const theme = createTheme({
-    typography: {
-      fontFamily: [
-        'Montserrat',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
-    },
-  });
+  typography: {
+    fontFamily: [
+      'Montserrat',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+});
+
 const cards = [
-  { image: kiaShowroom, description: "Kia showroom and Incheon Motors featuring EV charging station" },
+  { id:'project1',image: kiaShowroom, description: "Kia showroom and Incheon Motors featuring EV charging station" },
   { image: hardwareTrading, description: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart" },
   { image: luxuryLiving, description: "Luxury living redefined through reliable electrical innovations with RDS Legacy Apartments" },
   { image: healthcareCenter, description: "Empowering healthcare with cutting-edge electrical infrastructure for Kerala's First Nuclear Medicine Center" },
@@ -51,46 +51,54 @@ const headlines = [
   "Seamless Project Execution","Innovative Solutions", "Customer-Centric Approach", "Comprehensive Compliance and Certification"
 ];
 
+const CircularIconButton = styled(IconButton)(({ theme }) => ({
+  backgroundColor: 'white',
+  color: 'black',
+  width: '40px',
+  height: '40px',
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  },
+  margin: '0 10px', // Add margin to create space between buttons
+}));
+
 const PortfolioSection = () => {
-    const [cardIndex, setCardIndex] = useState(2);
-    const isSmallScreen = useMediaQuery('(max-width:960px)');
-    const isMediumScreen = useMediaQuery('(max-width:1280px)');
-  
-    const visibleCards = isSmallScreen ? 1 : (isMediumScreen ? 2 : 3);
+  const [cardIndex, setCardIndex] = useState(2);
+  const isSmallScreen = useMediaQuery('(max-width:960px)');
+  const isMediumScreen = useMediaQuery('(max-width:1280px)');
 
-    const cardWidth = 330; // Increased card width
-    const cardHeight = 413;
-    const imageHeight = 315;
-    const textHeight = 98;
-    const cardSpacing = 20; // Increased spacing between cards
-    const partialCardWidth = 50; // Width of partially visible cards on each side
-    const borderRadius = '15px'; 
+  const visibleCards = isSmallScreen ? 1 : (isMediumScreen ? 2 : 3);
 
-    const handleCardNav = (direction) => {
-      if (direction === 'next') {
-        setCardIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - 1));
-      } else {
-        setCardIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-      }
-    };
-    
-    // const carouselWidth = cardWidth * visibleCards + cardSpacing * (visibleCards - 1) + partialCardWidth * 2;
-    
-    const [headlineIndex, setHeadlineIndex] = useState(0);
-  
-    useEffect(() => {
-      const headlineInterval = setInterval(() => {
-        setHeadlineIndex((prevIndex) => (prevIndex + 1) % headlines.length);
-      }, 5000);
-  
-      return () => clearInterval(headlineInterval);
-    }, []);
-  
-    
+  const cardWidth = 330;
+  const cardHeight = 413;
+  const imageHeight = 315;
+  const textHeight = 98;
+  const cardSpacing = 20;
+  const partialCardWidth = 50;
+  const borderRadius = '15px'; 
+
+  const handleCardNav = (direction) => {
+    if (direction === 'next') {
+      setCardIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - 1));
+    } else {
+      setCardIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+    }
+  };
+
+  const [headlineIndex, setHeadlineIndex] = useState(0);
+
+  useEffect(() => {
+    const headlineInterval = setInterval(() => {
+      setHeadlineIndex((prevIndex) => (prevIndex + 1) % headlines.length);
+    }, 5000);
+
+    return () => clearInterval(headlineInterval);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Box className="portfolio-container" sx={{ 
+      <CssBaseline />
+      <Box className="portfolio-container" sx={{ 
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         padding: '40px',
@@ -98,36 +106,35 @@ const PortfolioSection = () => {
         marginTop: '90px'
       }}>
         <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-        <img src={textDivider} alt="divider" style={{ marginRight: '10px' }} />
-        <Typography variant="h4" className="portfolio-heading">
-          A PORTFOLIO OF <span style={{color: 'orange'}}>EXCELLENCE IN ACTION!</span>
-        </Typography>
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Typography sx={{ flex: 1, marginRight: '20px' }}>
-          We deliver comprehensive electrical solutions that encompass innovative design, seamless installation, robust liaisoning, and proactive maintenance. Our projects highlight our technical excellence, reliability, and adherence to the highest industry standards, ensuring safety and sustainability. Trust us to empower your industry with tailored, cutting-edge electrical solutions that surpass expectations.
-        </Typography>
-        {!isSmallScreen && (
-          <Box sx={{marginLeft: '120px'}}>
-          <IconButton onClick={() => handleCardNav('prev')} sx={{ color: 'white' }}>
-            <ArrowBackIosNewIcon />
-          </IconButton>
-          <IconButton onClick={() => handleCardNav('next')} sx={{ color: 'white' }}>
-            <ArrowForwardIosIcon />
-          </IconButton>
+          <img src={textDivider} alt="divider" style={{ marginRight: '10px' }} />
+          <Typography variant="h4" className="portfolio-heading">
+            A PORTFOLIO OF <span style={{color: 'orange'}}>EXCELLENCE IN ACTION!</span>
+          </Typography>
         </Box>
-        )}
-      </Box>
-  
-      <Box className="portfolio-card-carousel" sx={{ 
-        position: 'relative',
-        width: '99vw',
-        margin: '65px 0',
-        overflow: 'hidden',
-        left: '50%',
-        transform: 'translateX(-50%)',
-      }}>
-          
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Typography sx={{ flex: 1, marginRight: '20px' }}>
+            We deliver comprehensive electrical solutions that encompass innovative design, seamless installation, robust liaisoning, and proactive maintenance. Our projects highlight our technical excellence, reliability, and adherence to the highest industry standards, ensuring safety and sustainability. Trust us to empower your industry with tailored, cutting-edge electrical solutions that surpass expectations.
+          </Typography>
+          {!isSmallScreen && (
+            <Box sx={{marginLeft: '120px', display: 'flex'}}> {/* Added display: 'flex' */}
+              <CircularIconButton onClick={() => handleCardNav('prev')}>
+                <ArrowBackIosNewIcon />
+              </CircularIconButton>
+              <CircularIconButton onClick={() => handleCardNav('next')}>
+                <ArrowForwardIosIcon />
+              </CircularIconButton>
+            </Box>
+          )}
+        </Box>
+
+        <Box className="portfolio-card-carousel" sx={{ 
+          position: 'relative',
+          width: '99vw',
+          margin: '65px 0',
+          overflow: 'hidden',
+          left: '50%',
+          transform: 'translateX(-50%)',
+        }}>
           <Box sx={{
             display: 'flex',
             transition: 'transform 0.5s ease-in-out',
@@ -148,43 +155,40 @@ const PortfolioSection = () => {
                   display: 'grid',
                   gridTemplateRows: `${imageHeight}px ${textHeight}px`,
                 }}>
-    
-                <img 
-                  src={card.image} 
-                  alt={card.description}
-                  style={{
-                    width: '100%',
-                    height: `${imageHeight}px`,
-                    objectFit: 'cover',
-                  }}
-                />
-                <Box sx={{ 
-                  padding: '16px', 
-                  height: `${textHeight}px`, 
-                  overflow: 'hidden',
-                  backgroundColor: 'white',
-                  color: 'black',
-                }}>
-                  <Typography variant="body2">{card.description}</Typography>
+                  <img 
+                    src={card.image} 
+                    alt={card.description}
+                    style={{
+                      width: '100%',
+                      height: `${imageHeight}px`,
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <Box sx={{ 
+                    padding: '16px', 
+                    height: `${textHeight}px`, 
+                    overflow: 'hidden',
+                    backgroundColor: 'white',
+                    color: 'black',
+                  }}>
+                    <Typography variant="body2">{card.description}</Typography>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          ))}
-        </Box>
+            ))}
+          </Box>
+        </Box> 
 
-
-      </Box> 
-
-      {isSmallScreen && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        <IconButton onClick={() => handleCardNav('prev')} sx={{ color: 'white' }}>
-          <ArrowBackIosNewIcon />
-        </IconButton>
-        <IconButton onClick={() => handleCardNav('next')} sx={{ color: 'white' }}>
-          <ArrowForwardIosIcon />
-        </IconButton>
-      </Box>
-      )}   
+        {isSmallScreen && (
+          <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            <CircularIconButton onClick={() => handleCardNav('prev')}>
+              <ArrowBackIosNewIcon />
+            </CircularIconButton>
+            <CircularIconButton onClick={() => handleCardNav('next')}>
+              <ArrowForwardIosIcon />
+            </CircularIconButton>
+          </Box>
+        )}   
    
         <Box className="portfolio-headline-carousel" sx={{ 
           position: 'relative', 
@@ -208,7 +212,7 @@ const PortfolioSection = () => {
           <Box sx={{ 
             display: 'flex', 
             alignItems: 'center',
-            height: '100%',  // This ensures the box takes full height of its parent
+            height: '100%',
             animation: 'moveLeft 30s linear infinite',
             whiteSpace: 'nowrap'
           }}>
