@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import '../styles.css';
@@ -26,7 +26,8 @@ const slides = [
 
 const IntegrityCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const [updateEvent, setUpdateEvent] = useState(false);
+  const carouselRef = useRef(null);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -42,18 +43,19 @@ const IntegrityCarousel = () => {
     }
   };
 
-  const handleBeforeChange = (nextSlide) => {
-    setActiveIndex(nextSlide);
+  const handleAfterChange = (currentSlide) => {
+    if(!updateEvent) setActiveIndex((prev) => prev + 1 === slides.length ? 0 : prev + 1);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex(prevIndex => (prevIndex + 1) % slides.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   const isMobile = window.innerWidth <= 600;
+
+  const handleEventUpdation = (index) => {
+    setActiveIndex(index);
+    setUpdateEvent(true);
+    if (carouselRef.current) {
+      carouselRef.current.goToSlide((index + 2) % slides.length);
+    }
+  };
 
   return (
     <section className="integrity-carousel-section">
@@ -76,7 +78,7 @@ const IntegrityCarousel = () => {
               <div
                 key={index}
                 className={`integrity-item ${activeIndex === index ? 'active' : ''}`}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleEventUpdation(index)}
               >
                 {slide.title}
                 <hr />
@@ -85,15 +87,16 @@ const IntegrityCarousel = () => {
           </div>
           <Carousel
             responsive={responsive}
-            autoPlay
+            autoPlay={!updateEvent}
             autoPlaySpeed={3000}
             infinite
             arrows={false}
             containerClass="integrity-carousel"
-            beforeChange={handleBeforeChange}
+            afterChange={handleAfterChange}
             customTransition="transform 500ms ease-in-out"
             
             keyBoardControl
+            ref={carouselRef}
           >
             {slides.map((slide, index) => (
               <div key={index} className="carousel-slide">

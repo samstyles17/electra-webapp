@@ -16,9 +16,9 @@ const cards = [
   { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' },
   { id: 2, title: 'Installation And Commissioning', image: installationImage, description: 'More About' },
   { id: 3, title: 'Panel Board And Control Systems', image: panelImage, description: 'More About' },
-  { id: 4, title: 'Audit And Compliance', image: auditImage, description: 'More About' },
-  { id: 5, title: 'Testing And Inspection', image: testingImage, description: 'More About' },
-  { id: 6, title: 'Maintenance And Support', image: maintenanceImage, description: 'More About' },
+  { id: 4, title: 'Statuory Approval and Compliance', image: auditImage, description: 'More About' },
+  { id: 5, title: 'Maintenance and Repair', image: testingImage, description: 'More About' },
+  { id: 6, title: 'Value-Added Services', image: maintenanceImage, description: 'More About' },
 ];
 
 const theme = createTheme({
@@ -39,22 +39,23 @@ const theme = createTheme({
   },
 });
 
-const CarouselCard = ({ card, isFullyVisible }) => {
+const CarouselCard = ({ card, isFullyVisible, isOverlappingButton }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Card 
       sx={{ 
-        width: 327, // Updated width
-        height: 369, // Updated height
+        width: 327,
+        height: 369,
         position: 'relative',
         overflow: 'hidden',
-        opacity: isFullyVisible ? 1 : 0.5,
+        opacity: isFullyVisible ? (isOverlappingButton ? 0.5 : 1) : 0.5,
         transition: 'all 0.3s',
         borderRadius: '16px',
-        '&:hover': isFullyVisible ? {
+        pointerEvents: isFullyVisible && !isOverlappingButton ? 'auto' : 'none',
+        '&:hover': (isFullyVisible && !isOverlappingButton) ? {
           '& .MuiCardMedia-root': {
-            transform: 'scale(1.05)', // slight scale to maintain fit
+            transform: 'scale(1.05)',
           },
           '& .MuiCardContent-root': {
             height: '50%',
@@ -82,7 +83,7 @@ const CarouselCard = ({ card, isFullyVisible }) => {
           bottom: 0,
           left: 0,
           right: 0,
-          height: isHovered && isFullyVisible ? '50%' : '80px',
+          height: isHovered && isFullyVisible && !isOverlappingButton ? '50%' : '80px',
           background: 'rgba(0,0,0,0.5)',
           color: 'white',
           transition: 'all 0.3s',
@@ -110,7 +111,7 @@ const CarouselCard = ({ card, isFullyVisible }) => {
           </Box>
           <Typography variant="string" sx={{ flexGrow: 1 }}>{card.title}</Typography>
         </Box>
-        {isHovered && isFullyVisible && (
+        {isHovered && isFullyVisible && !isOverlappingButton && (
           <>
             <Divider sx={{ bgcolor: 'white', width: '70%', ml: 6.5 }} />
             <Box sx={{ display: 'flex', alignItems: 'center', ml: 6.5, mb: 6, paddingTop: 2 }}>
@@ -126,10 +127,10 @@ const CarouselCard = ({ card, isFullyVisible }) => {
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardWidth = 327; // Updated width of each card
-  const cardSpacing = 20; // Spacing between cards
+  const cardWidth = 327;
+  const cardSpacing = 40;
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const visibleCards = isMobile ? 1 : 4.1; // Number of fully visible cards based on screen size
+  const visibleCards = isMobile ? 1 : 4;
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
@@ -150,7 +151,7 @@ const Carousel = () => {
           position: 'relative', 
           width: '100%', 
           maxWidth: isMobile ? '100%' : `${visibleCards * (cardWidth + cardSpacing) - cardSpacing}px`, 
-          margin: isMobile ? 1 : '0 0 0 2.5rem',
+          margin: isMobile ? 1 : '0 0 0 95px',
           overflow: 'hidden'
         }}
       >
@@ -167,6 +168,10 @@ const Carousel = () => {
               <CarouselCard 
                 card={card} 
                 isFullyVisible={index >= currentIndex && index < currentIndex + visibleCards}
+                isOverlappingButton={
+                  (showLeftArrow && showRightArrow && index === currentIndex) ||
+                  (!showLeftArrow && showRightArrow && index === currentIndex + visibleCards - 1)
+                }
               />
             </Box>
           ))}

@@ -1,0 +1,137 @@
+.services {
+    display: flex;
+    gap: 5rem;
+    margin: 100px 40px;
+    padding: 0 40px;
+}
+.services-images {
+    display: flex;
+    gap: 20px;
+    height: 254px;
+}
+.services-row-revese {
+    flex-direction: row-reverse;
+}
+
+.service-image {
+    border-radius: 12px;
+}
+.services-images > img:first-of-type {
+    width: 293px;
+}
+.services-images > img:last-of-type {
+    width: 382px;
+}
+.services-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10.5px;
+    width: 490px;
+}
+
+.services-header {
+    display: grid;
+    grid-template-columns: auto  auto auto;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.services-header > h2 {
+    font-size: 18px;
+    word-spacing: 0.2em;
+    font-weight: 500;
+}
+
+.services-header >p {
+font-size: 40px;
+letter-spacing: 0.1em;
+color: #c8c8c8;
+width: 44px;
+}
+
+.services-description {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    margin-bottom: 25px;
+}
+.services-info > button {
+    width: 120px;
+    height: 30px;
+    background: #EDEDED;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+
+}
+.services-list-head {
+    font-weight: 500;
+}
+.services-list {
+    list-style-type: disc;
+    margin-left: 24px;
+}
+
+.services-list > li {
+    padding-inline-start: 10px;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    margin: 16px 0;
+}
+
+.services-svg-mb {
+    display: none;
+}
+
+@media (max-width: 475px) {
+    .services {
+     flex-direction: column;
+     margin-right: 10px;
+     margin-left: 10px;
+     padding: 0;
+    }
+    .services-images {
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+    }
+    .services-info {
+        width: auto;
+    }
+    .services-header {
+        width: 100%;
+    }
+    .services-header > h2 {
+        font-size: 14px;
+    }
+    .services-header > p {
+        font-size: 20px;
+        color: #333;
+        font-weight: 500;
+    }
+    .service-image {
+       width: 310px;
+       height: 196px;
+       display: none;
+    } 
+    .service-image:first-of-type {
+        display: block;
+    }
+    .services-images > img:first-of-type {
+        width: 310px;
+    }
+    .services-svg-lg {
+        display: none;
+    }
+    
+    .services-svg-mb {
+        display: block;
+    }
+}
+
+@media (max-width:320px) {
+
+     .services-header > h2 {
+      font-size: 10px;
+     }
+}
