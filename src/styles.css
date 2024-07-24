@@ -241,6 +241,8 @@ hr{
   background-color: #fff;
   color: #333;
   font-family: 'Montserrat', sans-serif;
+  margin-left: 80px;
+  margin-right: 40px;
 }
 
 .text-section {
@@ -290,7 +292,7 @@ hr{
 }
 
 .vision-box {
-  background: #ffffff;
+  background: #ededed61;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -537,6 +539,41 @@ hr{
   background-color: #007bff;
 }
 
+.mission-bullet-point {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px; /* Add space for the radio button */
+}
+
+.mission-bullet-point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #434343; /* Border to look like radio button */
+  background-color: #ffffff; /* Match background color */
+  opacity: 50%;
+}
+
+.mission-bullet-point::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-45%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #5b5b5b; /* Filled dot inside */
+  opacity: 50%;
+}
+
 /* Web version changes */
 @media (min-width: 601px) {
   .section-component-container {
@@ -760,6 +797,7 @@ hr{
   color: #333;
   font-family: 'Montserrat', sans-serif;
   margin-top: -35px;
+  
 }
 
 .mission-box {
@@ -871,10 +909,11 @@ hr{
   background-color: #1c1c1c;
   padding: 50px 10px;
   margin-top: -150px;
+  
 }
 
 .why-choose-container {
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 
@@ -885,7 +924,7 @@ hr{
 .why-choose-heading {
   font-size: 2.7rem;
   color: #fff;
-  margin-right: 350px;
+  margin-right: 650px;
 }
 
 .why-choose-heading .highlight-blue {
@@ -931,7 +970,7 @@ hr{
   padding: 40px;
   border-radius: 10px;
   flex: 1;
-  min-width: 300px;
+  min-width: 400px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
@@ -1018,6 +1057,10 @@ hr{
     font-size: 1.2rem;
   }
 
+  .feature-box{
+    min-width: 300px;
+  }
+
   .lowp{
     font-size: 1rem;
   }
@@ -1086,7 +1129,7 @@ hr{
 
 /* our route to success */
 .route-to-success {
-  margin-left: 40px;
+  margin-left: 120px;
   display: flex;
   align-items: center;
 }
@@ -1113,6 +1156,7 @@ hr{
   justify-content: flex-end;
   align-items: center;
   overflow: visible;
+  margin-left: 100px;
 }
 
 .semi-hover {
@@ -1270,7 +1314,7 @@ hr{
   visibility: hidden;
   border-top-left-radius: 15rem;
   border-bottom-left-radius: 15rem;
-  background-color: #337ab7; /* Dark blue background */
+  background-color: #1467A0; /* Dark blue background */
   z-index: 4;
 }
 
@@ -1311,6 +1355,16 @@ hr{
     position : relative;
   }
 
+  .image-container {
+    background-color: rgba(245, 245, 245, 1);
+    font-family: Montserrat;
+    text-align: center;
+    font-weight: 400;
+    size: 13px;
+    padding: 40px 20px;
+    color: rgba(34, 36, 47, 1);
+  }
+
   .semi-hover {
     position : relative;
     margin-left:0;
@@ -1318,8 +1372,8 @@ hr{
     border-radius: 55px;
     border: 1px solid #c9c9c9 !important;
     width: 90% !important;
-    margin-top: -300px;
-    height: 400px;
+    margin-top: -250px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1328,7 +1382,12 @@ hr{
   .content {
     justify-content: center;
     margin-left: 0 !important;
-    height: 100px;
+    height: 110px;
+  }
+
+  .hover-image {
+    width: 100%;
+    height: 100%;
   }
 
   .semi-hover:hover .content {
@@ -1336,7 +1395,7 @@ hr{
   }
   .semi-hover .image-container, .semi-hover:hover .image-container {
     width: 100% !important;
-    height: 300px;
+    height: 250px;
     position: relative;
     border-radius: 55px;
   }
@@ -1353,7 +1412,7 @@ hr{
     left: 50%;
   }
   .semi-hover:hover {
-    margin-bottom: 150px;
+    margin-bottom: 170px;
   }
 
 
@@ -1362,7 +1421,7 @@ hr{
   }
   
   .semi-hover:not(:hover) {
-    margin-top: -300px;
+    margin-top: -250px;
   }
 }
 /* Mobile responsiveness */
@@ -1405,7 +1464,7 @@ hr{
 }
 
 .our-people-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -1454,6 +1513,7 @@ hr{
 
 .route-content {
   text-align: left;
+  margin-left: -25px;
 }
 
 .route-title {
@@ -1507,6 +1567,10 @@ hr{
   .route-title {
     font-size: 2rem;
   }
+
+  .route-content{
+    margin-left: 0;
+  }
 }
 
 
@@ -1517,7 +1581,7 @@ hr{
   align-items: center;
   padding: 50px 20px;
   background-color: #ffffff;
-  margin-left: 150px;
+  margin-left: 75px;
 }
 
 .integrity-carousel-container {
@@ -1591,7 +1655,7 @@ hr{
 }
 
 .carousel-image {
-  width: 100%;
+  width: 95%;
   height: auto;
   border-radius: 10px;
 }
@@ -1745,10 +1809,11 @@ hr{
   align-items: center;
   padding: 20px;
   margin-bottom: 50px;
+
 }
 
 .partner-image {
-  max-width: 100%;
+  width: 85%;
   height: auto;
   border-radius: 10px;
 }

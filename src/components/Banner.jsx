@@ -30,9 +30,9 @@ function Banner() {
         responsive={responsive}
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={3000}
+        autoPlaySpeed={7000}
         customTransition="transform 1000ms ease-in-out"
-        transitionDuration={1000}
+        transitionDuration={2000}
         containerClass="banner-carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
