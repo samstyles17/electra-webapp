@@ -92,7 +92,7 @@ const IntegrityCarousel = () => {
             containerClass="integrity-carousel"
             beforeChange={handleBeforeChange}
             customTransition="transform 500ms ease-in-out"
-            transitionDuration={500}
+            
             keyBoardControl
           >
             {slides.map((slide, index) => (
