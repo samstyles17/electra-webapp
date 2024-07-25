@@ -45,7 +45,7 @@
 .circle-2 {
     margin-left: -20px;
 }
-.project-header-span > span:nth-child(4), span:nth-child(3) {
+.project-header-span > .span-3, .span-4 {
     font-size: 11px;
 }
 .project-header-span {

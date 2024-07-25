@@ -13,8 +13,8 @@ const ProjectHeader = () => {
                     <div className="project-header-span flex  items-center gap-x-2">
                         <span className='circle circle-1'>&nbsp;</span>
                         <span className='circle circle-2'>&nbsp;</span>
-                        <span>300+</span>
-                        <span>Projects delivered</span>
+                        <span className='span-3'>300+</span>
+                        <span className='span-4'>Projects delivered</span>
                         <span>120+ satisfied client</span>
                    </div>
                 </div>

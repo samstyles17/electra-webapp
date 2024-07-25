@@ -17,11 +17,16 @@ const ProjectImage = ({ images }) => {
             )}
         </div>
         <div className="project-images-slider">
-        <Slider {...settings}>
-        {images.map((e, i) =>
-                <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" />
-            )}
-        </Slider>
+          {
+            images.length > 1 ?    <Slider {...settings}>
+            {images.map((e, i) =>
+                    <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" />
+                )}
+            </Slider> :  images.map((e, i) =>
+                    <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" />
+                )
+          }  
+     
         </div>
         </>
 

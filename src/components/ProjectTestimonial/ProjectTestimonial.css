@@ -78,6 +78,19 @@ background-size: contain;
         }
         .project-testimonial-logo > img:last-child {
             display: block;
-        
         }
+}
+
+@media (max-width: 410px) {
+    .project-testimonial-logo > img:last-child {
+        margin-left: -60px;
+    }
+}
+@media (max-width: 350px) {
+    .project-testimonial-logo > img:last-child {
+        display: none;
+    }
+    .project-testimonial-logo > img:nth-child(2) {
+        display: block;
+    }
 }

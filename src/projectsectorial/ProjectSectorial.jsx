@@ -82,7 +82,7 @@ const data = [
         testimonial_info: "Electra Power Engineering proved to be a reliable and efficient partner throughout the entire project. Their expertise in electrical engineering, coupled with their commitment to quality and timely delivery, exceeded our expectations. We are highly satisfied with the results and confident that our upgraded electrical infrastructure will support our growth for years to come."
     },
     {
-        title: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart",
+        title: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart",
         images: [
             { url: hhys1 },
             { url: hhys2 },
