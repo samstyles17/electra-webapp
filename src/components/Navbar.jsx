@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import logo from "../assets/img/logo.png";
 import divider from "../assets/img/divider1.png";
 import mobileDivider from "../assets/img/navbar_vector.svg"; // Add this line
@@ -99,12 +100,12 @@ function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/enquire" className={`montserrat-medium ${isActive('/contact')}`} onClick={toggleMenu}>
+                          <Link to="/enquire#contactInfo" className={`montserrat-medium ${isActive('/contact')}`} onClick={toggleMenu}>
                             Contact
                           </Link>
                         </li>
                         <li>
-                          <Link to="/enquire" className={`montserrat-medium ${isActive('/enquire')}`} onClick={toggleMenu}>
+                          <Link to="/enquire#workTogetherForm" className={`montserrat-medium ${isActive('/enquire')}`} onClick={toggleMenu}>
                             Enquire
                           </Link>
                         </li>
@@ -164,14 +165,14 @@ function Navbar() {
                 </ul>
               </div>
               <div className="mx-3">
-                <Link to="/enquire">
+                <Link to="/enquire#contactInfo">
                   <button className={`btn btn-md px-8 bg-transparent rounded-full border-1 border-black ${isActive('/contact')}`}>
                     <h3 className="montserrat-regular text-black">Contact</h3>
                   </button>
                 </Link>
               </div>
               <div className="">
-                <Link to="/enquire">
+                <Link to="/enquire#workTogetherForm">
                   <button className={`btn btn-md px-8 bg-orange rounded-full ${isActive('/enquire')}`}>
                     <h3 className="montserrat-regular text-white">Enquire</h3>
                   </button>

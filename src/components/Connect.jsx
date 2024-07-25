@@ -1,5 +1,6 @@
 // LandingPage.js
 import React from 'react';
+import { Link, useLocation } from "react-router-dom";
 import { Grid, Box, Button, Typography, TextField } from '@mui/material';
 import { useTheme } from '@mui/system';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -102,6 +103,7 @@ const LandingPage = () => {
               )} */}
 
               
+              <Link to="/enquire#contactInfo">
               {!isMobile && (
                 <Button
                 variant="contained"
@@ -123,29 +125,10 @@ const LandingPage = () => {
                 <img src={arrowIcon} alt="Arrow" style={{ marginLeft: '8px' }} />
               </Button>
               )}
+              </Link>
 
-              {isMobile && (
-                <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: '#FF7F45',
-                  borderRadius: '50px',
-                  padding: '12px 32px',
-                  mt: 2,
-                  textTransform: 'none',
-                  color: '#fff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  '&:hover': {
-                    backgroundColor: '#FF7F45',
-                  marginBottom: '50px'
-                  },
-                }}
-              >
-                CONTACT US
-                <img src={arrowIcon} alt="Arrow" style={{ marginLeft: '8px' }} />
-              </Button>
-              )}
+              <Link to="/enquire#contactInfo">
+              </Link>
             </Box>
           </Grid>
           {!isMobile && (

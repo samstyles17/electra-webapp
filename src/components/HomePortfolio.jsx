@@ -48,8 +48,8 @@ const cards = [
   { image: healthcareCenter, description: "Empowering healthcare with cutting-edge electrical infrastructure for Kerala's First Nuclear Medicine Center" },
   { image: transformingMobility, description: " Transforming mobility with advanced electrical solutions for Travancore electric vehicle charging station" },
   { image: spicingProduction, description: " Spicing up production with enhanced electrical infrastructure for Eastern Condiments" },
-  { image: preservingHeritage, description: "Preserving heritage with electrifying solutions at Chungath Group's luxury resort, Napier Heritage" },
-  { image: evTata, description: " Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd" },
+  { image: preservingHeritage, description: "Preserving heritage with electrifying solutions at Chungath Group's luxury resort, Napier Heritage" },
+  { image: evTata, description: " Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd" },
 ];
 
 const headlines = [
@@ -73,6 +73,8 @@ const PortfolioSection = () => {
   const [cardIndex, setCardIndex] = useState(2);
   const isSmallScreen = useMediaQuery('(max-width:960px)');
   const isMediumScreen = useMediaQuery('(max-width:1280px)');
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const visibleCards = isSmallScreen ? 1 : (isMediumScreen ? 2 : 3);
 
@@ -92,6 +94,27 @@ const PortfolioSection = () => {
     }
   };
 
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    if (isLeftSwipe) {
+      handleCardNav('next');
+    } else if (isRightSwipe) {
+      handleCardNav('prev');
+    }
+  };
+
   const [headlineIndex, setHeadlineIndex] = useState(0);
 
   useEffect(() => {
@@ -100,6 +123,21 @@ const PortfolioSection = () => {
     }, 5000);
 
     return () => clearInterval(headlineInterval);
+  }, []);
+
+  useEffect(() => {
+    const carousel = document.querySelector('.portfolio-card-carousel');
+    if (carousel) {
+      carousel.addEventListener('touchstart', handleTouchStart);
+      carousel.addEventListener('touchmove', handleTouchMove);
+      carousel.addEventListener('touchend', handleTouchEnd);
+
+      return () => {
+        carousel.removeEventListener('touchstart', handleTouchStart);
+        carousel.removeEventListener('touchmove', handleTouchMove);
+        carousel.removeEventListener('touchend', handleTouchEnd);
+      };
+    }
   }, []);
 
   return (
@@ -141,7 +179,11 @@ const PortfolioSection = () => {
           overflow: 'hidden',
           left: '50%',
           transform: 'translateX(-50%)',
-        }}>
+        }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        >
           <Box sx={{
             display: 'flex',
             transition: 'transform 0.5s ease-in-out',
