@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { styled } from '@mui/system';
 import Slider from 'react-slick';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { HashLink } from 'react-router-hash-link';
 
 // Importing icons
 import DesignIcon from '../assets/img/service_icon1.svg';
@@ -94,11 +95,13 @@ const ResponsiveButtonGroup = () => {
       {isMobile ? (
         <Slider ref={sliderRef} {...settings}>
           {buttons.map((button, index) => (
+              <HashLink smooth to={`${button.link}#services`}>
             <Box key={index} sx={{ padding: '0 8px' }}>
+        
               <CustomButton
+              key={index}
                 startIcon={<img src={button.icon} alt={button.text} />}
-                component={Link}
-                to={button.link}
+               
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
@@ -118,15 +121,17 @@ const ResponsiveButtonGroup = () => {
                 {button.text}
               </CustomButton>
             </Box>
+            </HashLink>
           ))}
         </Slider>
       ) : (
+        
         buttons.map((button, index) => (
+          <HashLink smooth to={`${button.link}#services`}>
           <CustomButton
             key={index}
             startIcon={<img src={button.icon} alt={button.text} />}
-            component={Link}
-            to={button.link}
+        
             sx={{
               width: { xs: '250px', md: '256px' },
               height: { xs: '45px', md: '48px' },
@@ -137,6 +142,7 @@ const ResponsiveButtonGroup = () => {
           >
             {button.text}
           </CustomButton>
+          </HashLink>
         ))
       )}
     </Box>

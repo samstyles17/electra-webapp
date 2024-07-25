@@ -70,9 +70,11 @@ function PanelBoardControlSystemService () {
         <Navbar/>
         <div className='service-all-width'>
             <ServicePageText/>
+            <section id='services'>
             <ServicePageButton />
             <Services data={sections} panel={true} />
             <ServicePageBottomButton />
+            </section>
             <ServiceFooterCarousel/>
             <Footer/>
         </div>

@@ -57,8 +57,10 @@ function InstallationCommisioningService () {
           <Navbar/>
           <div className='service-all-width'>
             <ServicePageText/>
+            <section id='services'>
             <ServicePageButton />
             <Services data={sections}/>
+            </section>
             <ServicePageBottomButton />
             <ServiceFooterCarousel/>
             <Footer/>

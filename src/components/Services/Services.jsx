@@ -17,10 +17,9 @@ const Services = ({ data , panel}) => {
                         {e.images.map((e, i) => {
                             return (<img src={e} alt="" className='service-image' />)
                         })}
-
                     </div>
                     <div className='services-info'>
-                        <div className="services-header">
+                        <div className="services-header" style={{ gap: e.heading.length > 30 && '30px'}}  >
                             <h2 className={'montserrat-regular '} style={{ fontSize: e.heading.length > 30 && '16px', wordSpacing: e.heading.length > 30 && '-0.01em' }}>{e.heading}</h2>
                             <span>
                                 <svg className='services-svg-lg' width="114" height="6" viewBox="0 0 114 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,13 +30,12 @@ const Services = ({ data , panel}) => {
                                 </svg>
 
                             </span>
-                            <p>0{i + 1}</p>
+                            <p  >0{i + 1}</p>
                         </div>
                         <p className='services-description'>
                             {e.description}
                         </p>
                         {
-
                             e.bullets &&
                             <div style={{ display: toggle ? 'block' : 'none' }}>
                                 <h4 className='services-list-head'>We are specialise in:</h4>
@@ -61,7 +59,6 @@ const Services = ({ data , panel}) => {
                         </ul>
                     </div>
         }
-
                 </div>
             </>
             );

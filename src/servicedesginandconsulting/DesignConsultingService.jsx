@@ -65,8 +65,10 @@ function DesignConsultingService () {
         <>
             <Navbar/>
             <ServicePageText/>
+            <section id='services'>
             <ServicePageButton />
             <Services data={sections} />
+            </section>
             <ServicePageBottomButton />
             <ServiceFooterCarousel/>
             <Footer/>
