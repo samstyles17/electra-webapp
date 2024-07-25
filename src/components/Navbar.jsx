@@ -74,6 +74,11 @@ function Navbar() {
                         className="menu menu-sm dropdown-content text-base bg-base-100 rounded-box z-[1] mt-3 w-52 p-4 shadow right-0"
                       >
                         <li>
+                          <Link to="/" className={`montserrat-medium ${isActive('/')}`} onClick={toggleMenu}>
+                            Home
+                          </Link>
+                        </li>
+                        <li>
                           <Link to="/aboutus" className={`montserrat-medium ${isActive('/aboutus')}`} onClick={toggleMenu}>
                             About
                           </Link>

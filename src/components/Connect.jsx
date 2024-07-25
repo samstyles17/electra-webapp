@@ -85,7 +85,7 @@ const LandingPage = () => {
               <Typography variant="body1" className="montserrat-regular" sx={{ fontSize: '15px', mt: 2 }}>
                 Connect with us to transform your ideas into reality and give <br /> your projects the vibrant power they deserve
               </Typography>
-              {isMobile && (
+              {/* {isMobile && (
                 <TextField variant='outlined' placeholder="Enter your email"
                 sx={{
                   width: '90%',
@@ -99,7 +99,7 @@ const LandingPage = () => {
                   background: "#f2f2f2"
                 }} >
                 </TextField>
-              )}
+              )} */}
 
               
               {!isMobile && (
@@ -142,7 +142,7 @@ const LandingPage = () => {
                   },
                 }}
               >
-                SUBMIT
+                CONTACT US
                 <img src={arrowIcon} alt="Arrow" style={{ marginLeft: '8px' }} />
               </Button>
               )}
