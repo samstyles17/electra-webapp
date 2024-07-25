@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled } from '@mui/material/styles';
+import { HashLink } from 'react-router-hash-link';
 
 // Import your images
 import backgroundImage from '../assets/img/portfolio_bg.png';
@@ -147,7 +148,8 @@ const PortfolioSection = () => {
             transform: `translateX(calc(${-cardIndex * (cardWidth + cardSpacing)}px + ${(window.innerWidth - cardWidth) / 2}px))`,
           }}>
             {cards.map((card, index) => (
-              <Box key={index} sx={{
+              <HashLink smooth to={`/projectsectorial#${index}`} >
+              <Box  key={index} sx={{
                 width: cardWidth,
                 height: cardHeight,
                 flexShrink: 0,
@@ -181,6 +183,7 @@ const PortfolioSection = () => {
                   </Box>
                 </Box>
               </Box>
+              </HashLink>
             ))}
           </Box>
         </Box> 
