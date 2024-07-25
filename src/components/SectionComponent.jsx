@@ -97,15 +97,22 @@ function SectionComponent() {
                   <Box component="span" sx={{ backgroundColor: '#007bff', width: '10px', height: '10px', borderRadius: '15px', display: 'inline-block', marginRight: '10px' }} />
                   OUR MISSION
                 </Typography>
-                <Typography variant="body2" sx={{ fontSize: '0.9rem', lineHeight: 2.5, color: '#3a3a3a' }}>
-                  <ul >
+                <Box variant="body2" sx={{ 
+                  fontSize: '1rem', 
+                  lineHeight: 2.2, 
+                  color: '#333',
+                  margin: 0,
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 400,
+                }}>
+                  <ul>
                     <li className='mission-bullet-point'>Delivering exceptional high-tension electrical contracting services.</li>
                     <li className='mission-bullet-point'>Ensuring safety and sustainability with clear communication in all projects.</li>
                     <li className='mission-bullet-point'>Exceeding customer expectations through continuous improvement.</li>
                     <li className='mission-bullet-point'>Powering progress and enhancing community life with reliable electrical solutions.</li>
                     <li className='mission-bullet-point'>Pioneering cutting-edge technologies and methodologies.</li>
                   </ul>
-                </Typography>
+                </Box>
               </Box>
             </Box>
           </Grid>

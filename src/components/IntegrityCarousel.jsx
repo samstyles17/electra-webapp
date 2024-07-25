@@ -78,7 +78,7 @@ const IntegrityCarousel = () => {
               <div
                 key={index}
                 className={`integrity-item ${activeIndex === index ? 'active' : ''}`}
-                onClick={() => handleEventUpdation(index)}
+                onClick={() => { handleEventUpdation(index)}}
               >
                 {slide.title}
                 <hr />
@@ -103,7 +103,7 @@ const IntegrityCarousel = () => {
                 <img src={slide.image} alt={slide.title} className="carousel-image" />
                 <div className="carousel-description">
                   <h2>{slide.title}</h2>
-                  <p>{slide.description}</p>
+                  <p style = {{ fontSize: '17px', lineHeight: '1.7rem' }}>{slide.description}</p>
                 </div>
               </div>
             ))}
