@@ -17,7 +17,6 @@ const ExploreServicesComponent = () => {
       <CssBaseline />
       <Box
         sx={{
-          display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center',
