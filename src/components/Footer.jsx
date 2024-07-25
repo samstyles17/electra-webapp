@@ -13,7 +13,7 @@ import SmallDivider from '../assets/img/footer_small_vertical_divider.png';
 import LargeDivider from '../assets/img/footer_large_vertical_divider.png';
 import HorizontalDivider from '../assets/img/footer_horizontal_divider.png';
 import MapIcon from '../assets/img/footer_button_logo.png';
-import electrapowerLogo from '../assets/img/footer_logo.png'; // Adjust path as needed
+import electrapowerLogo from '../assets/img/footer_logo.png';
 
 const StyledTypography = styled(Typography)({
   '&.MuiTypography-root': {
@@ -25,30 +25,43 @@ const StyledTypography = styled(Typography)({
 
 const OrangeTypography = styled(StyledTypography)(({ theme }) => ({
   color: '#FF6B2B',
-  fontSize: '0.875rem', // Reduced font size
+  fontSize: '0.875rem',
 }));
 
-const IconTextContainer = styled(Box)({
+const ContactInfoContainer = styled(Box)({
   display: 'flex',
+  alignItems: 'flex-start',
+  marginBottom: '16px',
+});
+
+const IconColumn = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
-  marginBottom: '8px', // Add margin between icon and text
-  
+  marginRight: '16px',
+  justifyContent: 'space-between',
+  height: '144px', // Adjust the height to match the total height of the text
+});
+
+const TextColumn = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between', // Ensure spacing between elements
+  height: '100px', // Adjust the height to match the total height of the text
 });
 
 const IconWrapper = styled(Box)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  marginRight: '8px', // Add space between icon and text
-  width: '24px', // Fixed width to ensure proper alignment
-  height: '24px', // Fixed height to ensure proper alignment
-  marginBottom: '8px',
+  width: '24px',
+  height: '24px',
 });
 
 const Footer = () => {
   return (
     <Box sx={{ backgroundColor: '#333', color: 'white', py: 4, width: '100%', boxSizing: 'border-box' }} className="montserrat-regular">
-      <Container maxWidth="lg" sx={{ px: { xs: 1, md: 0.5 } }}> {/* Adjust padding here */}
+      <Container maxWidth="lg" sx={{ px: { xs: 1, md: 0.5 } }}>
         <Grid container spacing={2} alignItems="flex-start">
           <Grid item xs={12} md={4} sx={{ width: '100%', boxSizing: 'border-box' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'center', md: 'flex-start' }, width: '100%', boxSizing: 'border-box' }}>
@@ -64,72 +77,80 @@ const Footer = () => {
           </Grid>
 
           <Grid item xs={12} md={1} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
-            <img src={LargeDivider} style={{ margin: '0 8px', height: '100%' }} />
+            <img src={LargeDivider} style={{ margin: '0 8px', height: '100%' }} alt="Divider" />
           </Grid>
 
           <Box sx={{ my: 4, display: { xs: 'inline', md: 'none' } }}>
-            <img src={HorizontalDivider} style={{ width: '100%' }} />
+            <img src={HorizontalDivider} style={{ width: '100%' }} alt="Horizontal Divider" />
           </Box>
 
           <Grid item xs={12} md={3}>
-            <IconTextContainer>
-              <IconWrapper>
-                <img src={PhoneIcon} alt="Phone Icon" />
-              </IconWrapper>
-              <OrangeTypography variant="subtitle1" className="montserrat-medium">
-                Phone number
-              </OrangeTypography>
-            </IconTextContainer>
-            <StyledTypography variant="body2">+91 940 098 9363</StyledTypography>
-            <StyledTypography variant="body2" gutterBottom>+91 920 738 9111</StyledTypography>
-            
-            <IconTextContainer>
-              <IconWrapper>
-                <img src={MailIcon} alt="Mail Icon" />
-              </IconWrapper>
-              <OrangeTypography variant="subtitle1" className="montserrat-medium">
-                For Enquiries
-              </OrangeTypography>
-            </IconTextContainer>
-            <StyledTypography variant="body2">office@electrapower.in</StyledTypography>
+            <ContactInfoContainer>
+              <IconColumn>
+                <IconWrapper>
+                  <img src={PhoneIcon} alt="Phone Icon" />
+                </IconWrapper>
+                <IconWrapper>
+                  <img src={MailIcon} alt="Mail Icon" />
+                </IconWrapper>
+              </IconColumn>
+              <TextColumn>
+                <Box>
+                  <OrangeTypography variant="subtitle1" className="montserrat-medium">
+                    Phone number
+                  </OrangeTypography>
+                  <StyledTypography variant="body2">+91 940 098 9363</StyledTypography>
+                  <StyledTypography variant="body2">+91 920 738 9111</StyledTypography>
+                </Box>
+                
+                <Box mt={4}>
+                  <OrangeTypography variant="subtitle1" className="montserrat-medium">
+                    For Enquiries
+                  </OrangeTypography>
+                  <StyledTypography variant="body2">office@electrapower.in</StyledTypography>
+                </Box>
+              </TextColumn>
+            </ContactInfoContainer>
           </Grid>
 
           <Grid item xs={12} md={1} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
-            <img src={LargeDivider} style={{ margin: '0 8px', height: '100%' }} />
+            <img src={LargeDivider} style={{ margin: '0 8px', height: '178px' }} alt="Divider" />
           </Grid>
 
-          <Grid item xs={12} md={3} sx={{ textAlign: 'left' }}>
-            <IconTextContainer>
-              <IconWrapper>
+          <Grid item xs={12} md={3} sx={{ textAlign: 'left' , mt:{xs:4, md:0}}} >
+            <ContactInfoContainer>
+              <IconWrapper sx={{ mr: 2 }}>
                 <img src={LocationIcon} alt="Location Icon" />
               </IconWrapper>
-              <OrangeTypography variant="subtitle1" className="montserrat-medium">
-                Address
-              </OrangeTypography>
-            </IconTextContainer>
-            <StyledTypography variant="body2">Electra Power Engineering</StyledTypography>
-            <StyledTypography variant="body2">'A' grade Electrical Contractors & Engineers</StyledTypography>
-            <StyledTypography variant="body2">33/1305-A1, Chalikkavattom, Vennala P.O,</StyledTypography>
-            <StyledTypography variant="body2" gutterBottom>Kochi, Kerala, INDIA - 682028</StyledTypography>
-            <Button 
-              variant="outlined" 
-              sx={{ 
-                borderColor: '#FF6B2B',
-                color: '#FF6B2B',
-                '&:hover': { backgroundColor: 'rgba(255, 107, 43, 0.1)' },
-                borderRadius: '50px', 
-                fontFamily: 'inherit',
-              }} 
-              className="montserrat-medium"
-              startIcon={<Box component="img" src={MapIcon} sx={{ color: '#FF6B2B', height: '24px' }} />}
-            >
-              Locate in map
-            </Button>
+              <Box>
+                <OrangeTypography variant="subtitle1" className="montserrat-medium">
+                  Address
+                </OrangeTypography>
+                <StyledTypography variant="body2">Electra Power Engineering</StyledTypography>
+                <StyledTypography variant="body2">'A' grade Electrical Contractors & Engineers</StyledTypography>
+                <StyledTypography variant="body2">33/1305-A1, Chalikkavattom, Vennala P.O,</StyledTypography>
+                <StyledTypography variant="body2" gutterBottom>Kochi, Kerala, INDIA - 682028</StyledTypography>
+                <Button 
+                  variant="outlined" 
+                  sx={{ 
+                    borderColor: '#FF6B2B',
+                    color: '#FF6B2B',
+                    '&:hover': { backgroundColor: 'rgba(255, 107, 43, 0.1)' },
+                    borderRadius: '50px', 
+                    fontFamily: 'inherit',
+                  }} 
+                  className="montserrat-medium"
+                  startIcon={<Box component="img" src={MapIcon} sx={{ color: '#FF6B2B', height: '24px' }} />}
+                >
+                  Locate in map
+                </Button>
+              </Box>
+            </ContactInfoContainer>
           </Grid>
         </Grid>
 
         <Box sx={{ my: 4 }}>
-          <img src={HorizontalDivider} style={{ width: '100%' }} />
+          <img src={HorizontalDivider} style={{ width: '100%' }} alt="Horizontal Divider" />
         </Box>
 
         <Grid container justifyContent="space-between" alignItems="center">
@@ -143,8 +164,8 @@ const Footer = () => {
               ].map((item, index) => (
                 <React.Fragment key={item.name}>
                   <Button 
-                    component={Link} // Use Link component for navigation
-                    to={item.path} // Set the path
+                    component={Link}
+                    to={item.path}
                     sx={{ 
                       color: 'white', 
                       textTransform: 'none',
@@ -155,7 +176,7 @@ const Footer = () => {
                     {item.name}
                   </Button>
                   {index < 3 && (
-                    <img src={SmallDivider} style={{ margin: '0 8px' }} />
+                    <img src={SmallDivider} style={{ margin: '0 8px' }} alt="Small Divider" />
                   )}
                 </React.Fragment>
               ))}
@@ -167,7 +188,7 @@ const Footer = () => {
             </StyledTypography>
             {[LinkedInIcon, InstagramIcon, FacebookIcon, TwitterIcon].map((Icon, index) => (
               <IconButton key={index} size="small" sx={{ color: 'white' }}>
-                <Box component="img" src={Icon} />
+                <Box component="img" src={Icon} alt={`Social Media Icon ${index + 1}`} />
               </IconButton>
             ))}
           </Grid>
