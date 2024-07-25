@@ -1666,7 +1666,7 @@ hr{
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: #313131b4;
+  background: #060606e0;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -1675,7 +1675,7 @@ hr{
 }
 
 .carousel-description h2{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
 }
 
