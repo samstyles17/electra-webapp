@@ -10,16 +10,12 @@ import Services from '../components/Services/Services';
 
 import img1 from "../assets/img/service2/service2_carousel1_img1.png";
 import img2 from "../assets/img/service2/service2_carousel1_img2.png";
-import img3 from "../assets/img/service2/service2_carousel1_img3.png";
 import img4 from "../assets/img/service2/service2_carousel2_img1.png";
 import img5 from "../assets/img/service2/service2_carousel2_img2.png";
-import img6 from "../assets/img/service2/service2_carousel2_img3.png";
 import img7 from "../assets/img/service2/service2_carousel3_img2.png";
 import img8 from "../assets/img/service2/service2_carousel3_img3.png";
-import img9 from "../assets/img/service2/service2_carousel3_img4.png";
 import img10 from "../assets/img/service2/service2_carousel4_img1.png";
 import img11 from "../assets/img/service2/service2_carousel4_img2.png";
-import img12 from "../assets/img/service2/service2_carousel4_img3.png";
 
 const sections = [
   {
@@ -30,7 +26,6 @@ const sections = [
   {
     heading: "Internal Electrification:",
     description: "We offer comprehensive internal electrification solutions for residential, commercial, industrial and infrastructure projects of any scale. Our services include wiring, lighting installations, outlet and switch installations, and integration with automation systems.",
-    bullets: [],
     images: [img4, img5]
   },
   {

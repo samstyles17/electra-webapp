@@ -10,22 +10,19 @@ import Services from '../components/Services/Services';
 
 import img1 from "../assets/img/service1/service1_carousel1_img1.png";
 import img2 from "../assets/img/service1/service1_carousel1_img2.png";
-import img3 from "../assets/img/service1/service1_carousel1_img3.png";
 import img4 from "../assets/img/service1/service1_carousel2_img1.png";
 import img5 from "../assets/img/service1/service1_carousel2_img2.png";
-import img6 from "../assets/img/service1/service1_carousel2_img3.png";
 import img7 from "../assets/img/service1/service1_carousel3_img1.png";
 import img8 from "../assets/img/service1/service1_carousel3_img2.png";
-import img9 from "../assets/img/service1/service1_carousel3_img3.png";
 import img10 from "../assets/img/service1/service1_carousel4_img1.png";
 import img11 from "../assets/img/service1/service1_carousel4_img2.png";
-import img12 from "../assets/img/service1/service1_carousel4_img2.png";
 
 
 const sections = [
     {
       heading: "Electrical System Design",
       description: "Electra Power Engineering provides expert electrical system design services for residential, commercial, industrial, and infrastructure projects. Our experienced engineers leverage the latest technologies and industry best practices to create tailored designs that optimise safety, efficiency, and cost-effectiveness.",
+      bullets_heading: "We are specialise in",
       bullets: [
         "Conceptual Design and Load Calculations",
         "Detailed Engineering Design (Schematic Drawings, Cable Schedules, Equipment Layouts)",
