@@ -8,8 +8,14 @@ import Carousel from 'react-material-ui-carousel';
 import dividerImage from '../assets/img/service_footer_vector.png';
 
 // Import your carousel images
-import img1 from '../assets/img/service_footer_img1.png';
-import img2 from '../assets/img/service_footer_img2.png';
+import img1 from '../assets/img/portfolio_card1.png';
+import img2 from '../assets/img/portfolio_card2.png';
+import img3 from '../assets/img/portfolio_card3.png';
+import img4 from '../assets/img/portfolio_card4.png';
+import img5 from '../assets/img/portfolio_card5.png';
+import img6 from '../assets/img/portfolio_card6.png';
+import img7 from '../assets/img/portfolio_card7.png';
+import img8 from '../assets/img/portfolio_card8.png';
 
 const theme = createTheme({
   typography: {
@@ -23,7 +29,7 @@ const scroll = keyframes`
 `;
 
 
-const carouselImages = [img1, img2];
+const carouselImages = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 const PortfolioComponent = () => {
   // console.log("Carousel Images:", carouselImages); // Log the images
