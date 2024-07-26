@@ -5,7 +5,7 @@
 
 .slider-image {
     width: 475px;
-    height: 300px;
+    height: 370px;
     background-size: cover;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -14,9 +14,10 @@
 .slider-rectangle {
     position: absolute;
     bottom: 0;
-    height: 70px;
+    height: 60px;
     width: 475px;
-    background: #474D4E;
+    background: transparent;
+    backdrop-filter: blur(100px);
     color: #ffffff;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -35,7 +36,9 @@
     letter-spacing: 0.1em;
     font-size: 17px;
 }
-
+.react-multiple-carousel__arrow {
+    background: rgba(0, 0, 0, 0.8);
+}
 
 @media (max-width:460px) {
     .slider-card {
@@ -53,6 +56,9 @@
 
     .toggle-2>.slider-card {
         margin: 20px 0;
+    }
+    .slider-text {
+        font-size: 15px;
     }
 
 }
