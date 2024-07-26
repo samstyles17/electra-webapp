@@ -17,7 +17,7 @@ const slides = [
     image: image1,
     description: "Benefit from our team's extensive knowledge and skills in electrical engineering, ensuring proficient and reliable solutions."
   },
-  { title: "Agility", image: image2, description: "Experience our quick and flexible response to your needs, adapting swiftly to changing project requirements and timelines" },
+  { title: "Agility", image: image2, description: "Experience our quick and flexible response to your needs, adapting swiftly to changing project requirements and timelines." },
   { title: "Integrity", image: image3, description: "Trust in our commitment to honesty, transparency,and ethical conduct in all aspects of our work,fostering long-term partnerships based on integrity." },
   { title: "Innovation", image: image4, description: "Access cutting-edge solutions and technologies as we continuously explore new ideas and approaches to enhance efficiency and effectiveness." },
   { title: "Client centric", image: image5, description: "Enjoy personalised attention and tailored solutions that prioritise your unique requirements, ensuring your satisfaction and success." },
@@ -103,7 +103,7 @@ const IntegrityCarousel = () => {
                 <img src={slide.image} alt={slide.title} className="carousel-image" />
                 <div className="carousel-description">
                   <h2>{slide.title}</h2>
-                  <p style = {{ fontSize: '17px', lineHeight: '1.7rem' }}>{slide.description}</p>
+                  <p style = {{ fontSize: '18px', lineHeight: '2.4rem' }}>{slide.description}</p>
                 </div>
               </div>
             ))}
