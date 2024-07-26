@@ -535,44 +535,17 @@ hr{
   margin-right: 35px;
 }
 
+.styled-list {
+  list-style-type: disc;
+  margin-left: 18px;  
+}
+
+
+
 .section-component-blue-dot {
   background-color: #007bff;
 }
 
-.mission-bullet-point {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 30px; /* Add space for the radio button */
-}
-
-.mission-bullet-point::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1px solid #434343; /* Border to look like radio button */
-  background-color: #ffffff; /* Match background color */
-  opacity: 50%;
-}
-
-.mission-bullet-point::after {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 50%;
-  transform: translateY(-45%);
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #5b5b5b; /* Filled dot inside */
-  opacity: 50%;
-}
 
 /* Web version changes */
 @media (min-width: 601px) {
@@ -1775,23 +1748,39 @@ hr{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #515151ef;
+    background-color: #414141;
     color: #ffffff;
     padding: 15px 20px; /* Adjust padding to control overlap */
     border-radius: 20px;
     text-align: left;
-    opacity: 1; /* Optional: Adjust opacity if needed */
+    opacity: 0.8; /* Optional: Adjust opacity if needed */
     transform: translateY(28px); /* Overlap the bottom of the image */
   }
 
   .card-description h2 {
     font-size: 14px;
     margin-bottom: 5px;
+    font-weight: 500;
   }
 
   .card-description p {
     font-size: 12px;
     margin-bottom: 0;
+  }
+
+  .card-description:hover {
+    opacity: 0.98;
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+    height: 150px;
+  }
+
+  .card-description:hover h2{
+    font-size: 16px;
+  }
+
+  .card-description:hover p{
+    font-size: 13px;
+    line-height: 2;
   }
 }
 
