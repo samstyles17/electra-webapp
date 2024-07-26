@@ -6,24 +6,27 @@ import "./AllProjects.css";
 import Connect from "../components/Connect/Connect";
 import Footer from "../components/Footer";
 import image1601 from '../assets/img/image1601.jpg';
-import kia6 from '../assets/img/kia6.png';
-import kia3 from '../assets/img/kia3.png';
-import kia2 from '../assets/img/kia2.png';
-import kia4 from '../assets/img/kia4.png';
-import kia5 from '../assets/img/kia5.png';
-import kia1 from '../assets/img/kia1.png';
-import tata1 from '../assets/img/tata1.png';
-import tata2 from '../assets/img/tata2.png';
-import tata3 from '../assets/img/tata3.png';
-import tata4 from '../assets/img/tata4.png';
-import tata5 from '../assets/img/tata5.png';
-import tata6 from '../assets/img/tata6.png';
-import tata7 from '../assets/img/tata7.png';
-import toyota1 from '../assets/img/toyota1.png';
-import toyota2 from '../assets/img/toyota2.png';
-import toyota3 from '../assets/img/toyota3.png';
-import toyota4 from '../assets/img/toyota4.png';
-import toyota5 from '../assets/img/toyota5.png';
+import kia7 from '../assets/img/kia_edappalli.png'
+import kia6 from '../assets/img/kia_vadanappally.png';
+import kia3 from '../assets/img/kia_thrissur.png';
+import kia2 from '../assets/img/kia_nettoor_ev_charging_station.png';
+import kia4 from '../assets/img/kia_palakkad.png';
+import kia5 from '../assets/img/kia_kayamkulam.png';
+import kia1 from '../assets/img/kia_nettoor.png';
+import tata from '../assets/img/tata1.png'
+import tata1 from '../assets/img/luxon_palarivattom.png';
+import tata2 from '../assets/img/luxon_irumpanam.png';
+import tata3 from '../assets/img/luxon_mattancherry.png';
+import tata4 from '../assets/img/luxon_nedumkandam.png';
+import tata5 from '../assets/img/luxon_konni.png';
+import tata6 from '../assets/img/luxon_munduparamb.png';
+import tata7 from '../assets/img/luxon_areekod.png';
+import toyota from '../assets/img/toyota1.png';
+import toyota1 from '../assets/img/nippon_ernakulam.png';
+import toyota2 from '../assets/img/nippon_enchakkal.png';
+import toyota3 from '../assets/img/nippon_kayamkulam.png';
+import toyota4 from '../assets/img/nippon_kazhakootam.png';
+import toyota5 from '../assets/img/nippon_kochuveli.png';
 import hhys1 from '../assets/img/hhys1.png';
 import hhys2 from '../assets/img/hhys2.png';
 import hhys3 from '../assets/img/hhys3.png';
@@ -70,83 +73,95 @@ const data = [
     {
         title: "Incheon Motors Pvt, Ltd ",
         img: image1601,
-        images: [
-            {
-                title: "Nettor",
-                image_url: kia6,
-            },
-            {
-                title: "Nettor EV Chargin Station",
-                image_url: kia3,
-            },
-            {
-                title: "Kayamkulam",
-                image_url: kia2,
-            },
-            {
-                title: "Edappali",
-                image_url: kia4,
-            },
-            {
-                title: "Nettor",
-                image_url: kia5,
-            },
+        images: [  
             {
                 title: "Nettor",
                 image_url: kia1,
             },
+            {
+                title: "Nettor EV Chargin Station",
+                image_url: kia2,
+            },
+            {
+                title: "Thrissur",
+                image_url: kia3,
+            },
+            {
+                title: "Palakkad",
+                image_url: kia4,
+            },
+            {
+                title: "Kayamkulam",
+                image_url: kia5,
+            },
+            {
+                title: "Vadanappally",
+                image_url: kia6,
+            },
+            {
+                title:'Edappalli',
+                image_url:kia7
+            }
         ]
     },
     {
         title: "Luxon Motos Pvt. Ltd.",
-        img: tata1,
+        img: tata,
         images: [
             {
                 title: "Palarivattom",
-                image_url: tata2,
+                image_url: tata1,
             },
             {
                 title: "Irumpanam",
+                image_url: tata2,
+            },
+            {
+                title: "Mattancherry",
                 image_url: tata3,
             },
             {
-                title: "Nettor",
+                title: "Nedumkandam",
                 image_url: tata4,
             },
             {
-                title: "Nettor",
+                title: "Konni, Pathanamathitta",
                 image_url: tata5,
             },
             {
-                title: "Nettor",
+                title: "Munduparambu, Malappuram",
                 image_url: tata6,
             },
             {
-                title: "Nettor",
-                image_url: tata7,
+                title: "Areekkode",
+                image_url: tata7
             }
         ]
     },
     {
         title: "Nippon Toyota",
-        img: toyota1,
+        img: toyota,
         images: [
             {
                 title: "Ernakulum",
-                image_url: toyota2,
+                image_url: toyota1,
             },
             {
                 title: "Enchakkal",
+                image_url: toyota2,
+            },
+            {
+                title: "Kayamkulam",
                 image_url: toyota3,
             },
             {
-                title: "Nettor",
+                title: "Kazhakkottam",
                 image_url: toyota4,
             },
             {
-                title: "Nettor",
-                image_url: toyota5,
-            },
+                title:"Kochuveli",
+                image_url: toyota5
+            }
 
         ]
     },
@@ -160,28 +175,29 @@ const data = [
             },
             {
                 title: "Mukkavala, Kayamkulam",
-                image_url: hhys3,
-            },
-            {
-                title: "Nettor",
-                image_url: hhys4,
-            },
-            {
-                title: "Nettor",
-                image_url: hhys5,
-            },
-            {
-                title: "Nettor",
-                image_url: hhys6,
-            },
-            {
-                title: "Nettor",
                 image_url: hhys7,
             },
+            // {
+            //     title: "Mukkavala, Kayamkulam",
+            //     image_url: hhys3,
+            // },
             {
-                title: "Nettor",
-                image_url: hhys8,
+                title: "Kollam",
+                image_url: hhys4,
             },
+            // {
+            //     title: "Nettor",
+            //     image_url: hhys5,
+            // },
+            {
+                title: "Kollam",
+                image_url: hhys6,
+            },
+            
+            // {
+            //     title: "Nettor",
+            //     image_url: hhys8,
+            // },
 
         ]
     },
@@ -198,21 +214,22 @@ const data = [
                 image_url: app3,
             },
             {
-                title: "Nettor",
-                image_url: app4,
-            },
-            {
-                title: "Nettor",
-                image_url: app5,
-            },
-            {
-                title: "Nettor",
+                title: "AC Samridhi, Vytilya",
                 image_url: app6,
             },
             {
-                title: "Nettor",
+                title: "Bindu Sen Apartment, Muvattupuzha",
+                image_url: app4,
+            },
+            {
+                title: "Tristar Excellency",
                 image_url: app7,
             },
+            {
+                title: "Tristar Presidency",
+                image_url: app5,
+            }           
+            
 
 
         ]
@@ -223,29 +240,31 @@ const data = [
         images: [
             {
                 title: "Eastern Contiments, Kothamanglam",
-                image_url: ip2,
-            },
-            {
-                title: "Eastern Contiments, Adimaly",
                 image_url: ip3,
             },
             {
-                title: "Nettor",
-                image_url: ip4,
+                title: "Eastern Contiments, Adimaly",
+                image_url: ip2,
             },
             {
-                title: "Nettor",
-                image_url: ip5,
-            },
-            {
-                title: "Nettor",
+                title: "VKL Seasoning, Kuthiyathodu",
                 image_url: ip6,
             },
             {
-                title: "Nettor",
+                title: "VKL Seasoning, Alappuzha",
                 image_url: ip7,
             },
 
+            
+            // {
+            //     title: "Nettor",
+            //     image_url: ip4,
+            // },
+            {
+                title: "Travancore Coco, Cherthala",
+                image_url: ip5,
+            },
+            
 
         ]
     },
@@ -254,7 +273,7 @@ const data = [
         img: cp1,
         images: [
             {
-                title: "ST Joseph Bhavan, hospital, Chalakkudy",
+                title: "ST Joseph Bhavan, Hospital, Chalakkudy",
                 image_url: cp2,
             },
             {
@@ -262,41 +281,47 @@ const data = [
                 image_url: cp3,
             },
             {
-                title: "Nettor",
-                image_url: cp4,
-            },
-            {
-                title: "Nettor",
-                image_url: cp5,
-            },
-            {
-                title: "Nettor",
-                image_url: cp6,
-            },
-            {
-                title: "Nettor",
+                title: "Motorspot Pre Owned Cars, Ernakulam",
                 image_url: cp7,
             },
             {
-                title: "Nettor",
-                image_url: cp8,
-            },
-            {
-                title: "Nettor",
+                title: "Prince Jwellery, Ernakulam",
                 image_url: cp9,
             },
             {
-                title: "Nettor",
-                image_url: cp10,
-            },
-            {
-                title: "Nettor",
-                image_url: cp11,
-            },
-            {
-                title: "Nettor",
+                title: "UTSAV, MG Road, Ernakulam",
                 image_url: cp12,
             },
+            {
+                title: "Meigma Portico, Vyttila",
+                image_url: cp5,
+            },
+            {
+                title: "St. Mary's Tower, Ernakulam",
+                image_url: cp11,
+            },
+            
+            {
+                title: "ABS Arcade, Muvattupuzha",
+                image_url: cp4,
+            },
+            {
+                title: "Chungath Jwellery, Ernakulam",
+                image_url: cp8,
+            },
+            
+            {
+                title: "Finsyz Vacation Homes, Angamaly",
+                image_url: cp6,
+            },
+            
+            
+            
+            {
+                title: "Salafi Masjid, Vytila",
+                image_url: cp10,
+            },
+            
 
         ]
     },
@@ -313,19 +338,19 @@ const data = [
                 image_url: lh3,
             },
             {
-                title: "Nettor",
+                title: "Kinder Women Hospital, Chertala",
                 image_url: lh4,
             },
             {
-                title: "Nettor",
+                title: "PS Mission Hospital, Maradu",
                 image_url: lh5,
             },
             {
-                title: "Nettor",
+                title: "Assisi Mission Hospital, Parappukara",
                 image_url: lh6,
             },
             {
-                title: "Nettor",
+                title: "SH Hospital, Thodupuzha",
                 image_url: lh7,
             },
         ]
