@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid, Box, Typography, Divider, useMediaQuery, useTheme } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { keyframes } from '@emotion/react';
-// import '@fontsource/montserrat';
 
 const customTheme = createTheme({
   typography: {
@@ -13,18 +12,42 @@ const customTheme = createTheme({
 const fadeInFromTopLeft = keyframes`
   from {
     opacity: 0;
-    transform: translate(-10px, -10px);
   }
   to {
     opacity: 1;
-    transform: translate(0, 0);
   }
 `;
 
+const fadeInOutAnimation = keyframes`
+  0%, 100% {
+    opacity: 1;
+    
+  }
+  50% {
+    opacity: 0.1;
+    
+  }
+`;
+
+function useAnimateNumbers() {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimate(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return animate;
+}
 
 function SectionComponent() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const animate = useAnimateNumbers();
+
+  const animatedTypographyStyle = {
+    animation: animate ? `${fadeInOutAnimation} 4s ease-in-out infinite` : 'none',
+  };
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -52,7 +75,7 @@ function SectionComponent() {
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', marginLeft: isMobile ? '-10px' : '35px', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
               <Box sx={{ textAlign: 'left', margin: isMobile ? '0 10px 10px' : '0 25px', flex: isMobile ? '1 0 45%' : 'none', padding: isMobile ? '10px' : '0', backgroundColor: isMobile ? '#f5f5f5' : 'transparent', borderRadius: isMobile ? '10px' : '0' }}>
-                <Typography variant="h5" sx={{ color: '#007bff', margin: 0, fontWeight: 500 }}>
+                <Typography variant="h5" sx={{ ...animatedTypographyStyle, color: '#007bff', margin: 0, fontWeight: 500 }}>
                   12+
                 </Typography>
                 <Typography variant="body2" sx={{ fontSize: isMobile ? '12px' : '16px', margin: 0, color: '#333' }}>
@@ -61,7 +84,7 @@ function SectionComponent() {
               </Box>
               {!isMobile && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
               <Box sx={{ textAlign: 'left', margin: isMobile ? '0 -4px 10px' : '0 25px', flex: isMobile ? '1 0 45%' : 'none', padding: isMobile ? '10px' : '0', backgroundColor: isMobile ? '#f5f5f5' : 'transparent', borderRadius: isMobile ? '10px' : '0' }}>
-                <Typography variant="h5" sx={{ color: '#ff6600', margin: 0, fontWeight: 500 }}>
+                <Typography variant="h5" sx={{ ...animatedTypographyStyle, color: '#ff6600', margin: 0, fontWeight: 500 }}>
                   300+
                 </Typography>
                 <Typography variant="body2" sx={{ fontSize: isMobile ? '12px' : '16px', margin: 0, color: '#333' }}>
@@ -70,7 +93,7 @@ function SectionComponent() {
               </Box>
               {!isMobile && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
               <Box sx={{ textAlign: 'left', margin: isMobile ? '0 5px 10px' : '0 25px', flex: isMobile ? '1 0 100%' : 'none', padding: isMobile ? '10px' : '0', backgroundColor: isMobile ? '#f5f5f5' : 'transparent', borderRadius: isMobile ? '10px' : '0' }}>
-                <Typography variant="h5" sx={{ color: '#007bff', margin: 0, fontWeight: 500 }}>
+                <Typography variant="h5" sx={{ ...animatedTypographyStyle, color: '#007bff', margin: 0, fontWeight: 500 }}>
                   250+
                 </Typography>
                 <Typography variant="body2" sx={{ fontSize: isMobile ? '12px' : '16px', margin: 0, color: '#333' }}>

@@ -83,25 +83,17 @@ const LandingPage = () => {
                 Let’s <span style={{ color: '#FF7F45' }}>connect <br />and</span> <span style={{ color: '#337AB7' }}>power up</span>
               </Typography>
               )}
-              <Typography variant="body1" className="montserrat-regular" sx={{ fontSize: '15px', mt: 2 }}>
-                Connect with us to transform your ideas into reality and give <br /> your projects the vibrant power they deserve
-              </Typography>
-              {/* {isMobile && (
-                <TextField variant='outlined' placeholder="Enter your email"
-                sx={{
-                  width: '90%',
-                  mt: 2,
-                  borderRadius: '50px',
-                  '& .MuiOutlinedInput-root': {
-                    borderRadius: '50px',
-                  },
-                  marginTop: '20px',
-                  marginBottom: '5px',
-                  background: "#f2f2f2"
-                }} >
-                </TextField>
-              )} */}
+              {!isMobile && (
+                <Typography variant="body1" className="montserrat-regular" sx={{ fontSize: '15px', mt: 2 }}>
+                  Connect with us to transform your ideas into reality and give <br /> your projects the vibrant power they deserve
+                </Typography>
+              )}
 
+              {isMobile && (
+                <Typography variant="body1" className="montserrat-regular" sx={{ fontSize: '15px', mt: 2 }}>
+                  Connect with us to transform your ideas into reality and give your projects the vibrant power they deserve
+                </Typography>
+              )}
               
               <Link to="/enquire#contactInfo">
               {!isMobile && (
@@ -126,9 +118,32 @@ const LandingPage = () => {
               </Button>
               )}
               </Link>
-
+              
+              
               <Link to="/enquire#contactInfo">
+              {isMobile && (
+                <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: '#FF7F45',
+                  borderRadius: '50px',
+                  padding: '12px 32px',
+                  mt: 4,
+                  textTransform: 'none',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  '&:hover': {
+                    backgroundColor: '#FF7F45',
+                  },
+                }}
+              >
+                CONTACT US
+                <img src={arrowIcon} alt="Arrow" style={{ marginLeft: '8px' }} />
+              </Button>
+              )}
               </Link>
+                            
             </Box>
           </Grid>
           {!isMobile && (

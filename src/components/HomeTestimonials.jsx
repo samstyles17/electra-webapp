@@ -46,7 +46,7 @@ const PowerfulInsights = () => {
       text: "\"Electra Power Engineering's team surpassed our expectations in every aspect of this project. Their expertise, dedication to quality, and ability to meet challenging timelines were truly remarkable. The charging station they installed has become a major attraction for our customers, and we are confident that it will play a key role in driving EV adoption in Kerala.\""
     },
     {
-      name: "Mr. Yaseem",
+      name: "Mr. Yaseen",
       position: "GM, HHYS Inframart.",
       image: mrYaseem,
       text: "\"Electra Power Engineering proved to be a reliable and efficient partner throughout the entire project. Their expertise in electrical engineering, coupled with their commitment to quality and timely delivery, exceeded our expectations. We are highly satisfied with the results and confident that our upgraded electrical infrastructure will support our growth for years to come.\""
@@ -56,18 +56,26 @@ const PowerfulInsights = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const carouselRef = useRef(null);
 
-  const handleNext = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft += carouselRef.current.offsetWidth;
-    }
-  };
+  // const handleNext = () => {
+  //   setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  //   if (carouselRef.current) {
+  //     carouselRef.current.scrollLeft += carouselRef.current.offsetWidth;
+  //   }
+  // };
 
+  // const handlePrev = () => {
+  //   setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  //   if (carouselRef.current) {
+  //     carouselRef.current.scrollLeft -= carouselRef.current.offsetWidth;
+  //   }
+  // };
+
+  const handleNext = () => {
+    setCurrentTestimonial((prev) => Math.min(prev + 1, testimonials.length - 1));
+  };
+  
   const handlePrev = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft -= carouselRef.current.offsetWidth;
-    }
+    setCurrentTestimonial((prev) => Math.max(prev - 1, 0));
   };
 
   useEffect(() => {
@@ -151,11 +159,23 @@ const PowerfulInsights = () => {
             Get an insight into the valuable and impactful thoughts direct from our clients.
           </Typography>
           
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+          {/* <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
             <Typography variant={isMobile ? "body2" : "body1"} className="montserrat-regular">REVIEWS & TESTIMONIALS</Typography>
             <Box>
               <IconButton size="small" onClick={handlePrev}><ArrowBackIosNewIcon /></IconButton>
               <IconButton size="small" onClick={handleNext}><ArrowForwardIosIcon /></IconButton>
+            </Box>
+          </Box> */}
+
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Typography variant={isMobile ? "body2" : "body1"} className="montserrat-regular">REVIEWS & TESTIMONIALS</Typography>
+            <Box>
+              <IconButton size="small" onClick={handlePrev} disabled={currentTestimonial === 0}>
+                <ArrowBackIosNewIcon />
+              </IconButton>
+              <IconButton size="small" onClick={handleNext} disabled={currentTestimonial === testimonials.length - 1}>
+                <ArrowForwardIosIcon />
+              </IconButton>
             </Box>
           </Box>
           
@@ -186,7 +206,7 @@ const PowerfulInsights = () => {
                     <Typography variant="body2" sx={{ color: '#555' }} className="montserrat-regular">{testimonial.position}</Typography>
                     <img src={cardDivider} alt="Divider" style={{ width: '100%', height: 'auto', margin: '8px 0' }} />
                     <Typography variant={isMobile ? "caption" : "body2"} className="montserrat-regular" sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                      {isMobile ? testimonial.text.slice(0, 100) + '...' : testimonial.text}
+                      {isMobile ? testimonial.text : testimonial.text}
                     </Typography>
                   </Box>
                 </CardContent>

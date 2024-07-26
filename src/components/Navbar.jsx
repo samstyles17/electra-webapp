@@ -118,7 +118,7 @@ function Navbar() {
                 </div>
                 <div className="mt-2 text-center">
                   <h3 className="montserrat-regular text-sm">
-                    'A' grade Electrical Contractors & Engineers
+                    'A' grade Electrical Engineers & Contractors
                   </h3>
                 </div>
               </div>
@@ -136,7 +136,7 @@ function Navbar() {
                 </div>
                 <div>
                   <h3 className="montserrat-regular">
-                    'A' grade Electrical Contractors & Engineers
+                    'A' grade Electrical Engineers & Contactors
                   </h3>
                 </div>
               </div>

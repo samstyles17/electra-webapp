@@ -72,7 +72,8 @@ const Footer = () => {
               />
             </Box>
             <StyledTypography variant="body2">
-              Electra Power Engineering founded in 2013 is the brainchild of a group of skilled and experienced engineers who are proven game changers in the electrical engineering industry.
+            Electra Power Engineering founded in 2013 is the brainchild of a group of skilled and experienced engineers who are proven game changers in the electrical engineering Industry.
+
             </StyledTypography>
           </Grid>
 
@@ -127,7 +128,7 @@ const Footer = () => {
                   Address
                 </OrangeTypography>
                 <StyledTypography variant="body2">Electra Power Engineering</StyledTypography>
-                <StyledTypography variant="body2">'A' grade Electrical Contractors & Engineers</StyledTypography>
+                <StyledTypography variant="body2">'A' grade Electrical Engineers & Contractors </StyledTypography>
                 <StyledTypography variant="body2">33/1305-A1, Chalikkavattom, Vennala P.O,</StyledTypography>
                 <StyledTypography variant="body2" gutterBottom>Kochi, Kerala, INDIA - 682028</StyledTypography>
                 <Button 

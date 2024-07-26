@@ -10,16 +10,16 @@ function Hero() {
     <div 
       style={{
         padding: '69px 1rem',
-        marginLeft: isMobile ? '1rem' : '60px',  // Adjust left margin
-        marginRight: isMobile ? '1rem' : '60px'  // Adjust right margin
+        marginLeft: isMobile ? '0rem' : '60px',  // Adjust left margin
+        marginRight: isMobile ? '0rem' : '60px'  // Adjust right margin
       }} 
       className="bg-white"
     >
       <div 
         style={{
           maxWidth: '90rem',
-          marginLeft: isMobile ? 'auto' : '0.5rem',  // Adjust left margin for this div
-          marginRight: isMobile ? 'auto' : '3rem'  // Adjust right margin for this div
+          marginLeft: isMobile ? '0rem' : '0.5rem',  // Adjust left margin for this div
+          marginRight: isMobile ? '1rem' : '3rem'  // Adjust right margin for this div
         }}
         className="mx-auto"
       >
@@ -34,11 +34,8 @@ function Hero() {
               <span style={{ fontSize: isMobile ? '1.25rem' : '2rem', color: '#1a73e8' }}>PROJECT SOLUTIONS!</span>
             </h1>
             <p className={`montserrat-regular text-darkgreytext ${isMobile ? 'text-sm' : 'text-base mr-8 pr-8'}`}>
-              Our commitment to electrical expertise extends beyond mere
-              service - it's a pledge. We're dedicated to shaping the world
-              with every connection, driving progress forward. With us, you're
-              not simply a customer; you're a valued partner in illuminating
-              the path towards a powerful future.
+            Our commitment to electrical expertise extends beyond mere service—it's a pledge.  We're dedicated to shaping the world with every connection, driving progress forward. With us, you're not simply a customer; you're a valued partner in illuminating the path towards a powerful future.
+
             </p>
           </div>
           {!isMobile && (
