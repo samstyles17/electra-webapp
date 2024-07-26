@@ -35,7 +35,7 @@ const Services = ({ data , panel}) => {
                         <p className='services-description'>
                             {e.description}
                         </p>
-                        { i !== 0&&  e.bullets &&
+                        { i !== 0&&  e.bullets && !panel &&
                               <div >
                               { i === 0 && e.bullets&&  <h4 className='services-list-head'>We are specialise in:</h4>}
                                  <ul className='services-list'>
