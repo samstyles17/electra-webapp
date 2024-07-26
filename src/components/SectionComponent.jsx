@@ -128,12 +128,12 @@ function SectionComponent() {
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 400,
                 }}>
-                  <ul>
-                    <li className='mission-bullet-point'>Delivering exceptional high-tension electrical contracting services.</li>
-                    <li className='mission-bullet-point'>Ensuring safety and sustainability with clear communication in all projects.</li>
-                    <li className='mission-bullet-point'>Exceeding customer expectations through continuous improvement.</li>
-                    <li className='mission-bullet-point'>Powering progress and enhancing community life with reliable electrical solutions.</li>
-                    <li className='mission-bullet-point'>Pioneering cutting-edge technologies and methodologies.</li>
+                  <ul className="styled-list">
+                    <li>Delivering exceptional high-tension electrical contracting services.</li>
+                    <li>Ensuring safety and sustainability with clear communication in all projects.</li>
+                    <li>Exceeding customer expectations through continuous improvement.</li>
+                    <li>Powering progress and enhancing community life with reliable electrical solutions.</li>
+                    <li>Pioneering cutting-edge technologies and methodologies.</li>
                   </ul>
                 </Box>
               </Box>
