@@ -76,7 +76,7 @@ const ResponsiveButtonGroup = () => {
     variableWidth: true,
     centerMode: true,
     centerPadding: '0px',
-    focusOnSelect: true,
+
   };
 
   return (

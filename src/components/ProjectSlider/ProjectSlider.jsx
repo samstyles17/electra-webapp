@@ -60,7 +60,7 @@ const ProjectSlider = ({ images }) => {
                   <span className='slider-index flex justify-center items-center'>
                     {index + 1}
                   </span>
-                  <p className="slider-text">
+                  <p className="slider-text" style={{fontSize : element.title.length > 22 && '12px'}}>
                     {element.title}
                   </p>
                 </div>

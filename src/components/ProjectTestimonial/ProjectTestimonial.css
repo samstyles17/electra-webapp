@@ -4,11 +4,18 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     position: relative;
     margin-top: 50px;
+    width: fit-content;
+
 }
 .project-testimonial-info {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     border-radius: 25px;
-    gap: 5rem;
+   display: grid;
+   grid-template-columns: 30% auto;
+   justify-items: center;
+   align-items: center;
+   gap: 4rem;
+
 }
 
 .project-round-image {
@@ -19,12 +26,11 @@ background-repeat: no-repeat;
 background-position: center;
 background-size: contain;
 }
-.project-testimonial-logo {
-    width: 58rem;
-}
+
 .project-testimonial-logo > img:last-child {
     display: none;
 }
+
 
 @media (max-width: 768px) {
     .project-testimonial-text > p {
@@ -54,7 +60,7 @@ background-size: contain;
         height: fit-content !important;
     }
     .project-testimonial-info {
-        flex-direction: column;
+        grid-template-columns: auto;
         gap: 2rem;
     }
     .project-testimonial-logo {

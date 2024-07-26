@@ -35,16 +35,24 @@ const Services = ({ data , panel}) => {
                         <p className='services-description'>
                             {e.description}
                         </p>
+                        { i !== 0&&  e.bullets && !panel &&
+                              <div >
+                              { i === 0 && e.bullets&&  <h4 className='services-list-head'>We are specialise in:</h4>}
+                                 <ul className='services-list'>
+                                     {e.bullets.map(e => <li>{e}</li>)}
+                                 </ul>
+                             </div>
+                        }
                         {
-                            e.bullets &&
+                          i == 0 &&  e.bullets &&
                             <div style={{ display: toggle ? 'block' : 'none' }}>
-                                <h4 className='services-list-head'>We are specialise in:</h4>
+                             { i === 0 && e.bullets&&  <h4 className='services-list-head'>We are specialise in:</h4>}
                                 <ul className='services-list'>
                                     {e.bullets.map(e => <li>{e}</li>)}
                                 </ul>
                             </div>
                         }
-                        {i === 0 && e.bullets && !panel && <button onClick={() => setToggle(!toggle)}>{toggle ? 'Read Less' : "Read More"}</button>}
+                        {i ==0 && e.bullets && !panel && <button onClick={() => setToggle(!toggle)}>{toggle ? 'Read Less' : "Read More"}</button>}
                     </div>
                     { i === 3&& panel &&  <div className='service-panel-list'>
                         <ul className='service-panel-list-1'>

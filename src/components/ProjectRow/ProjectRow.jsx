@@ -17,7 +17,7 @@ const ProjectRow = ({ data }) => {
                                 </svg>
                                 <div className="card-h flex flex-col justify-between gap-5 ">
                                     <img src={e.img} alt="img1" className="card-h-img rounded-2xl" />
-                                    <div className="card-h-info flex flex-row justify-between items-center">
+                                    <div className="card-h-info flex flex-row gap-10 items-center">
                                         <span className="card-h-index flex items-center justify-center">
                                             0{i + 1}
                                         </span>

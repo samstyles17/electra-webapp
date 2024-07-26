@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import ButtonComponent from '../components/ServicePageButton'; // Assuming you have a button component
 import dashedDivider from '../assets/img/service_dashed_divider.png'; 
+import ServicePageButton from '../components/ServicePageButton';
 
 const theme = createTheme({
   typography: {
@@ -37,7 +37,7 @@ const ExploreServicesComponent = () => {
             gap: '20px',
           }}
         >
-          <ButtonComponent/>
+          <ServicePageButton />
         </Box>
 
         <img src={dashedDivider} alt="Dashed Divider" style={{ width: '100%', marginBottom: '40px' , marginTop:'20px'}} />

@@ -30,6 +30,7 @@ const sections = [
   {
     heading: "Internal Electrification:",
     description: "We offer comprehensive internal electrification solutions for residential, commercial, industrial and infrastructure projects of any scale. Our services include wiring, lighting installations, outlet and switch installations, and integration with automation systems.",
+    bullets: [],
     images: [img4, img5]
   },
   {
@@ -46,6 +47,7 @@ const sections = [
   {
     heading: "Testing and Commissioning",
     description: "We rigorously test and commission all electrical installations to ensure optimal performance, safety, and compliance with industry standards. Our meticulous approach minimises downtime and ensures the longevity of your electrical systems.",
+     bullets: [],
     images: [img10, img11]
   }
 ];
