@@ -26,7 +26,7 @@ const sections = [
       bullets: [
         "Conceptual Design and Load Calculations",
         "Detailed Engineering Design (Schematic Drawings, Cable Schedules, Equipment Layouts)",
-        "Design for specific applications"
+        "Design for Specific Applications (Residential, Commercial, Industrial, Infrastructure)."
       ],
       images: [img1, img2]
     },

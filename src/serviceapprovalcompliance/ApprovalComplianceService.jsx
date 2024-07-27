@@ -28,7 +28,7 @@ import img16 from "../assets/img/service5/service5_carousel5_img4.png";
 const sections = [
     {
       heading: "Liaison with KSEB and Electrical Inspectorate",
-      description: " We streamline the process of obtaining approvals and permits from the Kerala State Electricity Board (KSEB) and the Electrical Inspectorate. Our team handles all the necessary  documentation and coordination, ensuring timely approvals and compliance with local regulation.",
+      description: "We streamline the process of obtaining approvals and permits from the Kerala State Electricity Board (KSEB) and the Electrical Inspectorate. Our team handles all the necessary documentation and coordination, ensuring timely approvals and compliance with local regulations.",
       images: [img1, img2]
     },
     {

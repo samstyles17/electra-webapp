@@ -31,7 +31,7 @@ const sections = [
     },
     {
       heading: "Power Quality Analysis",
-      description: "We assess power quality issues like voltage fluctuations and harmonics that can affect the performance and lifespan of your electrical equipment. Our analysis helps you identify and rectify these problems, ensuring optimal power quality for your operations.",
+      description: "We assess power quality issues like voltage fluctuations and harmonics that can affect the performance and lifespan of your electrical equipment. Our analysis helps you identify and rectify these problems, ensuring optimal power quality for your operations",
       images: [img3, img4]
     },
     
