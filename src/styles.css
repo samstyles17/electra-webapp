@@ -1166,7 +1166,7 @@ hr{
 }
 
 .semi-hover:last-child:hover {
-  width: 470px;
+  width: 530px;
 }
 
 .semi-hover:last-child:hover .content {
@@ -1232,7 +1232,7 @@ hr{
   line-height: 27.32px;
 }
 
-.item-number {
+.cardgg .item-number {
   position: absolute;
   width: 130px;
   text-align: center;
@@ -1246,13 +1246,43 @@ hr{
   justify-content: center;
 }
 
-.semi-hover:hover {
+.cardgg .semi-hover:first-child,
+.cardgg:hover .semi-hover:first-child:hover {
+  background: #FF631E;
+}
+
+.cardgg  .semi-hover:first-child .content .item-number,
+.cardgg:hover .semi-hover:first-child:hover .content .item-number {
+  color: #f1f1f1;
+}
+
+.cardgg  .semi-hover:first-child .content .item-text,
+.cardgg:hover .semi-hover:first-child:hover .content .item-text {
+  color: #ffff;
+}
+
+.cardgg .semi-hover:hover:not(:last-child) {
   width: 600px;
+}
+
+.cardgg .semi-hover:hover {
   z-index: 3;
   background: #FF631E;
 }
 
-	
+.cardgg:hover .semi-hover:first-child {
+  background-color: #FAFAFA;
+  border: 1px solid #c9c9c9;
+}
+
+.cardgg:hover .semi-hover:first-child .content .item-number {
+  color: #d1c0c0;
+}
+
+.cardgg:hover .semi-hover:first-child .content .item-text {
+  color: black;
+}
+
 .semi-hover.active + .semi-hover {
   z-index: 3;
 }
