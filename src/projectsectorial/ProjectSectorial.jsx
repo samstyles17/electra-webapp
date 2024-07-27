@@ -61,8 +61,12 @@ const data = [
                 info: "Successfully installed and integrated  a 400 kVA transformer and a 250 kVA transformer, along with a 250 kVA DG set, to provide ample power for the showroom, workshop, and EV charging station."
             },
             {
-                heading: "india's Largest Kia EV Charging Station",
+                heading: "India's Largest Kia EV Charging Station",
                 info: "Installed and commissioned a 240 kW EV charging station, the largest of its kind in India, to cater to the growing demand for electric vehicles."
+            },
+            {
+                heading: "Sustainable Energy Integration",
+                info: "Installed a 115.2 kWp solar power system, contributing to the facility's energy efficiency and reducing its carbon footprint."
             },
             {
                 heading: "Rapid Charging Infrastructure Deployment",
@@ -72,14 +76,11 @@ const data = [
                 heading: "Exceptional Project Delivery",
                 info: "Successfully completed the entire project, from initial approvals to final commissioning, in just 90 days, showcasing our agility and commitment to exceeding client expectations."
             },
-            {
-                heading: "Sustainable Energy Integration",
-                info: "Installed a 115.2 kWp solar power system, contributing to the facility's energy efficiency and reducing its carbon footprint."
-            },
+            
         ],
         testimonial_logo: kiaLogo,
         testimonial_head: "Mr. Reji, VP Operations, Incheon Motors Pvt. Ltd",
-        testimonial_info: "Electra Power Engineering proved to be a reliable and efficient partner throughout the entire project. Their expertise in electrical engineering, coupled with their commitment to quality and timely delivery, exceeded our expectations. We are highly satisfied with the results and confident that our upgraded electrical infrastructure will support our growth for years to come."
+        testimonial_info: "Electra Power Engineering's team surpassed our expectations in every aspect of this project. Their technical expertise, dedication to quality, and ability to deliver within challenging timelines were truly remarkable. The EV charging station they installed has become a major attraction for our customers, and we are confident that it will play a significant role in driving EV adoption in Kerala."
     },
     {
         title: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart",
@@ -112,7 +113,7 @@ const data = [
             },
         ],
         testimonial_logo: hhysLogo,
-        testimonial_head: "Mr. Yaseem, GM, HHYS Inframart.",
+        testimonial_head: "Mr. Yaseen, GM, HHYS Inframart.",
         testimonial_info: "Electra Power Engineering proved to be a reliable and efficient partner throughout the entire project. Their expertise in electrical engineering, coupled with their commitment to quality and timely delivery, exceeded our expectations. We are highly satisfied with the results and confident that our upgraded electrical infrastructure will support our growth for years to come."
     },
     {
@@ -122,9 +123,9 @@ const data = [
             { url: app2 },
             { url: app3 }
         ],
-        description_one: "Electra Power Engineering has partnered with RDS Realties Ltd., a renowned builder in Kerala, to illuminate their prestigious RDSLegacy Apartments project in Kochi. Recognized for their commitment to quality and luxury, RDS Realities entrusted Electra Power Engineering with the turnkey electrical design and installation for this landmark residential development.",
+        description_one: "Electra Power Engineering has partnered with RDS Realties Ltd., a renowned builder in Kerala, to illuminate their prestigious RDS Legacy Apartments project in Kochi. Recognized for their commitment to quality and luxury, RDS Realities entrusted Electra Power with the turnkey electrical design and installation for this landmark residential development.",
 
-        description_two: "",
+        description_two: "Our team's expertise ensured that RDS Legacy Apartments residents enjoy uninterrupted power supply, state-of-the-art electrical amenities, and a seamless living experience. The project demonstrates our ability to deliver comprehensive electrical solutions for high-end residential projects, aligning perfectly with the builder's vision of luxury and comfort.",
 
         highlights: [
             {
@@ -159,9 +160,9 @@ const data = [
             { url: hos2 },
             { url: hos3 }
         ],
-        description_one: "Electra Power Engineering, a pioneer in electrical contracting and engineering, partnered with Imaging Lily Pvt. Ltd. to illuminate the future of healthcare in Kerala. We were entrusted with the turnkey electrical design and installation for Kerala's first all-inclusive nuclear medicine and radiology centre, located in the heart of Kochi.",
+        description_one: "Electra Power Engineering, a  pioneer in electrical contracting and engineering, partnered with Imaging Lily Pvt. Ltd. to illuminate the future of healthcare in Kerala. We were entrusted with the turnkey electrical design and installation for Kerala's first all-inclusive nuclear medicine and radiology centre, located in the heart of Kochi.",
 
-        description_two: "",
+        description_two: "Imaging Lily is a pioneering institution dedicated to providing comprehensive diagnostic and treatment services for a wide range of medical conditions. Electrapower's role was instrumental in creating a safe, reliable, and efficient electrical infrastructure that supports the centre's critical operations and advanced medical equipment. This project exemplifies our expertise in designing and implementing electrical solutions for healthcare facilities, where precision, reliability, and safety are paramount.",
 
         highlights: [
             {
@@ -183,7 +184,7 @@ const data = [
         ],
         testimonial_logo: hosLogo,
         testimonial_head: "Dr. Dennis Idikula Y, MD, Imaging Lily Pvt. Ltd.",
-        testimonial_info: "Electra Power Engineering's team went above and beyond to understand the specific electrical needs of our nuclear medicine and radiology center. Their meticulous attention to detail, adherence to safety regulations, and timely project delivery were instrumental in getting our facility up and running smoothly. We are highly impressed with their expertise and professionalism."
+        testimonial_info: "Electra Power Engineering's team went above and beyond to understand the specific electrical needs of our nuclear medicine and radiology centre. Their meticulous attention to detail, adherence to safety regulations, and timely project delivery were instrumental in getting our facility up and running smoothly. We are highly impressed with their expertise and professionalism."
     },
     {
         title: "Transforming mat manufacturing with advanced electrical upgrades for Travancore Cocotuft",
@@ -192,9 +193,9 @@ const data = [
             { url: coco2 },
             { url: coco3 }
         ],
-        description_one: "Electra Power Engineering collaborated with Travancore Cocotuft (P) Ltd., the world's largest doormat manufacturer and exporter,to upgrade their electrical infrastructure. Acknowledging the necessity for a robust and sustainable power solution to support theirextensive manufacturing operations, Travancore Cocotuft relied on Electra Power Engineering to design, install, and commission astate-of-the-art electrical system.",
+        description_one: "Electra Power Engineering collaborated with Travancore Cocotuft (P) Ltd., the world's largest doormat manufacturer and exporter, to upgrade their electrical infrastructure. Acknowledging the necessity for a robust and sustainable power solution to support their extensive manufacturing operations, Travancore Cocotuft relied on Electra Power to design, install, and commission a state-of-the-art electrical system.",
 
-        description_two: "",
+        description_two: "Our team delivered a comprehensive solution that addressed Travancore Cocotuft's increasing energy demands while prioritising environmental sustainability. This project exemplifies our expertise in designing and implementing scalable electrical systems for large-scale manufacturing facilities, incorporating renewable energy sources and energy-efficient technologies.",
 
         highlights: [
             {
@@ -227,7 +228,7 @@ const data = [
         ],
         description_one: "Electra Power Engineering, a trusted leader in electrical contracting and engineering, partnered with Eastern Condiments, India's largest spice exporter and a major player in the food industry, to enhance their electrical infrastructure. As a renowned brand backed by Orkla, Eastern Condiments sought a robust and efficient electrical system to support their expanding production lines for Masala and Roaster products.",
 
-        description_two: "Recognizing the critical role of reliable power in maintaining production efficiency and product quality, Eastern Condiments entrusted Electra Power Engineering with the electrification of their 440 kW Masala plant and 245 kW Roaster. This project demonstrates our expertise in designing and implementing electrical solutions for large-scale manufacturing facilities, ensuring uninterrupted operations and adherence to industry standards.",
+        description_two: "Recognizing the critical role of reliable power in maintaining production efficiency and product quality, Eastern Condiments entrusted Electra Power with the electrification of their 440 kW Masala plant and 245 kW Roaster. This project demonstrates our expertise in designing and implementing electrical solutions for large-scale manufacturing facilities, ensuring uninterrupted operations and adherence to industry standards.",
 
         highlights: [
             {
@@ -293,9 +294,9 @@ const data = [
         images: [
             { url: tata1 },
         ],
-        description_one: "Electra Power Engineering, pioneers in electrical contracting and engineering, partnered with Luxon Motos Pvt. Ltd., the largestTata Motors dealer in Kerala, to illuminate the future of mobility. We were entrusted with the electrical design and installation of Kerala's first exclusive TATA Motors EV showroom in Palarivattom, Kochi.",
+        description_one: "Electra Power Engineering, pioneers in electrical contracting and engineering, partnered with Luxon Motos Pvt. Ltd., the largest Tata Motors dealer in Kerala, to illuminate the future of mobility. We were entrusted with the electrical design and installation of Kerala's first exclusive TATA Motors EV showroom in Palarivattom, Kochi.",
 
-        description_two: "",
+        description_two: "This state-of-the-art facility represents Tata Motors' commitment to sustainable transportation and showcases a wide range of electric vehicles (EVs). Electrapower's role was pivotal in creating an environment that is both functional and visually appealing, ensuring a seamless customer experience while promoting the adoption of eco-friendly vehicles.",
 
         highlights: [
             {
