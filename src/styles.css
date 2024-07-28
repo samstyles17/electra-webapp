@@ -110,6 +110,7 @@
   .section-container.mobile .bottom-text h4 {
     font-size: 12px;
     line-height: 1.8;
+    text-align: left;
   }
 }
 

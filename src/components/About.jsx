@@ -24,7 +24,7 @@ function About() {
           <div className="bullet-point montserrat-regular my-5 text-sm">Technical excellence ensures optimal solutions.</div>
           <div className="bullet-point montserrat-regular my-5 text-sm">Proven success showcases track record.</div>
         </div>
-        <div className="bottom-text montserrat-regular text-sm">
+        <div className="bottom-text montserrat-regular text-sm left-align">
           <h4>We are committed to fostering long-term partnerships, collaborating closely with our clients to translate their vision into a reality. With Electra Power Engineering as your partner, you can be confident that your electrical infrastructure is built to last, empowering your business for a brighter future.</h4>
         </div>
       </div>
