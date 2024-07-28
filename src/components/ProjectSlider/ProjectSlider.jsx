@@ -34,7 +34,8 @@ const ProjectSlider = ({ images }) => {
             images.map((element, index) => {
               return (
                 <div className='slider-card' key={index}>
-                  <img src={element.image_url} alt="" className='slider-image' />
+                  <div style={{backgroundImage : `url(${element.image_url})`}}  className='slider-image' > 
+                  </div>
                   <div className="slider-rectangle flex   items-center gap-5 px-5 ">
                     <span className='slider-index flex justify-center items-center'>
                       {index + 1}
