@@ -1,18 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Services.css';
 
 const Services = ({ data, panel }) => {
-    console.log(data)
     const [toggle, setToggle] = useState({
         check: false,
         index: 0
     });
+    const elementsRef = useRef([]);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.1 });
+
+        elementsRef.current.forEach(el => {
+            if (el) observer.observe(el);
+        });
+        return () => {
+            elementsRef.current.forEach(ref => {
+              if (ref) observer.unobserve(ref);
+            });
+        }
+    }, []);
     return (
         data.map((e, i) => {
             return (
                 <>
-                    <div className={`services ${i % 2 !== 0 && 'services-row-revese '} ${i === 3 && panel && 'service-panel-fix'}`}  >
+                    <div    ref={(el) => (elementsRef.current[i] = el)} className={`services ${i % 2 !== 0 && 'services-row-revese '} ${i === 3 && panel && 'service-panel-fix'}`}  >
                         <div className={`services-images ${i % 2 !== 0 && 'services-row-revese'}`}>
                             {e.images.map((e, i) => {
                                 return (<img src={e} alt="" className='service-image' />)
