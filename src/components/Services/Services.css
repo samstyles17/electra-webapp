@@ -5,7 +5,7 @@
     margin: 100px 40px;
     padding: 0 40px;
     position: relative;
-    flex-wrap: wrap;
+   
 }
 .services-images {
     display: flex;
