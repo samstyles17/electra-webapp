@@ -55,18 +55,7 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
         transition: 'all 0.3s',
         borderRadius: '16px',
         pointerEvents: isMobile ? 'auto' : (isFullyVisible && !isOverlappingButton ? 'auto' : 'none'),
-        '&:hover': {
-          '& .MuiCardMedia-root': {
-            transform: 'scale(1.05)',
-          },
-          '& .MuiCardContent-root': {
-            height: '50%',
-            background: 'rgba(0,0,0,0.7)',
-          }
-        }
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <CardMedia
         component="img"
@@ -77,16 +66,19 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
           height: '100%',
           objectFit: 'cover',
           transition: 'transform 0.3s',
+          transform: isHovered ? 'scale(1.05)' : 'scale(1)',
         }}
       />
       <CardContent
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         sx={{
           position: 'absolute',
           bottom: 0,
           left: 0,
           right: 0,
           height: isHovered ? '50%' : '80px',
-          background: 'rgba(0,0,0,0.5)',
+          background: isHovered ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.5)',
           color: 'white',
           transition: 'all 0.3s',
           display: 'flex',
@@ -128,7 +120,6 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
     </Card>
   );
 };
-
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
