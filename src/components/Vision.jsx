@@ -11,7 +11,7 @@ function Vision() {
         <h1 className="sub-heading montserrat-medium">
           Powering Possibilities
         </h1>
-        <p className="paragraph montserrat-regular">
+        <p className="paragraph montserrat-regular" style={{textAlign:'left'}}>
           We are catalysts for change. By pushing the boundaries of what's possible
           and harnessing the power of imagination, we not only drive change but
           also empower endless possibilities for our clients and partners.

@@ -33,8 +33,8 @@ const OurPeople = () => {
           <div className="people-text">
             <hr />
             <h2 className="people-title montserrat-regular">
-              <span className="highlight-orange">Our </span>
-              <span className="highlight-blue">People</span>
+              <span className="highlight-orange" style={{marginRight:'10px'}}>Our </span>
+              <span className="highlight-blue"> People</span>
             </h2>
             <p className="people-paragraph montserrat-regular">
               Our greatest asset is our people, including experienced engineers, skilled technicians, 
@@ -48,9 +48,9 @@ const OurPeople = () => {
         <div className="route-content">
           <h2 className="route-title montserrat-regular">
             <span className="highlight-blue">
-              {isMobile ? 'Our ' : 'OUR ROUTE '}
+              {isMobile ? 'OUR ROUTE' : 'OUR ROUTE '}
             </span>
-            <span className="highlight-orange">{isMobile ? 'Expertise ' : 'TO SUCCESS '}</span>
+            <span className="highlight-orange">{isMobile ? ' TO SUCCESS ' : 'TO SUCCESS '}</span>
           </h2> 
           <p className="route-paragraph montserrat-regular">
             Discover our expertise in electrical engineering, where innovation meets reliability. With a focus 
