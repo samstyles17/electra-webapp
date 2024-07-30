@@ -335,6 +335,7 @@ hr{
     flex-direction: column;
     padding: 20px;
     margin-left: 0;
+    width: 100%;
   }
 
   .text-section {

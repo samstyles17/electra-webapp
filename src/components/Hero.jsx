@@ -9,7 +9,7 @@ function Hero() {
   return (
     <div 
       style={{
-        padding: '69px 1rem',
+        padding: isMobile ? '69px 1rem 15px 1rem': '69px 1rem',
         marginLeft: isMobile ? '0rem' : '60px',  // Adjust left margin
         marginRight: isMobile ? '0rem' : '60px'  // Adjust right margin
       }} 
@@ -48,8 +48,8 @@ function Hero() {
         </div>
         {isMobile && (
           <Link to="/designconsultingservice">
-            <button className="btn btn-md rounded-full whitespace-nowrap mt-4 bg-[#F2F2F2]">
-              <h3 className="montserrat-medium px-3 text-lg">OUR SERVICES →</h3>
+            <button className="btn btn-md rounded-full whitespace-nowrap mt-8 mb-1 bg-[#F2F2F2]">
+              <h3 className="montserrat-medium px-3 text-sm">OUR SERVICES →</h3>
             </button>
           </Link>
         )}
