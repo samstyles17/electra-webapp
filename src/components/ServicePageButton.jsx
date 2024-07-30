@@ -95,11 +95,10 @@ const ResponsiveButtonGroup = () => {
       {isMobile ? (
         <Slider ref={sliderRef} {...settings}>
           {buttons.map((button, index) => (
-              <HashLink smooth to={`${button.link}#services`}>
             <Box key={index} sx={{ padding: '0 8px' }}>
-        
+            <HashLink smooth to={`${button.link}#services`}>
               <CustomButton
-              key={index}
+            
                 startIcon={<img src={button.icon} alt={button.text} />}
                
                 sx={{
@@ -120,16 +119,17 @@ const ResponsiveButtonGroup = () => {
               >
                 {button.text}
               </CustomButton>
+              </HashLink>
             </Box>
-            </HashLink>
+          
           ))}
         </Slider>
       ) : (
         
         buttons.map((button, index) => (
-          <HashLink smooth to={`${button.link}#services`}>
+          <HashLink smooth to={`${button.link}#services`} key={index}>
           <CustomButton
-            key={index}
+     
             startIcon={<img src={button.icon} alt={button.text} />}
         
             sx={{
