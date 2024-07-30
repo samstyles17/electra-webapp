@@ -6,6 +6,7 @@ import "./AllProjects.css";
 import Connect from "../components/Connect/Connect";
 import Footer from "../components/Footer";
 import image1601 from '../assets/img/image1601.jpg';
+import kia8 from '../assets/img/kia_changaramkulam.jpeg'
 import kia7 from '../assets/img/kia_edappalli.png'
 import kia6 from '../assets/img/kia_vadanappally.png';
 import kia3 from '../assets/img/kia_thrissur.png';
@@ -61,6 +62,8 @@ import cp9 from '../assets/img/cp9.png';
 import cp10 from '../assets/img/cp10.png';
 import cp11 from '../assets/img/cp11.png';
 import cp12 from '../assets/img/cp12.png';
+import cp20 from '../assets/img/cp20.jpeg';
+import cp21 from '../assets/img/cp21.jpeg';
 import lh1 from '../assets/img/lh1.png';
 import lh2 from '../assets/img/lh2.png';
 import lh3 from '../assets/img/lh3.png';
@@ -75,31 +78,31 @@ const data = [
         img: image1601,
         images: [  
             {
-                title: "Nettor",
+                title: "Incheon Kia Showroom, Nettoor",
                 image_url: kia1,
             },
             {
-                title: "Nettor EV Chargin Station",
+                title: "Incheon Kia EV Charging Station, Nettoor",
                 image_url: kia2,
             },
             {
-                title: "Thrissur",
+                title: "Incheon Kia Showroom, Thrissur",
                 image_url: kia3,
             },
             {
-                title: "Palakkad",
+                title: "Incheon Kia Showroom, Palakkad",
                 image_url: kia4,
             },
             {
-                title: "Kayamkulam",
+                title: "Incheon Kia Showroom, Kayamkulam",
                 image_url: kia5,
             },
             {
-                title: "Vadanappally",
+                title: "Incheon Kia Showroom, Vadanappally",
                 image_url: kia6,
             },
             {
-                title:'Edappalli',
+                title:'Incheon Kia Showroom, Edappally',
                 image_url:kia7
             }
         ]
@@ -109,32 +112,37 @@ const data = [
         img: tata,
         images: [
             {
-                title: "Palarivattom",
+                title: "Luxon Tata Showroom, Palarivattom",
                 image_url: tata1,
             },
             {
-                title: "Irumpanam",
+                title: "Luxon Tata Showroom, Irumpanam",
                 image_url: tata2,
             },
             {
-                title: "Mattancherry",
+                title: "Luxon Tata Showroom, Mattanchery",
                 image_url: tata3,
             },
             {
-                title: "Nedumkandam",
+                title: "Luxon Tata Showroom, Nedumkandam",
                 image_url: tata4,
             },
             {
-                title: "Konni, Pathanamathitta",
+                title: "Luxon Tata Showroom, Konni",
                 image_url: tata5,
             },
             {
-                title: "Munduparambu, Malappuram",
+                title: "Luxon Tata Showroom, Munduparambu",
                 image_url: tata6,
             },
             {
-                title: "Areekkode",
+                title: "Luxon Tata Showroom, Areekkode",
                 image_url: tata7
+            },
+            ,
+            {
+                title:'Luxon Tata Showroom, Changaramkulam',
+                image_url:kia8
             }
         ]
     },
@@ -143,23 +151,23 @@ const data = [
         img: toyota,
         images: [
             {
-                title: "Ernakulum",
+                title: "Nippon Tayota Showromm, Ernakulam",
                 image_url: toyota1,
             },
             {
-                title: "Enchakkal",
+                title: "Nippon Tayota Showromm, Enchakkal",
                 image_url: toyota2,
             },
             {
-                title: "Kayamkulam",
+                title: "Nippon Tayota Showromm, Kayamkulam",
                 image_url: toyota3,
             },
             {
-                title: "Kazhakkottam",
+                title: "Nippon Tayota Showromm, Kazhakkoottam",
                 image_url: toyota4,
             },
             {
-                title:"Kochuveli",
+                title:"Nippon Tayota Showromm, Kochuveli",
                 image_url: toyota5
             }
 
@@ -170,11 +178,11 @@ const data = [
         img: hhys1,
         images: [
             {
-                title: "Pranthangamood, Kayamkulam",
+                title: "HHYS Inframart Showroom, Prathangamood",
                 image_url: hhys2
             },
             {
-                title: "Mukkavala, Kayamkulam",
+                title: "HHYS Inframart Showroom, Kayamkulam",
                 image_url: hhys7,
             },
             // {
@@ -182,7 +190,7 @@ const data = [
             //     image_url: hhys3,
             // },
             {
-                title: "Kollam",
+                title: "HHYS Inframart Showroom, Kollam-1",
                 image_url: hhys4,
             },
             // {
@@ -190,7 +198,7 @@ const data = [
             //     image_url: hhys5,
             // },
             {
-                title: "Kollam",
+                title: "HHYS Inframart Showroom, Kollam-2",
                 image_url: hhys6,
             },
             
@@ -206,7 +214,7 @@ const data = [
         img: app1,
         images: [
             {
-                title: "RDS Realities",
+                title: "RDS Legacy, Panampilly Nagar",
                 image_url: app2,
             },
             {
@@ -218,15 +226,15 @@ const data = [
                 image_url: app6,
             },
             {
-                title: "Bindu Sen Apartment, Muvattupuzha",
+                title: "Bindu Sen Apartment, Muvattupuzh",
                 image_url: app4,
             },
             {
-                title: "Tristar Excellency",
+                title: "Tristar Excellency, Kakkanad",
                 image_url: app7,
             },
             {
-                title: "Tristar Presidency",
+                title: "Tristar Presidency, Panampilly Nagar",
                 image_url: app5,
             }           
             
@@ -261,7 +269,7 @@ const data = [
             //     image_url: ip4,
             // },
             {
-                title: "Travancore Coco, Cherthala",
+                title: "Travancore Coco Tuft, Cherthala",
                 image_url: ip5,
             },
             
@@ -273,7 +281,7 @@ const data = [
         img: cp1,
         images: [
             {
-                title: "ST Joseph Bhavan, Hospital, Chalakkudy",
+                title: "St. Joseph Bhavan, Chalakkudy",
                 image_url: cp2,
             },
             {
@@ -281,15 +289,15 @@ const data = [
                 image_url: cp3,
             },
             {
-                title: "Motorspot Pre Owned Cars, Ernakulam",
+                title: "Motorspot Showroom, Ernakulam",
                 image_url: cp7,
             },
             {
-                title: "Prince Jwellery, Ernakulam",
+                title: "Prince Square, M.G Road, Ernakulam",
                 image_url: cp9,
             },
             {
-                title: "UTSAV, MG Road, Ernakulam",
+                title: "Utsav, M.G. Road, Ernakulam",
                 image_url: cp12,
             },
             {
@@ -306,22 +314,28 @@ const data = [
                 image_url: cp4,
             },
             {
-                title: "Chungath Jwellery, Ernakulam",
+                title: "PUCBank, Thripunithura",
                 image_url: cp8,
             },
             
             {
                 title: "Finsyz Vacation Homes, Angamaly",
                 image_url: cp6,
-            },
-            
-            
+            },           
+
             
             {
                 title: "Salafi Masjid, Vytila",
                 image_url: cp10,
             },
-            
+            {
+                title:'Catholic Syrian Bank, Ernakulam',
+                image_url: cp20
+            },
+            {
+                title:'Chungath Jewellery, M.G Road, Ernakulam',
+                image_url: cp21
+            }
 
         ]
     },
