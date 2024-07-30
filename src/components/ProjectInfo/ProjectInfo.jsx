@@ -36,7 +36,7 @@ const ProjectInfo = ({ data }) => {
             <ProjectHeader />
             {data.map((e, i) => (
                 <section
-                    id={`section-${i}`}
+                    id={`${i}`}
                     key={i}
                     ref={el => elementsRef.current[i] = el}
                     className="project-section"
