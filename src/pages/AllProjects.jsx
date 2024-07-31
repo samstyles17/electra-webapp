@@ -151,23 +151,23 @@ const data = [
         img: toyota,
         images: [
             {
-                title: "Nippon Toyota Showromm, Ernakulam",
+                title: "Nippon Toyota Showroom, Ernakulam",
                 image_url: toyota1,
             },
             {
-                title: "Nippon Toyota Showromm, Enchakkal",
+                title: "Nippon Toyota Showroom, Enchakkal",
                 image_url: toyota2,
             },
             {
-                title: "Nippon Toyota Showromm, Kayamkulam",
+                title: "Nippon Toyota Showroom, Kayamkulam",
                 image_url: toyota3,
             },
             {
-                title: "Nippon Toyota Showromm, Kazhakkoottam",
+                title: "Nippon Toyota Showroom, Kazhakkoottam",
                 image_url: toyota4,
             },
             {
-                title:"Nippon Toyota Showromm, Kochuveli",
+                title:"Nippon Toyota Showroom, Kochuveli",
                 image_url: toyota5
             }
 
