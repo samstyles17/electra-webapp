@@ -5,14 +5,28 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import DividerImage from '../assets/img/client_divider.png';
 
-import Client1 from '../assets/img/client1.png';
-import Client4 from '../assets/img/client4.png';
-import Client6 from '../assets/img/client6.png';
-import Client8 from '../assets/img/client8.png';
-import Client13 from '../assets/img/client13.png';
-import Client14 from '../assets/img/client14.png';
-import Client15 from '../assets/img/client15.png';
-import Client16 from '../assets/img/client16.png';
+import Client1 from '../assets/img/cl1.png';
+import Client2 from '../assets/img/cl2.png';
+import Client3 from '../assets/img/cl3.png';
+import Client4 from '../assets/img/cl4.png';
+import Client5 from '../assets/img/cl5.png';
+import Client6 from '../assets/img/cl6.png';
+import Client7 from '../assets/img/cl7.png';
+import Client8 from '../assets/img/cl8.png';
+import Client9 from '../assets/img/cl9.png';
+import Client10 from '../assets/img/cl10.png';
+import Client11 from '../assets/img/cl11.png';
+import Client12 from '../assets/img/cl12.png';
+import Client13 from '../assets/img/cl14.png';
+import Client14 from '../assets/img/cl15.png';
+import Client15 from '../assets/img/cl16.png';
+import Client16 from '../assets/img/cl17.png';
+import Client17 from '../assets/img/cl18.png';
+import Client18 from '../assets/img/cl19.png';
+import Client19 from '../assets/img/cl20.png';
+import Client20 from '../assets/img/cl21.png';
+import Client21 from '../assets/img/cl22.png';
+import Client22 from '../assets/img/cl23.png';
 
 const theme = createTheme({
   typography: {
@@ -21,8 +35,9 @@ const theme = createTheme({
 });
 
 const clients = [
-  Client1, Client4, Client6, Client8,
-  Client13, Client14, Client15, Client16,
+ Client1, Client2,Client3,Client4,Client5,Client6,Client7,
+ Client8, Client9, Client10, Client11, Client12, Client13, Client14,
+ Client15, Client16, Client17, Client18, Client19, Client20, Client21, Client22
 ];
 
 const scroll = keyframes`
