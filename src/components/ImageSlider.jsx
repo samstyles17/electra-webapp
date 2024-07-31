@@ -171,7 +171,11 @@ const Carousel = () => {
           position: 'relative', 
           width: '100%', 
           maxWidth: isMobile ? '100%' : `${visibleCards * (cardWidth + cardSpacing) - cardSpacing}px`, 
-          margin: isMobile ? 1 : '0 0 0 95px',
+          marginTop: isMobile? 1 : 0,
+          marginBottom: isMobile? 1 : 0,
+          marginLeft : isMobile ? 1 : '95px' ,
+          marginRight :isMobile ? 1:0,
+          // margin: isMobile ? 1 : '0 0 0 95px',
           overflow: 'hidden'
         }}
         onTouchStart={onTouchStart}

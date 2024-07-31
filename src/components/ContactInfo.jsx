@@ -24,7 +24,7 @@ const ContactInfo = () => {
           <div className="info-box">
             <div className="info-header">
               <img src={img2} alt="Head Office" className="info-logo" />
-              <h3 className="montserrat-regular">HEADOFFICE</h3>
+              <h3 className="montserrat-regular">HEAD OFFICE</h3>
             </div>
             <p className="montserrat-regular">Electra Power Engineering<br />
               'A' Grade Electrical Contractors & Engineers<br />

@@ -34,12 +34,13 @@ background-size: contain;
 
 @media (max-width: 768px) {
     .project-testimonial-text > p {
-        font-size: 12px;
+        font-size: 14px !important;
         padding-bottom: 20px;
     }
     .project-testimonial-text > h4 {
-        font-size: 12px;
+        font-size: 15px;
         margin-bottom: 0;
+        padding-right: 5px;
     }
     .project-testimonial-info {
         gap: 2rem;
@@ -73,7 +74,6 @@ background-size: contain;
         margin-top: 30px;
     }
     .project-testimonial-text > p {
-        font-size: 12px;
         padding-bottom: 20px;
     }
     .project-testimonial-text > h4 {

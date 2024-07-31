@@ -8,13 +8,13 @@ import Carousel from 'react-material-ui-carousel';
 import dividerImage from '../assets/img/service_footer_vector.png';
 
 // Import your carousel images
-import img1 from '../assets/img/portfolio_card1.png';
-import img2 from '../assets/img/portfolio_card2.png';
-import img3 from '../assets/img/portfolio_card3.png';
-import img4 from '../assets/img/portfolio_card4.png';
-import img5 from '../assets/img/portfolio_card5.png';
-import img6 from '../assets/img/portfolio_card6.png';
-import img7 from '../assets/img/portfolio_card7.png';
+import img1 from '../assets/img/kia_nettoor.png';
+import img2 from '../assets/img/hhys2.png';
+import img3 from '../assets/img/app2.png';
+import img4 from '../assets/img/hospital/hos1.png';
+import img5 from '../assets/img/cocotuft/coco1.png';
+import img6 from '../assets/img/condiments/ec1.png';
+import img7 from '../assets/img/east_napier/napier1.png';
 import img8 from '../assets/img/portfolio_card8.png';
 
 const theme = createTheme({

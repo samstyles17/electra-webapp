@@ -28,7 +28,7 @@
 
 
     .project-description-text>p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .project-description-text,
@@ -57,9 +57,7 @@
         padding: 20px 14px !important;
     }
 
-    .project-description-text>p {
-        font-size: 12px !important;
-    }
+    
 
     .rotate-inverse {
         writing-mode: horizontal-tb;
@@ -78,5 +76,5 @@
     .project-images-slider {
         display: block;
         margin-bottom: 40px;
-    }
+    }    
 }

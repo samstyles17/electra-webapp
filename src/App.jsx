@@ -11,6 +11,7 @@ import ApprovalComplianceService from "./serviceapprovalcompliance/ApprovalCompl
 import MaintenaceRepairService from "./servicemaintenancerepair/MaintenaceRepairService";
 import ValueAddedService from "./servicevalueaddedservice/ValueAddedService";
 import Enquire from "./enquire/Enquire";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/allprojects" element={<AllProjects/>}/>
         <Route path="/enquire" element={<Enquire/>} />
       </Routes>
+      <ScrollToTop />
     </>
   );
 }

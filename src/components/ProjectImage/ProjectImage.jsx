@@ -1,7 +1,30 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import Slider from "react-slick";
 
 const ProjectImage = ({ images }) => {
+    const imageRefs = useRef([]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        imageRefs.current.forEach(img => {
+            if (img) observer.observe(img);
+        });
+
+        return () => {
+            imageRefs.current.forEach(img => {
+                if (img) observer.unobserve(img);
+            });
+        };
+    }, [images]);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -23,7 +46,8 @@ const ProjectImage = ({ images }) => {
                     <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" />
                 )}
             </Slider> :  images.map((e, i) =>
-                    <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" />
+                    <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" 
+            />
                 )
           }  
      

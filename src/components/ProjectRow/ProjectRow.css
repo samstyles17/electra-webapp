@@ -91,6 +91,9 @@
         margin: 0;
         align-items: center;
         justify-content: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s ease-out, transform 1s ease-out;
     }
 
     .col-1 {
@@ -122,5 +125,12 @@
     .card-h-img {
         height: 156px;
         background-size: contain;
+
     }
+    
+    .row.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
 }

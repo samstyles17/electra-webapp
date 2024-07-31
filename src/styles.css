@@ -335,6 +335,7 @@ hr{
     flex-direction: column;
     padding: 20px;
     margin-left: 0;
+    width: 100%;
   }
 
   .text-section {
@@ -2288,5 +2289,15 @@ hr{
   .home {
     width: auto;
     overflow: hidden !important;
+  }
+  .aboutus > div {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+  }
+
+  .aboutus > div.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

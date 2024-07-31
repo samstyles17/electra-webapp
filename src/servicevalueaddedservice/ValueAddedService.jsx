@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import Services from '../components/Services/Services';
 
 import img1 from "../assets/img/service6/service6_carousel1_img1.png";
-import img2 from "../assets/img/service6/service6_carousel2_img2.png";
+import img2 from "../assets/img/service6/service6_carousel1_img2.png";
 import img3 from "../assets/img/service6/service6_carousel2_img1.png";
 import img4 from "../assets/img/service6/service6_carousel2_img2.png";
 import img5 from "../assets/img/service6/service6_carousel3_img1.png";
