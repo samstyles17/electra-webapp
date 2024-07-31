@@ -1389,14 +1389,20 @@ hr{
     position: relative;
     border-radius: 55px;
   }
-
-  .semi-hover:last-child .image-container {
+  .semi-hover:first-child, .cardgg:hover .semi-hover:first-child:hover {
+    margin-bottom: 170px;
     visibility: visible !important;
   }
 
-  .cardgg:hover .semi-hover:not(:last-child):hover ~ .semi-hover:last-child .image-container {
-    visibility: hidden !important;
+  .semi-hover:first-child .image-container {
+    visibility: visible !important;
+    z-index:0;
   }
+
+  .cardgg:hover .semi-hover:first-child {
+    margin-bottom: 0px;
+  }
+  
   .semi-hover:hover .image-container .hover-image {
     margin-left: 0 !important;
     left: 50%;
