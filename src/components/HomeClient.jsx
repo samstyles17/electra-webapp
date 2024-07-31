@@ -18,7 +18,7 @@ import Client10 from '../assets/img/cl10.png';
 import Client11 from '../assets/img/cl11.png';
 import Client12 from '../assets/img/cl12.png';
 import Client13 from '../assets/img/cl14.png';
-import Client14 from '../assets/img/cl15.png';
+// import Client14 from '../assets/img/cl15.png';
 import Client15 from '../assets/img/cl16.png';
 import Client16 from '../assets/img/cl17.png';
 import Client17 from '../assets/img/cl18.png';
@@ -36,7 +36,7 @@ const theme = createTheme({
 
 const clients = [
  Client1, Client2,Client3,Client4,Client5,Client6,Client7,
- Client8, Client9, Client10, Client11, Client12, Client13, Client14,
+ Client8, Client9, Client10, Client11, Client12, Client13, 
  Client15, Client16, Client17, Client18, Client19, Client20, Client21, Client22
 ];
 
