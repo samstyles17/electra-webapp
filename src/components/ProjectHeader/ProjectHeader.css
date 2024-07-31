@@ -116,6 +116,7 @@
     }
     .project-header-span > span:last-child {
         display: block;
+        width: fit-content;
         color: #6A6A73;
         font-size: 21px;
         text-transform: capitalize;
