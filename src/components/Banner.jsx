@@ -7,7 +7,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 // Web banner images
 import banner1 from "../assets/img/banner_a.png";
-import banner2 from "../assets/img/banner_b.png";
+// import banner2 from "../assets/img/banner_b.png";
 import banner3 from "../assets/img/banner_c.png";
 import banner4 from "../assets/img/banner_d.png";
 import banner5 from "../assets/img/banner_e.png";
@@ -60,7 +60,6 @@ function Banner() {
 
   const webImages = [
     { src: banner1, route: '/enquire' },
-    { src: banner2, route: '/aboutus' },
     { src: banner3, route: '/allprojects' },
     { src: banner4, route: '/projectsectorial' },
     { src: banner5, route: "/designconsultingservice" },

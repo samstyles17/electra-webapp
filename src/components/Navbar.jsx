@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
-import logo from "../assets/img/logo.png";
+// import logo from "../assets/img/logo.png";
+import logo from '../assets/img/logo_a.png';
 import divider from "../assets/img/divider1.png";
 import mobileDivider from "../assets/img/navbar_vector.svg"; // Add this line
 import "../styles.css";
@@ -45,7 +46,7 @@ function Navbar() {
               <div className="navbar-start w-full flex flex-col items-center">
                 <div className="flex justify-between w-full px-4">
                   <Link to="/">
-                    <img src={logo} alt="logo" className="h-8 w-auto" />
+                    <img src={logo} alt="logo" className="h-9 w-15" />
                   </Link>
                   <div className="dropdown">
                     <div
@@ -126,7 +127,7 @@ function Navbar() {
           ) : (
             <>
               <div className="navbar-start">
-                <div className="ml-14">
+                <div className="ml-14 h-10 w-40">
                   <Link to="/">
                     <img src={logo} alt="logo"  />
                   </Link>
