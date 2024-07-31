@@ -39,7 +39,7 @@ const ProjectHighlights = ({ highlights }) => {
         <svg width="45" height="2" viewBox="0 0 45 2" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.19" d="M0 1L45 1" stroke="#F8753C" strokeWidth="2" />
         </svg>
-        <span className="text-orangetext text-2xl tracking-wide">
+        <span className="text-orangetext text-2xl tracking-wide font-bold">
           Projects Highlights
         </span>
       </div>

@@ -36,7 +36,7 @@ const sections = [
       bullets: [
     
       ],
-      images: [img4, img5]
+      images: [img5, img4]
     },
     {
       heading: "Value Engineering",
@@ -44,7 +44,7 @@ const sections = [
       bullets: [
      
       ],
-      images: [img7, img8]
+      images: [img8, img7]
     },
     {
       heading: "Technical Consulting",
@@ -52,7 +52,7 @@ const sections = [
       bullets: [
       
       ],
-      images: [img10, img11]
+      images: [img11, img10]
     }
   ];
   

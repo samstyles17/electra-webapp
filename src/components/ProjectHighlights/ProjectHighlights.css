@@ -56,11 +56,15 @@
 .project-highlight-list li.animate-color {
   color: #2D3033; 
 }
-
+.project-highlight-list>li>h4 {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
 @media (max-width:768px) {
   .project-highlight-list>li>h4 {
     font-size: 13px;
     margin: 10px 0;
+
   }
 
   .project-highlight-list>li>p {

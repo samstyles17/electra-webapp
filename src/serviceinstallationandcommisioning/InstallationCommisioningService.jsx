@@ -10,23 +10,25 @@ import Services from '../components/Services/Services';
 
 import img1 from "../assets/img/service2/service2_carousel1_img1.png";
 import img2 from "../assets/img/service2/service2_carousel1_img2.png";
+import img3 from "../assets/img/service2/service2_carousel1_img3.png";
 import img4 from "../assets/img/service2/service2_carousel2_img1.png";
 import img5 from "../assets/img/service2/service2_carousel2_img2.png";
+import img6 from "../assets/img/service2/service2_carousel2_img3.png";
 import img7 from "../assets/img/service2/service2_carousel3_img2.png";
 import img8 from "../assets/img/service2/service2_carousel3_img3.png";
 import img10 from "../assets/img/service2/service2_carousel4_img1.png";
 import img11 from "../assets/img/service2/service2_carousel4_img2.png";
-
+import img12 from "../assets/img/service2/service2_carousel4_img3.png";
 const sections = [
   {
     heading: "Electrical Installations (HT/LT):",
     description: "Our skilled electricians provide professional installation services for high-tension (HT) and low-tension (LT) electrical systems. We ensure seamless integration of switchgear, transformers, panels, and other equipment, adhering to the highest safety and quality standards.",
-    images: [img1, img2]
+    images: [img1, img3]
   },
   {
     heading: "Internal Electrification:",
     description: "We offer comprehensive internal electrification solutions for residential, commercial, industrial and infrastructure projects of any scale. Our services include wiring, lighting installations, outlet and switch installations, and integration with automation systems.",
-    images: [img4, img5]
+    images: [img6, img4]
   },
   {
     heading: "Specialised Installations",
@@ -43,7 +45,7 @@ const sections = [
     heading: "Testing and Commissioning",
     description: "We rigorously test and commission all electrical installations to ensure optimal performance, safety, and compliance with industry standards. Our meticulous approach minimises downtime and ensures the longevity of your electrical systems.",
      bullets: [],
-    images: [img10, img11]
+    images: [img10, img12]
   }
 ];
 

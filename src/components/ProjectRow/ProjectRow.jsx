@@ -29,6 +29,7 @@ const ProjectRow = ({ data }) => {
 
     return (
         <>
+        
             {
                 data.map((e, i) => {
                     return (

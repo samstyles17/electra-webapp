@@ -29,7 +29,7 @@ const sections = [
     {
       heading: "Liaison with KSEB and Electrical Inspectorate",
       description: "We streamline the process of obtaining approvals and permits from the Kerala State Electricity Board (KSEB) and the Electrical Inspectorate. Our team handles all the necessary documentation and coordination, ensuring timely approvals and compliance with local regulations.",
-      images: [img1, img2]
+      images: [img15, img13]
     },
     {
       heading: "Short Circuit and Earthing Design",
@@ -40,7 +40,7 @@ const sections = [
     {
       heading: "Approval for Electrical Installations (Addition/Modification)",
       description: "We assist you in obtaining approvals for new electrical installations or modifications to existing systems. Our team ensures that your projects comply with all relevant regulations and standards.",
-      images: [img7, img8]
+      images: [img9, img8]
     },
     {
       heading:"GRID-Connected Solar Plant Approvals",
@@ -50,7 +50,7 @@ const sections = [
     {
       heading: "Obtaining Sanction for Energization",
       description:"We work closely with the Electrical Inspectorate to obtain sanction for energization after a thorough inspection and compliance verification of your electrical installation.",
-      images:[img13, img14]
+      images:[img1, img4]
     }
   ];
   

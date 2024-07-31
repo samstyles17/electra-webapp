@@ -27,12 +27,12 @@ const sections = [
     {
       heading: "Preventive Maintenance",
       description: "We offer proactive maintenance programs to keep your electrical systems and panel boards running smoothly. Our services include regular inspections, cleaning, testing, and calibration of equipment to prevent breakdowns and extend the lifespan of your electrical infrastructure.",
-      images: [img1, img3]
+      images: [img7, img6]
     },
     {
       heading: "Corrective Maintenance",
       description: "Our team of experts is available 24/7 to respond to electrical emergencies and provide prompt repair services. We diagnose and resolve issues quickly, minimising downtime and ensuring the safety of your premises.",
-      images: [img4, img6]
+      images: [img4, img1]
     },
     
     {
