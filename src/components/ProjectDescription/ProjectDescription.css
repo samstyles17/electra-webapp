@@ -10,8 +10,10 @@
 }
 
 .project-description-text {
+    height: fit-content;
     background-color: #fff;
     border-radius: 25px;
+    padding: 30px 0;
 }
 
 .blue-rectangle {

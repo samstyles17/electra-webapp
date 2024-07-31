@@ -14,7 +14,6 @@
 .services-row-revese {
     flex-direction: row-reverse;
 }
-
 .service-image {
     border-radius: 12px;
 }
@@ -123,6 +122,7 @@ width: 44px;
      }
      
 }
+
 @media (max-width: 475px) {
     .services {
      flex-direction: column;

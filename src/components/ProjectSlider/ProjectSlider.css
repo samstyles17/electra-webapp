@@ -56,9 +56,8 @@
         position: absolute;
         bottom: 0;
         background: transparent;
-        backdrop-filter: blur(100px);
-        color: #5b5b5b;
         font-weight: 500;
+        color: #060606;
     }
 
     .toggle-2>.slider-card {

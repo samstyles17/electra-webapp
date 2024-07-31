@@ -46,7 +46,7 @@ const sections = [
   {
     heading: "Specialized Panels",
     description: "We engineer and manufacture a wide range of custom-designed specialised panels to meet your unique industrial, commercial, and infrastructure needs. Our experienced team of engineers and technicians ensures that every panel is designed and built to the highest standards of quality, safety, and performance. We use only top-grade components and materials to guarantee long-lasting reliability.",
-    images: [img8, img9],
+    images: [img8, img11],
     bullets :  [
       "Power Control Centers (PCCs): Centralised control and protection for high-voltage power distribution systems.",
       "Motor Control Centers (MCCs): Efficient control and protection for multiple motors in industrial settings.",

@@ -20,14 +20,14 @@ import img9 from "../assets/img/service6/service6_carousel5_img1.png";
 import img10 from "../assets/img/service6/service6_carousel5_img2.png";
 import img11 from "../assets/img/service6/service6_carousel6_img1.png";
 import img12 from "../assets/img/service6/service6_carousel6_img2.png";
-
+import img13 from "../assets/img/service5/service5_carousel1_img2.png";
 
 
 const sections = [
     {
       heading: "Energy Management Systems (EMS)",
       description: "Our EMS solutions enable you to monitor, analyse, and optimise energy consumption in your buildings or facilities. By identifying energy-saving opportunities, you can reduce costs and contribute to a greener environment.",
-      images: [img1, img2]
+      images: [img13, img1]
     },
     {
       heading: "Power Quality Analysis",

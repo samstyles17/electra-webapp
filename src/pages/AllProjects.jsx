@@ -369,6 +369,7 @@ const data = [
             },
         ]
     }
+    
 ]
 
 const AllProjects = () => {
