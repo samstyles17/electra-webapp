@@ -228,12 +228,12 @@ const data = [
         ],
         description_one: "Electra Power Engineering, a trusted leader in electrical contracting and engineering, partnered with Eastern Condiments, India's largest spice exporter and a major player in the food industry, to enhance their electrical infrastructure. As a renowned brand backed by Orkla, Eastern Condiments sought a robust and efficient electrical system to support their expanding production lines for Masala and Roaster products.",
 
-        description_two: "Recognizing the critical role of reliable power in maintaining production efficiency and product quality, Eastern Condiments entrusted Electra Power with the electrification of their 440 kW Masala plant and 245 kW Roaster. This project demonstrates our expertise in designing and implementing electrical solutions for large-scale manufacturing facilities, ensuring uninterrupted operations and adherence to industry standards.",
+        description_two: "Recognizing the critical role of reliable power in maintaining production efficiency and product quality, Eastern Condiments entrusted Electra Power with the electrification of their Masala plant and Roaster. This project demonstrates our expertise in designing and implementing electrical solutions for large-scale manufacturing facilities, ensuring uninterrupted operations and adherence to industry standards.",
 
         highlights: [
             {
                 heading: "High-Capacity Power Generation:",
-                info: "Successfully designed, installed, and commissioned electrical systems for a 440 kW Masala Plant and a 245 kW Roaster, ensuring optimal power supply for the efficient production of spices and masalas."
+                info: "Successfully designed, installed, and commissioned electrical systems of capacity 685 kW, ensuring optimal power supply for the efficient production of spices and masalas."
             },
             {
                 heading: "Specialized Electrical Solutions:",

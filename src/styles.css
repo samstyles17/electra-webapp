@@ -2020,6 +2020,10 @@ hr{
     margin-bottom: 10px;
   }
 
+  .info-box p{
+    font-size: 0.85rem;
+  }
+
   .phone-section {
     flex-direction: column;
   }
@@ -2032,13 +2036,16 @@ hr{
 
   .phone-header {
     display: flex;
-    margin-right: 125px;
+    margin-right: 105px;
   }
-  
+
+ 
   .phone-box p{
     margin-left: 40px;
     margin-bottom: 10px;
   }
+
+  
 
   .phone-box:last-child {
     margin-bottom: 0;

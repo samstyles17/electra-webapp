@@ -13,9 +13,9 @@ const ProjectHeader = () => {
                     <div className="project-header-span flex  items-center gap-x-2">
                         <span className='circle circle-1'>&nbsp;</span>
                         <span className='circle circle-2'>&nbsp;</span>
-                        <span className='span-3'>300+</span>
-                        <span className='span-4'>Projects delivered</span>
-                        <span>120+ satisfied client</span>
+                        <span className='span-3'>120+</span>
+                        <span className='span-4'>Satisfied Client</span>
+                        <span>120+ Satisfied Client</span>
                    </div>
                 </div>
                 <p className="project-header-title border text-base tracking-[0.2em] text-center rounded-[13px] mt-10 ">

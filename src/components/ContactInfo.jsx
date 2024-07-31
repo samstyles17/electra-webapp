@@ -16,18 +16,18 @@ const ContactInfo = () => {
         <div className="top-info">
           <div className="info-box">
             <div className="info-header">
-              <img src={img1} alt="Enquiries" className="info-logo" />
+              <img src={img2} alt="Enquiries" className="info-logo" />
               <h3 className="montserrat-regular">FOR ENQUIRIES</h3>
             </div>
             <p className="montserrat-regular">office@electrapower.in</p>
           </div>
           <div className="info-box">
             <div className="info-header">
-              <img src={img2} alt="Head Office" className="info-logo" />
+              <img src={img1} alt="Head Office" className="info-logo" />
               <h3 className="montserrat-regular">HEAD OFFICE</h3>
             </div>
             <p className="montserrat-regular">Electra Power Engineering<br />
-              'A' Grade Electrical Contractors & Engineers<br />
+              'A' Grade Electrical Engineers & Contractors<br />
               33/1305-A1, Chalikavattom, Vennala P.O,<br />
               Kochi, Kerala, INDIA - 682028
             </p>

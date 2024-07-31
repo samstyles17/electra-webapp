@@ -222,7 +222,7 @@ const data = [
                 image_url: app3,
             },
             {
-                title: "AC Samridhi, Vytilya",
+                title: "AC Samridhi, Vyttilya",
                 image_url: app6,
             },
             {

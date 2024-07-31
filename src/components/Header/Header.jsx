@@ -37,8 +37,8 @@ const Header = () => {
         <div className="header-span-2 flex flex-row items-center gap-x-2">
           <span className='circle circle-1'>&nbsp;</span>
           <span className='circle circle-2'>&nbsp;</span>
-          <span>120+</span>
-          <span>Satisfied Client</span>
+          <span>300+</span>
+          <span>Projects delivered</span>
         </div>
       </div>
     </div>
