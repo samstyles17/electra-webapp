@@ -15,22 +15,25 @@
 
 .border-right {
     position: absolute;
-    right: -5%;
+    left: 0.8%;
+   
 }
 
 .card-h-img {
     height: 290px;
-    width: 310px;
+    width: 100%;
 }
 
 .col-2 {
     height: 300px;
     margin: 0 20px;
     padding: 0 20px;
+    position: relative;
 }
 
+
 .card-h-info {
-    width: 285px;
+    width: 100%;
 }
 
 .card-h-index {
