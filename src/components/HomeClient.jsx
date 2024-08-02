@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Box, Typography, useMediaQuery } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -27,6 +27,7 @@ import Client19 from '../assets/img/cl20.png';
 import Client20 from '../assets/img/cl21.png';
 import Client21 from '../assets/img/cl22.png';
 import Client22 from '../assets/img/cl23.png';
+
 const theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, Arial, sans-serif',
@@ -58,27 +59,74 @@ const clients = [
   { src: Client22, alt: 'Client 22' },
 ];
 
+const animationDuration = clients.length * 2;
+
 const scroll = keyframes`
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-200%); }
 `;
+
 
 const ClientsCarousel = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const scrollerRef = useRef(null);
+  const scrollerInnerRef = useRef(null);
+
   useEffect(() => {
-    console.log('Clients array:', clients);
-    
-    // Log each client's src and alt
-    clients.forEach((client, index) => {
-      console.log(`Client ${index + 1}:`, client.src, client.alt);
+    if (!scrollerRef.current || !scrollerInnerRef.current) return;
+
+    const scrollerContent = Array.from(scrollerInnerRef.current.children);
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      scrollerInnerRef.current.appendChild(duplicatedItem);
     });
-    
-    // Check if any client's src is undefined or null
-    const invalidClients = clients.filter(client => !client.src);
-    if (invalidClients.length > 0) {
-      console.warn('Some clients have invalid src:', invalidClients);
-    }
-  }, []);
+
+    const scrollSpeed = isMobile ? 50 : 30; // Adjust these values to change speed
+
+    const scroll = () => {
+      if (scrollerRef.current.scrollLeft >= scrollerInnerRef.current.scrollWidth / 2) {
+        scrollerRef.current.scrollLeft = 0;
+      } else {
+        scrollerRef.current.scrollLeft += 1;
+      }
+    };
+
+    const scrollInterval = setInterval(scroll, scrollSpeed);
+
+    return () => clearInterval(scrollInterval);
+  }, [isMobile]);
+
+  const carouselContent = (
+    <Box
+      ref={scrollerRef}
+      sx={{
+        width: '100%',
+        overflow: 'hidden',
+        '&::-webkit-scrollbar': { display: 'none' },
+        msOverflowStyle: 'none',
+        scrollbarWidth: 'none',
+      }}
+    >
+      <Box
+        ref={scrollerInnerRef}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        {clients.map((client, index) => (
+          <Box 
+            key={index} 
+            component="img" 
+            src={client.src} 
+            alt={client.alt} 
+            sx={{ margin: '0 10px', height: '60px', width: 'auto', flexShrink: 0 }} 
+          />
+        ))}
+      </Box>
+    </Box>
+  );
 
   return (
     <ThemeProvider theme={theme}>
@@ -119,49 +167,23 @@ const ClientsCarousel = () => {
             >
               OUR CLIENTS
             </Typography>
-            <Box sx={{ width: '100%', overflow: 'hidden' }}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  animation: `${scroll} 30s linear infinite`,
-                  whiteSpace: 'nowrap',
-                  width: '200%', // to allow smooth scrolling
-                }}
-              >
-                {[...clients, ...clients].map((client, index) => (
-                  <Box key={index} component="img" src={client.src} alt={client.alt} sx={{ margin: '0 10px', height: '60px', width: 'auto' }} />
-                ))}
-              </Box>
-            </Box>
+            {carouselContent}
             <Box 
               sx={{ 
                 width: '100%', 
                 borderTop: '1px dashed grey', 
-                marginTop: '20px' 
+                marginTop: '20px', 
+                marginRight:'40px'
               }} 
             />
           </>
         ) : (
           <>
-            <Box sx={{ display: 'flex', alignItems: 'center', color: '#000', marginRight: '20px' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', color: '#000', marginRight: '20px', flexShrink: 0 }}>
               <Box component="img" src={DividerImage} alt="Divider" sx={{ marginRight: '10px', height: 'auto' }} />
               <Typography variant="h6">OUR CLIENTS</Typography>
             </Box>
-            <Box sx={{ overflow: 'hidden', flex: 1, display: 'flex', alignItems: 'center', height: '100%' }}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  animation: `${scroll} 30s linear infinite`,
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {[...clients, ...clients].map((client, index) => (
-                  <Box key={index} component="img" src={client.src} alt={client.alt} sx={{ margin: '0 10px', height: '60px', width: 'auto' }} />
-                ))}
-              </Box>
-            </Box>
+            {carouselContent}
           </>
         )}
       </Box>
