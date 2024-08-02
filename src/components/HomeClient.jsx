@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography, useMediaQuery } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import DividerImage from '../assets/img/client_divider.png';
 
+// Import all client images
 import Client1 from '../assets/img/cl1.png';
 import Client2 from '../assets/img/cl2.png';
 import Client3 from '../assets/img/cl3.png';
@@ -18,7 +19,6 @@ import Client10 from '../assets/img/cl10.png';
 import Client11 from '../assets/img/cl11.png';
 import Client12 from '../assets/img/cl12.png';
 import Client13 from '../assets/img/cl14.png';
-// import Client14 from '../assets/img/cl15.png';
 import Client15 from '../assets/img/cl16.png';
 import Client16 from '../assets/img/cl17.png';
 import Client17 from '../assets/img/cl18.png';
@@ -27,26 +27,58 @@ import Client19 from '../assets/img/cl20.png';
 import Client20 from '../assets/img/cl21.png';
 import Client21 from '../assets/img/cl22.png';
 import Client22 from '../assets/img/cl23.png';
-
 const theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, Arial, sans-serif',
   },
 });
 
+// Create an array of client image objects
 const clients = [
- Client1, Client2,Client3,Client4,Client5,Client6,Client7,
- Client8, Client9, Client10, Client11, Client12, Client13, 
- Client15, Client16, Client17, Client18, Client19, Client20, Client21, Client22
+  { src: Client1, alt: 'Client 1' },
+  { src: Client2, alt: 'Client 2' },
+  { src: Client3, alt: 'Client 3' },
+  { src: Client4, alt: 'Client 4' },
+  { src: Client5, alt: 'Client 5' },
+  { src: Client6, alt: 'Client 6' },
+  { src: Client7, alt: 'Client 7' },
+  { src: Client8, alt: 'Client 8' },
+  { src: Client9, alt: 'Client 9' },
+  { src: Client10, alt: 'Client 10' },
+  { src: Client11, alt: 'Client 11' },
+  { src: Client12, alt: 'Client 12' },
+  { src: Client13, alt: 'Client 13' },
+  { src: Client15, alt: 'Client 15' },
+  { src: Client16, alt: 'Client 16' },
+  { src: Client17, alt: 'Client 17' },
+  { src: Client18, alt: 'Client 18' },
+  { src: Client19, alt: 'Client 19' },
+  { src: Client20, alt: 'Client 20' },
+  { src: Client21, alt: 'Client 21' },
+  { src: Client22, alt: 'Client 22' },
 ];
 
 const scroll = keyframes`
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
 `;
 
 const ClientsCarousel = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  useEffect(() => {
+    console.log('Clients array:', clients);
+    
+    // Log each client's src and alt
+    clients.forEach((client, index) => {
+      console.log(`Client ${index + 1}:`, client.src, client.alt);
+    });
+    
+    // Check if any client's src is undefined or null
+    const invalidClients = clients.filter(client => !client.src);
+    if (invalidClients.length > 0) {
+      console.warn('Some clients have invalid src:', invalidClients);
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -92,13 +124,13 @@ const ClientsCarousel = () => {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  animation: `${scroll} 10s linear infinite`,
+                  animation: `${scroll} 30s linear infinite`,
                   whiteSpace: 'nowrap',
                   width: '200%', // to allow smooth scrolling
                 }}
               >
-                {clients.concat(clients).map((client, index) => (
-                  <Box key={index} component="img" src={client} alt={`Client ${index + 1}`} sx={{ margin: '0 10px', height: '60px', width: 'auto' }} />
+                {[...clients, ...clients].map((client, index) => (
+                  <Box key={index} component="img" src={client.src} alt={client.alt} sx={{ margin: '0 10px', height: '60px', width: 'auto' }} />
                 ))}
               </Box>
             </Box>
@@ -121,12 +153,12 @@ const ClientsCarousel = () => {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  animation: `${scroll} 10s linear infinite`,
+                  animation: `${scroll} 30s linear infinite`,
                   whiteSpace: 'nowrap',
                 }}
               >
-                {clients.concat(clients).map((client, index) => (
-                  <Box key={index} component="img" src={client} alt={`Client ${index + 1}`} sx={{ margin: '0 10px', height: '60px', width: 'auto' }} />
+                {[...clients, ...clients].map((client, index) => (
+                  <Box key={index} component="img" src={client.src} alt={client.alt} sx={{ margin: '0 10px', height: '60px', width: 'auto' }} />
                 ))}
               </Box>
             </Box>

@@ -325,7 +325,7 @@ const data = [
 
             
             {
-                title: "Salafi Masjid, Vytila",
+                title: "Salafi Masjid, Vyttila",
                 image_url: cp10,
             },
             {
