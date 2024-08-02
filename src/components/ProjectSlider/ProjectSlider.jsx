@@ -13,9 +13,14 @@ const responsive = {
   },
   
   tablet: {
-    breakpoint: { max: 1200, min: 464 },
+    breakpoint: { max: 1200, min: 788 },
     items: 1,
     partialVisibilityGutter: 200
+  },
+  tablet2 : {
+    breakpoint: { max: 788, min: 464 },
+    items: 1,
+    partialVisibilityGutter: 0
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },

@@ -46,6 +46,14 @@
         font-weight: 500;
     }
 }
+@media (max-width: 768px) {
+  .slider-image {
+    width: 100%;
+  }
+  .slider-rectangle {
+  width: 100%;  
+}
+}
 
 @media (max-width:475px) {
     .slider-card {
