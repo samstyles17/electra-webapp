@@ -24,9 +24,9 @@ import Client16 from '../assets/img/cl17.png';
 import Client17 from '../assets/img/cl18.png';
 import Client18 from '../assets/img/cl19.png';
 import Client19 from '../assets/img/cl20.png';
-import Client20 from '../assets/img/cl21.png';
-import Client21 from '../assets/img/cl22.png';
-import Client22 from '../assets/img/cl23.png';
+import Client20 from '../assets/img/cl211.png';
+import Client21 from '../assets/img/cl222.png';
+import Client22 from '../assets/img/cl233.png';
 
 const theme = createTheme({
   typography: {
