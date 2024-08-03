@@ -4,7 +4,7 @@
 }
 
 .slider-image {
-    width: 475px;
+    width: 90%;
     height: 370px;
     background-size: cover;
     border-radius: 16px;
@@ -15,7 +15,7 @@
     position: absolute;
     bottom: 0;
     height: 60px;
-    width: 475px;
+    width: 90%;
     background: transparent;
     backdrop-filter: blur(100px);
     color: #ffffff;
@@ -38,6 +38,21 @@
 }
 .react-multiple-carousel__arrow {
     background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 1200px) {
+    .slider-text {
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+@media (max-width: 768px) {
+  .slider-image {
+    width: 100%;
+  }
+  .slider-rectangle {
+  width: 100%;  
+}
 }
 
 @media (max-width:475px) {
