@@ -35,7 +35,7 @@ const sections = [
     heading: "Fabrication and Assembly",
     description: "We fabricate high-quality panel boards using premium materials and components. Our skilled technicians meticulously assemble and test each panel to ensure it meets stringent quality standards.",
     images: [img3, img4],
-    bullets: []
+    bullets: [   "Synchronisation Panels: Safe and reliable synchronisation of generators with the electrical grid."]
   },
   {
     heading: "Installation and Commissioning",

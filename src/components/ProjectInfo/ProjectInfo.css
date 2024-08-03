@@ -15,9 +15,6 @@
 .project-image {
     width: 100%;
 }
-.project-image:last-of-type {
-    width: fit-content;
-}
 
 @media (max-width: 475px) {
     .projectinfo {
