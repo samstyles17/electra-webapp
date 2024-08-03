@@ -44,7 +44,6 @@ const sections = [
   {
     heading: "Testing and Commissioning",
     description: "We rigorously test and commission all electrical installations to ensure optimal performance, safety, and compliance with industry standards. Our meticulous approach minimises downtime and ensures the longevity of your electrical systems.",
-     bullets: [   "Synchronisation Panels: Safe and reliable synchronisation of generators with the electrical grid."],
     images: [img10, img12]
   }
 ];
