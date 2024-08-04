@@ -176,7 +176,9 @@ const Carousel = () => {
           marginLeft : isMobile ? 1 : '95px' ,
           marginRight :isMobile ? 1:0,
           // margin: isMobile ? 1 : '0 0 0 95px',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          // auto spacing 
+          margin: '0 auto',
         }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
