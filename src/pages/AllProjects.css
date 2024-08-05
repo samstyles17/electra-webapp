@@ -17,6 +17,13 @@
 
 }
 
+@media (max-width: 900px) {
+  .wrapper {
+    margin-top: 200px;
+}
+
+}
+
 @media (max-width:475px) {
     .allprojects {
         width: auto;

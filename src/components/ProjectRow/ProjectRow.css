@@ -15,7 +15,8 @@
 
 .border-right {
     position: absolute;
-    left: 0.8%;
+    right: -30px;
+
    
 }
 
@@ -56,14 +57,16 @@
 .toggle-2 {
     display: none !important;
 }
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .row {
         width: auto;
         display: grid;
         grid-template-columns: 45% 55%;
         gap: 10px;
     }
+}
+@media (max-width: 768px) {
+
 
     .carousel-container {
         width: 100%;

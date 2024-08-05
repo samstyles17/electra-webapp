@@ -17,6 +17,11 @@ const responsive = {
     items: 1,
     partialVisibilityGutter: 200
   },
+  tablet3: {
+    breakpoint: { max: 900, min: 768 },
+    items: 1,
+    partialVisibilityGutter: 0
+  },
   tablet2 : {
     breakpoint: { max: 788, min: 464 },
     items: 1,
@@ -41,7 +46,7 @@ const ProjectSlider = ({ images }) => {
                 <div className='slider-card' key={index}>
                   <div style={{backgroundImage : `url(${element.image_url})`}}  className='slider-image' > 
                   </div>
-                  <div className="slider-rectangle flex   items-center gap-5 px-5 ">
+                  <div className="slider-rectangle  px-5 ">
                     <span className='slider-index flex justify-center items-center'>
                       {index + 1}
                     </span>

@@ -11,10 +11,15 @@
 .border-top-sm {
     display: none;
 }
+.project-images {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
 
 .project-image {
     width: 100%;
 }
+
 
 @media (max-width: 475px) {
     .projectinfo {
