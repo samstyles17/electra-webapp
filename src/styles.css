@@ -677,7 +677,14 @@ hr{
 }
 
 
+
+
 /*Aboutus page section1*/
+
+.aboutus{
+  overflow-x: hidden;
+}
+
 .aboutus-container {
   display: flex;
   justify-content: space-between;
@@ -695,7 +702,7 @@ hr{
 }
 
 .aboutus-image {
-  max-width: 800px;
+  max-width: 100%; 
   width: 600px;
   border-radius: 10px; /* Rounded corners */
 }
@@ -735,7 +742,7 @@ hr{
 }
 
 /* Mobile responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .aboutus-container {
     flex-direction: column;
     padding: 20px;
@@ -744,7 +751,7 @@ hr{
   }
 
   .aboutus-image {
-    width: 100%;
+    width: 105%;
     margin-bottom: 20px;
   }
 
@@ -759,6 +766,44 @@ hr{
   .aboutus-heading,
   .aboutus-paragraph {
     font-size: 0.9rem;
+  }
+}
+
+/* Landscape orientation on mobile devices */
+@media (orientation: landscape) {
+  .aboutus-container {
+    flex-direction: column-reverse;
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  .aboutus-image-section {
+    flex: 1;
+    margin-right: 5px;
+    
+  }
+
+  .aboutus-image {
+    width: 100%;
+  }
+
+  .aboutus-text-section {
+    flex: 2;
+    padding-left: 20px;
+    margin-top: 25px;
+    
+  }
+
+  .aboutus-title {
+    font-size: 1.8rem; /* Slightly smaller title */
+  }
+
+  .aboutus-heading {
+    font-size: 1rem;
+  }
+
+  .aboutus-paragraph {
+    font-size:0.9rem;
   }
 }
 
@@ -878,6 +923,8 @@ hr{
     display: none;
   }
 }
+
+
 
 /* Why Choose Section */
 .why-choose-section {
@@ -1044,6 +1091,55 @@ hr{
     background-color: #2e2e2e;
   }
 }
+
+@media (orientation: landscape) {
+  .why-choose-section {
+    margin-top: 10px;
+    padding: 20px;
+  }
+
+  .why-choose-heading {
+    font-size: 1.8rem;
+    margin-right: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .why-choose-paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-left: 35px;
+  }
+
+  .portfolio-button {
+    float: none;
+    display: block;
+    margin: 30px auto;
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .low{
+    font-size: 1.2rem;
+  }
+
+  .feature-box{
+    width: 100%;
+  }
+
+  .lowp{
+    font-size: 1rem;
+  }
+
+  .highlight-blue-box {
+    background-color: #2e2e2e;
+  }
+}
+
 
 /*Our Team AboutUs Page*/
 .our-team-container {
@@ -1453,6 +1549,40 @@ hr{
   
 }
 
+@media (orientation: landscape) {
+  .our-team-container {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  .our-team-title {
+    font-size: 1.6rem;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .our-team-description {
+    font-size: 1rem;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .carousel-image {
+    margin-top: 25px;
+    height: auto;
+  }
+
+  .our-team-experience {
+    font-size: 1rem; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    margin-top: 10px; /* Adjust top margin to create spacing */
+    margin-right: 0; /* Remove right margin */
+    float: none; /* Remove float */
+  }
+  
+}
+
 /*Our People section*/
 .our-people-section {
   background-color: #ffffff;
@@ -1545,6 +1675,40 @@ hr{
     width: 100%;
     margin-bottom: 20px;
     order: 2;
+  }
+
+  .people-text {
+    margin-left: 0;
+  }
+
+  .people-title {
+    font-size: 2rem;
+  }
+
+  .people-paragraph,
+  .route-paragraph {
+    font-size: 1rem;
+  }
+
+  .route-title {
+    font-size: 2rem;
+  }
+
+  .route-content{
+    margin-left: 0;
+  }
+}
+
+@media (orientation: landscape) {
+  .people-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .people-image {
+    width: 45%;
+    margin-bottom: 20px;
+    
   }
 
   .people-text {
@@ -1818,6 +1982,140 @@ hr{
 
   .card-description:hover p{
     font-size: 13px;
+    line-height: 2;
+  }
+}
+
+@media (orientation: landscape) {
+  .integrity-carousel-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    margin-left: 55px;
+  }
+
+  .integrity-menu {
+    width: 100%;
+    text-align: left;
+    margin-top: auto; /* Push menu items to the bottom */
+    padding-bottom: 20px; /* Optional: Add some space between menu and carousel */
+  }
+
+  .integrity-menu hr {
+    width: 250px;
+    margin: 15px auto;
+    opacity: 0.1;
+  }
+
+  .integrity-item {
+    font-size: 1.2rem;
+    color: #888888;
+    transition: color 0.5s ease, font-weight 0.5s ease;
+    margin-bottom: 10px; /* Optional: add margin between menu items */
+  }
+
+  .integrity-item.active::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  }
+
+  .integrity-item.active::before {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: #007BFF;
+  }
+
+  .integrity-carousel {
+    width: 100%;
+    display: flex;
+    /* Add space between the menu and carousel */
+  }
+
+  .carousel-slide {
+    width: 100%; /* Ensure slides take full width */
+    margin-bottom: 20px; /* Optional: add margin between slides */
+  }
+
+  /* Card View for Mobile */
+  .integrity-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .integrity-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Enable positioning for description overlap */
+    margin-bottom: 60px;
+    width: 100%; /* Adjust the width as needed */
+    height: auto;
+    /* Ensure no overflow from the image */
+  }
+
+  .card-image {
+    width:100%; /* Set width to auto */
+    height: 350px; /* Set a fixed height to make it portrait */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border-radius: 20px;
+
+    margin-bottom: -25px;
+  }
+
+  .card-description {
+    position: absolute; /* Position description over the image */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #414141;
+    color: #ffffff;
+    padding: 15px 20px; /* Adjust padding to control overlap */
+    border-radius: 20px;
+    text-align: left;
+    opacity: 0.8; /* Optional: Adjust opacity if needed */
+    transform: translateY(28px); /* Overlap the bottom of the image */
+  }
+
+  .card-description h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .card-description p {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .card-description:hover {
+    opacity: 0.98;
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+    height: 150px;
+  }
+
+  .card-description:hover h2{
+    font-size: 18px;
+  }
+
+  .card-description:hover p{
+    font-size: 14px;
     line-height: 2;
   }
 }
