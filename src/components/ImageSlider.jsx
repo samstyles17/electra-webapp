@@ -47,7 +47,7 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
   return (
     <Card 
       sx={{ 
-        width: 327,
+        width: 'auto', //changed
         height: 369,
         position: 'relative',
         overflow: 'hidden',
@@ -169,8 +169,8 @@ const Carousel = () => {
         ref={containerRef}
         sx={{ 
           position: 'relative', 
-          width: '100%', 
-          maxWidth: isMobile ? '100%' : `${visibleCards * (cardWidth + cardSpacing) - cardSpacing}px`, 
+          width: 'auto', //changed
+       //   maxWidth: isMobile ? '100%' : `${visibleCards * (cardWidth + cardSpacing) - cardSpacing}px`, 
           marginTop: isMobile? 1 : 0,
           marginBottom: isMobile? 1 : 0,
           marginLeft : isMobile ? 1 : '95px' ,
@@ -178,7 +178,7 @@ const Carousel = () => {
           // margin: isMobile ? 1 : '0 0 0 95px',
           overflow: 'hidden',
           // auto spacing 
-          margin: '0 auto',
+          // margin: '0 auto',
         }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
