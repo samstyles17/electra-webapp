@@ -22,7 +22,7 @@
 
 .card-h-img {
     height: 290px;
-    width: 100%;
+    width: auto;
 }
 
 .col-2 {
@@ -131,6 +131,7 @@
     }
     .card-h-img {
         background-size: contain;
+        width: 300px;
     }
     
     .row.visible {

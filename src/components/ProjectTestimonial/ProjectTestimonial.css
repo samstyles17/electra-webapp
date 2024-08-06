@@ -87,12 +87,9 @@ background-size: contain;
         .project-testimonial-logo > img:last-child {
             display: block;
         }
-}
-
-@media (max-width: 410px) {
-    .project-testimonial-logo > img:last-child {
-        margin-left: -60px;
-    }
+        .project-testimonial-logo > img:last-child {
+            margin-left: -60px;
+        }
 }
 @media (max-width: 350px) {
     .project-testimonial-logo > img:last-child {
