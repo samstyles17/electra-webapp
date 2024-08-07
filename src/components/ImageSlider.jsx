@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Box, Card, CardContent, CardMedia, Typography, IconButton, Divider } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from 'react-router-dom';
@@ -23,6 +23,15 @@ const cards = [
 ];
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 910,
+      lg: 1440,
+      xl: 1920,
+    },
+  },
   typography: {
     fontFamily: [
       'Montserrat',
@@ -40,14 +49,13 @@ const theme = createTheme({
   },
 });
 
-
 const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Card 
       sx={{ 
-        width: 'auto', //changed
+        width: 'auto',
         height: 369,
         position: 'relative',
         overflow: 'hidden',
@@ -122,11 +130,13 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
 };
 
 const Carousel = () => {
+  const theme = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardWidth = 327;
   const cardSpacing = 40;
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const visibleCards = isMobile ? 1 : 4;
+  const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg'));
+  const visibleCards = isMobile ? 1 : isTablet ? 3 : 4;
   const containerRef = useRef(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -169,16 +179,16 @@ const Carousel = () => {
         ref={containerRef}
         sx={{ 
           position: 'relative', 
-          width: 'auto', //changed
-       //   maxWidth: isMobile ? '100%' : `${visibleCards * (cardWidth + cardSpacing) - cardSpacing}px`, 
-          marginTop: isMobile? 1 : 0,
-          marginBottom: isMobile? 1 : 0,
-          marginLeft : isMobile ? 1 : '95px' ,
-          marginRight :isMobile ? 1:0,
-          // margin: isMobile ? 1 : '0 0 0 95px',
+          width: 'auto',
+          marginTop: isMobile ? 1 : 0,
+          marginBottom: isMobile ? 1 : 0,
+          marginLeft: {
+            xs: 1,
+            md: '20px',
+            lg: '95px',
+          },
+          marginRight: isMobile ? 1 : 0,
           overflow: 'hidden',
-          // auto spacing 
-          // margin: '0 auto',
         }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
