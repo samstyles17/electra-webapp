@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
-// import logo from "../assets/img/logo.png";
 import logo from '../assets/img/logo_a.png';
 import divider from "../assets/img/divider1.png";
-import mobileDivider from "../assets/img/navbar_vector.svg"; // Add this line
+import mobileDivider from "../assets/img/navbar_vector.svg";
 import "../styles.css";
 
 function Navbar() {
   const isMobile = useMediaQuery("(max-width:960px)");
+  const is1920Screen = useMediaQuery("(min-width: 1920px)");
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,10 +36,9 @@ function Navbar() {
   return (
     <>
       <div className={`sticky-navbar z-[999] ${isMobile ? '' : ''}`}>
-      <div className={`navbar bg-base-100 mt-2 w-full ${
-          isMobile 
-            ? 'rounded-b-xl shadow-md' 
-            : ''
+        <div className={`navbar bg-base-100 mt-2 w-full ${
+          isMobile ? 'rounded-b-xl shadow-md' : 
+          is1920Screen ? 'px-20' : ''
         }`}>
           {isMobile ? (
             <>
@@ -126,10 +125,10 @@ function Navbar() {
             </>
           ) : (
             <>
-              <div className="navbar-start">
-                <div className="ml-14 h-10 w-40">
+              <div className={`navbar-start ${is1920Screen ? 'flex-1' : ''}`}>
+                <div className={`${is1920Screen ? 'ml-0' : 'ml-14'} h-10 w-40`}>
                   <Link to="/">
-                    <img src={logo} alt="logo"  />
+                    <img src={logo} alt="logo" />
                   </Link>
                 </div>
                 <div className="mx-5">
@@ -141,8 +140,8 @@ function Navbar() {
                   </h3>
                 </div>
               </div>
-              <div className="navbar-right hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+              <div className={`navbar-right hidden lg:flex ${is1920Screen ? 'flex-1 justify-end' : ''}`}>
+                <ul className={`menu menu-horizontal px-1 ${is1920Screen ? 'mr-4' : ''}`}>
                   <li>
                     <Link to="/aboutus" className={`montserrat-medium ${isActive('/aboutus')}`}>
                       About
@@ -164,20 +163,18 @@ function Navbar() {
                     </Link>
                   </li>
                 </ul>
-              </div>
-              <div className="mx-3">
-                <Link to="/enquire#contactInfo">
-                  <button className={`btn btn-md px-8 bg-transparent rounded-full border-1 border-black ${isActive('/contact')}`}>
-                    <h3 className="montserrat-regular text-black">Contact</h3>
-                  </button>
-                </Link>
-              </div>
-              <div className="">
-                <Link to="/enquire#workTogetherForm">
-                  <button className={`btn btn-md px-8 bg-orange rounded-full ${isActive('/enquire')}`}>
-                    <h3 className="montserrat-regular text-white">Enquire</h3>
-                  </button>
-                </Link>
+                <div className={`flex items-center ${is1920Screen ? '' : 'mx-3'}`}>
+                  <Link to="/enquire#contactInfo" className={is1920Screen ? "mr-3" : "mr-3"}>
+                    <button className={`btn btn-md px-8 bg-transparent rounded-full border-1 border-black ${isActive('/contact')}`}>
+                      <h3 className="montserrat-regular text-black">Contact</h3>
+                    </button>
+                  </Link>
+                  <Link to="/enquire#workTogetherForm">
+                    <button className={`btn btn-md px-8 bg-orange rounded-full ${isActive('/enquire')}`}>
+                      <h3 className="montserrat-regular text-white">Enquire</h3>
+                    </button>
+                  </Link>
+                </div>
               </div>
             </>
           )}

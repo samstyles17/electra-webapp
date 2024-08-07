@@ -15,13 +15,14 @@
 
 .border-right {
     position: absolute;
-    left: 0.8%;
+    right: -30px;
+
    
 }
 
 .card-h-img {
     height: 290px;
-    width: 100%;
+    width: auto;
 }
 
 .col-2 {
@@ -56,14 +57,16 @@
 .toggle-2 {
     display: none !important;
 }
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .row {
         width: auto;
         display: grid;
         grid-template-columns: 45% 55%;
         gap: 10px;
     }
+}
+@media (max-width: 768px) {
+
 
     .carousel-container {
         width: 100%;
@@ -128,6 +131,7 @@
     }
     .card-h-img {
         background-size: contain;
+        width: 300px;
     }
     
     .row.visible {

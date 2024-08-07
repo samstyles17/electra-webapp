@@ -129,7 +129,36 @@ width: 44px;
     .services {
         gap: 3rem;
      }
+     .services {
+        margin: 100px 20px;
+    }
+
+}
+@media (max-width : 900px) {
+    .services {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .service-panel-list {
+        flex-direction: column;
+    }
+    .service-panel-fix > .services-info, .service-panel-fix > .services-images {
+        flex: 1 1 100%;
      
+     }
+     .services-images {
+        align-items: flex-start;
+        align-items: start;
+        justify-items: flex-start;
+     }
+     .service-image {
+    
+        height: 250px;
+      
+     } 
+     .services-row-revese {
+        flex-direction: row;
+    }
 }
 
 @media (max-width: 475px) {

@@ -12,6 +12,10 @@
 }
 
 .slider-rectangle {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 20px;
     position: absolute;
     bottom: 0;
     height: 60px;
@@ -46,6 +50,14 @@
         font-weight: 500;
     }
 }
+@media (max-width: 900px) {
+    .slider-image {
+      width: 100%;
+    }
+    .slider-rectangle {
+    width: 100%;  
+  }
+  }
 @media (max-width: 768px) {
   .slider-image {
     width: 100%;

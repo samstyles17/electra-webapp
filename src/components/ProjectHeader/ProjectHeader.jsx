@@ -8,7 +8,7 @@ const ProjectHeader = () => {
          
             </span>
             <div className="mt-12 mb-4 flex flex-col">
-                <div className="flex items-center justify-between">
+                <div className="flex  items-center justify-between h-fix">
                     <h2 className="text-[38px] -tracking-[0.03em]">Powerfully placed <span>success </span><span>Stories</span></h2>
                     <div className="project-header-span flex  items-center gap-x-2">
                         <span className='circle circle-1'>&nbsp;</span>

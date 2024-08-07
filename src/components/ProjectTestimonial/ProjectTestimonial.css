@@ -30,22 +30,25 @@ background-size: contain;
 .project-testimonial-logo > img:last-child {
     display: none;
 }
-
+@media (max-width: 900px) {
+    .project-testimonial-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
 
 @media (max-width: 768px) {
     .project-testimonial-text > p {
         font-size: 14px !important;
-        padding-bottom: 20px;
+        padding: 0 0 20px 0 !important;
     }
     .project-testimonial-text > h4 {
         font-size: 15px;
+        margin-left: 0 !important;
         margin-bottom: 0;
         padding-right: 5px;
     }
-    .project-testimonial-info {
-        gap: 2rem;
-    }
- 
  
     
 }
@@ -85,12 +88,9 @@ background-size: contain;
         .project-testimonial-logo > img:last-child {
             display: block;
         }
-}
-
-@media (max-width: 410px) {
-    .project-testimonial-logo > img:last-child {
-        margin-left: -60px;
-    }
+        .project-testimonial-logo > img:last-child {
+            margin-left: -60px;
+        }
 }
 @media (max-width: 350px) {
     .project-testimonial-logo > img:last-child {
