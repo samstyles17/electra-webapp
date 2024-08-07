@@ -46,7 +46,8 @@ const CustomButton = styled(Button)(({ theme }) => ({
 
 const ResponsiveButtonGroup = () => {
   const location = useLocation();
-  const isMobile = useMediaQuery('(max-width:980px)');
+  const isMobile = useMediaQuery('(max-width:909px)');
+  const isTablet = useMediaQuery('(min-width:910px) and (max-width:1440px)');
   const [activeIndex, setActiveIndex] = React.useState(0);
   const sliderRef = React.useRef(null);
 
@@ -84,11 +85,11 @@ const ResponsiveButtonGroup = () => {
       sx={{
         display: 'flex',
         flexDirection: { xs: 'row', md: 'row' },
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: isTablet?'left':'center',
+        justifyContent: isTablet?'left':'center',
         flexWrap: { xs: 'nowrap', md: 'wrap' },
         width: { xs: '100%', md: '1200px' },
-        height: { xs: 'auto', md: '130px' },
+        height: { xs: 'auto', md: 'auto' },
         margin: '20px auto',
       }}
     >
@@ -124,8 +125,36 @@ const ResponsiveButtonGroup = () => {
           
           ))}
         </Slider>
-      ) : (
-        
+      ) : isTablet ? (
+            <Box sx={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(3, 1fr)', 
+              gridTemplateRows: 'repeat(2, 1fr)',
+              gap: '16px',
+              width: '100%',
+              maxWidth: '900px',
+              justifyContent: 'start', // Change this
+              alignItems: 'start',     // Add this
+              marginLeft: '0px',      //
+            }}>
+              {buttons.map((button, index) => (
+                <HashLink smooth to={`${button.link}#services`} key={index}>
+                  <CustomButton
+                    startIcon={<img src={button.icon} alt={button.text} />}
+                    sx={{
+                      width: '100%',
+                      height: '48px',
+                      whiteSpace: 'nowrap',
+                      backgroundColor: location.pathname === button.link ? theme.palette.primary.main : 'transparent',
+                      color: location.pathname === button.link ? theme.palette.common.white : theme.palette.text.primary,
+                    }}
+                  >
+                    {button.text}
+                  </CustomButton>
+                </HashLink>
+              ))}
+            </Box>
+      ): (
         buttons.map((button, index) => (
           <HashLink smooth to={`${button.link}#services`} key={index}>
           <CustomButton
