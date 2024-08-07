@@ -61,7 +61,15 @@ const IconWrapper = styled(Box)({
 const Footer = () => {
   return (
     <Box sx={{ backgroundColor: '#333', color: 'white', py: 4, width: '100%', boxSizing: 'border-box' }} className="montserrat-regular">
-      <Container maxWidth="lg" sx={{ px: { xs: 1, md: 0.5 } }}>
+      <Container maxWidth="lg" sx={{ 
+        px: { 
+          xs: 1, 
+          '@media (min-width: 910px) and (max-width: 1440px)': {
+            px: 6, // 32px padding for screens between 910px and 1440px
+          },
+          lg: 0.5 
+        } 
+      }}>
         <Grid container spacing={2} alignItems="flex-start">
           <Grid item xs={12} md={4} sx={{ width: '100%', boxSizing: 'border-box' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: { xs: 'center', md: 'flex-start' }, width: '100%', boxSizing: 'border-box' }}>
@@ -73,7 +81,6 @@ const Footer = () => {
             </Box>
             <StyledTypography variant="body2">
             Electra Power Engineering founded in 2013 is the brainchild of a group of skilled and experienced engineers who are proven game changers in the electrical engineering Industry.
-
             </StyledTypography>
           </Grid>
 
