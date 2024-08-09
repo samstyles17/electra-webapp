@@ -45,7 +45,6 @@ const IntegrityCarousel = () => {
   };
 
   const handleResize = () => {
-    console.log('Window resized:', window.innerWidth);
     setIsMobile(window.innerWidth <= 800);
   };
 
@@ -55,7 +54,6 @@ const IntegrityCarousel = () => {
   };
 
   useEffect(() => {
-    console.log('Adding resize event listener');
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => {

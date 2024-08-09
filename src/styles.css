@@ -1817,17 +1817,19 @@ hr{
     text-align: left;
     opacity: 0.8; /* Optional: Adjust opacity if needed */
     transform: translateY(28px); /* Overlap the bottom of the image */
+    height: 150px;
   }
 
   .card-description h2 {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 5px;
     font-weight: 500;
   }
 
   .card-description p {
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 0;
+    line-height: 2;
   }
 
   .card-description:hover {
