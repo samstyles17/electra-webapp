@@ -36,6 +36,7 @@ const theme = createTheme({
 const LandingPage = () => {
   // const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   return (
     <ThemeProvider theme={theme}>
     <CssBaseline />
@@ -44,11 +45,13 @@ const LandingPage = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        minHeight: '100vh', // Changed from height to minHeight
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         padding: '16px',
+        paddingTop: isTablet ? '64px' : '16px', // Add top padding for tablet view
+        paddingBottom: isTablet ? '64px' : '16px', 
       }}
     >
       <Box
@@ -65,7 +68,7 @@ const LandingPage = () => {
         }}
       >
         <Grid container spacing={2} alignItems="center">
-        {isMobile && (
+        {(isMobile || isTablet) && (
             <Grid item xs={12}>
               <img src={mobileImage} alt="Mobile view" style={{ width: '100%', borderRadius: '8px', marginBottom:'20px'}} />
             </Grid>

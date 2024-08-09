@@ -18,7 +18,7 @@ const theme = createTheme({
     values: {
       xs: 0,
       sm: 600,
-      md: 910,
+      md: 900,
       lg: 1440,
       xl: 1920,
     },
@@ -66,6 +66,7 @@ const PowerfulInsights = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const isTabletLandscape = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const carouselRef = useRef(null);
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
   const handleNext = () => {
     setCurrentTestimonial((prev) => Math.min(prev + 1, testimonials.length - 1));
@@ -108,13 +109,14 @@ const PowerfulInsights = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ 
-        padding: isMobile ? 2 : isTabletLandscape ? '3px 20px' : 4,
+        padding: isMobile ? 2 : isTablet ? 3 : 4,
         display: 'flex', 
-        flexDirection: isMobile || isTabletLandscape ? 'column' : 'row',
-        alignItems: isMobile || isTabletLandscape ? 'center' : 'flex-start',
-        justifyContent: isMobile || isTabletLandscape ? 'center' : 'flex-start',
-        marginLeft: isMobile ? 0 : isTabletLandscape ? '0' : '95px',
-        maxWidth: isTabletLandscape ? '100%' : 'none',
+        flexDirection: isMobile || isTablet ? 'column' : 'row',
+        alignItems: isMobile || isTablet ? 'center' : 'flex-start',
+        justifyContent: isMobile || isTablet ? 'center' : 'flex-start',
+        marginLeft: isMobile ? 0 : isTablet ? '0' : '95px',
+        maxWidth: isTablet ? '100%' : 'none',
+        marginBottom: isTablet ? 4 : 0
       }}>
         {!isMobile && !isTabletLandscape && (
           <Box sx={{ 
