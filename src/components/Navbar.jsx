@@ -8,7 +8,7 @@ import mobileDivider from "../assets/img/navbar_vector.svg";
 import "../styles.css";
 
 function Navbar() {
-  const isMobile = useMediaQuery("(max-width:960px)");
+  const isMobile = useMediaQuery("(max-width:1024px)");
   const is1920Screen = useMediaQuery("(min-width: 1920px)");
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
