@@ -7,6 +7,15 @@ const customTheme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 910,
+      lg: 1440,
+      xl: 1920,
+    },
+  },
 });
 
 const fadeInFromTopLeft = keyframes`
@@ -42,7 +51,9 @@ function useAnimateNumbers() {
 
 function SectionComponent() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg'));
+  const isSmallScreen = isMobile || isTablet;
   const animate = useAnimateNumbers();
 
   const animatedTypographyStyle = {
@@ -52,9 +63,9 @@ function SectionComponent() {
   return (
     <ThemeProvider theme={customTheme}>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', marginBottom: '100px', backgroundColor: '#fff', color: '#333' }}>
-        <Grid container spacing={isMobile ? 2 : 3} alignItems="flex-start">
+        <Grid container spacing={isSmallScreen ? 2 : 3} alignItems="flex-start">
           <Grid item xs={12} md={6}>
-            <Box sx={{ marginRight: isMobile ? 0 : '40px', textAlign: 'left', marginBottom: '40px', marginLeft: isMobile ? 0 : '60px' }}>
+            <Box sx={{ marginRight: isSmallScreen ? 0 : '40px', textAlign: 'left', marginBottom: '40px', marginLeft: isSmallScreen ? 0 : '60px' }}>
               <Typography variant="h3" sx={{ color: '#3a3a3a', transition: 'color 0.3s ease-in-out' }}>
                 Driving Change,
               </Typography>
@@ -73,38 +84,38 @@ function SectionComponent() {
                 We are catalysts for change. By pushing the boundaries of what's possible and harnessing the power of imagination, we not only drive change but also empower endless possibilities for our clients and partners.
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', marginLeft: isMobile ? '-10px' : '35px', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
-              <Box sx={{ textAlign: 'left', margin: isMobile ? '0 10px 10px' : '0 25px', flex: isMobile ? '1 0 45%' : 'none', padding: isMobile ? '10px' : '0', backgroundColor: isMobile ? '#f5f5f5' : 'transparent', borderRadius: isMobile ? '10px' : '0' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', marginLeft: isSmallScreen ? '-10px' : '35px', flexWrap: isSmallScreen ? 'wrap' : 'nowrap' }}>
+              <Box sx={{ textAlign: 'left', margin: isSmallScreen ? '0 10px 10px' : '0 25px', flex: isSmallScreen ? '1 0 45%' : 'none', padding: isSmallScreen ? '10px' : '0', backgroundColor: isSmallScreen ? '#f5f5f5' : 'transparent', borderRadius: isSmallScreen ? '10px' : '0' }}>
                 <Typography variant="h2" sx={{ ...animatedTypographyStyle, color: '#007bff', margin: 0, fontWeight: 500 }}>
                   12+
                 </Typography>
-                <Typography variant="body2" sx={{ fontSize: isMobile ? '12px' : '16px', margin: 0, color: '#333' }}>
+                <Typography variant="body2" sx={{ fontSize: isSmallScreen ? '12px' : '16px', margin: 0, color: '#333' }}>
                   Years of Experience
                 </Typography>
               </Box>
-              {!isMobile && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
-              <Box sx={{ textAlign: 'left', margin: isMobile ? '0 -4px 10px' : '0 25px', flex: isMobile ? '1 0 45%' : 'none', padding: isMobile ? '10px' : '0', backgroundColor: isMobile ? '#f5f5f5' : 'transparent', borderRadius: isMobile ? '10px' : '0' }}>
+              {!isSmallScreen && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
+              <Box sx={{ textAlign: 'left', margin: isSmallScreen ? '0 -4px 10px' : '0 25px', flex: isSmallScreen ? '1 0 45%' : 'none', padding: isSmallScreen ? '10px' : '0', backgroundColor: isSmallScreen ? '#f5f5f5' : 'transparent', borderRadius: isSmallScreen ? '10px' : '0' }}>
                 <Typography variant="h2" sx={{ ...animatedTypographyStyle, color: '#ff6600', margin: 0, fontWeight: 500 }}>
                   300+
                 </Typography>
-                <Typography variant="body2" sx={{ fontSize: isMobile ? '12px' : '16px', margin: 0, color: '#333' }}>
+                <Typography variant="body2" sx={{ fontSize: isSmallScreen ? '12px' : '16px', margin: 0, color: '#333' }}>
                   Projects Delivered
                 </Typography>
               </Box>
-              {!isMobile && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
-              <Box sx={{ textAlign: 'left', margin: isMobile ? '0 5px 10px' : '0 25px', flex: isMobile ? '1 0 100%' : 'none', padding: isMobile ? '10px' : '0', backgroundColor: isMobile ? '#f5f5f5' : 'transparent', borderRadius: isMobile ? '10px' : '0' }}>
+              {!isSmallScreen && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
+              <Box sx={{ textAlign: 'left', margin: isSmallScreen ? '0 5px 10px' : '0 25px', flex: isSmallScreen ? '1 0 100%' : 'none', padding: isSmallScreen ? '10px' : '0', backgroundColor: isSmallScreen ? '#f5f5f5' : 'transparent', borderRadius: isSmallScreen ? '10px' : '0' }}>
                 <Typography variant="h2" sx={{ ...animatedTypographyStyle, color: '#007bff', margin: 0, fontWeight: 500 }}>
                   250+
                 </Typography>
-                <Typography variant="body2" sx={{ fontSize: isMobile ? '12px' : '16px', margin: 0, color: '#333' }}>
+                <Typography variant="body2" sx={{ fontSize: isSmallScreen ? '12px' : '16px', margin: 0, color: '#333' }}>
                   Happy Clients
                 </Typography>
               </Box>
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={{ marginBottom: '50px', marginLeft: isMobile ? '0' : '60px', marginRight: isMobile ? '0' : '10px', maxWidth: '600px' }}>
-              <Box sx={{ backgroundColor: isMobile ? '#f5f5f5' : '#ffffff', padding: '30px', borderRadius: '15px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)', width: '100%', textAlign: 'left' }}>
+            <Box sx={{ marginBottom: '50px', marginLeft: isSmallScreen ? '0' : '60px', marginRight: isSmallScreen ? '0' : '10px', maxWidth: '600px' }}>
+              <Box sx={{ backgroundColor: isSmallScreen ? '#f5f5f5' : '#ffffff', padding: '30px', borderRadius: '15px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)', width: '100%', textAlign: 'left' }}>
                 <Typography variant="h6" sx={{ color: '#ff6600', marginBottom: '10px', marginTop: '10px' }}>
                   <Box component="span" sx={{ backgroundColor: '#ff5733', width: '10px', height: '10px', borderRadius: '15px', display: 'inline-block', marginRight: '10px' }} />
                   OUR VISION
@@ -114,8 +125,8 @@ function SectionComponent() {
                 </Typography>
               </Box>
             </Box>
-            <Box sx={{ marginLeft: isMobile ? '0' : '60px', marginTop: '10px', marginRight: isMobile ? '0' : '10px', maxWidth: '600px' }}>
-              <Box sx={{ backgroundColor: isMobile ? '#f5f5f5' : '#ffffff', padding: '30px', borderRadius: '15px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)', width: '100%', textAlign: 'left' }}>
+            <Box sx={{ marginLeft: isSmallScreen ? '0' : '60px', marginTop: '10px', marginRight: isSmallScreen ? '0' : '10px', maxWidth: '600px' }}>
+              <Box sx={{ backgroundColor: isSmallScreen ? '#f5f5f5' : '#ffffff', padding: '30px', borderRadius: '15px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)', width: '100%', textAlign: 'left' }}>
                 <Typography variant="h6" sx={{ color: '#007bff', marginBottom: '10px', marginTop: '10px' }}>
                   <Box component="span" sx={{ backgroundColor: '#007bff', width: '10px', height: '10px', borderRadius: '15px', display: 'inline-block', marginRight: '10px' }} />
                   OUR MISSION
