@@ -27,7 +27,7 @@ const slides = [
 const IntegrityCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [updateEvent, setUpdateEvent] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
+  const [viewMode, setViewMode] = useState('desktop');
   const carouselRef = useRef(null);
   const responsive = {
     desktop: {
@@ -45,7 +45,13 @@ const IntegrityCarousel = () => {
   };
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 800);
+    if (window.innerWidth <= 910) {
+      setViewMode('mobile');
+    } else if (window.innerWidth <= 1440) {
+      setViewMode('tablet');
+    } else {
+      setViewMode('desktop');
+    }
   };
 
 
@@ -71,7 +77,7 @@ const IntegrityCarousel = () => {
 
   return (
     <section className="integrity-carousel-section">
-      {isMobile ? (
+      {viewMode !== 'desktop' ? (
         <div className="integrity-card-container">
           {slides.map((slide, index) => (
             <div key={index} className="integrity-card">

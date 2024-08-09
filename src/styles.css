@@ -1837,7 +1837,6 @@ hr{
 
 .carousel-image {
   width: 95%;
-  /* height: auto; */
   border-radius: 10px;
 }
 
@@ -1857,7 +1856,7 @@ hr{
   transition: opacity 0.3s ease;
 }
 
-.carousel-description h2{
+.carousel-description h2 {
   font-size: 22px;
   line-height: 3rem;
   font-weight: 500;
@@ -1871,8 +1870,8 @@ hr{
   position: absolute;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 800px) {
+/* Mobile and Tablet responsiveness */
+@media (max-width: 1440px) {
   .integrity-carousel-section {
     display: flex;
     flex-direction: column;
@@ -1882,9 +1881,6 @@ hr{
     margin-left: 0px;
   }
 
- 
-
-  /* Card View for Mobile */
   .integrity-card-container {
     display: flex;
     flex-direction: column;
@@ -1896,34 +1892,33 @@ hr{
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative; /* Enable positioning for description overlap */
+    position: relative;
     margin-bottom: 60px;
-    width: 90%; /* Adjust the width as needed */
+    width: 100%;
+    max-width: 600px;
     height: auto;
-    /* Ensure no overflow from the image */
   }
 
   .card-image {
-    width: auto; /* Set width to auto */
-    height: 350px; /* Set a fixed height to make it portrait */
-    object-fit: cover; /* Ensure image covers the area without distortion */
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
     border-radius: 20px;
-
     margin-bottom: -25px;
   }
 
   .card-description {
-    position: absolute; /* Position description over the image */
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: #414141;
     color: #ffffff;
-    padding: 15px 20px; /* Adjust padding to control overlap */
+    padding: 15px 20px;
     border-radius: 20px;
     text-align: left;
-    opacity: 0.8; /* Optional: Adjust opacity if needed */
-    transform: translateY(28px); /* Overlap the bottom of the image */
+    opacity: 0.8;
+    transform: translateY(28px);
   }
 
   .card-description h2 {
@@ -1939,35 +1934,59 @@ hr{
 
   .card-description:hover {
     opacity: 0.98;
-    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+    transition: transform 0.5s ease-in-out;
     height: 150px;
   }
 
-  .card-description:hover h2{
+  .card-description:hover h2 {
     font-size: 16px;
   }
 
-  .card-description:hover p{
+  .card-description:hover p {
     font-size: 13px;
     line-height: 2;
   }
 }
 
-@media (max-width:1000px) and (orientation: landscape){
+/* Tablet-specific adjustments */
+@media (min-width: 911px) and (max-width: 1440px) {
+  .integrity-card {
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .card-image {
+    height: 400px;
+  }
+
+  .card-description h2 {
+    font-size: 16px;
+  }
+
+  .card-description p {
+    font-size: 14px;
+  }
+
+  .card-description:hover h2 {
+    font-size: 18px;
+  }
+
+  .card-description:hover p {
+    font-size: 15px;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-width: 1000px) and (orientation: landscape) {
   .integrity-carousel-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-    background-color: #ffffff;
-    margin-left: 55px;
+    margin-left: 35px;
   }
 
   .integrity-menu {
     width: 100%;
     text-align: left;
-    margin-top: auto; /* Push menu items to the bottom */
-    padding-bottom: 20px; /* Optional: Add some space between menu and carousel */
+    margin-top: auto;
+    padding-bottom: 20px;
   }
 
   .integrity-menu hr {
@@ -1978,237 +1997,53 @@ hr{
 
   .integrity-item {
     font-size: 1.2rem;
-    color: #888888;
-    transition: color 0.5s ease, font-weight 0.5s ease;
-    margin-bottom: 10px; /* Optional: add margin between menu items */
+    margin-bottom: 10px;
   }
 
   .integrity-item.active::after {
-    content: '';
-    position: absolute;
     right: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    background-color: #007BFF;
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
   }
 
   .integrity-item.active::before {
-    content: '';
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translateY(-50%);
     width: 30px;
-    height: 2px;
-    background-color: #007BFF;
   }
 
   .integrity-carousel {
     width: 100%;
     display: flex;
-    /* Add space between the menu and carousel */
   }
 
   .carousel-slide {
-    width: 100%; /* Ensure slides take full width */
-    margin-bottom: 20px; /* Optional: add margin between slides */
-  }
-
-  /* Card View for Mobile */
-  .integrity-card-container {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: center;
-  }
-
-  .integrity-card {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative; /* Enable positioning for description overlap */
-    margin-bottom: 60px;
-    /* width: 90%;  */
-    height: auto;
-    /* Ensure no overflow from the image */
+    margin-bottom: 20px;
   }
 
   .card-image {
-    width:100%; /* Set width to auto */
-    height: 350px; /* Set a fixed height to make it portrait */
-    object-fit: cover; /* Ensure image covers the area without distortion */
-    border-radius: 20px;
-    /* .card-image {
-      width: 100%;
-      height: auto;
-      transition: transform 0.3s ease;
-    } */
-    margin-bottom: -25px;
+    width: 100%;
+    height: 350px;
   }
 
   .card-description {
-    position: absolute; /* Position description over the image */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #1d2b36;
-    color: #ffffff;
-    padding: 15px 20px; /* Adjust padding to control overlap */
-    border-radius: 20px;
-    text-align: left;
-    opacity: 0.8; /* Optional: Adjust opacity if needed */
-    transform: translateY(28px); /* Overlap the bottom of the image */
     height: 150px;
   }
 
   .card-description h2 {
     font-size: 16px;
-    margin-bottom: 5px;
-    font-weight: 500;
   }
 
   .card-description p {
     font-size: 13px;
-    margin-bottom: 0;
     line-height: 2;
   }
 
-  .card-description:hover {
-    opacity: 0.98;
-    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
-    height: 150px;
-  }
-  
-  .card-description:hover h2{
+  .card-description:hover h2 {
     font-size: 18px;
   }
 
-  .card-description:hover p{
+  .card-description:hover p {
     font-size: 14px;
-    line-height: 2;
   }
 }
-
-  .integrity-carousel-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: #ffffff;
-    margin-left: 75px;
-  }
-  
-  .integrity-carousel-container {
-    display: flex;
-    max-width: 1200px;
-    width: 100%;
-  }
-  
-  .integrity-menu {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-right: 50px;
-  }
-  
-  .integrity-item {
-    font-size: 1.5rem;
-    color: #888888;
-    margin-bottom: 20px;
-    transition: color 0.5s ease, font-weight 0.5s ease;
-    cursor: pointer;
-    position: relative;
-    margin-right: -50px;
-  }
-  
-  .integrity-item hr {
-    width: 400px;
-    border: 1px solid #383838;
-    opacity: 0;
-    margin-top: 25px;
-  }
-  
-  .integrity-item.active {
-    color: #007BFF;
-  }
-  
-  .integrity-item.active::after {
-    content: '';
-    position: absolute;
-    right: -50px;
-    top: 35%;
-    transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    background-color: #007BFF;
-    border-radius: 50%;
-    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.2);
-  }
-  
-  .integrity-item.active::before {
-    content: '';
-    position: absolute;
-    left: 100%;
-    top: 35%;
-    transform: translateY(-50%);
-    width: 250px;
-    height: 1px;
-    background-color: #007BFF;
-    margin-left: -200px;
-  }
-  
-  .integrity-carousel {
-    flex: 2;
-    position: relative;
-  }
-  
-  .carousel-slide {
-    position: relative;
-    border-radius: 20px;
-  }
-  
-  .carousel-image {
-    width: 95%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .carousel-description {
-    width: 95%;
-    height: 28%;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    background: #1d2b36;
-    color: #fff;
-    padding: 15px 30px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    line-height: 2rem;
-    opacity: 0.75;
-    transition: opacity 0.3s ease;
-  }
-  
-  .carousel-description h2{
-    font-size: 22px;
-    line-height: 3rem;
-    font-weight: 500;
-  }
-  
-  .carousel-slide:hover .carousel-description {
-    opacity: 0.98;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    overflow: hidden;
-    position: absolute;
-  }
-
 
 
 
@@ -2240,6 +2075,12 @@ hr{
 @media (max-width: 1400px) {
   .carousel-description {
     height: 40%;
+  }
+}
+
+@media(min-width:911px) and (max-width:1440px){
+  .partner-section{
+    padding: 20px 20px 20px 70px
   }
 }
 
