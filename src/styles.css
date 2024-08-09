@@ -1636,7 +1636,7 @@ hr{
   color: #007BFF;
 }
 
-.integrity-item.active::after {
+/* .integrity-item.active::after {
   content: '';
   position: absolute;
   right: -50px;
@@ -1659,7 +1659,7 @@ hr{
   height: 1px;
   background-color: #007BFF;
   margin-left: -200px;
-}
+} */
 
 .integrity-carousel {
   flex: 2;
