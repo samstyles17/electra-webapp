@@ -20,19 +20,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const CustomButton = styled(Button)(({ theme, isMobile }) => ({
-  width: isMobile ? '220px' : '250px',
-  height: '45px',
+  width: isMobile ? '180px' : '250px', // Reduced width for mobile
+  height: isMobile ? '40px' : '45px', // Slightly reduced height for mobile
   borderRadius: '24px',
-  margin: isMobile ? '8px 4px' : '8px',
+  margin: isMobile ? '4px 2px' : '8px', // Reduced margin for mobile
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   color: theme.palette.text.primary,
   textTransform: 'none',
   fontFamily: 'Montserrat, sans-serif',
-  fontSize: isMobile ? '10px' : '12px',
+  fontSize: isMobile ? '9px' : '12px', // Reduced font size for mobile
   border: '1px solid lightgrey',
-  padding: '0 8px',
+  padding: isMobile ? '0 4px' : '0 8px',
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
@@ -55,7 +55,7 @@ const ResponsiveButtonGroup = () => {
     { icon: DesignIcon, text: 'Design And Consulting', link: '/designconsultingservice' },
     { icon: InstallationIcon, text: 'Installation & Commissioning', link: '/installationcommisioningservice' },
     { icon: PanelIcon, text: 'Panel Board & Control Systems', link: '/panelboardcontrolservice' },
-    { icon: ComplianceIcon, text: 'Statutory Approvals & Compliance', link: '/approvalcomplianceservice' },
+    { icon: ComplianceIcon, text: 'Approvals & Compliance', link: '/approvalcomplianceservice' },
     { icon: MaintenanceIcon, text: 'Maintenance & Repair', link: '/maintenacerepairservice' },
     { icon: ValueAddedIcon, text: 'Value-Added Services', link: "/valueaddedservice" },
   ];
@@ -78,6 +78,7 @@ const ResponsiveButtonGroup = () => {
     centerMode: false,
     centerPadding: '0px',
     initialSlide: activeIndex,
+    swipeToSlide: true, // Allow swipe
   };
 
   return (
@@ -85,25 +86,21 @@ const ResponsiveButtonGroup = () => {
       sx={{
         display: 'flex',
         flexDirection: { xs: 'row', md: 'row' },
-        alignItems: isTablet || isMobile ? 'flex-start' : 'center', // Left for mobile/tablet, center for desktop
-        justifyContent: isTablet || isMobile ? 'flex-start' : 'center', // Left for mobile/tablet, center for desktop
+        alignItems: isTablet || isMobile ? 'flex-start' : 'center',
+        justifyContent: isTablet || isMobile ? 'flex-start' : 'center',
         flexWrap: { xs: 'nowrap', md: 'wrap' },
-        width: { 
-          xs: '100%', 
-          sm: '100%',
-          md: '100%',
-          lg: '1200px'
-        },
+        width: '100%', // Use full width on all screen sizes
+        maxWidth: { lg: '1200px' }, // Max width for larger screens
         height: { xs: 'auto', md: 'auto' },
         margin: '20px auto',
-        overflow: 'visible',      
+        overflow: 'hidden', // Hide overflow   
       }}
     >
       {isMobile ? (
-        <Box sx={{ width: '100%', overflow: 'visible' }}> {/* Added wrapper Box */}
+        <Box sx={{ width: '100%', overflow: 'hidden' }}> {/* Hide overflow */}
         <Slider ref={sliderRef} {...settings}>
           {buttons.map((button, index) => (
-            <Box key={index} sx={{ padding: '0 4px' }}>
+            <Box key={index} sx={{ padding: '0 2px' }}> {/* Reduced padding */}
               <HashLink smooth to={`${button.link}#services`}>
                 <CustomButton
                   isMobile={isMobile}
@@ -112,9 +109,9 @@ const ResponsiveButtonGroup = () => {
                     backgroundColor: location.pathname === button.link ? theme.palette.primary.main : 'transparent',
                     color: location.pathname === button.link ? theme.palette.common.white : theme.palette.text.primary,
                     '& img': {
-                      marginRight: '4px',
-                      width: '16px',
-                      height: '16px',
+                      marginRight: '2px', // Reduced margin
+                      width: '14px', // Slightly smaller icon
+                      height: '14px',
                     },
                   }}
                 >
