@@ -70,6 +70,7 @@ background-size: contain;
     .project-testimonial-logo {
         width: auto;
         margin-bottom: 20px;
+        padding-left: 0 !important;
     }
     .project-testimonial-logo > img {
 
