@@ -5,29 +5,29 @@ import { styled } from '@mui/system';
 const StyledBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(4),
   backgroundColor: '#ffffff',
-  margin: '20px auto', // Add margin to prevent overlapping
-  [theme.breakpoints.up('md')]: {
+  margin: '20px auto',
+  [theme.breakpoints.up('lg')]: { // Changed from 'md' to 'lg' for desktop
     width: '941px',
-    minHeight: '215px', // Changed to minHeight for flexibility
+    minHeight: '215px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('lg')]: { // Changed from 'md' to 'lg' for tablet and mobile
     width: '100%',
     minHeight: '256px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    padding: theme.spacing(2), // Reduce padding on mobile
+    padding: theme.spacing(2),
   },
 }));
 
 const ServiceComponent = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg')); // New breakpoint for desktop
 
   return (
     <StyledBox>
@@ -38,34 +38,34 @@ const ServiceComponent = () => {
           textTransform: 'uppercase',
           mb: 2,
           fontFamily: 'Montserrat, sans-serif',
-          textAlign: isMobile ? 'left' : 'center',
-          color: '#666', // Make "OUR SERVICES" visible
-          fontSize: isMobile ? '0.8rem' : '1rem', // Reduce font size on mobile
+          textAlign: isDesktop ? 'center' : 'left',
+          color: '#666',
+          fontSize: isDesktop ? '1rem' : '0.8rem',
         }}
       >
         Our Services
       </Typography>
       <Typography
-        variant={isMobile ? 'h4' : 'h3'}
+        variant={isDesktop ? 'h3' : 'h4'}
         component="h1"
         sx={{
           fontFamily: 'Montserrat, sans-serif',
           mb: 2,
-          textAlign: isMobile ? 'left' : 'center',
-          fontSize: isMobile ? '1.5rem' : '2.5rem', // Reduce font size on mobile
+          textAlign: isDesktop ? 'center' : 'left',
+          fontSize: isDesktop ? '2.5rem' : '1.5rem',
         }}
       >
         <span style={{ color: '#FF6B00' }}>Shaping</span>{' '}
         <span style={{ color: '#0080FF' }}>the world with</span>
       </Typography>
       <Typography
-        variant={isMobile ? 'h4' : 'h3'}
+        variant={isDesktop ? 'h3' : 'h4'}
         component="h1"
         sx={{
           fontFamily: 'Montserrat, sans-serif',
           mb: 2,
-          textAlign: isMobile ? 'left' : 'center',
-          fontSize: isMobile ? '1.5rem' : '2.5rem', // Reduce font size on mobile
+          textAlign: isDesktop ? 'center' : 'left',
+          fontSize: isDesktop ? '2.5rem' : '1.5rem',
         }}
       >
         electrical expertise
@@ -74,8 +74,8 @@ const ServiceComponent = () => {
         variant="body1"
         sx={{
           fontFamily: 'Montserrat, sans-serif',
-          textAlign: isMobile ? 'left' : 'center',
-          fontSize: isMobile ? '0.9rem' : '1rem', // Reduce font size on mobile
+          textAlign: isDesktop ? 'center' : 'left',
+          fontSize: isDesktop ? '1rem' : '0.9rem',
         }}
       >
         We provide comprehensive electrical solutions, from custom turnkey projects to complex control systems. Our services

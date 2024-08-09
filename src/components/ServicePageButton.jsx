@@ -19,28 +19,28 @@ import ValueAddedIcon from '../assets/img/service_icon6.svg';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-const CustomButton = styled(Button)(({ theme }) => ({
-  width: '250px',
+const CustomButton = styled(Button)(({ theme, isMobile }) => ({
+  width: isMobile ? '220px' : '250px',
   height: '45px',
   borderRadius: '24px',
-  margin: '8px',
+  margin: isMobile ? '8px 4px' : '8px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   color: theme.palette.text.primary,
   textTransform: 'none',
   fontFamily: 'Montserrat, sans-serif',
-  fontSize: '12px',
+  fontSize: isMobile ? '10px' : '12px',
   border: '1px solid lightgrey',
-  padding: '0 16px',
+  padding: '0 8px',
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
   },
   '& .MuiButton-startIcon': {
-    marginRight: '8px',
-    width: '18px',
-    height: '18px',
+    marginRight: '4px',
+    width: '16px',
+    height: '16px',
   },
 }));
 
@@ -77,54 +77,52 @@ const ResponsiveButtonGroup = () => {
     variableWidth: true,
     centerMode: true,
     centerPadding: '0px',
-
+    initialSlide: activeIndex,
   };
 
   return (
     <Box
       sx={{
-        display: 'flex',
-        flexDirection: { xs: 'row', md: 'row' },
-        alignItems: isTablet?'left':'center',
-        justifyContent: isTablet?'left':'center',
-        flexWrap: { xs: 'nowrap', md: 'wrap' },
-        width: { xs: '100%', md: '1200px' },
-        height: { xs: 'auto', md: 'auto' },
-        margin: '20px auto',
+          display: 'flex',
+          flexDirection: { xs: 'row', md: 'row' },
+          alignItems: isTablet ? 'left' : 'center',
+          justifyContent: isTablet ? 'left' : 'center',
+          flexWrap: { xs: 'nowrap', md: 'wrap' },
+          width: { 
+            xs: '100%', 
+            sm: '100%',  // Added for tablet
+            md: '100%',  // Changed to 100% for consistency
+            lg: '1200px' // For larger screens
+          },
+          height: { xs: 'auto', md: 'auto' },
+          margin: '20px auto',
+          overflow: 'hidden',        
       }}
     >
       {isMobile ? (
         <Slider ref={sliderRef} {...settings}>
-          {buttons.map((button, index) => (
-            <Box key={index} sx={{ padding: '0 8px' }}>
+        {buttons.map((button, index) => (
+          <Box key={index} sx={{ padding: '0 4px' }}>
             <HashLink smooth to={`${button.link}#services`}>
               <CustomButton
-            
+                isMobile={isMobile}
                 startIcon={<img src={button.icon} alt={button.text} />}
-               
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                   backgroundColor: location.pathname === button.link ? theme.palette.primary.main : 'transparent',
                   color: location.pathname === button.link ? theme.palette.common.white : theme.palette.text.primary,
                   '& img': {
-                    marginRight: '8px',
+                    marginRight: '4px',
+                    width: '16px',
+                    height: '16px',
                   },
-                  '& .MuiButton-startIcon': {
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }
                 }}
               >
                 {button.text}
               </CustomButton>
-              </HashLink>
-            </Box>
-          
-          ))}
-        </Slider>
+            </HashLink>
+          </Box>
+        ))}
+      </Slider>
       ) : isTablet ? (
             <Box sx={{ 
               display: 'grid', 

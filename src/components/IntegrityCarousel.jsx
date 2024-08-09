@@ -27,6 +27,7 @@ const slides = [
 const IntegrityCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [updateEvent, setUpdateEvent] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
   const carouselRef = useRef(null);
   const responsive = {
     desktop: {
@@ -43,11 +44,22 @@ const IntegrityCarousel = () => {
     }
   };
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 800);
+  };
+
+
   const handleAfterChange = (currentSlide) => {
     if(!updateEvent) setActiveIndex((prev) => prev + 1 === slides.length ? 0 : prev + 1);
   };
 
-  const isMobile = window.innerWidth <= 600;
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleEventUpdation = (index) => {
     setActiveIndex(index);

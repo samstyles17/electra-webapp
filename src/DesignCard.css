@@ -14,11 +14,11 @@
   opacity: 1;
 }
 
-.card-image {
+/* .card-image {
   width: 100%;
   height: auto;
   transition: transform 0.3s ease;
-}
+} */
 
 .card-content {
   position: absolute;

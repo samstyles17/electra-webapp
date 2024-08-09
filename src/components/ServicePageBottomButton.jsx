@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import dashedDivider from '../assets/img/service_dashed_divider.png'; 
 import ServicePageButton from '../components/ServicePageButton';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const theme = createTheme({
   typography: {
@@ -12,13 +13,14 @@ const theme = createTheme({
 });
 
 const ExploreServicesComponent = () => {
+  const isTablet = useMediaQuery('(min-width:910px) and (max-width:1440px)');
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
         sx={{
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: isTablet ? 'left':'center',
           textAlign: 'center',
           padding: '40px 20px',
         }}
@@ -33,7 +35,7 @@ const ExploreServicesComponent = () => {
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'center',
+            justifyContent: isTablet?'left':'center',
             gap: '20px',
           }}
         >

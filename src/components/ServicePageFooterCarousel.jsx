@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, useMediaQuery } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ArrowForward } from '@mui/icons-material';
 import { keyframes } from '@mui/system';
 import { Link } from 'react-router-dom';
-import Carousel from 'react-material-ui-carousel';
 import dividerImage from '../assets/img/service_footer_vector.png';
 
 // Import your carousel images
@@ -28,12 +27,13 @@ const scroll = keyframes`
   100% { transform: translateX(-50%); }
 `;
 
-
 const carouselImages = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 const PortfolioComponent = () => {
-  // console.log("Carousel Images:", carouselImages); // Log the images
   const scrollRef = useRef(null);
+  const isTablet = useMediaQuery('(min-width:910px) and (max-width:1440px)');
+  const isMobile = useMediaQuery('(max-width:909px)');
+
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (scrollContainer) {
@@ -42,6 +42,7 @@ const PortfolioComponent = () => {
       scrollContainer.style.animationDuration = `${animationDuration}s`;
     }
   }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -49,7 +50,7 @@ const PortfolioComponent = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent:isTablet?'left' : 'center',
           width: '100%',
           padding: '40px 0', // Top and bottom margin
         }}
@@ -57,8 +58,9 @@ const PortfolioComponent = () => {
         <Box
           sx={{
             display: 'flex',
-            width: '1155px',
-            height: '359px',
+            flexDirection: isTablet || isMobile ? 'column' : 'row',
+            width: isTablet ? '90%' : isMobile ? '95%' : '1155px',
+            height: isTablet || isMobile ? 'auto' : '359px',
             backgroundColor: '#333',
             borderRadius: '20px',
             overflow: 'hidden',
@@ -66,52 +68,52 @@ const PortfolioComponent = () => {
         >
           {/* Carousel Section */}
           <Box
-        sx={{
-          width: '570px',
-          height: '328px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-          overflow: 'hidden',
-          margin: '16px',
-          backgroundColor: '#fff',
-          borderRadius: '15px',
-        }}
-      >
-        <Box
-          ref={scrollRef}
-          sx={{
-            display: 'flex',
-            animation: `${scroll} linear infinite`,
-            '&:hover': {
-              animationPlayState: 'paused',
-            },
-          }}
-        >
-          {[...carouselImages, ...carouselImages].map((image, index) => (
-            <Box 
-              key={index} 
-              sx={{ 
-                flexShrink: 0,
-                width: '242px',
-                height: '328px',
-                marginRight: '10px',
+            sx={{
+              width: isTablet || isMobile ? '100%' : '570px',
+              height: '328px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+              overflow: 'hidden',
+              margin: isTablet || isMobile ? '16px 0' : '16px',
+              backgroundColor: '#fff',
+              borderRadius: '15px',
+            }}
+          >
+            <Box
+              ref={scrollRef}
+              sx={{
+                display: 'flex',
+                animation: `${scroll} linear infinite`,
+                '&:hover': {
+                  animationPlayState: 'paused',
+                },
               }}
             >
-              <img
-                src={image}
-                alt={`Carousel ${index}`}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '15px',
-                  objectFit: 'cover',
-                }}
-              />
+              {[...carouselImages, ...carouselImages].map((image, index) => (
+                <Box 
+                  key={index} 
+                  sx={{ 
+                    flexShrink: 0,
+                    width: '242px',
+                    height: '328px',
+                    marginRight: '10px',
+                  }}
+                >
+                  <img
+                    src={image}
+                    alt={`Carousel ${index}`}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '15px',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </Box>
+              ))}
             </Box>
-          ))}
-        </Box>
-      </Box>
+          </Box>
 
           {/* Text Section */}
           <Box
