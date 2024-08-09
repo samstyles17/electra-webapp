@@ -24,6 +24,15 @@ import textDivider from '../assets/img/portfolio_text_divider.png';
 import textSeparator from '../assets/img/portfolio_text_separator.png';
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1440,
+      xl: 1920,
+    },
+  },
   typography: {
     fontFamily: [
       'Montserrat',
@@ -39,6 +48,7 @@ const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(','),
   },
+  
 });
 
 const cards = [
@@ -78,7 +88,7 @@ const CircularIconButton = styled(IconButton)(({ theme }) => ({
 
 const PortfolioSection = () => {
   const [cardIndex, setCardIndex] = useState(2);
-  const isSmallScreen = useMediaQuery('(max-width:960px)');
+  const isSmallScreen = useMediaQuery('(max-width:900px)');
   const isMediumScreen = useMediaQuery('(max-width:1280px)');
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);

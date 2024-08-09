@@ -29,6 +29,15 @@ import Client21 from '../assets/img/cl222.png';
 import Client22 from '../assets/img/cl233.png';
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 470,
+      md: 900,
+      lg: 1440,
+      xl: 1920,
+    }
+  },
   typography: {
     fontFamily: 'Montserrat, Arial, sans-serif',
   },
@@ -68,7 +77,8 @@ const scroll = keyframes`
 
 
 const ClientsCarousel = () => {
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const scrollerRef = useRef(null);
   const scrollerInnerRef = useRef(null);
 
@@ -121,7 +131,13 @@ const ClientsCarousel = () => {
             component="img" 
             src={client.src} 
             alt={client.alt} 
-            sx={{ margin: '0 10px', height: '60px', width: 'auto', flexShrink: 0 }} 
+            sx={{ 
+              margin: '0 10px', 
+              height: isMobile ? '40px' : isTablet ? '40px' : '60px', 
+              width: 'auto', 
+              flexShrink: 0,
+              maxWidth: '100%', 
+            }} 
           />
         ))}
       </Box>
@@ -136,16 +152,18 @@ const ClientsCarousel = () => {
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'center', 
-          margin: isMobile ? '20px' : '90px', 
-          flexDirection: isMobile ? 'column' : 'row',
+          margin: isMobile ? '0px' : isTablet ? '0px' : '90px', 
+          flexDirection: isMobile || isTablet ? 'column' : 'row',
           borderRadius: isMobile ? '0' : '25px',
-          border: isMobile ? 'none' : '0.1px solid grey',
-          padding: isMobile ? '0' : '30px 40px',
+          border: isMobile || isTablet ? 'none' : '0.1px solid grey',
+          padding: isMobile ? '0' : isTablet ? '20px' : '30px 40px',
           backgroundColor: isMobile ? 'transparent' : '#fff',
-          width: isMobile ? '100%' : 'auto',
+          width: isMobile || isTablet ? '100%' : 'auto',
+          maxWidth: '100%',
+          overflow: 'hidden',
         }}
       >
-        {isMobile ? (
+        {isMobile || isTablet ? (
           <>
             <Box 
               component="img" 
@@ -154,7 +172,8 @@ const ClientsCarousel = () => {
               sx={{ 
                 marginBottom: '20px', 
                 height: 'auto', 
-                alignSelf: 'center' 
+                alignSelf: 'center' ,
+                maxWidth: '100%'
               }} 
             />
             <Typography 
@@ -162,7 +181,7 @@ const ClientsCarousel = () => {
               sx={{ 
                 textAlign: 'center', 
                 marginBottom: '20px', 
-                fontSize: '18px' 
+                fontSize: isTablet ? '20px' : '18px'
               }}
             >
               OUR CLIENTS
@@ -173,14 +192,14 @@ const ClientsCarousel = () => {
                 width: '100%', 
                 borderTop: '1px dashed grey', 
                 marginTop: '20px', 
-                marginRight:'40px'
+                marginRight: isTablet ? '0' : '40px'
               }} 
             />
           </>
         ) : (
           <>
             <Box sx={{ display: 'flex', alignItems: 'center', color: '#000', marginRight: '20px', flexShrink: 0 }}>
-              <Box component="img" src={DividerImage} alt="Divider" sx={{ marginRight: '10px', height: 'auto' }} />
+              <Box component="img" src={DividerImage} alt="Divider" sx={{ marginRight: '10px', height: 'auto', maxWidth: '100%' }} />
               <Typography variant="h6">OUR CLIENTS</Typography>
             </Box>
             {carouselContent}
