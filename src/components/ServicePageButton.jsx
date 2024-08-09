@@ -75,7 +75,7 @@ const ResponsiveButtonGroup = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
-    centerMode: true,
+    centerMode: false,
     centerPadding: '0px',
     initialSlide: activeIndex,
   };
@@ -83,46 +83,48 @@ const ResponsiveButtonGroup = () => {
   return (
     <Box
       sx={{
-          display: 'flex',
-          flexDirection: { xs: 'row', md: 'row' },
-          alignItems: isTablet ? 'left' : 'center',
-          justifyContent: isTablet ? 'left' : 'center',
-          flexWrap: { xs: 'nowrap', md: 'wrap' },
-          width: { 
-            xs: '100%', 
-            sm: '100%',  // Added for tablet
-            md: '100%',  // Changed to 100% for consistency
-            lg: '1200px' // For larger screens
-          },
-          height: { xs: 'auto', md: 'auto' },
-          margin: '20px auto',
-          overflow: 'hidden',        
+        display: 'flex',
+        flexDirection: { xs: 'row', md: 'row' },
+        alignItems: isTablet || isMobile ? 'flex-start' : 'center', // Left for mobile/tablet, center for desktop
+        justifyContent: isTablet || isMobile ? 'flex-start' : 'center', // Left for mobile/tablet, center for desktop
+        flexWrap: { xs: 'nowrap', md: 'wrap' },
+        width: { 
+          xs: '100%', 
+          sm: '100%',
+          md: '100%',
+          lg: '1200px'
+        },
+        height: { xs: 'auto', md: 'auto' },
+        margin: '20px auto',
+        overflow: 'visible',      
       }}
     >
       {isMobile ? (
+        <Box sx={{ width: '100%', overflow: 'visible' }}> {/* Added wrapper Box */}
         <Slider ref={sliderRef} {...settings}>
-        {buttons.map((button, index) => (
-          <Box key={index} sx={{ padding: '0 4px' }}>
-            <HashLink smooth to={`${button.link}#services`}>
-              <CustomButton
-                isMobile={isMobile}
-                startIcon={<img src={button.icon} alt={button.text} />}
-                sx={{
-                  backgroundColor: location.pathname === button.link ? theme.palette.primary.main : 'transparent',
-                  color: location.pathname === button.link ? theme.palette.common.white : theme.palette.text.primary,
-                  '& img': {
-                    marginRight: '4px',
-                    width: '16px',
-                    height: '16px',
-                  },
-                }}
-              >
-                {button.text}
-              </CustomButton>
-            </HashLink>
-          </Box>
-        ))}
-      </Slider>
+          {buttons.map((button, index) => (
+            <Box key={index} sx={{ padding: '0 4px' }}>
+              <HashLink smooth to={`${button.link}#services`}>
+                <CustomButton
+                  isMobile={isMobile}
+                  startIcon={<img src={button.icon} alt={button.text} />}
+                  sx={{
+                    backgroundColor: location.pathname === button.link ? theme.palette.primary.main : 'transparent',
+                    color: location.pathname === button.link ? theme.palette.common.white : theme.palette.text.primary,
+                    '& img': {
+                      marginRight: '4px',
+                      width: '16px',
+                      height: '16px',
+                    },
+                  }}
+                >
+                  {button.text}
+                </CustomButton>
+              </HashLink>
+            </Box>
+          ))}
+        </Slider>
+      </Box>
       ) : isTablet ? (
             <Box sx={{ 
               display: 'grid', 
@@ -131,9 +133,9 @@ const ResponsiveButtonGroup = () => {
               gap: '16px',
               width: '100%',
               maxWidth: '900px',
-              justifyContent: 'start', // Change this
-              alignItems: 'start',     // Add this
-              marginLeft: '0px',      //
+              justifyContent: 'start',
+              alignItems: 'start',
+              marginLeft: '0px',   //
             }}>
               {buttons.map((button, index) => (
                 <HashLink smooth to={`${button.link}#services`} key={index}>
