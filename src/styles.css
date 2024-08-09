@@ -330,7 +330,7 @@ hr{
 
 
 /* Mobile responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .vision-container {
     flex-direction: column;
     padding: 20px;
