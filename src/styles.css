@@ -1264,7 +1264,7 @@ hr{
 }
 
 .cardgg .semi-hover:hover:not(:last-child) {
-  width: 600px;
+  width: 630px;
 }
 
 .cardgg .semi-hover:hover {
@@ -1315,6 +1315,26 @@ hr{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1400px) {
+  .semi-hover {
+    width: 30%;
+  }
+
+  .semi-hover:last-child {
+    width: 23%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .cardgg:hover .semi-hover:hover {
+    width: 33%;
+  }
+  
+  .cardgg:hover .semi-hover:last-child:hover {
+    width: 28%;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1509,7 +1529,7 @@ hr{
 
 .route-content {
   text-align: left;
-  margin-left: -25px;
+  margin-left: 0px;
 }
 
 .route-title {
@@ -1653,7 +1673,7 @@ hr{
 
 .carousel-image {
   width: 95%;
-  height: auto;
+  /* height: auto; */
   border-radius: 10px;
 }
 
@@ -1688,14 +1708,14 @@ hr{
 }
 
 /* Mobile responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .integrity-carousel-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 20px;
     background-color: #ffffff;
-    margin-left: 55px;
+    margin-left: 0px;
   }
 
   .integrity-menu {
@@ -1767,7 +1787,7 @@ hr{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative; /* Enable positioning for description overlap */
     margin-bottom: 60px;
-    width: 90%; /* Adjust the width as needed */
+    /* width: 90%;  */
     height: auto;
     /* Ensure no overflow from the image */
   }
@@ -1777,7 +1797,11 @@ hr{
     height: 350px; /* Set a fixed height to make it portrait */
     object-fit: cover; /* Ensure image covers the area without distortion */
     border-radius: 20px;
-
+    /* .card-image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    } */
     margin-bottom: -25px;
   }
 
