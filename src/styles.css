@@ -1041,7 +1041,7 @@ hr{
 }
 
 .track-record-icon::before {
-  content: url('../src/assets/img/icon5.svg');
+  content: url('../src/assets/img/newicon5.svg');
 }
 
 /* Mobile responsiveness */
@@ -1087,9 +1087,6 @@ hr{
     font-size: 1rem;
   }
 
-  .highlight-blue-box {
-    background-color: #2e2e2e;
-  }
 }
 
 @media (max-width:1000px) and (orientation: landscape) {
@@ -1133,10 +1130,6 @@ hr{
 
   .lowp{
     font-size: 1rem;
-  }
-
-  .highlight-blue-box {
-    background-color: #2e2e2e;
   }
 }
 
