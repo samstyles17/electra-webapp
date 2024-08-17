@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import PhoneIcon from '../assets/img/footer_phone_logo.png';
 import MailIcon from '../assets/img/footer_mail_logo.png';
 import LocationIcon from '../assets/img/footer_map_logo.png';
-import LinkedInIcon from '../assets/img/a.svg';
-import InstagramIcon from '../assets/img/b.svg';
-import FacebookIcon from '../assets/img/c.svg';
-import TwitterIcon from '../assets/img/d.svg';
+import TwitterIcon from '../assets/img/a.svg';
+import FacebookIcon from '../assets/img/b.svg';
+import InstagramIcon from '../assets/img/c.svg';
+import LinkedInIcon from '../assets/img/d.svg';
 import SmallDivider from '../assets/img/footer_small_vertical_divider.png';
 import LargeDivider from '../assets/img/footer_large_vertical_divider.png';
 import HorizontalDivider from '../assets/img/footer_horizontal_divider.png';
@@ -165,11 +165,18 @@ const Footer = () => {
             <StyledTypography variant="body2" component="span" sx={{ mr: 2, display: { xs: 'inline', md: 'none' } }}>
               Connect with us
             </StyledTypography>
-            {[LinkedInIcon, InstagramIcon, FacebookIcon, TwitterIcon].map((Icon, index) => (
-              <IconButton key={index} size="small" sx={{ color: 'white' }}>
-                <Box component="img" src={Icon} alt={`Social Media Icon ${index + 1}`} />
-              </IconButton>
-            ))}
+            {[
+            { icon: LinkedInIcon, link: 'https://www.linkedin.com/company/electrapower-engineering', alt: 'LinkedIn' },
+            { icon: FacebookIcon, link: 'https://www.facebook.com/ElectrapowerEngineering/', alt: 'Facebook' },
+            { icon: InstagramIcon, link: 'https://www.instagram.com/electrapowerengineering/', alt: 'Instagram' },
+            { icon: TwitterIcon, link: 'https://twitter.com/electrapowereng', alt: 'Twitter' }
+          ].map((item, index) => (
+            <IconButton key={index} size="small" sx={{ color: 'white' }}>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <Box component="img" src={item.icon} alt={`${item.alt} Icon`} />
+              </a>
+            </IconButton>
+          ))}
           </Grid>
 
         <Box sx={{mb:4, mt:2 }}>
@@ -209,11 +216,33 @@ const Footer = () => {
             <StyledTypography variant="body2" component="span" sx={{ mr: 2, display: { xs: 'none', md: 'inline' } }}>
               Connect with us
             </StyledTypography>
-            {[LinkedInIcon, InstagramIcon, FacebookIcon, TwitterIcon].map((Icon, index) => (
-              <IconButton key={index} size="small" sx={{ color: 'white' }}>
-                <Box component="img" src={Icon} alt={`Social Media Icon ${index + 1}`} />
-              </IconButton>
-            ))}
+            {/* LinkedIn */}
+            <IconButton size="small" sx={{ color: 'white' }}>
+              <a href="https://www.linkedin.com/company/electrapower-engineering" target="_blank" rel="noopener noreferrer">
+                <Box component="img" src={LinkedInIcon} alt="LinkedIn Icon" />
+              </a>
+            </IconButton>
+
+            {/* Facebook */}
+            <IconButton size="small" sx={{ color: 'white' }}>
+              <a href="https://www.facebook.com/ElectrapowerEngineering/" target="_blank" rel="noopener noreferrer">
+                <Box component="img" src={FacebookIcon} alt="Facebook Icon" />
+              </a>
+            </IconButton>
+
+            {/* Instagram */}
+            <IconButton size="small" sx={{ color: 'white' }}>
+              <a href="https://www.instagram.com/electrapowerengineering/" target="_blank" rel="noopener noreferrer">
+                <Box component="img" src={InstagramIcon} alt="Instagram Icon" />
+              </a>
+            </IconButton>
+
+            {/* Twitter */}
+            <IconButton size="small" sx={{ color: 'white' }}>
+              <a href="https://twitter.com/electrapowereng" target="_blank" rel="noopener noreferrer">
+                <Box component="img" src={TwitterIcon} alt="Twitter Icon" />
+              </a>
+            </IconButton>
           </Grid>
         </Grid>
       </Container>
