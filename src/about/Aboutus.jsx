@@ -39,7 +39,7 @@ function Aboutus() {
       <Helmet>
         <title>About Electrapower Engineering | Kerala's Leading ‘A’ Grade Electrical Experts</title>
         <meta name="description" content="Learn about Electrapower Engineering's mission, values, and team of experienced electrical engineers. Discover how we're powering Kerala's future with innovative and sustainable solutions."/>
-        <link rel="canonical" href='/aboutus'/>
+        <link rel="canonical" href={window.location.href}/>
       </Helmet>
       <Navbar />
       <div className="aboutus">

@@ -52,7 +52,7 @@ function InstallationCommisioningService () {
           <Helmet>
             <title>Installation & Commissioning Service Services | Electrapower Engineering | Kerala</title>
             <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
-            <link rel='canonical' href='/installationcommisioningservice'/>
+            <link rel='canonical' href={window.location.href}/>
           </Helmet>
           <Navbar/>
           <div className='service-all-width'>

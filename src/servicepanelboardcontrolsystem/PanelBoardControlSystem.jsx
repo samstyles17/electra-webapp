@@ -71,7 +71,7 @@ function PanelBoardControlSystemService () {
         <Helmet>
           <title>Panel Board & Control Systems Service | Electrapower Engineering | Kerala</title>
           <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
-          <link rel='canonical' href='/panelboardcontrolservice'/>
+          <link rel='canonical' href={window.location.href}/>
         </Helmet>
         <Navbar/>
         <div className='service-all-width'>

@@ -379,7 +379,7 @@ const AllProjects = () => {
         <Helmet>
             <title>All Projects | Electrapower Engineering | Complete Project Showcase</title>
             <meta name='description' content="View all of Electrapower Engineering's completed projects, demonstrating our commitment to quality, innovation, and client satisfaction. Get inspired by our electrical engineering expertise."/>
-            <link rel='canonical' href='/allprojects'/>
+            <link rel='canonical' href={window.location.href}/>
         </Helmet>
         <Navbar />
         <div className="allprojects">

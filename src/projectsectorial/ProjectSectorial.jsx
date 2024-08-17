@@ -328,7 +328,7 @@ const ProjectSectorial = () => {
         <Helmet>
             <title>Project Portfolio | Electrapower Engineering | Electrical Success Stories</title>
             <meta name='description' content="Explore Electrapower's diverse project portfolio showcasing our expertise in various sectors. See how we've delivered exceptional electrical solutions for clients across Kerala."/>
-            <link rel='canonical' href='/projectsectorial'/>
+            <link rel='canonical' href={window.location.href}/>
         </Helmet>
         <Navbar />
         <div className="project-sectorial">

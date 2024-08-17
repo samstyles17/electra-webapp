@@ -26,7 +26,7 @@ function Enquire() {
       <Helmet>
         <title>Contact Electrapower Engineering | Get a Quote Today!</title>
         <meta name='description' content="Ready to power your next project? Contact Electrapower Engineering for expert electrical solutions. Get a free quote and discover how we can energize your future."/>
-        <link rel='canonical' href='/enquire'/>
+        <link rel='canonical' href={window.location.href}/>
       </Helmet>
       <div>
         <Navbar/>

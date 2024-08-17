@@ -20,7 +20,7 @@ function Home() {
       <Helmet>
         <title>Electrapower Engineering | HT/LT Power & Electrical Solutions | Kerala</title>
         <meta name='description' content="Trusted 'A' Grade Electrical Engineers & Contractors in Kerala. Specializing in HT/LT installations, Sub Stations, & renewable energy solutions. Energize your future with Electrapower!" />
-        <link rel='canonical' href='/'/>
+        <link rel='canonical' href={window.location.href}/>
       </Helmet>
       <Navbar />
       <div className="home">
