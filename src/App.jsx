@@ -1,4 +1,5 @@
 import React from "react";
+import { HelmetProvider } from "react-helmet-async";
 import Home from "./home/Home";
 import Aboutus from "./about/Aboutus";
 import AllProjects from "./pages/AllProjects";
@@ -16,20 +17,22 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 export default function App() {
   return (
     <>
+      <HelmetProvider>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/aboutus" element={<Aboutus/>}/>
-        <Route path="/designconsultingservice" element={<DesignConsultingService/>} />
-        <Route path="/installationcommisioningservice" element={<InstallationCommisioningService/>}/>
-        <Route path="/panelboardcontrolservice" element={<PanelBoardControlSystem/>}/>
-        <Route path="/approvalcomplianceservice" element={<ApprovalComplianceService/>}/>
-        <Route path="/maintenacerepairservice" element={<MaintenaceRepairService/>}/>
-        <Route path="/valueaddedservice" element= {<ValueAddedService/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/designconsultingservice" element={<DesignConsultingService />} />
+        <Route path="/installationcommisioningservice" element={<InstallationCommisioningService />} />
+        <Route path="/panelboardcontrolservice" element={<PanelBoardControlSystem />} />
+        <Route path="/approvalcomplianceservice" element={<ApprovalComplianceService />} />
+        <Route path="/maintenacerepairservice" element={<MaintenaceRepairService />} />
+        <Route path="/valueaddedservice" element={<ValueAddedService />} />
         <Route path="/projectsectorial" element={<ProjectSectorial />} />
-        <Route path="/allprojects" element={<AllProjects/>}/>
-        <Route path="/enquire" element={<Enquire/>} />
+        <Route path="/allprojects" element={<AllProjects />} />
+        <Route path="/enquire" element={<Enquire />} />
       </Routes>
       <ScrollToTop />
+    </HelmetProvider>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from "../components/Navbar";
 import Header from '../components/Header/Header';
 import ProjectRow from '../components/ProjectRow/ProjectRow';
@@ -375,6 +376,11 @@ const data = [
 const AllProjects = () => {
     return (
         <>
+        <Helmet>
+            <title>All Projects | Electrapower Engineering | Complete Project Showcase</title>
+            <meta name='description' content="View all of Electrapower Engineering's completed projects, demonstrating our commitment to quality, innovation, and client satisfaction. Get inspired by our electrical engineering expertise."/>
+            <link rel='canonical' href='/allprojects'/>
+        </Helmet>
         <Navbar />
         <div className="allprojects">
            

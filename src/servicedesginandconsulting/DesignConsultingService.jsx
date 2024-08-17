@@ -2,11 +2,11 @@ import React from 'react'
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
-import ServicePage1Content from "../components/ServicePage1Content";
 import ServicePageBottomButton from "../components/ServicePageBottomButton";
 import ServiceFooterCarousel from "../components/ServicePageFooterCarousel";
 import Footer from "../components/Footer";
 import Services from '../components/Services/Services';
+import { Helmet } from 'react-helmet-async';
 
 import img1 from "../assets/img/service1/service1_carousel1_img1.png";
 import img2 from "../assets/img/service1/service1_carousel1_img2.png";
@@ -60,6 +60,11 @@ const sections = [
 function DesignConsultingService () {
     return(
         <>
+            <Helmet>
+              <title>Electrical Design & Consulting Services | Electrapower Engineering | Kerala</title>
+              <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
+              <link rel='canonical' href='/designconsultingservice'/>
+            </Helmet>
             <Navbar/>
             <ServicePageText/>
             <section id='services'>

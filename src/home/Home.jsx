@@ -11,12 +11,18 @@ import HomeClient from "../components/HomeClient";
 import HomeTestimonial from  "../components/HomeTestimonials"
 import Connect from "../components/Connect";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 function Home() {
   return (
     <>
-          <Navbar />
+      <Helmet>
+        <title>Electrapower Engineering | HT/LT Power & Electrical Solutions | Kerala</title>
+        <meta name='description' content="Trusted 'A' Grade Electrical Engineers & Contractors in Kerala. Specializing in HT/LT installations, Sub Stations, & renewable energy solutions. Energize your future with Electrapower!" />
+        <link rel='canonical' href='/'/>
+      </Helmet>
+      <Navbar />
       <div className="home">
       <Banner />
       <Hero />

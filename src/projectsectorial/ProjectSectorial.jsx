@@ -3,6 +3,7 @@ import "./ProjectSectorial.css";
 import Navbar from '../components/Navbar';
 import ProjectInfo from '../components/ProjectInfo/ProjectInfo';
 import Footer from "../components/Footer";
+import { Helmet } from 'react-helmet-async';
 
 import kia1 from '../assets/img/kia/kia1.png';
 import kia2 from '../assets/img/kia/kia2.png';
@@ -324,6 +325,11 @@ const data = [
 const ProjectSectorial = () => {
     return (
         <>
+        <Helmet>
+            <title>Project Portfolio | Electrapower Engineering | Electrical Success Stories</title>
+            <meta name='description' content="Explore Electrapower's diverse project portfolio showcasing our expertise in various sectors. See how we've delivered exceptional electrical solutions for clients across Kerala."/>
+            <link rel='canonical' href='/projectsectorial'/>
+        </Helmet>
         <Navbar />
         <div className="project-sectorial">
             <ProjectInfo data={data} />

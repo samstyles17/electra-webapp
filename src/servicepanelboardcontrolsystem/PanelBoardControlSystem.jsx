@@ -6,6 +6,7 @@ import ServicePage3Content from "../components/ServicePage3Content";
 import ServicePageBottomButton from "../components/ServicePageBottomButton";
 import ServiceFooterCarousel from "../components/ServicePageFooterCarousel";
 import Footer from "../components/Footer";
+import { Helmet } from 'react-helmet-async';
 
 import titleDivider from "../assets/img/service_text_divider.png";
 import img1 from "../assets/img/service3/service3_carousel1_img1.png";
@@ -67,6 +68,11 @@ const sections = [
 function PanelBoardControlSystemService () {
     return(
         <>
+        <Helmet>
+          <title>Panel Board & Control Systems Service | Electrapower Engineering | Kerala</title>
+          <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
+          <link rel='canonical' href='/panelboardcontrolservice'/>
+        </Helmet>
         <Navbar/>
         <div className='service-all-width'>
             <ServicePageText/>

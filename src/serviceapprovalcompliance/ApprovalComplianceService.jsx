@@ -7,6 +7,7 @@ import ServicePageBottomButton from "../components/ServicePageBottomButton";
 import ServiceFooterCarousel from "../components/ServicePageFooterCarousel";
 import Footer from "../components/Footer";
 import Services from '../components/Services/Services';
+import { Helmet } from 'react-helmet-async';
 
 import titleDivider from "../assets/img/service_text_divider.png";
 import img1 from "../assets/img/service5/service5_carousel1_img1.png";
@@ -58,6 +59,11 @@ const sections = [
 function MaintenaceRepairService () {
     return(
         <>
+        <Helmet>
+          <title>Approvals & Compliance Services | Electrapower Engineering | Kerala</title>
+          <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
+          <link rel='canonical' href='/approvalcomplianceservice'/>
+        </Helmet>
         <Navbar/>
         <div className="service-all-width">
             <ServicePageText/>

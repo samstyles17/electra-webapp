@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import AboutSec1 from "../components/AboutSec1";
 import Navbar from "../components/Navbar";
-import Vision from "../components/Vision";
-import Mission from "../components/Mission";
 import WhyChoose from "../components/WhyChoose";
 import OurTeam from "../components/OurTeam";
 import OurPeople from "../components/OurPeople";
@@ -10,6 +8,7 @@ import IntegrityCarousel from "../components/IntegrityCarousel";
 import PartnerSection from "../components/PartnerSection";
 import Footer from "../components/Footer";
 import SectionComponent from "../components/SectionComponent";
+import { Helmet } from "react-helmet-async";
 
 function Aboutus() {
   const rowRefs = useRef([]);
@@ -37,6 +36,11 @@ function Aboutus() {
 
   return (
     <>
+      <Helmet>
+        <title>About Electrapower Engineering | Kerala's Leading ‘A’ Grade Electrical Experts</title>
+        <meta name="description" content="Learn about Electrapower Engineering's mission, values, and team of experienced electrical engineers. Discover how we're powering Kerala's future with innovative and sustainable solutions."/>
+        <link rel="canonical" href='/aboutus'/>
+      </Helmet>
       <Navbar />
       <div className="aboutus">
         <div ref={el => rowRefs.current[0] = el}><AboutSec1 /></div>

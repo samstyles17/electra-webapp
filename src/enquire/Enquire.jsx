@@ -5,6 +5,7 @@ import ContactInfo from '../components/ContactInfo'
 import WorkTogetherForm from '../components/WorkTogetherForm'
 import Footer from '../components/Footer'
 import FAQ from '../components/FAQ'
+import { Helmet } from 'react-helmet-async'
 
 function Enquire() {
   const location = useLocation();
@@ -22,6 +23,11 @@ function Enquire() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Electrapower Engineering | Get a Quote Today!</title>
+        <meta name='description' content="Ready to power your next project? Contact Electrapower Engineering for expert electrical solutions. Get a free quote and discover how we can energize your future."/>
+        <link rel='canonical' href='/enquire'/>
+      </Helmet>
       <div>
         <Navbar/>
         <div id="contactInfo">
