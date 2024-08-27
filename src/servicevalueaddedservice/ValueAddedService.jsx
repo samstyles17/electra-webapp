@@ -1,34 +1,33 @@
-import React from 'react'
+// import React from 'react'
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
-import ServicePage6Content from "../components/ServicePage6Content";
+// import ServicePage6Content from "../components/ServicePage6Content";
 import ServicePageBottomButton from "../components/ServicePageBottomButton";
 import ServiceFooterCarousel from "../components/ServicePageFooterCarousel";
 import Footer from "../components/Footer";
 import Services from '../components/Services/Services';
 import { Helmet } from 'react-helmet-async';
 
-import img1 from "../assets/img/service6/service6_carousel1_img1.png";
-import img2 from "../assets/img/service6/service6_carousel1_img2.png";
-import img3 from "../assets/img/service6/service6_carousel2_img1.png";
-import img4 from "../assets/img/service6/service6_carousel2_img2.png";
-import img5 from "../assets/img/service6/service6_carousel3_img1.png";
-import img6 from "../assets/img/service6/service6_carousel3_img2.png";
-import img7 from "../assets/img/service6/service6_carousel4_img1.png";
-import img8 from "../assets/img/service6/service6_carousel4_img2.png";
-import img9 from "../assets/img/service6/service6_carousel5_img1.png";
-import img10 from "../assets/img/service6/service6_carousel5_img2.png";
-import img11 from "../assets/img/service6/service6_carousel6_img1.png";
-import img12 from "../assets/img/service6/service6_carousel6_img2.png";
-import img13 from "../assets/img/service5/service5_carousel1_img2.png";
+import img1 from "../assets/img/service6/img1.webp";
+import img2 from "../assets/img/service6/img2.webp";
+import img3 from "../assets/img/service6/img3.webp";
+import img4 from "../assets/img/service6/img4.webp";
+import img5 from "../assets/img/service6/img5.webp";
+import img6 from "../assets/img/service6/img6.webp";
+import img7 from "../assets/img/service6/img7.webp";
+import img8 from "../assets/img/service6/img8.webp";
+import img9 from "../assets/img/service6/img9.webp";
+import img10 from "../assets/img/service6/img10.webp";
+import img11 from "../assets/img/service6/img11.webp";
+import img12 from "../assets/img/service6/img12.webp";
 
 
 const sections = [
     {
       heading: "Energy Management Systems (EMS)",
       description: "Our EMS solutions enable you to monitor, analyse, and optimise energy consumption in your buildings or facilities. By identifying energy-saving opportunities, you can reduce costs and contribute to a greener environment.",
-      images: [img13, img1]
+      images: [img1, img2]
     },
     {
       heading: "Power Quality Analysis",

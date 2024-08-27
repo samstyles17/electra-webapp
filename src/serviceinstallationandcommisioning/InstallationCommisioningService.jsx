@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
@@ -8,14 +8,14 @@ import Footer from "../components/Footer";
 import Services from '../components/Services/Services';
 import { Helmet } from 'react-helmet-async';
 
-import img1 from "../assets/img/service2/service2_carousel1_img1.png";
-import img3 from "../assets/img/service2/service2_carousel1_img3.png";
-import img4 from "../assets/img/service2/service2_carousel2_img1.png";
-import img6 from "../assets/img/service2/service2_carousel2_img3.png";
-import img7 from "../assets/img/service2/service2_carousel3_img2.png";
-import img8 from "../assets/img/service2/service2_carousel3_img3.png";
-import img10 from "../assets/img/service2/service2_carousel4_img1.png";
-import img12 from "../assets/img/service2/service2_carousel4_img3.png";
+import img1 from "../assets/img/service2/img1.webp";
+import img3 from "../assets/img/service2/img2.webp";
+import img4 from "../assets/img/service2/img3.webp";
+import img6 from "../assets/img/service2/img4.webp";
+import img7 from "../assets/img/service2/img5.webp";
+import img8 from "../assets/img/service2/img6.webp";
+import img10 from "../assets/img/service2/img7.webp";
+import img12 from "../assets/img/service2/img8.webp";
 const sections = [
   {
     heading: "Electrical Installations (HT/LT):",

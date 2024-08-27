@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
@@ -8,14 +8,14 @@ import Footer from "../components/Footer";
 import Services from '../components/Services/Services';
 import { Helmet } from 'react-helmet-async';
 
-import img1 from "../assets/img/service1/service1_carousel1_img1.png";
-import img2 from "../assets/img/service1/service1_carousel1_img2.png";
-import img4 from "../assets/img/service1/service1_carousel2_img1.png";
-import img5 from "../assets/img/service1/service1_carousel2_img2.png";
-import img7 from "../assets/img/service1/service1_carousel3_img1.png";
-import img8 from "../assets/img/service1/service1_carousel3_img2.png";
-import img10 from "../assets/img/service1/service1_carousel4_img1.png";
-import img11 from "../assets/img/service1/service1_carousel4_img2.png";
+import img1 from "../assets/img/service1/img1.webp";
+import img2 from "../assets/img/service1/img2.webp";
+import img4 from "../assets/img/service1/img3.webp";
+import img5 from "../assets/img/service1/img4.webp";
+import img7 from "../assets/img/service1/img5.webp";
+import img8 from "../assets/img/service1/img6.webp";
+import img10 from "../assets/img/service1/img7.webp";
+import img11 from "../assets/img/service1/img8.webp";
 
 
 const sections = [

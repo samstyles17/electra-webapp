@@ -1,25 +1,22 @@
-import React from 'react'
+// import React from 'react'
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
-import ServicePage3Content from "../components/ServicePage3Content";
+// import ServicePage3Content from "../components/ServicePage3Content";
 import ServicePageBottomButton from "../components/ServicePageBottomButton";
 import ServiceFooterCarousel from "../components/ServicePageFooterCarousel";
 import Footer from "../components/Footer";
 import { Helmet } from 'react-helmet-async';
 
-import titleDivider from "../assets/img/service_text_divider.png";
-import img1 from "../assets/img/service3/service3_carousel1_img1.png";
-import img2 from "../assets/img/service3/service3_carousel1_img2.png";
-import img3 from "../assets/img/service3/service3_carousel2_img1.png";
-import img4 from "../assets/img/service3/service3_carousel2_img2.png";
-import img5 from "../assets/img/service3/service3_carousel3_img1.png";
-import img6 from "../assets/img/service3/service3_carousel3_img2.png";
-import img7 from "../assets/img/service3/service3_carousel3_img3.png";
-import img8 from "../assets/img/service3/service3_carousel4_img1.png";
-import img9 from "../assets/img/service3/service3_carousel4_img2.png";
-import img10 from "../assets/img/service3/service3_carousel4_img3.png";
-import img11 from "../assets/img/service3/service3_carousel4_img4.png";
+// import titleDivider from "../assets/img/service_text_divider.png";
+import img1 from "../assets/img/service3/img1.webp";
+import img2 from "../assets/img/service3/img2.webp";
+import img3 from "../assets/img/service3/img3.webp";
+import img4 from "../assets/img/service3/img4.webp";
+import img5 from "../assets/img/service3/img5.webp";
+import img6 from "../assets/img/service3/img6.webp";
+import img7 from "../assets/img/service3/img7.webp";
+import img8 from "../assets/img/service3/img8.webp";
 import Services from '../components/Services/Services';
 
 
@@ -47,7 +44,7 @@ const sections = [
   {
     heading: "Specialized Panels",
     description: "We engineer and manufacture a wide range of custom-designed specialised panels to meet your unique industrial, commercial, and infrastructure needs. Our experienced team of engineers and technicians ensures that every panel is designed and built to the highest standards of quality, safety, and performance. We use only top-grade components and materials to guarantee long-lasting reliability.",
-    images: [img8, img11],
+    images: [img7, img8],
     bullets :  [
       "Power Control Centers (PCCs): Centralised control and protection for high-voltage power distribution systems.",
       "Motor Control Centers (MCCs): Efficient control and protection for multiple motors in industrial settings.",
