@@ -10,14 +10,14 @@ import { HashLink } from 'react-router-hash-link';
 
 // Import your images
 import backgroundImage from '../assets/img/portfolio_bg.png';
-import kiaShowroom from '../assets/img/kia_nettoor.png';
-import hardwareTrading from '../assets/img/hhys2.png';
-import luxuryLiving from '../assets/img/app2.png';
+import kiaShowroom from '../assets/img/kia1_webimage.webp';
+import hardwareTrading from '../assets/img/hhys_webimage1.webp';
+import luxuryLiving from '../assets/img/apartment_webimage1.webp';
 import healthcareCenter from '../assets/img/hospital/hos1.png';
-import transformingMobility from '../assets/img/cocotuft/coco1.png';
-import spicingProduction from "../assets/img/condiments/ec1.png";
-import preservingHeritage from "../assets/img/east_napier/napier1.png";
-import evTata from "../assets/img/portfolio_card8.png";
+import transformingMobility from '../assets/img/ip5_webimage.webp';
+import spicingProduction from "../assets/img/ip3_webimage.webp";
+import preservingHeritage from "../assets/img/apartment_webimage2.webp";
+import evTata from "../assets/img/tata1_webimage.webp";
 
 // Import your divider and separator images
 import textDivider from '../assets/img/portfolio_text_divider.png';
