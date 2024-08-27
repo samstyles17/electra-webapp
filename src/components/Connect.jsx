@@ -1,14 +1,14 @@
 // LandingPage.js
-import React from 'react';
-import { Link, useLocation } from "react-router-dom";
-import { Grid, Box, Button, Typography, TextField } from '@mui/material';
+// import React from 'react';
+import { Link} from "react-router-dom";
+import { Grid, Box, Button, Typography} from '@mui/material';
 import { useTheme } from '@mui/system';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import mobileImage from '../assets/img/connect_mobile_image.png';
 import backgroundImage from '../assets/img/connect_bg.png';
-import rightImage from '../assets/img/connect_image.png'; // Ensure you have the additional image in the img folder
+import rightImage from '../assets/img/connect_webp_image.webp'; // Ensure you have the additional image in the img folder
 import vectorImage from '../assets/img/connect_vector.png'; // Ensure you have the vector image in the img folder
 import arrowIcon from '../assets/img/connect_button_arrow.png';
 import '../styles.css';

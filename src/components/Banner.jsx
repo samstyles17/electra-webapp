@@ -6,11 +6,11 @@ import styled from 'styled-components';
 import 'react-multi-carousel/lib/styles.css';
 
 // Web banner images
-import banner1 from "../assets/img/banner_a.png";
+import banner1 from "../assets/img/banner_webimage1.webp";
 // import banner2 from "../assets/img/banner_b.png";
-import banner3 from "../assets/img/banner_c.png";
-import banner4 from "../assets/img/banner_d.png";
-import banner5 from "../assets/img/banner_e.png";
+import banner3 from "../assets/img/banner_webimage2.webp";
+import banner4 from "../assets/img/banner_webimage3.webp";
+import banner5 from "../assets/img/banner_webimage4.webp";
 
 // Mobile banner images (replace these with your actual mobile banner images)
 import mobileBanner1 from "../assets/img/BANER POSTER-01.png";

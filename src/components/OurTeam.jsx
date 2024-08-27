@@ -2,8 +2,8 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import '../styles.css';
-import image1 from '../assets/img/teamimg1.png'; // Replace with actual image path
-import image2 from '../assets/img/teamimg2.png'; // Replace with actual image path
+import image1 from '../assets/img/teamimg1_webimage.webp'; // Replace with actual image path
+import image2 from '../assets/img/teamimg2_webimage.webp'; // Replace with actual image path
 import expicon from '../assets/img/expicon.png'; // Replace with actual image
 
 const responsive = {

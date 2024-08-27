@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles.css';
-import peopleImage from '../assets/img/peopleimg.png'; // Replace with the correct path
+import peopleImage from '../assets/img/peopleimg_webimage.webp'; // Replace with the correct path
 
 const OurPeople = () => {
   const [isMobile, setIsMobile] = useState(false);

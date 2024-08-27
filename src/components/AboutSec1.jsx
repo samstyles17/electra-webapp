@@ -1,7 +1,7 @@
 import React from 'react'
 
 import '../styles.css'; // Ensure to import your CSS file
-import aboutusimg from "../assets/img/aboutusimg1.png"; 
+import aboutusimg from "../assets/img/aboutusimg1_webimage.webp"; 
 
 
 function AboutSec1() {

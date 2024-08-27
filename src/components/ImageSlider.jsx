@@ -6,12 +6,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from 'react-router-dom';
 // Import your images
-import designImage from '../assets/img/sliding_image1.png';
-import installationImage from '../assets/img/sliding_image2.png';
-import panelImage from '../assets/img/sliding_image3.png';
-import auditImage from '../assets/img/sliding_image4.png';
-import testingImage from '../assets/img/sliding_image5.png';
-import maintenanceImage from '../assets/img/sliding_image6.png';
+import designImage from '../assets/img/service1_webimage.webp';
+import installationImage from '../assets/img/service2_webimage.webp';
+import panelImage from '../assets/img/service3_webimage.webp';
+import auditImage from '../assets/img/service4_webimage.webp';
+import testingImage from '../assets/img/service5_webimage.webp';
+import maintenanceImage from '../assets/img/service6_webimage.webp';
 
 const cards = [
   { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' , route:'/designconsultingservice'},

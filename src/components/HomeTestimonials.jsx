@@ -7,7 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from 'react-router-dom';
 
 // Import images
-import mapWithAvatars from '../assets/img/home_testimonial_map.png';
+import mapWithAvatars from '../assets/img/tetimonial_map_webimage.webp';
 import mrShaji from '../assets/img/home_testimonial_profile_pic_1.png';
 import mrReji from '../assets/img/home_testimonial_profile_pic_2.png';
 import mrYaseem from '../assets/img/home_testimonial_profile_pic_3.png';

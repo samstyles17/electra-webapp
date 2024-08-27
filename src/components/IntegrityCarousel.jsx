@@ -4,12 +4,12 @@ import 'react-multi-carousel/lib/styles.css';
 import '../styles.css';
 
 // Import images directly
-import image1 from "../assets/img/carimg1.png";
-import image2 from "../assets/img/carimg2.png";
-import image3 from "../assets/img/carimg3.png";
-import image4 from "../assets/img/carimg4.png";
-import image5 from "../assets/img/carimg5.png";
-import image6 from "../assets/img/carimg6.png";
+import image1 from "../assets/img/expertise_webimage.webp";
+import image2 from "../assets/img/agility_webimage.webp";
+import image3 from "../assets/img/integrity_webimage.webp";
+import image4 from "../assets/img/innovation_webimage.webp";
+import image5 from "../assets/img/clientcentric_webimage.webp";
+import image6 from "../assets/img/collaboration_webimage.webp";
 
 const slides = [
   {
