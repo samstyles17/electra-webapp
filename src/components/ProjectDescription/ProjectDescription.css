@@ -37,6 +37,11 @@
     .px-14 {
         padding: 0 30px !important;
     }
+    .project-image {
+        min-width: auto !important;
+        height: 150px !important;
+    }
+    
 
 }
 
@@ -68,6 +73,7 @@
 
     .project-image {
         width: fit-content;
+
     }
     .project-images {
         display: none !important;
