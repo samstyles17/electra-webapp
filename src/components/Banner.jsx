@@ -1,29 +1,17 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from "@mui/material";
 import styled from 'styled-components';
 import 'react-multi-carousel/lib/styles.css';
 
-// Web banner images
-import banner1 from "../assets/img/banner_webimage1.webp";
-// import banner2 from "../assets/img/banner_b.png";
-import banner3 from "../assets/img/banner_webimage2.webp";
-import banner4 from "../assets/img/banner_webimage3.webp";
-import banner5 from "../assets/img/banner_webimage4.webp";
-
-// Mobile banner images (replace these with your actual mobile banner images)
-import mobileBanner1 from "../assets/img/BANER POSTER-01.png";
-import mobileBanner2 from "../assets/img/BANER POSTER-02.png";
-import mobileBanner3 from "../assets/img/BANER POSTER-03.png";
-import mobileBanner4 from "../assets/img/BANER POSTER-04.png";
-
+// Styled components remain the same
 const BannerContainer = styled.div`
   width: 100%;
-  margin-top: 2rem; // Adjust this value as needed for desktop
+  margin-top: 2rem;
 
   @media (max-width: 960px) {
-    margin-top: 0; // Remove top margin for mobile
+    margin-top: 0;
   }
 `;
 
@@ -48,31 +36,58 @@ const StyledCarousel = styled(Carousel)`
 `;
 
 const responsive = {
-  all: {
-    breakpoint: { max: 4000, min: 0 },
-    items: 1,
+  desktop: {
+    breakpoint: { max: 3000, min: 961 },
+    items: 1
+  },
+  mobile: {
+    breakpoint: { max: 960, min: 0 },
+    items: 1
   }
 };
 
-
 function Banner() {
+  const [images, setImages] = useState({ web: [], mobile: [] });
+  const [isLoading, setIsLoading] = useState(true);
   const isMobile = useMediaQuery("(max-width:960px)");
+  // Handling API call and response
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await fetch('https://1a2fagymd7.execute-api.ap-south-1.amazonaws.com/v2/fetchBannerImageDetails');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Fetched banner data:', data);
+        
+        const sortImages = (imageArray) => {
+          return imageArray.sort((a, b) => {
+            if (a.position_index === 1) return -1;
+            if (b.position_index === 1) return 1;
+            return a.position_index - b.position_index;
+          });
+        };
 
-  const webImages = [
-    { src: banner1, route: '/enquire' },
-    { src: banner3, route: '/allprojects' },
-    { src: banner4, route: '/projectsectorial' },
-    { src: banner5, route: "/designconsultingservice" },
-  ];
+        const webImages = sortImages(data.filter(image => image.mode === "Desktop"));
+        const mobileImages = sortImages(data.filter(image => image.mode === "Mobile"));
 
-  const mobileImages = [
-    { src: mobileBanner1, route: '/enquire' },
-    { src: mobileBanner2, route: '/aboutus' },
-    { src: mobileBanner3, route: '/allprojects' },
-    { src: mobileBanner4, route: '/projectsectorial' },
-  ];
+        setImages({ web: webImages, mobile: mobileImages });
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching images:", error);
+        setIsLoading(false);
+      }
+    };
 
-  const images = isMobile ? mobileImages : webImages;
+    fetchImages();
+  }, []);
+
+  const selectedImages = isMobile ? images.mobile : images.web;
+
+  if (isLoading || selectedImages.length === 0) {
+    return <div>Loading...</div>; // Or any loading indicator you prefer
+  }
 
   return (
     <BannerContainer>
@@ -91,12 +106,12 @@ function Banner() {
         pauseOnHover={false}
         rtl={true}
       >
-        {images.map((image, index) => (
-          <div key={index}>
-            <Link to={image.route}>
+        {selectedImages.map((image, index) => (
+          <div key={image.id}>
+            <Link to={image.link}>
               <BannerImage 
-                src={image.src} 
-                alt={`Slide ${index + 1}`}
+                src={image.image_url} 
+                alt={image.alt || `Slide ${index + 1}`}
               />
             </Link>
           </div>
