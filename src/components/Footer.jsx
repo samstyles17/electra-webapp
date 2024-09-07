@@ -188,8 +188,8 @@ const Footer = () => {
             <Box component="nav" sx={{ display: 'flex', alignItems: 'center' }}>
               {[
                 { name: 'Home', path: '/' },
-                { name: 'About', path: "/aboutus" },
-                { name: 'Services', path: "/designconsultingservice" },
+                { name: 'About', path: "/about-us" },
+                { name: 'Services', path: "/design-consulting-service" },
                 { name: 'Blogs', path: '/' }
               ].map((item, index) => (
                 <React.Fragment key={item.name}>

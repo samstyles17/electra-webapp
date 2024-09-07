@@ -14,12 +14,12 @@ import testingImage from '../assets/img/service5_webimage.webp';
 import maintenanceImage from '../assets/img/service6_webimage.webp';
 
 const cards = [
-  { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' , route:'/designconsultingservice'},
-  { id: 2, title: 'Installation And Commissioning', image: installationImage, description: 'More About', route:'/installationcommisioningservice' },
-  { id: 3, title: 'Panel Board And Control Systems', image: panelImage, description: 'More About', route:'/panelboardcontrolservice' },
-  { id: 4, title: 'Statuory Approval and Compliance', image: auditImage, description: 'More About' , route:'/approvalcomplianceservice'},
-  { id: 5, title: 'Maintenance and Repair', image: testingImage, description: 'More About', route:'/maintenacerepairservice' },
-  { id: 6, title: 'Value-Added Services', image: maintenanceImage, description: 'More About' , route:'/valueaddedservice'},
+  { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' , route:'/design-consulting-service'},
+  { id: 2, title: 'Installation And Commissioning', image: installationImage, description: 'More About', route:'/installation-commisioning-service' },
+  { id: 3, title: 'Panel Board And Control Systems', image: panelImage, description: 'More About', route:'/panel-board-control-service' },
+  { id: 4, title: 'Statuory Approval and Compliance', image: auditImage, description: 'More About' , route:'/approval-compliance-service'},
+  { id: 5, title: 'Maintenance and Repair', image: testingImage, description: 'More About', route:'/maintenance-repair-service' },
+  { id: 6, title: 'Value-Added Services', image: maintenanceImage, description: 'More About' , route:'/value-added-service'},
 ];
 
 const theme = createTheme({

@@ -207,7 +207,7 @@ const PortfolioSection = () => {
             transform: `translateX(calc(${-cardIndex * (cardWidth + cardSpacing)}px + ${(window.innerWidth - cardWidth) / 2}px))`,
           }}>
             {cards.map((card, index) => (
-              <HashLink key={index} smooth to={`/projectsectorial#${index}`} >
+              <HashLink key={index} smooth to={`/project-sectorial#${index}`} >
               <Box sx={{
                 width: cardWidth,
                 height: cardHeight,

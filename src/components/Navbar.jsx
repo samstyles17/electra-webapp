@@ -23,12 +23,12 @@ function Navbar() {
 
   const isServicesActive = () => {
     const servicesRoutes = [
-      "/designconsultingservice",
-      "/installationcommisioningservice",
-      "/panelboardcontrolservice",
-      "/approvalcomplianceservice",
-      "/maintenacerepairservice",
-      "/valueaddedservice",
+      "/design-consulting-service",
+      "/installation-commisioning-service",
+      "/panel-board-control-service",
+      "/approval-compliance-service",
+      "/maintenance-repair-service",
+      "/value-added-service",
     ];
     return servicesRoutes.includes(location.pathname) ? "text-orange" : "";
   };
@@ -81,22 +81,22 @@ function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/aboutus" className={`montserrat-medium ${isActive('/aboutus')}`} onClick={toggleMenu}>
+                          <Link to="/about-us" className={`montserrat-medium ${isActive('/about-us')}`} onClick={toggleMenu}>
                             About
                           </Link>
                         </li>
                         <li>
-                          <Link to='/designconsultingservice' className={`montserrat-medium ${isServicesActive()}`} onClick={toggleMenu}>
+                          <Link to='/design-consulting-service' className={`montserrat-medium ${isServicesActive()}`} onClick={toggleMenu}>
                             Services
                           </Link>
                         </li>
                         <li>
-                          <Link to="/projectsectorial" className={`montserrat-medium ${isActive('/projectsectorial')}`} onClick={toggleMenu}>
+                          <Link to="/project-sectorial" className={`montserrat-medium ${isActive('/project-sectorial')}`} onClick={toggleMenu}>
                             Portfolio Projects
                           </Link>
                         </li>
                         <li>
-                          <Link to="/allprojects" className={`montserrat-medium ${isActive('/allprojects')}`} onClick={toggleMenu}>
+                          <Link to="/all-projects" className={`montserrat-medium ${isActive('/all-projects')}`} onClick={toggleMenu}>
                             All Project
                           </Link>
                         </li>
@@ -144,22 +144,22 @@ function Navbar() {
               <div className={`navbar-right hidden lg:flex ${is1920Screen ? 'flex-1 justify-end' : ''}`}>
                 <ul className={`menu menu-horizontal px-1 ${is1920Screen ? 'mr-4' : ''}`}>
                   <li>
-                    <Link to="/aboutus" className={`montserrat-medium ${isActive('/aboutus')}`}>
+                    <Link to="/about-us" className={`montserrat-medium ${isActive('/about-us')}`}>
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link to="/designconsultingservice" className={`montserrat-medium ${isServicesActive()}`}>
+                    <Link to="/design-consulting-service" className={`montserrat-medium ${isServicesActive()}`}>
                       Services
                     </Link>
                   </li>
                   <li>
-                    <Link to="/projectsectorial" className={`montserrat-medium ${isActive('/projectsectorial')}`}>
+                    <Link to="/project-sectorial" className={`montserrat-medium ${isActive('/project-sectorial')}`}>
                       Portfolio Projects
                     </Link>
                   </li>
                   <li>
-                    <Link to="/allprojects" className={`montserrat-medium ${isActive('/allprojects')}`}>
+                    <Link to="/all-projects" className={`montserrat-medium ${isActive('/all-projects')}`}>
                       All Project
                     </Link>
                   </li>

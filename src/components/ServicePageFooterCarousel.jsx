@@ -137,7 +137,7 @@ const PortfolioComponent = () => {
             <Typography variant="body1" gutterBottom>
               Explore our diverse portfolio of high-tension electrical contracting projects, showcasing innovation, safety, and sustainability. Our dedicated team delivers tailored solutions that exceed client expectations, driving progress and fostering sustainable development.
             </Typography>
-            <Link to="/projectsectorial">
+            <Link to="/project-sectorial">
               <Button
                 variant="contained"
                 sx={{

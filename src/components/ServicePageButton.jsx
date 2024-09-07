@@ -52,12 +52,12 @@ const ResponsiveButtonGroup = () => {
   const sliderRef = React.useRef(null);
 
   const buttons = [
-    { icon: DesignIcon, text: 'Design And Consulting', link: '/designconsultingservice' },
-    { icon: InstallationIcon, text: 'Installation & Commissioning', link: '/installationcommisioningservice' },
-    { icon: PanelIcon, text: 'Panel Board & Control Systems', link: '/panelboardcontrolservice' },
-    { icon: ComplianceIcon, text: 'Approvals & Compliance', link: '/approvalcomplianceservice' },
-    { icon: MaintenanceIcon, text: 'Maintenance & Repair', link: '/maintenacerepairservice' },
-    { icon: ValueAddedIcon, text: 'Value-Added Services', link: "/valueaddedservice" },
+    { icon: DesignIcon, text: 'Design And Consulting', link: '/design-consulting-service' },
+    { icon: InstallationIcon, text: 'Installation & Commissioning', link: '/installation-commisioning-service' },
+    { icon: PanelIcon, text: 'Panel Board & Control Systems', link: '/panel-board-control-service' },
+    { icon: ComplianceIcon, text: 'Approvals & Compliance', link: '/approval-compliance-service' },
+    { icon: MaintenanceIcon, text: 'Maintenance & Repair', link: '/maintenance-repair-service' },
+    { icon: ValueAddedIcon, text: 'Value-Added Services', link: "/value-added-service" },
   ];
 
   useEffect(() => {

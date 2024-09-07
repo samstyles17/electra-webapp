@@ -20,15 +20,15 @@ export default function App() {
       <HelmetProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/aboutus" element={<Aboutus />} />
-        <Route path="/designconsultingservice" element={<DesignConsultingService />} />
-        <Route path="/installationcommisioningservice" element={<InstallationCommisioningService />} />
-        <Route path="/panelboardcontrolservice" element={<PanelBoardControlSystem />} />
-        <Route path="/approvalcomplianceservice" element={<ApprovalComplianceService />} />
-        <Route path="/maintenacerepairservice" element={<MaintenaceRepairService />} />
-        <Route path="/valueaddedservice" element={<ValueAddedService />} />
-        <Route path="/projectsectorial" element={<ProjectSectorial />} />
-        <Route path="/allprojects" element={<AllProjects />} />
+        <Route path="/about-us" element={<Aboutus />} />
+        <Route path="/design-consulting-service" element={<DesignConsultingService />} />
+        <Route path="/installation-commisioning-service" element={<InstallationCommisioningService />} />
+        <Route path="/panel-board-control-service" element={<PanelBoardControlSystem />} />
+        <Route path="/approval-compliance-service" element={<ApprovalComplianceService />} />
+        <Route path="/maintenance-repair-service" element={<MaintenaceRepairService />} />
+        <Route path="/value-added-service" element={<ValueAddedService />} />
+        <Route path="/project-sectorial" element={<ProjectSectorial />} />
+        <Route path="/all-projects" element={<AllProjects />} />
         <Route path="/enquire" element={<Enquire />} />
       </Routes>
       <ScrollToTop />

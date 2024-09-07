@@ -60,16 +60,16 @@ function Banner() {
 
   const webImages = [
     { src: banner1, route: '/enquire' },
-    { src: banner3, route: '/allprojects' },
-    { src: banner4, route: '/projectsectorial' },
-    { src: banner5, route: "/designconsultingservice" },
+    { src: banner3, route: '/design-consulting-service' },
+    { src: banner4, route: '/all-projects' },
+    { src: banner5, route: "/project-sectorial" },
   ];
 
   const mobileImages = [
     { src: mobileBanner1, route: '/enquire' },
-    { src: mobileBanner2, route: '/aboutus' },
-    { src: mobileBanner3, route: '/allprojects' },
-    { src: mobileBanner4, route: '/projectsectorial' },
+    { src: mobileBanner2, route: '/design-consulting-service' },
+    { src: mobileBanner3, route: '/all-projects' },
+    { src: mobileBanner4, route: '/project-sectorial' },
   ];
 
   const images = isMobile ? mobileImages : webImages;
