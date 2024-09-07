@@ -1,4 +1,4 @@
-// import React from 'react'
+import {useState,useEffect} from 'react';
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
@@ -51,12 +51,36 @@ const sections = [
   
 
 function MaintenaceRepairService () {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+
+      // Set the initial value
+      handleResize();
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return(
         <>
         <Helmet>
-          <title>Approvals & Compliance Services | Electrapower Engineering | Kerala</title>
-          <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
-          <link rel='canonical' href={window.location.href}/>
+          <title>
+            {isMobile
+              ? "KSEB & Electrical Inspectorate Approvals on time | HT/LT Projects"
+              : "KSEB & Electrical Inspectorate Approvals on time | HT/LT Projects"}
+          </title>
+          <meta
+            name="description"
+            content={
+              isMobile
+                ? "Electrapower Engineering handle Faster KSEB & Electrical Inspectorate liaisoning, installation approvals."
+                : "Simplify electrical approvals in Kerala with Electrapower Engineering. We handle KSEB & Electrical Inspectorate liaisoning, installation approvals & more!"
+            }
+          />
+          <link rel="canonical" href={window.location.href} />
         </Helmet>
         <Navbar/>
         <div className="service-all-width">

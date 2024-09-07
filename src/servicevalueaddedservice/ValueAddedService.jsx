@@ -1,4 +1,4 @@
-// import React from 'react'
+import {useState, useEffect} from 'react';
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
@@ -58,25 +58,49 @@ const sections = [
   ];
 
 function MaintenaceRepairService () {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+
+      // Set the initial value
+      handleResize();
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return(
-<>
-<Helmet>
-  <title>Value Added Services | Electrapower Engineering | Kerala</title>
-  <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions'/>
-  <link rel='canonical' href={window.location.href}/>
-</Helmet>
-<Navbar/>
-        <div className='service-all-width'>
-            <ServicePageText/>
-            <section id='services'>
-            <ServicePageButton />
-            <Services data={sections}  />
-            </section>
-            <ServicePageBottomButton />
-            <ServiceFooterCarousel/>
-            <Footer/>
-        </div>
-</>
+    <>
+      <Helmet>
+        <title>
+          {isMobile
+            ? "Electrical Automation | Control Systems | Safety Audits & More"
+            : "Electrical Automation | Control Systems | Safety Audits & More"}
+        </title>
+        <meta
+          name="description"
+          content={
+            isMobile
+              ? "Optimize energy use, reduce costs, & ensure safety with Electrapower Engineering's expert electrical services."
+              : "Optimize energy use, reduce costs, and ensure safety with Electrapower Engineering's expert electrical services. EMS, power quality analysis, automation & more"
+          }
+        />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
+      <Navbar/>
+      <div className='service-all-width'>
+          <ServicePageText/>
+          <section id='services'>
+          <ServicePageButton />
+          <Services data={sections}  />
+          </section>
+          <ServicePageBottomButton />
+          <ServiceFooterCarousel/>
+          <Footer/>
+      </div>
+    </>
 
     )
 }
