@@ -5,36 +5,37 @@ import ProjectInfo from '../components/ProjectInfo/ProjectInfo';
 import Footer from "../components/Footer";
 import { Helmet } from 'react-helmet-async';
 
-import kia1 from '../assets/img/kia/kia1.png';
-import kia2 from '../assets/img/kia/kia2.png';
-import kia3 from '../assets/img/kia/kia3.png';
+import kia1 from '../assets/img/kia/kia1.webp';
+import kia2 from '../assets/img/kia/kia2.webp';
+import kia3 from '../assets/img/kia/kia3.webp';
 
-import hhys1 from '../assets/img/hhys/hhys1.png';
-import hhys2 from '../assets/img/hhys/hhys2.png';
-import hhys3 from '../assets/img/hhys/hhys3.png';
-import hhys4 from '../assets/img/hhys/hhys4.png';
+import hhys1 from '../assets/img/hhys/hhys1.webp';
+import hhys2 from '../assets/img/hhys/hhys2.webp';
+import hhys3 from '../assets/img/hhys/hhys3.webp';
+import hhys4 from '../assets/img/hhys/hhys4.webp';
 
-import app1 from '../assets/img/appartment/app1.png';
-import app2 from '../assets/img/appartment/app2.png';
-import app3 from '../assets/img/appartment/app3.png';
+import app1 from '../assets/img/appartment/app1.webp';
+import app2 from '../assets/img/appartment/app2.webp';
+import app3 from '../assets/img/appartment/app3.webp';
 
-import hos1 from '../assets/img/hospital/hos1.png';
-import hos2 from '../assets/img/hospital/hos2.png';
-import hos3 from '../assets/img/hospital/hos3.png';
+import hos1 from '../assets/img/hospital/hos1.webp';
+import hos2 from '../assets/img/hospital/hos2.webp';
+import hos3 from '../assets/img/hospital/hos3.webp';
 
-import coco1 from '../assets/img/cocotuft/coco1.png';
-import coco2 from '../assets/img/cocotuft/coco2.png';
-import coco3 from '../assets/img/cocotuft/coco3.png';
+import coco1 from '../assets/img/cocotuft/coco1.webp';
+import coco2 from '../assets/img/cocotuft/coco2.webp';
+import coco3 from '../assets/img/cocotuft/coco3.webp';
 
-import ec1 from '../assets/img/condiments/ec1.png';
-import ec2 from '../assets/img/condiments/ec2.png';
-import ec3 from '../assets/img/condiments/ec3.png';
+import ec1 from '../assets/img/condiments/ec1.webp';
+import ec2 from '../assets/img/condiments/ec2.webp';
+import ec3 from '../assets/img/condiments/ec3.webp';
 
-import napier1 from '../assets/img/east_napier/napier1.png';
-import napier2 from '../assets/img/east_napier/napier2.png';
-import napier3 from '../assets/img/east_napier/napier3.png';
+import napier1 from '../assets/img/east_napier/napier1.webp';
+import napier2 from '../assets/img/east_napier/napier2.webp';
+import napier3 from '../assets/img/east_napier/napier3.webp';
 
-import tata1 from '../assets/img/tata/tata1.png';
+import tata1 from '../assets/img/tata/tata1.webp';
+import tata2 from '../assets/img/tata/tata2.webp';
 
 import kiaLogo from '../assets/img/logo/kia_logo.svg';
 import hhysLogo from '../assets/img/logo/hhys_logo.svg';
@@ -224,8 +225,8 @@ const data = [
         title: "Spicing up production with enhanced electrical infrastructure for Eastern Condiments",
         images: [
             { url: ec1 },
-            { url: ec2 },
-            { url: ec3 }
+            { url: ec3 },
+            { url: ec2 }
         ],
         description_one: "Electra Power Engineering, a trusted leader in electrical contracting and engineering, partnered with Eastern Condiments, India's largest spice exporter and a major player in the food industry, to enhance their electrical infrastructure. As a renowned brand backed by Orkla, Eastern Condiments sought a robust and efficient electrical system to support their expanding production lines for Masala and Roaster products.",
 
@@ -293,7 +294,7 @@ const data = [
     {
         title: "Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd",
         images: [
-            { url: tata1 },
+            { url: tata1 }, {url: tata2},
         ],
         description_one: "Electra Power Engineering, pioneers in electrical contracting and engineering, partnered with Luxon Motos Pvt. Ltd., the largest Tata Motors dealer in Kerala, to illuminate the future of mobility. We were entrusted with the electrical design and installation of Kerala's first exclusive TATA Motors EV showroom in Palarivattom, Kochi.",
 

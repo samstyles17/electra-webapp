@@ -25,6 +25,20 @@
     display: none;
 }
 
+@media(max-width: 1200px) {
+    .project-image {
+        width: 100%;
+        min-width: 250px !important;
+        height: 240px !important;
+    }
+}
+@media(max-width: 1024px) {
+    .project-image {
+        width: 100%;
+        min-width: 20px !important;
+        height: 240px !important;
+    }
+}
 
 @media (max-width:768px) {
 
@@ -37,6 +51,11 @@
     .px-14 {
         padding: 0 30px !important;
     }
+    .project-image {
+        min-width: auto !important;
+        height: 200px !important;
+    }
+    
 
 }
 
@@ -68,6 +87,8 @@
 
     .project-image {
         width: fit-content;
+        height: 290px !important;
+
     }
     .project-images {
         display: none !important;
