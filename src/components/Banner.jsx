@@ -59,17 +59,17 @@ function Banner() {
   const isMobile = useMediaQuery("(max-width:960px)");
 
   const webImages = [
-    { src: banner1, route: '/enquire' },
-    { src: banner3, route: '/design-consulting-service' },
+    { src: banner1, route: '/contactus' },
+    { src: banner3, route: '/services-design-consulting' },
     { src: banner4, route: '/all-projects' },
-    { src: banner5, route: "/project-sectorial" },
+    { src: banner5, route: "/portfolio-projects" },
   ];
 
   const mobileImages = [
-    { src: mobileBanner1, route: '/enquire' },
-    { src: mobileBanner2, route: '/design-consulting-service' },
+    { src: mobileBanner1, route: '/contactus' },
+    { src: mobileBanner2, route: '/services-design-consulting' },
     { src: mobileBanner3, route: '/all-projects' },
-    { src: mobileBanner4, route: '/project-sectorial' },
+    { src: mobileBanner4, route: '/portfolio-projects' },
   ];
 
   const images = isMobile ? mobileImages : webImages;

@@ -98,7 +98,7 @@ const LandingPage = () => {
                 </Typography>
               )}
               
-              <Link to="/enquire#contactInfo">
+              <Link to="/contactus">
               {!isMobile && (
                 <Button
                 variant="contained"
@@ -123,7 +123,7 @@ const LandingPage = () => {
               </Link>
               
               
-              <Link to="/enquire#contactInfo">
+              <Link to="/contactus">
               {isMobile && (
                 <Button
                 variant="contained"

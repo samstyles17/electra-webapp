@@ -17,7 +17,7 @@ const WhyChoose = () => {
             expectations while fostering trust and integrity.
           </p>
         </div>
-        <Link to="/project-sectorial">
+        <Link to="/portfolio-projects">
           <button className="portfolio-button montserrat-regular">PORTFOLIO PROJECTS {"-->"}</button>
         </Link>
         <div className="features-container">
