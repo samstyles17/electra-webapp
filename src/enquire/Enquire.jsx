@@ -57,7 +57,7 @@ function Enquire() {
         <div id="contactInfo">
           <ContactInfo/>
         </div>
-        <div id="workTogetherForm">
+        <div id="enquire">
           <WorkTogetherForm/>
         </div>
         <FAQ/>
