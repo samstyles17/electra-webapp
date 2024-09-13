@@ -13,6 +13,7 @@ import MaintenaceRepairService from "./servicemaintenancerepair/MaintenaceRepair
 import ValueAddedService from "./servicevalueaddedservice/ValueAddedService";
 import Enquire from "./enquire/Enquire";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Career from "./career/Career";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/projectsectorial" element={<ProjectSectorial />} />
         <Route path="/allprojects" element={<AllProjects />} />
         <Route path="/enquire" element={<Enquire />} />
+        <Route path="/careers" element={<Career/>} />
       </Routes>
       <ScrollToTop />
     </HelmetProvider>

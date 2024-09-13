@@ -101,6 +101,11 @@ function Navbar() {
                           </Link>
                         </li>
                         <li>
+                          <Link to="/careers" className={`montserrat-medium ${isActive('/careers')}`} onClick={toggleMenu}>
+                            Careers
+                          </Link>
+                        </li>
+                        <li>
                           <Link to="/enquire#contactInfo" className={`montserrat-medium ${isActive('/contact')}`} onClick={toggleMenu}>
                             Contact
                           </Link>
@@ -141,8 +146,8 @@ function Navbar() {
                   </h3>
                 </div>
               </div>
-              <div className={`navbar-right hidden lg:flex ${is1920Screen ? 'flex-1 justify-end' : ''}`}>
-                <ul className={`menu menu-horizontal px-1 ${is1920Screen ? 'mr-4' : ''}`}>
+              <div className={`navbar-center hidden lg:flex ${is1920Screen ? 'flex-1 justify-end' : ''}`}>
+                <ul className={`menu menu-horizontal px-1 ${is1920Screen ? 'mr-2' : ''}`}>
                   <li>
                     <Link to="/aboutus" className={`montserrat-medium ${isActive('/aboutus')}`}>
                       About
@@ -161,6 +166,11 @@ function Navbar() {
                   <li>
                     <Link to="/allprojects" className={`montserrat-medium ${isActive('/allprojects')}`}>
                       All Project
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/careers" className={`montserrat-medium ${isActive('/careers')}`}>
+                      Careers
                     </Link>
                   </li>
                 </ul>
