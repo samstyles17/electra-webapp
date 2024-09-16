@@ -39,7 +39,7 @@ function Hero() {
             </p>
           </div>
           {!isMobile && (
-            <Link to="/designconsultingservice">
+            <Link to="/services-design-consulting">
               <button className="btn btn-md rounded-full whitespace-nowrap ml-7 bg-[#F2F2F2]">
                 <h3 className="montserrat-medium px-3 text-lg">OUR SERVICES →</h3>
               </button>
@@ -47,7 +47,7 @@ function Hero() {
           )}
         </div>
         {isMobile && (
-          <Link to="/designconsultingservice">
+          <Link to="/services-design-consulting">
             <button className="btn btn-md rounded-full whitespace-nowrap mt-8 mb-1 bg-[#F2F2F2]">
               <h3 className="montserrat-medium px-3 text-sm">OUR SERVICES →</h3>
             </button>

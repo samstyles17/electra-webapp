@@ -1,6 +1,6 @@
-// import React from 'react'
+import { useState, useEffect } from 'react';
 import Navbar from "../components/Navbar";
-import ServicePageText  from '../components/ServicePageText';
+import ServicePageText from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
 import ServicePageBottomButton from "../components/ServicePageBottomButton";
 import ServiceFooterCarousel from "../components/ServicePageFooterCarousel";
@@ -16,6 +16,7 @@ import img7 from "../assets/img/service2/img5.webp";
 import img8 from "../assets/img/service2/img6.webp";
 import img10 from "../assets/img/service2/img7.webp";
 import img12 from "../assets/img/service2/img8.webp";
+
 const sections = [
   {
     heading: "Electrical Installations (HT/LT):",
@@ -45,29 +46,52 @@ const sections = [
   }
 ];
 
+function InstallationCommisioningService() {
+  const [isMobile, setIsMobile] = useState(false);
 
-function InstallationCommisioningService () {
-    return(
-        <>
-          <Helmet>
-            <title>Installation & Commissioning Service Services | Electrapower Engineering | Kerala</title>
-            <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
-            <link rel='canonical' href={window.location.href}/>
-          </Helmet>
-          <Navbar/>
-          <div className='service-all-width'>
-            <ServicePageText/>
-            <section id='services'>
-            <ServicePageButton />
-            <Services data={sections}/>
-            </section>
-            <ServicePageBottomButton />
-            <ServiceFooterCarousel/>
-            <Footer/>
-           </div>
-        </>
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-    )
+    // Set the initial value
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <>
+      <Helmet>
+        <title>
+          {isMobile
+            ? "Electrical Installation & Commissioning | Electrapower Engineering"
+            : "Electrical Installation & Commissioning | Electrapower Engineering"}
+        </title>
+        <meta
+          name="description"
+          content={
+            isMobile
+              ? "Need reliable electrical installations in Kerala? Electrapower Engineering provides HT/LT specialised installations, internal electrification & more!"
+              : "Need reliable electrical installations in Kerala? Electrapower Engineering's skilled electricians handle HT/LT specialised installations, internal electrification & more!"
+          }
+        />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
+      <Navbar />
+      <div className="service-all-width">
+        <ServicePageText />
+        <section id="services">
+          <ServicePageButton />
+          <Services data={sections} />
+        </section>
+        <ServicePageBottomButton />
+        <ServiceFooterCarousel />
+        <Footer />
+      </div>
+    </>
+  );
 }
 
 export default InstallationCommisioningService;

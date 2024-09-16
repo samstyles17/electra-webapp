@@ -1,4 +1,4 @@
-// import React from 'react';
+import {useState, useEffect} from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from "../components/Navbar";
 import Header from '../components/Header/Header';
@@ -370,13 +370,37 @@ const data = [
 ]
 
 const AllProjects = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        // Set the initial value
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <>
         <Helmet>
-            <title>All Projects | Electrapower Engineering | Complete Project Showcase</title>
-            <meta name='description' content="View all of Electrapower Engineering's completed projects, demonstrating our commitment to quality, innovation, and client satisfaction. Get inspired by our electrical engineering expertise."/>
-            <link rel='canonical' href={window.location.href}/>
-        </Helmet>
+                <title>
+                    {isMobile
+                        ? "Completed Electrical Projects | Electrapower Engineering, Kerala"
+                        : "Completed Electrical Projects | Electrapower Engineering, Kerala"}
+                </title>
+                <meta
+                    name="description"
+                    content={
+                        isMobile
+                            ? "Explore Electrapower's diverse portfolio of completed electrical projects in Kerala. Witness our commitment to quality, innovation & client satisfaction stories."
+                            : "Explore Electrapower's diverse portfolio of completed electrical projects in Kerala. Witness our commitment to quality, innovation & client satisfaction stories."
+                    }
+                />
+                <link rel="canonical" href={window.location.href} />
+            </Helmet>
         <Navbar />
         <div className="allprojects">
            

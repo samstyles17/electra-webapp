@@ -189,7 +189,7 @@ const Footer = () => {
               {[
                 { name: 'Home', path: '/' },
                 { name: 'About', path: "/aboutus" },
-                { name: 'Services', path: "/designconsultingservice" },
+                { name: 'Services', path: "/services-design-consulting" },
                 { name: 'Blogs', path: '/' }
               ].map((item, index) => (
                 <React.Fragment key={item.name}>

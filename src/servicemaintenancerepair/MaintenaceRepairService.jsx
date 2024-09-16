@@ -1,4 +1,4 @@
-// import React from 'react'
+import {useState, useEffect} from 'react';
 import Navbar from "../components/Navbar";
 import ServicePageText  from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
@@ -37,13 +37,35 @@ const sections = [
   
 
 function MaintenaceRepairService () {
+    const [isMobile, setIsMobile] = useState(false);
+    
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+
+      handleResize();
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return(
     <>
         <Helmet>
-          <title>Maintenace & Repair Services | Electrapower Engineering | Kerala</title>
-          <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
-          <link rel='canonical' href={window.location.href}/>
-          <link />
+          <title>
+            {isMobile
+              ? "Expert HT/LT Electrical Maintenance & Repair Services in Kerala"
+              : "Expert HT/LT Electrical Maintenance & Repair Services in Kerala"}
+          </title>
+          <meta
+            name="description"
+            content={
+              isMobile
+                ? "Electrapower Engineering offers electrical maintenance services includes preventive maintenance, corrective repairs & AMCs"
+                : "Prevent breakdowns & ensure safety with Electrapower Engineering's electrical maintenance services includes preventive maintenance, corrective repairs & AMCs"
+            }
+          />
+          <link rel="canonical" href={window.location.href} />
         </Helmet>
         <Navbar/>
         <div className='service-all-width'>

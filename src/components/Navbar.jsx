@@ -23,12 +23,12 @@ function Navbar() {
 
   const isServicesActive = () => {
     const servicesRoutes = [
-      "/designconsultingservice",
-      "/installationcommisioningservice",
-      "/panelboardcontrolservice",
-      "/approvalcomplianceservice",
-      "/maintenacerepairservice",
-      "/valueaddedservice",
+      "/services-design-consulting",
+      "/services-installation-commisioning",
+      "/services-panelboard-control-systems",
+      "/services-statutory-approvals",
+      "/services-maintenance-repairs",
+      "/services-valueadded",
     ];
     return servicesRoutes.includes(location.pathname) ? "text-orange" : "";
   };
@@ -86,17 +86,17 @@ function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <Link to='/designconsultingservice' className={`montserrat-medium ${isServicesActive()}`} onClick={toggleMenu}>
+                          <Link to='/services-design-consulting' className={`montserrat-medium ${isServicesActive()}`} onClick={toggleMenu}>
                             Services
                           </Link>
                         </li>
                         <li>
-                          <Link to="/projectsectorial" className={`montserrat-medium ${isActive('/projectsectorial')}`} onClick={toggleMenu}>
+                          <Link to="/portfolio-projects" className={`montserrat-medium ${isActive('/portfolio-projects')}`} onClick={toggleMenu}>
                             Portfolio Projects
                           </Link>
                         </li>
                         <li>
-                          <Link to="/allprojects" className={`montserrat-medium ${isActive('/allprojects')}`} onClick={toggleMenu}>
+                          <Link to="/all-projects" className={`montserrat-medium ${isActive('/all-projects')}`} onClick={toggleMenu}>
                             All Project
                           </Link>
                         </li>
@@ -111,7 +111,7 @@ function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/enquire#workTogetherForm" className={`montserrat-medium ${isActive('/enquire')}`} onClick={toggleMenu}>
+                          <Link to="/contactus#enquire" className={`montserrat-medium ${isActive('/enquire')}`} onClick={toggleMenu}>
                             Enquire
                           </Link>
                         </li>
@@ -154,17 +154,17 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/designconsultingservice" className={`montserrat-medium ${isServicesActive()}`}>
+                    <Link to="/services-design-consulting" className={`montserrat-medium ${isServicesActive()}`}>
                       Services
                     </Link>
                   </li>
                   <li>
-                    <Link to="/projectsectorial" className={`montserrat-medium ${isActive('/projectsectorial')}`}>
+                    <Link to="/portfolio-projects" className={`montserrat-medium ${isActive('/portfolio-projects')}`}>
                       Portfolio Projects
                     </Link>
                   </li>
                   <li>
-                    <Link to="/allprojects" className={`montserrat-medium ${isActive('/allprojects')}`}>
+                    <Link to="/all-projects" className={`montserrat-medium ${isActive('/all-projects')}`}>
                       All Project
                     </Link>
                   </li>
@@ -175,12 +175,12 @@ function Navbar() {
                   </li>
                 </ul>
                 <div className={`flex items-center ${is1920Screen ? '' : 'mx-3'}`}>
-                  <Link to="/enquire#contactInfo" className={is1920Screen ? "mr-3" : "mr-3"}>
+                  <Link to="/contactus" className={is1920Screen ? "mr-3" : "mr-3"}>
                     <button className={`btn btn-md px-8 bg-transparent rounded-full border-1 border-black ${isActive('/contact')}`}>
                       <h3 className="montserrat-regular text-black">Contact</h3>
                     </button>
                   </Link>
-                  <Link to="/enquire#workTogetherForm">
+                  <Link to="/contactus#enquire">
                     <button className={`btn btn-md px-8 bg-orange rounded-full ${isActive('/enquire')}`}>
                       <h3 className="montserrat-regular text-white">Enquire</h3>
                     </button>

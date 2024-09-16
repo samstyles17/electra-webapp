@@ -1,6 +1,6 @@
-// import React from 'react'
+import { useState, useEffect } from 'react';
 import Navbar from "../components/Navbar";
-import ServicePageText  from '../components/ServicePageText';
+import ServicePageText from '../components/ServicePageText';
 import ServicePageButton from "../components/ServicePageButton";
 // import ServicePage3Content from "../components/ServicePage3Content";
 import ServicePageBottomButton from "../components/ServicePageBottomButton";
@@ -19,9 +19,6 @@ import img7 from "../assets/img/service3/img7.webp";
 import img8 from "../assets/img/service3/img8.webp";
 import Services from '../components/Services/Services';
 
-
-
-
 const sections = [
   {
     heading: "Design and Engineering",
@@ -33,7 +30,7 @@ const sections = [
     heading: "Fabrication and Assembly",
     description: "We fabricate high-quality panel boards using premium materials and components. Our skilled technicians meticulously assemble and test each panel to ensure it meets stringent quality standards.",
     images: [img3, img4],
-    bullets: [   "Synchronisation Panels: Safe and reliable synchronisation of generators with the electrical grid."]
+    bullets: ["Synchronisation Panels: Safe and reliable synchronisation of generators with the electrical grid."]
   },
   {
     heading: "Installation and Commissioning",
@@ -45,7 +42,7 @@ const sections = [
     heading: "Specialized Panels",
     description: "We engineer and manufacture a wide range of custom-designed specialised panels to meet your unique industrial, commercial, and infrastructure needs. Our experienced team of engineers and technicians ensures that every panel is designed and built to the highest standards of quality, safety, and performance. We use only top-grade components and materials to guarantee long-lasting reliability.",
     images: [img7, img8],
-    bullets :  [
+    bullets: [
       "Power Control Centers (PCCs): Centralised control and protection for high-voltage power distribution systems.",
       "Motor Control Centers (MCCs): Efficient control and protection for multiple motors in industrial settings.",
       "Generator Control Panels: Seamless integration and control of generators for backup power supply.",
@@ -62,27 +59,52 @@ const sections = [
   }
 ];
 
-function PanelBoardControlSystemService () {
-    return(
-        <>
-        <Helmet>
-          <title>Panel Board & Control Systems Service | Electrapower Engineering | Kerala</title>
-          <meta name='description' content='Expert electrical design and consulting services for HT/LT installations, Panel Board, Control systems, and renewable energy projects. Partner with Electrapower for efficient and reliable solutions.'/>
-          <link rel='canonical' href={window.location.href}/>
-        </Helmet>
-        <Navbar/>
-        <div className='service-all-width'>
-            <ServicePageText/>
-            <section id='services'>
-            <ServicePageButton />
-            <Services data={sections} panel={true} />
-            <ServicePageBottomButton />
-            </section>
-            <ServiceFooterCarousel/>
-            <Footer/>
-        </div>
-        </>
-    )
+function PanelBoardControlSystemService() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Set the initial value
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <>
+      <Helmet>
+        <title>
+          {isMobile
+            ? "Electrical Panels & Control Systems in Kerala | Design & Fabrication"
+            : "Electrical Panels & Control Systems in Kerala | Design & Fabrication"}
+        </title>
+        <meta
+          name="description"
+          content={
+            isMobile
+              ? "Electrapower Engineering designs, fabricates & installs custom panel boards and control systems for your HT/LT projects."
+              : "Electrapower Engineering designs, fabricates & installs custom panel boards and control systems in Kerala. Expert solutions for optimal power management & control."
+          }
+        />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
+      <Navbar />
+      <div className="service-all-width">
+        <ServicePageText />
+        <section id="services">
+          <ServicePageButton />
+          <Services data={sections} panel={true} />
+          <ServicePageBottomButton />
+        </section>
+        <ServiceFooterCarousel />
+        <Footer />
+      </div>
+    </>
+  );
 }
 
 export default PanelBoardControlSystemService;

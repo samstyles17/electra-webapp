@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import "./ProjectSectorial.css";
 import Navbar from '../components/Navbar';
 import ProjectInfo from '../components/ProjectInfo/ProjectInfo';
@@ -35,7 +35,7 @@ import napier2 from '../assets/img/east_napier/napier2.webp';
 import napier3 from '../assets/img/east_napier/napier3.webp';
 
 import tata1 from '../assets/img/tata/tata1.webp';
-import tata2 from '../assets/img/tata/tata2.webp';
+// import tata2 from '../assets/img/tata/tata2.webp';
 
 import kiaLogo from '../assets/img/logo/kia_logo.svg';
 import hhysLogo from '../assets/img/logo/hhys_logo.svg';
@@ -294,7 +294,7 @@ const data = [
     {
         title: "Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd",
         images: [
-            { url: tata1 }, {url: tata2},
+            { url: tata1 },
         ],
         description_one: "Electra Power Engineering, pioneers in electrical contracting and engineering, partnered with Luxon Motos Pvt. Ltd., the largest Tata Motors dealer in Kerala, to illuminate the future of mobility. We were entrusted with the electrical design and installation of Kerala's first exclusive TATA Motors EV showroom in Palarivattom, Kochi.",
 
@@ -324,13 +324,37 @@ const data = [
     },
 ]
 const ProjectSectorial = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        // Set the initial value
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <>
         <Helmet>
-            <title>Project Portfolio | Electrapower Engineering | Electrical Success Stories</title>
-            <meta name='description' content="Explore Electrapower's diverse project portfolio showcasing our expertise in various sectors. See how we've delivered exceptional electrical solutions for clients across Kerala."/>
-            <link rel='canonical' href={window.location.href}/>
-        </Helmet>
+                <title>
+                    {isMobile
+                        ? "Electrical Projects Showcase | Kerala's Top Contractor"
+                        : "Electrical Projects Showcase | Kerala's Top Contractor"}
+                </title>
+                <meta
+                    name="description"
+                    content={
+                        isMobile
+                            ? "Electrapower Engineering powers Kerala's businesses. Our portfolio showcases successful projects across various industries, including India's largest Kia EV charging station."
+                            : "Electrapower Engineering powers Kerala's businesses. Our portfolio showcases successful projects across various industries, including India's largest Kia EV charging station."
+                    }
+                />
+                <link rel="canonical" href={window.location.href} />
+            </Helmet>
         <Navbar />
         <div className="project-sectorial">
             <ProjectInfo data={data} />
