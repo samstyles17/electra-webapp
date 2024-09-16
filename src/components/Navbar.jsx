@@ -88,7 +88,7 @@ function Navbar() {
                         <li>
                           <Link to='/services-design-consulting' className={`montserrat-medium ${isServicesActive()}`} onClick={toggleMenu}>
                             Services
-                          </Link>
+                          </Link> 
                         </li>
                         <li>
                           <Link to="/portfolio-projects" className={`montserrat-medium ${isActive('/portfolio-projects')}`} onClick={toggleMenu}>
@@ -106,7 +106,7 @@ function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/enquire#contactInfo" className={`montserrat-medium ${isActive('/contact')}`} onClick={toggleMenu}>
+                          <Link to="/contactus" className={`montserrat-medium ${isActive('/contactus')}`} onClick={toggleMenu}>
                             Contact
                           </Link>
                         </li>

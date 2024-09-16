@@ -22,16 +22,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<Aboutus />} />
-        <Route path="/designconsultingservice" element={<DesignConsultingService />} />
-        <Route path="/installationcommisioningservice" element={<InstallationCommisioningService />} />
-        <Route path="/panelboardcontrolservice" element={<PanelBoardControlSystem />} />
-        <Route path="/approvalcomplianceservice" element={<ApprovalComplianceService />} />
-        <Route path="/maintenacerepairservice" element={<MaintenaceRepairService />} />
-        <Route path="/valueaddedservice" element={<ValueAddedService />} />
-        <Route path="/projectsectorial" element={<ProjectSectorial />} />
-        <Route path="/allprojects" element={<AllProjects />} />
-        <Route path="/enquire" element={<Enquire />} />
-        <Route path="/careers" element={<Career/>} />
+        <Route path="/services-design-consulting" element={<DesignConsultingService />} />
+        <Route path="/services-installation-commisioning" element={<InstallationCommisioningService />} />
+        <Route path="/services-panelboard-control-systems" element={<PanelBoardControlSystem />} />
+        <Route path="/services-statutory-approvals" element={<ApprovalComplianceService />} />
+        <Route path="/services-maintenance-repairs" element={<MaintenaceRepairService />} />
+        <Route path="/services-valueadded" element={<ValueAddedService />} />
+        <Route path="/portfolio-projects" element={<ProjectSectorial />} />
+        <Route path="/all-projects" element={<AllProjects />} />
+        <Route path="/contactus" element={<Enquire />} />
+        <Route path="/careers" element={<Career />} />
       </Routes>
       <ScrollToTop />
     </HelmetProvider>
