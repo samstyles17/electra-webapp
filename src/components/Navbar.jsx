@@ -100,11 +100,11 @@ function Navbar() {
                             All Project
                           </Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link to="/careers" className={`montserrat-medium ${isActive('/careers')}`} onClick={toggleMenu}>
                             Careers
                           </Link>
-                        </li>
+                        </li> */}
                         <li>
                           <Link to="/contactus" className={`montserrat-medium ${isActive('/contactus')}`} onClick={toggleMenu}>
                             Contact
@@ -168,11 +168,11 @@ function Navbar() {
                       All Project
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/careers" className={`montserrat-medium ${isActive('/careers')}`}>
                       Careers
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
                 <div className={`flex items-center ${is1920Screen ? '' : 'mx-3'}`}>
                   <Link to="/contactus" className={is1920Screen ? "mr-3" : "mr-3"}>
