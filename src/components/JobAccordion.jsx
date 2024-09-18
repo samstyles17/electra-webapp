@@ -5,89 +5,59 @@ const JobAccordion = () => {
 
   const jobDetails = [
     {
-      title: "Kia Experienced Consultant",
+      title: "Electrical Site Engineer",
       location: "Kerala",
-      experience: "0-4 Years",
-      description: "We are looking for Kia Experienced Consultant to join our showrooms located in Nettoor, Edappally, Kottayam, Desom, Thrissur and Palakkad. Candidates who have completed UG/Diploma with 0-4 years of experience can apply.",
+      experience: "2+ Years",
+      description: "Electrapower Engineering, a leading A-Grade HT electrical contracting firm, is seeking a highly motivated and experienced Electrical Site Engineer to join our team.",
       responsibilities: [
-        "Be the first point of contact between customers and dealership",
-        "Demonstrate features and options on all Kia cars",
-        "Drive sales targets",
-        "Ensure highest customer satisfaction"
+        "Oversee and coordinate all on-site electrical activities.",
+        "Manage project timelines, budgets, and resources.",
+        "Review and interpret electrical drawings, specifications, and schematics.",
+        "Conduct regular inspections and quality checks.",
+        "Supervise and guide a team of electricians and technicians.",
+        "Maintain effective communication with clients.",
+        "Implement and enforce safety protocols.",
+        "Prepare and submit regular progress reports."
       ],
       skillsets: [
-        "Excellent interpersonal and customer service skills",
-        "A persuasive personality",
-        "Great networking skills",
-        "Verbal and communication skills",
-        "Basic knowledge and understanding of automobile industry and related terminologies"
+        "Strong knowledge of electrical system design.",
+        "Project management and site coordination skills.",
+        "Ability to read electrical schematics and plans.",
+        "Excellent communication and leadership skills."
       ],
       requirements: [
-        "Must have LMV License."
+        "B.Tech/Diploma in Electrical and Electronics Engineering (EEE).",
+        "Minimum 2 years of experience in electrical projects, preferably with an A-Grade Electrical Contractor."
       ],
-      education: "UG/Diploma"
+      education: "B.Tech/Diploma in Electrical and Electronics Engineering"
     },
     {
-      title: "Content Strategist",
+      title: "Electrician",
       location: "Kerala",
-      experience: "2-5 Years",
-      description: "We are seeking a Content Strategist to join our marketing team to plan and create engaging content that aligns with our brand's goals.",
+      experience: "1-2 Years",
+      description: "Electrapower Engineering is seeking skilled Electricians to join our team. The ideal candidate will have a strong technical background in electrical installations, maintenance, and repair.",
       responsibilities: [
-        "Develop and manage content strategies",
-        "Create and edit written and visual content",
-        "Collaborate with marketing and design teams"
+        "Install, maintain, and repair electrical systems.",
+        "Perform routine electrical maintenance tasks.",
+        "Inspect transformers, circuit breakers, and electrical components.",
+        "Troubleshoot and resolve electrical malfunctions.",
+        "Adhere to safety protocols and regulations.",
+        "Collaborate effectively with team members to complete projects."
       ],
       skillsets: [
-        "Excellent writing and editing skills",
-        "Strong understanding of SEO",
-        "Creative mindset"
+        "Proficient in electrical installations and repairs.",
+        "Ability to read and interpret electrical drawings.",
+        "Strong troubleshooting and problem-solving skills.",
+        "Good communication and teamwork abilities."
       ],
       requirements: [
-        "Must have experience in content creation and strategy."
+        "ITI Electrical (Wireman, Electrician) or Diploma in Electrical Engineering.",
+        "1 to 2 years of experience in electrical work, preferably with an A-Grade Electrical Contractor."
       ],
-      education: "Bachelor's in Communications or related field"
-    },
-    {
-      title: "General Technician",
-      location: "Kerala",
-      experience: "1-3 Years",
-      description: "We are looking for a General Technician to support our workshop with car maintenance and repairs.",
-      responsibilities: [
-        "Perform vehicle diagnostics",
-        "Conduct repairs and maintenance",
-        "Ensure quality control"
-      ],
-      skillsets: [
-        "Strong mechanical skills",
-        "Problem-solving ability",
-        "Experience with vehicle repairs"
-      ],
-      requirements: [
-        "Must have technical diploma or equivalent experience."
-      ],
-      education: "Technical Diploma"
-    },
-    {
-      title: "Call Centre Executive",
-      location: "Kerala",
-      experience: "0-2 Years",
-      description: "We are hiring a Call Centre Executive to manage customer queries and support.",
-      responsibilities: [
-        "Handle inbound and outbound calls",
-        "Resolve customer queries",
-        "Provide product and service information"
-      ],
-      skillsets: [
-        "Good communication skills",
-        "Customer service orientation",
-        "Problem-solving ability"
-      ],
-      requirements: [
-        "Must have basic computer skills."
-      ],
-      education: "High School Diploma or higher"
+      education: "ITI Electrical/Diploma in Electrical Engineering"
     }
-  ];
+];
+
   
 
   const handleClick = (index) => {
@@ -102,7 +72,7 @@ const JobAccordion = () => {
             className="accordion-button flex justify-between items-center py-2 w-full text-left bg-gray-100 rounded-lg mb-2"
             onClick={() => handleClick(index)}
           >
-            <span>{job.title}</span>
+            <span className="montserrat-regular">{job.title}</span>
             <span
               className="rounded-full border border-gray-500 p-2 w-6 h-6 flex items-center justify-center"
             >
@@ -110,16 +80,16 @@ const JobAccordion = () => {
             </span>
           </button>
           {activeIndex === index && (
-            <div className="accordion-content">
+            <div className="accordion-content ">
               <h4 className="montserrat-regular py-3">{job.experience} | {job.location}</h4>
               <p className="montserrat-regular py-3"><strong>Responsibilities:</strong></p>
-              <ul className="py-2">
+              <ul className="py-2 list-disc mx-5">
                 {job.responsibilities.map((resp, idx) => (
                   <li key={idx} className="montserrat-regular py-1">{resp}</li>
                 ))}
               </ul>
               <p className="montserrat-regular py-3"><strong>Skillsets Required:</strong></p>
-              <ul className="py-2">
+              <ul className="py-2 list-disc mx-5">
                 {job.skillsets.map((skill, idx) => (
                   <li key={idx} className="montserrat-regular py-1">{skill}</li>
                 ))}
