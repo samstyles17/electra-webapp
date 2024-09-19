@@ -6,7 +6,7 @@ function CareerHeader() {
     <>
       <div className="career-header">
         <div className="career-header-overlay"></div>
-        <img src={image2} alt="Banner1" className="career-header-img" />
+        <img src={image2} alt="A group of electrapower electrical site engineers and technicians standing in front of a construction site, their shadows cast forward onto the ground." className="career-header-img" />
         <h1 className="career-header-title montserrat-medium">Careers</h1>
       </div>
     </>

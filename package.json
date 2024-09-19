@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-sitemap": "node generate-sitemap.js",
+    "build:sitemap": "npm run build && npm run generate-sitemap"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -28,6 +30,7 @@
     "react-slick": "^0.30.2",
     "react-spring": "^9.7.3",
     "react-swipeable": "^7.0.1",
+    "sitemap": "^8.0.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.11",
     "swiper": "^11.1.4"
