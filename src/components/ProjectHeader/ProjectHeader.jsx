@@ -1,12 +1,11 @@
 import React from 'react';
 import "./ProjectHeader.css"
+import projectHeaderImage from "../../assets//img/project-header-webimage.webp"
 const ProjectHeader = () => {
 
     return (
         <div className="project-header">
-            <span>
-         
-            </span>
+            <img src={projectHeaderImage} alt="Modern commercial building with extensive glass facade reflecting a vibrant sunset sky" class="project-header-image" />
             <div className="mt-12 mb-4 flex flex-col">
                 <div className="flex  items-center justify-between h-fix">
                     <h2 className="text-[38px] -tracking-[0.03em]">Powerfully placed <span>success </span><span>Stories</span></h2>

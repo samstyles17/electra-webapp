@@ -341,7 +341,6 @@ const ProjectSectorial = () => {
             setIsMobile(window.innerWidth <= 768);
         };
 
-        // Set the initial value
         handleResize();
 
         window.addEventListener("resize", handleResize);
