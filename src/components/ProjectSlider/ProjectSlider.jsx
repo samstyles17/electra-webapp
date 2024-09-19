@@ -44,8 +44,9 @@ const ProjectSlider = ({ images }) => {
             images.map((element, index) => {
               return (
                 <div className='slider-card' key={index}>
-                  <div style={{backgroundImage : `url(${element.image_url})`}}  className='slider-image' > 
-                  </div>
+                  {/* <div style={{backgroundImage : `url(${element.image_url})`}}  className='slider-image' > 
+                  </div> */}
+                  <img src={element.image_url} alt={element.title || "default alt text"} className='slider-image'/>
                   <div className="slider-rectangle  px-5 ">
                     <span className='slider-index flex justify-center items-center'>
                       {index + 1}
@@ -66,7 +67,7 @@ const ProjectSlider = ({ images }) => {
           images.map((element, index) => {
             return (
               <div className='slider-card'  key={index}>
-                <img src={element.image_url} alt="" className='slider-image' />
+                <img src={element.image_url} alt={element.title} className='slider-image' />
                 <div className="slider-rectangle flex   items-center gap-5 px-5">
                   <span className='slider-index flex justify-center items-center'>
                     {index + 1}

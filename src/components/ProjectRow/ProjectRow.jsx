@@ -39,7 +39,7 @@ const ProjectRow = ({ data }) => {
                                     <path opacity="0.23" d="M1 0.5V362.5" stroke="black" strokeDasharray="4 4" />
                                 </svg>
                                 <div className="card-h flex flex-col justify-between gap-5 ">
-                                    <img src={e.img} alt="img1" className="card-h-img rounded-2xl" />
+                                    <img src={e.img} alt={e.title} className="card-h-img rounded-2xl" />
                                     <div className="card-h-info flex flex-row gap-10 items-center">
                                         <span className="card-h-index flex items-center justify-center">
                                             0{i + 1}
