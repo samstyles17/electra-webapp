@@ -5,13 +5,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const WorkTogetherForm = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     name: '',
     company: '',
     email: '',
     phone: '',
     requirements: ''
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
 
   const alphaPattern = /^[A-Za-z\s]+$/;
 
@@ -107,7 +109,7 @@ const WorkTogetherForm = () => {
       const result = await response.json();
       if (response.ok) {
         // Success toast
-        toast.success('Email sent successfully! We will reach back to you soon !', {
+        toast.success('Email sent successfully! We will reach back to you soon!', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -116,6 +118,9 @@ const WorkTogetherForm = () => {
           draggable: true,
           progress: undefined,
         });
+
+        // Reset form fields
+        setFormData(initialFormData);
       } else {
         // Error toast
         toast.error(`Failed to send email: ${result.message}`, {

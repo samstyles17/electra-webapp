@@ -72,6 +72,24 @@ const ApplyForm = () => {
         const result = await response.json();
         if (response.ok) {
           toast.success('Form submitted successfully!');
+          // Clear form fields, file, and checkbox after successful submission
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            mobile: '',
+            whatsapp: '',
+            role: '',
+            experience: '',
+            ctc: '',
+            message: ''
+          });
+          setFile(null);
+          setAgree(false);
+          
+          // Reset file input and checkbox
+          document.querySelector('input[type="file"]').value = ''; // Reset file input
+          document.querySelector('input[type="checkbox"]').checked = false; // Reset checkbox
         } else {
           toast.error(`Failed to submit form: ${result.message}`);
         }
@@ -151,7 +169,7 @@ const ApplyForm = () => {
         </div>
         <div className="careers-form-group-checkbox montserrat-regular">
           <label>
-            <input type="checkbox" onChange={() => setAgree(!agree)} /> I accept the Terms & Conditions and Privacy Policy
+            <input type="checkbox" onChange={() => setAgree(!agree)} checked={agree} /> I accept the Terms & Conditions and Privacy Policy
           </label>
         </div>
         <button type="submit" className="careers-submit-button montserrat-regular" disabled={!agree}>
