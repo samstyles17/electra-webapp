@@ -53,7 +53,7 @@ const ProjectInfo = ({ data }) => {
                         <ProjectImage images={e.images} />
                         <ProjectDescription description_one={e.description_one} description_two={e.description_two} />
                         <ProjectHighlights highlights={e.highlights} />
-                        <ProjectTestimonial image={e.testimonial_logo} title={e.testimonial_head} info={e.testimonial_info} />
+                        <ProjectTestimonial image={e.testimonial_logo} alt={e.testimonial_logo_alt} title={e.testimonial_head} info={e.testimonial_info} />
                     </div>
                 </section>
             ))}

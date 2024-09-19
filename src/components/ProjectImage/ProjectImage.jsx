@@ -36,17 +36,17 @@ const ProjectImage = ({ images }) => {
         <>
         <div className="project-images   gap-5 my-10">
             {images.map((e, i) =>
-                <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" />
+                <img src={e.url} alt={e.alt} key={i} className="project-image rounded-[14px]" />
             )}
         </div>
         <div className="project-images-slider">
           {
             images.length > 1 ?    <Slider {...settings}>
             {images.map((e, i) =>
-                    <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" />
+                    <img src={e.url} alt={e.alt} key={i} className="project-image rounded-[14px]" />
                 )}
             </Slider> :  images.map((e, i) =>
-                    <img src={e.url} alt={i} key={i} className="project-image rounded-[14px]" 
+                    <img src={e.url} alt={e.alt} key={i} className="project-image rounded-[14px]" 
             />
                 )
           }  
