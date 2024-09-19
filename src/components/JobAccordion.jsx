@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const JobAccordion = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const jobDetails = [
     {
@@ -61,7 +61,7 @@ const JobAccordion = () => {
   
 
   const handleClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex(activeIndex === index ? 0 : index);
   };
 
   return (
@@ -72,7 +72,7 @@ const JobAccordion = () => {
             className="accordion-button flex justify-between items-center py-2 w-full text-left bg-gray-100 rounded-lg mb-2"
             onClick={() => handleClick(index)}
           >
-            <span className="montserrat-regular">{job.title}</span>
+            <span className="montserrat-bold">{job.title}</span>
             <span
               className="rounded-full border border-gray-500 p-2 w-6 h-6 flex items-center justify-center"
             >
