@@ -27,25 +27,36 @@ const sections = [
             "Detailed Engineering Design (Schematic Drawings, Cable Schedules, Equipment Layouts)",
             "Design for Specific Applications (Residential, Commercial, Industrial, Infrastructure)."
         ],
-        images: [img1, img2]
+        images: [
+            {src:img1, alt:"Electrical wires, pliers, and blueprints, showcasing Electrapower's expertise in Electrical System Design and Consulting."}, 
+            {src:img2, alt:"Electrical blueprints, tools, and a hard hat, representing Electrapower's comprehensive approach to Electrical System Design and Consulting."}
+        ]
     },
     {
         heading: "Energy Audits And Analysis",
         description: "Our comprehensive energy audits identify opportunities to reduce energy consumption and lower costs. We analyse your existing electrical systems, identify inefficiencies, and recommend tailored solutions that align with your budget and sustainability goals.",
         bullets: [],
-        images: [img5, img4]
+        images: [
+            {src:img5, alt:"Engineer analyzing energy data with wind turbines in the background, representing Electrapower's Energy Audits and Analysis services"},
+            {src:img4, alt:"Engineer analyzing complex energy calculations on a whiteboard, demonstrating Electrapower's in-depth Energy Audits and Analysis expertise."}
+        ]
     },
     {
         heading: "Value Engineering",
         description: "We specialise in value engineering, optimising your electrical designs to minimise costs without compromising quality or safety. Our team of experts identifies cost-effective alternatives and innovative solutions to maximise the value of your investment.",
         bullets: [],
-        images: [img8, img7]
+        images: [
+            {src:img8, alt:"Technician using a cable tester to analyze network connections, highlighting Electrapower's Value Engineering services for optimizing performance   "}, 
+            {src:img7, alt:"Engineer using an oscilloscope to analyze electrical signals, showcasing Electrapower Engineering’s Value Engineering expertise"}
+        ]
     },
     {
         heading: "Technical Consulting",
         description: "Need expert advice on electrical codes, standards, or regulations? Electra Power Engineering offers comprehensive technical consulting services. We provide feasibility studies, technical due diligence, and expert recommendations to ensure your electrical projects are compliant, safe, and efficient.",
         bullets: [],
-        images: [img11, img10]
+        images: [
+            {src:img11, alt:"Close-up of professionals collaborating, using a tablet and taking notes, showcasing Electrapower Engineering Technical Consulting expertise."}, 
+            {src:img10, alt:"Professionals collaborating on a technical consulting project at Electrapower Engineering."}]
     }
 ];
 

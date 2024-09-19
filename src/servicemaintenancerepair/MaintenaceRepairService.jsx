@@ -20,18 +20,27 @@ const sections = [
     {
       heading: "Preventive Maintenance",
       description: "We offer proactive maintenance programs to keep your electrical systems and panel boards running smoothly. Our services include regular inspections, cleaning, testing, and calibration of equipment to prevent breakdowns and extend the lifespan of your electrical infrastructure.",
-      images: [img1, img2]
+      images: [
+        {src:img1, alt:"Electrician performing preventive maintenance on electrical equipment, ensuring optimal performance and minimizing downtime."}, 
+        {src:img2, alt:"Electrician inspecting electrical equipment with tools, showcasing Electrapower Engineering's preventive maintenance services."}
+      ]
     },
     {
       heading: "Corrective Maintenance",
       description: "Our team of experts is available 24/7 to respond to electrical emergencies and provide prompt repair services. We diagnose and resolve issues quickly, minimising downtime and ensuring the safety of your premises.",
-      images: [img3, img4]
+      images: [
+        {src:img3, alt:"Electrician using a multimeter to troubleshoot an electrical outlet, representing Electrapower Engineering's corrective maintenance services."}, 
+        {src:img4, alt:"Electrician rewiring an electrical outlet, demonstrating Electrapower Engineering's corrective maintenance expertise in fixing electrical issues"}
+      ]
     },
     
     {
       heading: "Annual Maintenance Contracts (AMCs)",
       description: "Our comprehensive AMCs provide peace of mind by covering all your electrical maintenance needs. With regular inspections, preventive maintenance, and priority emergency response, we keep your electrical systems operating at peak performance.",
-      images: [img5, img6]
+      images: [
+        {src:img5, alt:"Electrician performing routine maintenance on electrical equipment, showcasing Electrapower Engineering's AMC services"}, 
+        {src:img6, alt:"Electrician working on equipment wiring with toolbox nearby, showcasing Electrapower Engineering's Annual Maintenance Contract services."}
+      ]
     }
   ];
   

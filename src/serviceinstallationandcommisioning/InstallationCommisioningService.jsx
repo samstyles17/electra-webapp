@@ -21,12 +21,18 @@ const sections = [
   {
     heading: "Electrical Installations (HT/LT):",
     description: "Our skilled electricians provide professional installation services for high-tension (HT) and low-tension (LT) electrical systems. We ensure seamless integration of switchgear, transformers, panels, and other equipment, adhering to the highest safety and quality standards.",
-    images: [img1, img3]
+    images: [
+      {src:img1, alt:"High-voltage electrical equipment with insulators and wires, showcasing Electrapower Engineering's expertise in HT/LT Electrical Installations and Commissioning"}, 
+      {src:img3, alt:"Electricians working on high-voltage electrical installations, showcasing Electrapower Engineering's expertise in HT/LT Electrical Installations & Commissioning"}
+    ]
   },
   {
     heading: "Internal Electrification:",
     description: "We offer comprehensive internal electrification solutions for residential, commercial, industrial and infrastructure projects of any scale. Our services include wiring, lighting installations, outlet and switch installations, and integration with automation systems.",
-    images: [img6, img4]
+    images: [
+      {src:img6, alt:"A jumble of wires and electrical components inside an open electrical panel, highlighting the importance of professional Internal Electrification services by Electrapower Engineering."},
+      {src:img4, alt:"An electrical panel with organized wiring and components, demonstrating Electrapower Engineering's professional Internal Electrification services."}
+    ]
   },
   {
     heading: "Specialised Installations",
@@ -37,12 +43,18 @@ const sections = [
       "Electric Vehicle (EV) Charging Stations",
       "Fire Alarm Systems and Emergency Lighting"
     ],
-    images: [img7, img8]
+    images: [
+      {src:img7, alt:"Electrapower Engineering technician working on a complex electrical panel, demonstrating their expertise in Specialized Installations & Commissioning"}, 
+      {src:img8, alt:"Electrapower Engineering technicians skillfully installing solar panels in a challenging environment, showcasing their expertise in Specialized Installations"}
+    ]
   },
   {
     heading: "Testing and Commissioning",
     description: "We rigorously test and commission all electrical installations to ensure optimal performance, safety, and compliance with industry standards. Our meticulous approach minimises downtime and ensures the longevity of your electrical systems.",
-    images: [img10, img12]
+    images: [
+      {src:img10, alt:"Electrapower Engineering technicians performing testing and commissioning procedures on electrical equipment"}, 
+      {src:img12, alt:"Electrapower Engineering's Testing and Commissioning services, ensuring the safety and functionality of electrical systems."}
+    ]
   }
 ];
 

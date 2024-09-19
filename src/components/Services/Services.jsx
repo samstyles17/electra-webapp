@@ -32,8 +32,8 @@ const Services = ({ data, panel }) => {
             return (
                 <div key={i} ref={(el) => (elementsRef.current[i] = el)} className={`services ${i % 2 !== 0 && 'services-row-revese '} ${i === 3 && panel && 'service-panel-fix'}`}  >
                     <div className={`services-images ${i % 2 !== 0 && 'services-row-revese'}`}>
-                        {e.images.map((e, imgIndex) => {
-                            return (<img src={e} alt="" className='service-image' key={imgIndex} />)
+                        {e.images.map((imgData, imgIndex) => {
+                            return (<img src={imgData.src} alt={imgData.alt || `Service image ${imgIndex + 1}`} className='service-image' key={imgIndex} />)
                         })}
                     </div>
                     <div className='services-info'>

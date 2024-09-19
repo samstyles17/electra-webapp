@@ -23,25 +23,37 @@ const sections = [
   {
     heading: "Design and Engineering",
     description: "Our experienced engineers design custom panel boards and control systems tailored to your specific needs. We incorporate the latest automation and control technologies, ensuring efficient and reliable operation of your electrical systems.",
-    images: [img1, img2],
+    images: [
+      {src:img1, alt:"Electrapower Engineering technicians assembling a complex electrical panel board, showcasing their expertise in manufacturing and assembly."}, 
+      {src:img2, alt:"Electrapower Engineering engineer inspecting a panel board, ensuring precise configuration and adherence to safety standards."}
+    ],
     bullets: []
   },
   {
     heading: "Fabrication and Assembly",
     description: "We fabricate high-quality panel boards using premium materials and components. Our skilled technicians meticulously assemble and test each panel to ensure it meets stringent quality standards.",
-    images: [img3, img4],
+    images: [
+      {src:img3, alt:"A meticulously fabricated electrical panel board by Electrapower Engineering, showcasing its intricate internal components and wiring."}, 
+      {src:img4, alt:"Electrapower Engineering technician skillfully assembling an electrical panel, showcasing their expertise in panel board fabrication."}
+    ],
     bullets: ["Synchronisation Panels: Safe and reliable synchronisation of generators with the electrical grid."]
   },
   {
     heading: "Installation and Commissioning",
     description: "We provide professional installation and commissioning services for panel boards and control systems, ensuring seamless integration with your existing infrastructure and minimising disruptions to your operations.",
-    images: [img5, img6],
+    images: [
+      {src:img5, alt:"Electrapower Engineering technician expertly installing and commissioning an electrical panel board, ensuring its safe and efficient operation."}, 
+      {src:img6, alt:"Electrapower Engineering technicians meticulously installing and commissioning an electrical panel board, ensuring its seamless operation."}
+    ],
     bullets: []
   },
   {
     heading: "Specialized Panels",
     description: "We engineer and manufacture a wide range of custom-designed specialised panels to meet your unique industrial, commercial, and infrastructure needs. Our experienced team of engineers and technicians ensures that every panel is designed and built to the highest standards of quality, safety, and performance. We use only top-grade components and materials to guarantee long-lasting reliability.",
-    images: [img7, img8],
+    images: [
+      {src:img7, alt:"A complex electrical control panel in operation, monitored by an Electrapower Engineering technician ensuring its optimal performance."}, 
+      {src:img8, alt:"A sophisticated electrical panel board with intricate wiring and components, demonstrating Electrapower Engineering's expertise in specialized panel systems."}
+    ],
     bullets: [
       "Power Control Centers (PCCs): Centralised control and protection for high-voltage power distribution systems.",
       "Motor Control Centers (MCCs): Efficient control and protection for multiple motors in industrial settings.",

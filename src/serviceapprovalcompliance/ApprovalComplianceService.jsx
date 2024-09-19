@@ -24,28 +24,43 @@ const sections = [
     {
       heading: "Liaison with KSEB and Electrical Inspectorate",
       description: "We streamline the process of obtaining approvals and permits from the Kerala State Electricity Board (KSEB) and the Electrical Inspectorate. Our team handles all the necessary documentation and coordination, ensuring timely approvals and compliance with local regulations.",
-      images: [img1, img2]
+      images: [
+        {src:img1, alt:"Documents and paperwork related to electrical approvals and compliance, representing Electrapower Engineering's liaison services with KSEB and the Electrical Inspectorate."}, 
+        {src:img2, alt:"Electrapower Engineering's commitment to navigating the regulatory landscape for electrical projects in Kerala."}
+      ]
     },
     {
       heading: "Short Circuit and Earthing Design",
       description: "We design and install earthing systems that comply with high end safety standards and regulations. Our solutions protect your electrical systems from short circuits and ensure the safety of your personnel and equipment.",
-      images: [img3, img4]
+      images: [
+        {src:img3, alt:"Electrapower Engineering technician using a thermal imaging camera to inspect electrical equipment, demonstrating their expertise in short circuit and earthing design for compliance and safety."}, 
+        {src:img4, alt:"Electrical blueprints, circuit breaker, multimeter, and tools, showcasing Electrapower Engineering's focus on short circuit and earthing design for safety and compliance."}
+      ]
     },
     
     {
       heading: "Approval for Electrical Installations (Addition/Modification)",
       description: "We assist you in obtaining approvals for new electrical installations or modifications to existing systems. Our team ensures that your projects comply with all relevant regulations and standards.",
-      images: [img5, img6]
+      images: [
+        {src:img5,alt:"Hands organizing paperwork, symbolizing Electrapower Engineering's meticulous approach to securing approvals for electrical installations and modifications."}, 
+        {src:img6, alt:"Person reviewing documents, representing Electrapower Engineering's diligence in obtaining approvals for electrical installations and modifications."}
+      ]
     },
     {
       heading:"GRID-Connected Solar Plant Approvals",
       description:"We facilitate the approval process for grid-connected solar power plants from authorities- KSEB and Inspectorate. Our expertise helps you navigate the regulatory landscape and obtain timely approvals efficiently.",
-      images:[img7, img8],
+      images:[
+        {src:img7,alt:"Stack of documents with a pen, symbolizing Electrapower Engineering's expertise in securing grid-connected solar plant approvals."}, 
+        {src:img8, alt:"Solar panels on a rooftop, representing Electrapower Engineering's expertise in obtaining grid-connected solar plant approvals."}
+      ],
     },
     {
       heading: "Obtaining Sanction for Energization",
       description:"We work closely with the Electrical Inspectorate to obtain sanction for energization after a thorough inspection and compliance verification of your electrical installation.",
-      images:[img9, img10]
+      images:[
+        {src:img9, alt:"Close-up of a person signing a document, representing Electrapower Engineering's assistance in obtaining necessary sanctions for energization projects."}, 
+        {src:img10, alt:"Close-up of a hand signing a document, symbolizing Electrapower Engineering's assistance in obtaining energization sanctions."}
+      ]
     }
   ];
   
