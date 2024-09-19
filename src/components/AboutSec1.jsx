@@ -10,7 +10,7 @@ function AboutSec1() {
      
       <div className="aboutus-container">
         <div className="aboutus-image-section">
-          <img src={aboutusimg} alt="Engineer" className="aboutus-image" />
+          <img src={aboutusimg} alt="A smiling electrical engineer in uniform gives a thumbs up, conveying confidence and optimism about the future of Electrapower Engineering" className="aboutus-image" />
         </div>
         <div className="aboutus-text-section">
           <h3 className="aboutus-heading montserrat-medium">ELECTRA POWER ENGINEERING</h3>

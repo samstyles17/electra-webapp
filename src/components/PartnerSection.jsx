@@ -6,8 +6,8 @@ import partnerImagePortrait from "../assets/img/partneraboutpotrait.png"; // Adj
 const PartnerSection = () => {
     return (
         <div className="partner-section">
-            <img src={partnerImage} alt="Partner" className="partner-image" />
-            <img src={partnerImagePortrait} alt="Partner Portrait" className="partner-image-portrait" />
+            <img src={partnerImage} alt="Electrapower Engineering owner, Mr. Ansar OM, sharing his commitment to providing exceptional service and innovative solutions." className="partner-image" />
+            <img src={partnerImagePortrait} alt="Electrapower Engineering owner, Mr. Ansar OM, sharing his commitment to providing exceptional service and innovative solutions." className="partner-image-portrait" />
         </div>
     );
 };

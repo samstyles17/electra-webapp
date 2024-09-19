@@ -53,10 +53,10 @@ const OurTeam = () => {
         className="our-team-carousel"
       >
         <div>
-          <img src={image1} alt="Team working" className="carousel-image"/>
+          <img src={image1} alt="A group of jubilant electrical site engineers and technicians standing together, holding their helmets in celebration after successfully completing a project or task." className="carousel-image"/>
         </div>
         <div>
-          <img src={image2} alt="Construction site" className="carousel-image"/>
+          <img src={image2} alt="A group of electrapower electrical site engineers and technicians standing in front of a construction site, their shadows cast forward onto the ground." className="carousel-image"/>
         </div>
         {/* Add more images as needed */}
       </Carousel>

@@ -15,13 +15,37 @@ const slides = [
   {
     title: "Expertise",
     image: image1,
-    description: "Benefit from our team's extensive knowledge and skills in electrical engineering, ensuring proficient and reliable solutions."
+    description: "Benefit from our team's extensive knowledge and skills in electrical engineering, ensuring proficient and reliable solutions.",
+    alt:"Skilled Electrapower Engineering technician at work, demonstrating expertise, reflecting company values."
   },
-  { title: "Agility", image: image2, description: "Experience our quick and flexible response to your needs, adapting swiftly to changing project requirements and timelines." },
-  { title: "Integrity", image: image3, description: "Trust in our commitment to honesty, transparency,and ethical conduct in all aspects of our work,fostering long-term partnerships based on integrity." },
-  { title: "Innovation", image: image4, description: "Access cutting-edge solutions and technologies as we continuously explore new ideas and approaches to enhance efficiency and effectiveness." },
-  { title: "Client centric", image: image5, description: "Enjoy personalised attention and tailored solutions that prioritise your unique requirements, ensuring your satisfaction and success." },
-  { title: "Collaboration", image: image6, description: "We believe in teamwork and foster a collaborative environment where everyone's ideas are valued." },
+  { title: "Agility", 
+    image: image2, 
+    description: "Experience our quick and flexible response to your needs, adapting swiftly to changing project requirements and timelines.", 
+    alt:"Team collaboration around a table, adapting to project needs, showcasing Electrapower Engineering’s Agility."},
+  { 
+    title: "Integrity", 
+    image: image3, 
+    description: "Trust in our commitment to honesty, transparency,and ethical conduct in all aspects of our work,fostering long-term partnerships based on integrity.",
+    alt:"Diverse team in open discussion with clients, reflecting Electrapower Engineering’s core value of Integrity." 
+  },
+  { 
+    title: "Innovation", 
+    image: image4, 
+    description: "Access cutting-edge solutions and technologies as we continuously explore new ideas and approaches to enhance efficiency and effectiveness.",
+    alt:"Engineer working on intricate machinery, symbolizing Electrapower Engineering’s commitment to Innovation." 
+  },
+  { 
+    title: "Client centric", 
+    image: image5, 
+    description: "Enjoy personalised attention and tailored solutions that prioritise your unique requirements, ensuring your satisfaction and success.",
+    alt:"Electrapower Engineering team celebrating with happy clients, showcasing their Client Centric approach."
+  },
+  { 
+    title: "Collaboration", 
+    image: image6, 
+    description: "We believe in teamwork and foster a collaborative environment where everyone's ideas are valued." ,
+    alt:"Electrapower Engineering team and clients collaborating closely, highlighting the company's core value of Collaboration."
+  },
 ];
 
 const IntegrityCarousel = () => {
@@ -81,7 +105,7 @@ const IntegrityCarousel = () => {
         <div className="integrity-card-container">
           {slides.map((slide, index) => (
             <div key={index} className="integrity-card">
-              <img src={slide.image} alt={slide.title} className="card-image" />
+              <img src={slide.image} alt={slide.alt} className="card-image" />
               <div className="card-description montserrat-regular">
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>

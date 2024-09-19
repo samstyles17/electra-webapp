@@ -27,7 +27,7 @@ const OurPeople = () => {
         <div className="people-content">
           <img 
             src={peopleImage} 
-            alt="Our People" 
+            alt="A close-up group photo of electricians in uniform, smiling confidently at the camera." 
             className="people-image" 
           />
           <div className="people-text">
