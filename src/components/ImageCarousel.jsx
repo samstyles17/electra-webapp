@@ -25,7 +25,11 @@ const responsive = {
   },
 };
 
-const images = [img1, img2, img3];
+const images = [
+  { src: img1, alt: 'Electrapower Engineering: The illuminated heart of industry, showcasing the vast energy demands that power modern operations' },
+  { src: img2, alt: 'Electrapower Engineering: Close-up view of high-voltage electrical equipment showcasing the intricacies of power transmission infrastructure.' },
+  { src: img3, alt: 'Electrapower Engineering: A confident electrician gives a thumbs-up from a worksite, demonstrating pride in their work and expertise' },
+];
 
 const ImageCarousel = () => {
   return (
@@ -46,9 +50,9 @@ const ImageCarousel = () => {
         pauseOnHover={false}
         rtl={false}
       >
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <div key={index} className="carousel-item">
-            <img src={src} alt={`Slide ${index + 1}`} className="slider-image" />
+            <img src={image.src} alt={image.alt} className="slider-image" />
           </div>
         ))}
       </Carousel>

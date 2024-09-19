@@ -14,12 +14,12 @@ import testingImage from '../assets/img/service5_webimage.webp';
 import maintenanceImage from '../assets/img/service6_webimage.webp';
 
 const cards = [
-  { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' , route:'/services-design-consulting'},
-  { id: 2, title: 'Installation And Commissioning', image: installationImage, description: 'More About', route:'/services-installation-commisioning' },
-  { id: 3, title: 'Panel Board And Control Systems', image: panelImage, description: 'More About', route:'/services-panelboard-control-systems' },
-  { id: 4, title: 'Statuory Approval and Compliance', image: auditImage, description: 'More About' , route:'/services-statutory-approvals'},
-  { id: 5, title: 'Maintenance and Repair', image: testingImage, description: 'More About', route:'/services-maintenance-repairs' },
-  { id: 6, title: 'Value-Added Services', image: maintenanceImage, description: 'More About' , route:'/services-valueadded'},
+  { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' , route:'/services-design-consulting', alt:"Electrapower Engineering: Engineers discussing expert design and consulting services for electrical projects in Kerala."},
+  { id: 2, title: 'Installation And Commissioning', image: installationImage, description: 'More About', route:'/services-installation-commisioning', alt:"Electrapower engineer using a clamp meter to test electrical installations during commissioning in Kerala." },
+  { id: 3, title: 'Panel Board And Control Systems', image: panelImage, description: 'More About', route:'/services-panelboard-control-systems', alt:"Electrician's hands working on an electrical panel, showcasing Electrapower Engineering's expertise in panel board and control systems" },
+  { id: 4, title: 'Statuory Approval and Compliance', image: auditImage, description: 'More About' , route:'/services-statutory-approvals', alt:"Electrapower Engineering team reviewing legal documents for compliance."},
+  { id: 5, title: 'Maintenance and Repair', image: testingImage, description: 'More About', route:'/services-maintenance-repairs', alt:"Maintenance and Repair Technician Conducting Works at Electrapower Engineering" },
+  { id: 6, title: 'Value-Added Services', image: maintenanceImage, description: 'More About' , route:'/services-valueadded', alt:"Electrapower Engineering technician providing electrical value-added services"},
 ];
 
 const theme = createTheme({
@@ -68,7 +68,7 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
       <CardMedia
         component="img"
         image={card.image}
-        alt={card.title}
+        alt={card.alt}
         sx={{
           width: '100%',
           height: '100%',

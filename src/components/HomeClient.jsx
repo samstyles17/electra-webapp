@@ -6,27 +6,27 @@ import CssBaseline from '@mui/material/CssBaseline';
 import DividerImage from '../assets/img/client_divider.png';
 
 // Import all client images
-import Client1 from '../assets/img/cl1.png';
-import Client2 from '../assets/img/cl2.png';
-import Client3 from '../assets/img/cl3.png';
-import Client4 from '../assets/img/cl4.png';
-import Client5 from '../assets/img/cl5.png';
-import Client6 from '../assets/img/cl6.png';
-import Client7 from '../assets/img/cl7.png';
-import Client8 from '../assets/img/cl8.png';
-import Client9 from '../assets/img/cl9.png';
-import Client10 from '../assets/img/cl10.png';
-import Client11 from '../assets/img/cl11.png';
-import Client12 from '../assets/img/cl12.png';
-import Client13 from '../assets/img/cl14.png';
-import Client15 from '../assets/img/cl16.png';
-import Client16 from '../assets/img/cl17.png';
-import Client17 from '../assets/img/cl18.png';
-import Client18 from '../assets/img/cl19.png';
-import Client19 from '../assets/img/cl20.png';
-import Client20 from '../assets/img/cl211.png';
-import Client21 from '../assets/img/cl222.png';
-import Client22 from '../assets/img/cl233.png';
+import Eastern_Condiments from '../assets/img/cl1.png';
+import HHYS_Inframart from '../assets/img/cl2.png';
+import Nippon_Toyota from '../assets/img/cl3.png';
+import Kia_Motors from '../assets/img/cl4.png';
+import Chungath_Jewellery from '../assets/img/cl5.png';
+import Luxon_Tata from '../assets/img/cl6.png';
+import VKL_seasoning from '../assets/img/cl7.png';
+import Catholic_Syrian_Bank from '../assets/img/cl8.png';
+import Codepoint_Softwares  from '../assets/img/cl9.png';
+import Assisi_Hospital from '../assets/img/cl10.png';
+import PS_mission_hospital from '../assets/img/cl11.png';
+import RDS_realties from '../assets/img/cl12.png';
+import Travancore_Cocotuft from '../assets/img/cl14.png';
+import Revolt from '../assets/img/cl16.png';
+import Marymatha_Infrastructure from '../assets/img/cl17.png';
+import Ejyothi_services from '../assets/img/cl18.png';
+import Nirmala_College from '../assets/img/cl19.png';
+import Puc_Bank from '../assets/img/cl20.png';
+import Accity from '../assets/img/cl211.png';
+import Imaging_Lily from '../assets/img/cl222.png';
+import Kinder_Hospital from '../assets/img/cl233.png';
 
 const theme = createTheme({
   breakpoints: {
@@ -45,27 +45,27 @@ const theme = createTheme({
 
 // Create an array of client image objects
 const clients = [
-  { src: Client1, alt: 'Client 1' },
-  { src: Client2, alt: 'Client 2' },
-  { src: Client3, alt: 'Client 3' },
-  { src: Client4, alt: 'Client 4' },
-  { src: Client5, alt: 'Client 5' },
-  { src: Client6, alt: 'Client 6' },
-  { src: Client7, alt: 'Client 7' },
-  { src: Client8, alt: 'Client 8' },
-  { src: Client9, alt: 'Client 9' },
-  { src: Client10, alt: 'Client 10' },
-  { src: Client11, alt: 'Client 11' },
-  { src: Client12, alt: 'Client 12' },
-  { src: Client13, alt: 'Client 13' },
-  { src: Client15, alt: 'Client 15' },
-  { src: Client16, alt: 'Client 16' },
-  { src: Client17, alt: 'Client 17' },
-  { src: Client18, alt: 'Client 18' },
-  { src: Client19, alt: 'Client 19' },
-  { src: Client20, alt: 'Client 20' },
-  { src: Client21, alt: 'Client 21' },
-  { src: Client22, alt: 'Client 22' },
+  { src: Eastern_Condiments, alt: 'Eastern Condiments Logo' },
+  { src: HHYS_Inframart, alt: 'HHYS Inframart Logo' },
+  { src: Nippon_Toyota, alt: 'Nippon Toyota Logo' },
+  { src: Kia_Motors, alt: 'Kia Motors logo' },
+  { src: Chungath_Jewellery, alt: 'Chungath Jewellery logo' },
+  { src: Luxon_Tata, alt: 'Luxon Tata Logo' },
+  { src: VKL_seasoning, alt: 'VKL seasoning logo' },
+  { src: Catholic_Syrian_Bank, alt: 'Catholic Syrian Bank logo' },
+  { src: Codepoint_Softwares, alt: 'Codepoint Softwares Pvt. Ltd Logo' },
+  { src: Assisi_Hospital, alt: 'Assisi Hospital logo' },
+  { src: PS_mission_hospital, alt: 'PS mission hospital logo' },
+  { src: RDS_realties, alt: 'RDS rds realties logo' },
+  { src: Travancore_Cocotuft, alt: 'Travancore Cocotuft logo' },
+  { src: Revolt, alt: 'Revolt logo' },
+  { src: Marymatha_Infrastructure, alt: 'Marymatha Infrastructure Private Limited logo' },
+  { src: Ejyothi_services, alt: 'Ejyothi services logo' },
+  { src: Nirmala_College, alt: 'Nirmala College Muvattupuzha logo' },
+  { src: Puc_Bank, alt: 'PUCBANK logo' },
+  { src: Accity, alt: 'Accity Logo' },
+  { src: Imaging_Lily, alt: 'Imaging Lily Logo' },
+  { src: Kinder_Hospital, alt: 'Kinder Hospital Logo' },
 ];
 
 const animationDuration = clients.length * 2;

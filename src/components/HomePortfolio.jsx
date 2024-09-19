@@ -52,21 +52,21 @@ const theme = createTheme({
 });
 
 const cards = [
-  { image: kiaShowroom, description: "Kerala's largest Kia showroom and workshop by Incheon Motors, featuring India's largest EV charging station." },
+  { image: kiaShowroom, description: "Kerala's largest Kia showroom and workshop by Incheon Motors, featuring India's largest EV charging station." , alt:"Kerala's largest Kia showroom and workshop by Incheon Motors, featuring India's largest EV charging station."},
   
-  { image: hardwareTrading, description: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart."},
+  { image: hardwareTrading, description: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart.", alt:"Modern storefront of HHYS Inframart in Kayamkulam, Kerala, featuring scalable electrical solutions for hardware trading."},
   
-  { image: luxuryLiving, description: "Luxury living redefined through reliable electrical innovations with RDS Legacy Apartments." },
+  { image: luxuryLiving, description: "Luxury living redefined through reliable electrical innovations with RDS Legacy Apartments.", alt:"Modern high-rise apartment building, RDS Legacy, offering luxury living with innovative electrical solutions." },
   
-  { image: healthcareCenter, description:"Empowering healthcare with cutting-edge electrical infrastructure for Kerala's First Nuclear Medicine Center." },
+  { image: healthcareCenter, description:"Empowering healthcare with cutting-edge electrical infrastructure for Kerala's First Nuclear Medicine Center." , alt:"Exterior of Kerala's first Nuclear Medicine Center, featuring Imaging Lily and South Indian Bank ATM."},
   
-  { image: transformingMobility, description: "Transforming mat manufacturing with advanced electrical upgrades for Travancore Cocotuft." },
+  { image: transformingMobility, description: "Transforming mat manufacturing with advanced electrical upgrades for Travancore Cocotuft.", alt:"Modern factory building of Travancore Cocotuft in Cherthala, Kerala, showcasing advanced electrical upgrades for efficient mat manufacturing." },
   
-  { image: spicingProduction, description: " Spicing up production with enhanced electrical infrastructure for Eastern Condiments" },
+  { image: spicingProduction, description: " Spicing up production with enhanced electrical infrastructure for Eastern Condiments", alt:"Eastern Condiments factory in Kothamangalam, Kerala, featuring upgraded electrical infrastructure to boost production." },
   
-  { image: preservingHeritage, description: "Preserving heritage with electrifying solutions at Chungath Group's luxury resort, Napier Heritage." },
+  { image: preservingHeritage, description: "Preserving heritage with electrifying solutions at Chungath Group's luxury resort, Napier Heritage." , alt:"The elegant facade of Napier Heritage, a luxury resort in Fort Kochi, Kerala, showcasing the blend of heritage architecture and modern electrical solutions."},
   
-  { image: evTata, description: " Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd" },
+  { image: evTata, description: " Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd", alt:"Illuminated exterior of TATA Motors' first exclusive EV showroom in Palarivattom, Kerala, established in partnership with Luxon Motors Pvt Ltd." },
 ];
 
 const headlines = [
@@ -224,7 +224,7 @@ const PortfolioSection = () => {
                 }}>
                   <img 
                     src={card.image} 
-                    alt={card.description}
+                    alt={card.alt}
                     style={{
                       width: '100%',
                       height: `${imageHeight}px`,

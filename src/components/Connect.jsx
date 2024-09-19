@@ -151,7 +151,7 @@ const LandingPage = () => {
           </Grid>
           {!isMobile && (
             <Grid item xs={12} md={6} order={2}>
-              <img src={rightImage} alt="Team working" style={{ width: '100%', borderRadius: '8px' }} />
+              <img src={rightImage} alt="Two people shake hands across a table, symbolizing connection and collaboration" style={{ width: '100%', borderRadius: '8px' }} />
             </Grid>
           )}
         </Grid>

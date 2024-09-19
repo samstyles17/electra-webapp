@@ -127,7 +127,7 @@ const PowerfulInsights = () => {
           }}>
             <img 
               src={mapWithAvatars} 
-              alt="World Map with Avatars" 
+              alt="Electrapower Engineering: Highlighting Customer feedback through testimonials." 
               style={{ 
                 width: '545.6px',
                 height: 'auto',
