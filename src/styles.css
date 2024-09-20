@@ -20,6 +20,12 @@
   font-weight: 500;
 }
 
+.montserrat-bold{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+
 .sticky-navbar {
   position: -webkit-sticky; /* For Safari */
   position: sticky;

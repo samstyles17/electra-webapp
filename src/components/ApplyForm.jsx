@@ -159,7 +159,7 @@ const ApplyForm = () => {
           <input type="number" name="ctc" min="0" value={formData.ctc} onChange={handleChange} required />
         </div>
         <div className="careers-form-group montserrat-regular">
-          <label>Upload Resume <span style={{ color: "red" }}>*</span></label>
+          <label>Upload Resume <span style={{ color: "red" }}>*(less than 5MB)</span></label>
           <input type="file" name="resume" onChange={handleFileChange} required />
           {fileError && <p style={{ color: "red" }}>{fileError}</p>}
         </div>
