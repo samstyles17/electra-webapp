@@ -51,6 +51,11 @@ function Home() {
               : "Kerala's leading A-grade electrical contractors based in Kochi. Experts in HT/LT installations, Panel Board fabrication, statutory approvals & More."
           }
         />
+        <meta 
+        name="keywords"
+        content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, Home, Design and Consulting, panel board, control systems, electrical panel, custom panel design, panel fabrication, installation, commissioning, PCC, MCC, generator control panel, AMF panel, PLC panel, Rittal panel, APFC panel, control desk, VFD panel, metering panel, bus duct system, synchronization panel, Kerala, Electrapower, electrical contractor"
+        />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
       <Navbar />

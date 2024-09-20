@@ -95,6 +95,11 @@ function MaintenaceRepairService () {
                 : "Simplify electrical approvals in Kerala with Electrapower Engineering. We handle KSEB & Electrical Inspectorate liaisoning, installation approvals & more!"
             }
           />
+          <meta 
+              name="keywords"
+              content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, statutory approvals, compliance, electrical approvals, KSEB, Electrical Inspectorate, earthing design, short circuit design, installation approvals, solar plant approvals, energization sanction, Kerala, Electrapower, electrical contractor"
+          />
+          <meta name="robots" content="index, follow" />
           <link rel="canonical" href={window.location.href} />
         </Helmet>
         <Navbar/>

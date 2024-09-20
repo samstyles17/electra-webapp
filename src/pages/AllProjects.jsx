@@ -399,6 +399,11 @@ const AllProjects = () => {
                             : "Explore Electrapower's diverse portfolio of completed electrical projects in Kerala. Witness our commitment to quality, innovation & client satisfaction stories."
                     }
                 />
+                <meta 
+                    name="keywords"
+                    content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, electrical projects, electrical, projects, electrical projects kerala, kia, hhys inframart, nippon toyota, luxon, commercial projects, commercial"
+                />
+                <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={window.location.href} />
             </Helmet>
         <Navbar />

@@ -51,6 +51,11 @@ function Enquire() {
             }
         />
         <link rel="canonical" href={window.location.href} />
+        <meta 
+          name="keywords"
+          content= "Electrapower Engineering, Electrapower, Engineering, electrapower, engineering, enquire, contact, energy management systems (EMS), power quality analysis, automation, control systems, building management systems (BMS), electrical safety training, electrical safety audits, Kerala, Electrapower, electrical contractor"
+        />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div>
         <Navbar/>

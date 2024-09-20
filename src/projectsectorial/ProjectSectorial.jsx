@@ -362,6 +362,11 @@ const ProjectSectorial = () => {
                             : "Electrapower Engineering powers Kerala's businesses. Our portfolio showcases successful projects across various industries, including India's largest Kia EV charging station."
                     }
                 />
+                <meta 
+                    name="keywords"
+                    content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, electrical projects, electrical, projects, electrical projects kerala, kia, hhys inframart, nippon toyota, luxon, commercial projects, commercial, rds "
+                />
+                <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={window.location.href} />
             </Helmet>
         <Navbar />
