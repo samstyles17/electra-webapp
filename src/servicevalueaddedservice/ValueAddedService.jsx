@@ -105,6 +105,11 @@ function MaintenaceRepairService () {
               : "Optimize energy use, reduce costs, and ensure safety with Electrapower Engineering's expert electrical services. EMS, power quality analysis, automation & more"
           }
         />
+        <meta 
+            name="keywords"
+            content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, energy management systems (EMS), power quality analysis, automation, control systems, building management systems (BMS), electrical safety training, electrical safety audits, Kerala, Electrapower, electrical contractor"
+        />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
       <Navbar/>
