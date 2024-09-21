@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import '../styles.css';
 import img1 from '../assets/img/chaticon.svg';
 import img2 from '../assets/img/headoff.svg';
@@ -14,13 +14,13 @@ const ContactInfo = () => {
               width="450"
               height="300"
               id="gmap_canvas"
-              src="https://maps.google.com/maps?q=33%2F1305-A1%2C+Chalikkavattom%2C+Vennala%2C+Ernakulam%2C+Kerala+682028&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15717.482159013798!2d76.3240716!3d9.9862192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080cd0b324123d%3A0x1816999b2d1e93c3!2sElectrapower%20Engineering%20%7C%20A%20grade%20Electrical%20Engineers%20%26%20Contractors!5e0!3m2!1sen!2sin!4v1726885681567!5m2!1sen!2sin" 
               frameBorder="0"
               scrolling="no"
               marginHeight="0"
               marginWidth="0"
               title="Location Map"
-            ></iframe>
+            ></iframe>           
             
           </div>
         </div>
