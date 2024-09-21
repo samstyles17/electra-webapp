@@ -5,6 +5,35 @@ const JobAccordion = () => {
 
   const jobDetails = [
     {
+      title:"Accountant Assistant",
+      location:"Ernakulam, Kerala",
+      experience:"1+ Year",
+      description:"We are seeking a motivated and detail-oriented Accountant Assistant to join our team. You will play a crucial role in supporting the financial operations of our electrical contracting firm. This position involves various accounting, administrative, and customer service tasks.",
+      responsibilities:[
+        "Accounting: Accurately record financial transactions, Process invoices and payments, Assist in preparing financial statements",
+        "Administrative Support: Manage office tasks such as filing, printing, and emailing, Organize and maintain financial records",
+        "Customer Service: Communicate with clients and vendors regarding payments and invoices, Address any billing inquiries",
+        "Payroll: Assist with payroll processing, Verify timesheets and calculate vacation/sick time",
+        "Financial Reporting: Help create and update financial reports (balance sheets, cash flow statements, etc.)",
+        "Reconciliation: Reconcile financial accounts, including accounts receivable and payable",
+        "Budgeting: Evaluate financial budgets and track expenses",
+        "Compliance: Ensure compliance with company policies and procedures"
+      ],
+      skillsets:[
+        "Strong understanding of accounting principles and practices", 
+        "Proficiency in Microsoft Office Suite (especially Excel)" ,
+        "Excellent attention to detail and accuracy", 
+        "Effective communication and interpersonal skills", 
+        "Ability to work independently and as part of a team "
+      ],
+      requirements:[
+        "Bachelor's degree in Commerce (B.Com) or higher. ",
+        "1+ year of experience in an electrical contracting firm or a related field"
+      ],
+      education:"Bachelor's degree in Commerce (B.Com) or higher",
+      benefits:"Competitive salary. Opportunities for professional growth and development. Work in a dynamic and innovative environment"
+    },
+    {
       title: "Electrical Site Engineer",
       location: "Kerala",
       experience: "2+ Years",
