@@ -1,6 +1,6 @@
 import React from "react";
 // import image2 from "../assets/img/teamimg2_webimage.webp"; // Replace with actual image path
-import banner from "../assets/img/careers_banner.webp"
+import banner from "../assets/img/careers_banner.webp";
 function CareerHeader() {
   return (
     <>

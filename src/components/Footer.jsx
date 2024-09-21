@@ -138,6 +138,7 @@ const Footer = () => {
                 <StyledTypography variant="body2">'A' grade Electrical Engineers & Contractors </StyledTypography>
                 <StyledTypography variant="body2">33/1305-A1, Chalikkavattom, Vennala P.O,</StyledTypography>
                 <StyledTypography variant="body2" gutterBottom>Kochi, Kerala, INDIA - 682028</StyledTypography>
+                <a href='https://maps.app.goo.gl/Yc7AaeZD7PgbSzwr6'>
                 <Button 
                   variant="outlined" 
                   sx={{ 
@@ -152,6 +153,7 @@ const Footer = () => {
                 >
                   Locate in map
                 </Button>
+                </a>
               </Box>
             </ContactInfoContainer>
           </Grid>
@@ -190,7 +192,7 @@ const Footer = () => {
                 { name: 'Home', path: '/' },
                 { name: 'About', path: "/aboutus" },
                 { name: 'Services', path: "/services-design-consulting" },
-                { name: 'Blogs', path: '/' }
+                { name: 'Projects', path: '/portfolio-projects' }
               ].map((item, index) => (
                 <React.Fragment key={item.name}>
                   <Button 
