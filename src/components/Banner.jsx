@@ -59,7 +59,7 @@ function Banner() {
   const isMobile = useMediaQuery("(max-width:960px)");
 
   const webImages = [
-    { src: banner1, route: '/contactus' , alt: 'Welcome to Electrapower Engineering. A-grade electrical contractors in Kerala.'},
+    { src: banner1, route: '/contactus' , alt: 'Welcome to Electrapower Engineering.A-grade electrical contractors in Kerala.'},
     { src: banner3, route: '/services-design-consulting', alt:'24/7 Emergency Electrical Services in Kerala. Electrapower Engineering experts are available around the clock for immediate response.' },
     { src: banner4, route: '/all-projects', alt:"Showcasing Electrapower's diverse electrical projects: Kerala's first TATA EV Showroom, Imaging Lily, and Napier Heritage resort & more" },
     { src: banner5, route: "/portfolio-projects", alt:"Explore Electrapower's transformative portfolio projects: RDS Legacy Apartments, KIA " },
