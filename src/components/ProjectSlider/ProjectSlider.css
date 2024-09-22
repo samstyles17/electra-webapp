@@ -70,11 +70,12 @@
 @media (max-width:475px) {
     .slider-card {
         width: auto;
+        height: auto;
     }
 
     .slider-image {
         width: 300px;
-        height: 360px;
+        height: 290px;
         background-size: cover;
     }
 
