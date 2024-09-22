@@ -91,6 +91,11 @@ function DesignConsultingService() {
                             : "Expert electrical design & consulting services in Kerala. Electrapower Engineering optimises your projects for efficiency, safety & more. Contact us today"
                     }
                 />
+                <meta 
+                    name="keywords"
+                    content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, panel board, control systems, electrical panel, custom panel design, panel fabrication, installation, commissioning, PCC, MCC, generator control panel, AMF panel, PLC panel, Rittal panel, APFC panel, control desk, VFD panel, metering panel, bus duct system, synchronization panel, Kerala, Electrapower, electrical contractor"
+                />
+                <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={window.location.href} />
             </Helmet>
             <Navbar />

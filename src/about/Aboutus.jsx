@@ -71,6 +71,11 @@ function Aboutus() {
               : "Discover why Kerala businesses choose Electrapower Engineering for their HT/LT electrical projects. Expert solutions, proven track record. Know more."
           }
         />
+        <meta 
+        name="keywords"
+        content= "Electrapower Engineering, Electrapower, Engineering, Our Story, About, Team, People"
+      />
+      <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
       <Navbar />

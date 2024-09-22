@@ -74,6 +74,11 @@ function MaintenaceRepairService () {
                 : "Prevent breakdowns & ensure safety with Electrapower Engineering's electrical maintenance services includes preventive maintenance, corrective repairs & AMCs"
             }
           />
+          <meta 
+            name="keywords"
+            content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, electrical maintenance, repair services, preventive maintenance, corrective maintenance, emergency response, AMCs, electrical systems, panel boards, Kerala, Electrapower, electrical contractor"
+        />
+        <meta name="robots" content="index, follow" />
           <link rel="canonical" href={window.location.href} />
         </Helmet>
         <Navbar/>
