@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const JobAccordion = () => {
+const JobAccordion = ({ onJobTitlesChange }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const jobDetails = [
@@ -8,6 +8,7 @@ const JobAccordion = () => {
       title:"Accountant Assistant",
       location:"Ernakulam, Kerala",
       experience:"1+ Year",
+      job_status: "Open",
       description:"We are seeking a motivated and detail-oriented Accountant Assistant to join our team. You will play a crucial role in supporting the financial operations of our electrical contracting firm. This position involves various accounting, administrative, and customer service tasks.",
       responsibilities:[
         "Accounting: Accurately record financial transactions, Process invoices and payments, Assist in preparing financial statements",
@@ -31,12 +32,13 @@ const JobAccordion = () => {
         "1+ year of experience in an electrical contracting firm or a related field"
       ],
       education:"Bachelor's degree in Commerce (B.Com) or higher",
-      benefits:"Competitive salary. Opportunities for professional growth and development. Work in a dynamic and innovative environment"
+      benefits:"Competitive salary. Opportunities for professional growth and development. Work in a dynamic and innovative environment."
     },
     {
       title: "Electrical Site Engineer",
       location: "Kerala",
       experience: "2+ Years",
+      job_status: "Open",
       description: "Electrapower Engineering, a leading A-Grade HT electrical contracting firm, is seeking a highly motivated and experienced Electrical Site Engineer to join our team.",
       responsibilities: [
         "Oversee and coordinate all on-site electrical activities.",
@@ -64,6 +66,7 @@ const JobAccordion = () => {
       title: "Electrician",
       location: "Kerala",
       experience: "1-2 Years",
+      job_status: "Open",
       description: "Electrapower Engineering is seeking skilled Electricians to join our team. The ideal candidate will have a strong technical background in electrical installations, maintenance, and repair.",
       responsibilities: [
         "Install, maintain, and repair electrical systems.",
@@ -85,9 +88,12 @@ const JobAccordion = () => {
       ],
       education: "ITI Electrical/Diploma in Electrical Engineering"
     }
-];
+  ];
 
-  
+  useEffect(() => {
+    const titles = jobDetails.map(job => job.title);
+    onJobTitlesChange(titles);
+  }, [onJobTitlesChange]);
 
   const handleClick = (index) => {
     setActiveIndex(activeIndex === index ? 0 : index);
@@ -111,6 +117,7 @@ const JobAccordion = () => {
           {activeIndex === index && (
             <div className="accordion-content ">
               <h4 className="montserrat-regular py-3">{job.experience} | {job.location}</h4>
+              <p className="montserrat-regular py-3"><strong>Position Status: </strong>{job.job_status}</p>
               <p className="montserrat-regular py-3"><strong>Responsibilities:</strong></p>
               <ul className="py-2 list-disc mx-5">
                 {job.responsibilities.map((resp, idx) => (
@@ -127,8 +134,7 @@ const JobAccordion = () => {
               <p className="montserrat-regular py-3"><strong>Education:</strong> {job.education}</p>
             </div>
           )}
-          {/* Divider */}
-          {index < jobDetails.length&& (
+          {index < jobDetails.length - 1 && (
             <hr className="border-t-1 my-4 careers-divider" />
           )}
         </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ApplyForm = () => {
+const ApplyForm = ({ jobTitles }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,11 +15,10 @@ const ApplyForm = () => {
     message: ''
   });
   const [file, setFile] = useState(null);
-  const [fileError, setFileError] = useState(""); // To store file size error message
+  const [fileError, setFileError] = useState("");
   const [agree, setAgree] = useState(false);
   
-  const jobTitles = ["Electrical Site Engineer", "Electrician"]; // Replace with actual job titles
-  const maxFileSize = 5 * 1024 * 1024; // Maximum file size (5MB)
+  const maxFileSize = 5 * 1024 * 1024;
   
   const handleChange = (e) => {
     const { name, value } = e.target;

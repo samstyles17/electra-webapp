@@ -276,7 +276,7 @@ const data = [
         highlights: [
             {
                 heading: "Turnkey Electrical Solution",
-                info: "Electro Power Engineering provided a complete turnkey solution, overseeing all aspects of the electrical project, from design and planning to procurement, installation, testing, and commissioning. This comprehensive approach ensured a seamless and efficient project execution, minimising disruptions to the resort's operations."
+                info: "Electra Power Engineering provided a complete turnkey solution, overseeing all aspects of the electrical project, from design and planning to procurement, installation, testing, and commissioning. This comprehensive approach ensured a seamless and efficient project execution, minimising disruptions to the resort's operations."
             },
             {
                 heading: "Reliable Backup Power",
