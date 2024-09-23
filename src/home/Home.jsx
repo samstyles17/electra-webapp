@@ -57,6 +57,15 @@ function Home() {
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGGQC38182"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MGGQC38182');
+          `}
+        </script>
       </Helmet>
       <Navbar />
       <div className="home">
