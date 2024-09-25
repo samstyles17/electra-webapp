@@ -366,6 +366,15 @@ const ProjectSectorial = () => {
                     name="keywords"
                     content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, electrical projects, electrical, projects, electrical projects kerala, kia, hhys inframart, nippon toyota, luxon, commercial projects, commercial, rds "
                 />
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGGQC38182"></script>
+                <script>
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-MGGQC38182');
+                `}
+                </script>
                 <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={window.location.href} />
             </Helmet>

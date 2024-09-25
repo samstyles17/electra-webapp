@@ -50,6 +50,15 @@ function Enquire() {
                     : "Need expert electrical solutions in Kerala? Contact Electrapower Engineering today for a free consultation & quote. We're ready to power your next project!"
             }
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGGQC38182"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MGGQC38182');
+          `}
+        </script>
         <link rel="canonical" href={window.location.href} />
         <meta 
           name="keywords"

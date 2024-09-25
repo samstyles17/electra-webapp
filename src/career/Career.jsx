@@ -24,6 +24,15 @@ function Career() {
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content="English" />
       <meta name="author" content="Electrapower Engineering" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGGQC38182"></script>
+      <script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MGGQC38182');
+          `}
+      </script>
       <meta name="revisit-after" content="7 days" />
       <link rel="canonical" href={window.location.href} />
     </Helmet>

@@ -75,6 +75,15 @@ function Aboutus() {
         name="keywords"
         content= "Electrapower Engineering, Electrapower, Engineering, Our Story, About, Team, People"
       />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGGQC38182"></script>
+      <script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MGGQC38182');
+          `}
+      </script>
       <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
