@@ -103,6 +103,12 @@ function PanelBoardControlSystemService() {
           }
         />
         <meta 
+        name = "title"
+        content = {isMobile
+          ? "Electrical Panels & Control Systems in Kerala | Design & Fabrication"
+          : "Electrical Panels & Control Systems in Kerala | Design & Fabrication"}
+        />
+        <meta 
             name="keywords"
             content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, panel board, control systems, electrical panel, custom panel design, panel fabrication, installation, commissioning, PCC, MCC, generator control panel, AMF panel, PLC panel, Rittal panel, APFC panel, control desk, VFD panel, metering panel, bus duct system, synchronization panel, Kerala, Electrapower, electrical contractor"
         />
@@ -114,6 +120,26 @@ function PanelBoardControlSystemService() {
             gtag('js', new Date());
             gtag('config', 'G-MGGQC38182');
             `}
+        </script>
+        <script type="application/ld+json">
+        {
+        JSON.stringify(
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Electrical Panels & Control Systems in Kerala | Design & Fabrication",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Electra Power",
+                  "url": "https://electrapower.in/"
+                },
+                "url": "https://electrapower.in/services-panelboard-control-systems",
+                "description": "Electrapower Engineering designs, fabricates & installs custom panel boards and control systems for your HT/LT projects."
+            }
+                                  
+        )
+        }
+          
         </script>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />

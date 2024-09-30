@@ -96,6 +96,12 @@ function MaintenaceRepairService () {
             }
           />
           <meta 
+          name = "title"
+          content = {isMobile
+            ? "KSEB & Electrical Inspectorate Approvals on time | HT/LT Projects"
+            : "KSEB & Electrical Inspectorate Approvals on time | HT/LT Projects"}
+          />
+          <meta 
               name="keywords"
               content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, statutory approvals, compliance, electrical approvals, KSEB, Electrical Inspectorate, earthing design, short circuit design, installation approvals, solar plant approvals, energization sanction, Kerala, Electrapower, electrical contractor"
           />
@@ -107,6 +113,26 @@ function MaintenaceRepairService () {
               gtag('js', new Date());
               gtag('config', 'G-MGGQC38182');
             `}
+          </script>
+          <script type="application/ld+json">
+          {
+          JSON.stringify(
+              {
+                  "@context": "https://schema.org",
+                  "@type": "Service",
+                  "serviceType": "KSEB & Electrical Inspectorate Approvals on time | HT/LT Projects",
+                  "provider": {
+                    "@type": "Organization",
+                    "name": "Electra Power",
+                    "url": "https://electrapower.in/"
+                  },
+                  "url": "https://electrapower.in/services-statutory-approvals",
+                  "description": "Electrapower Engineering handle Faster KSEB & Electrical Inspectorate liaisoning, installation approvals."
+              }
+                                    
+          )
+          }
+            
           </script>
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href={window.location.href} />

@@ -50,6 +50,12 @@ function Enquire() {
                     : "Need expert electrical solutions in Kerala? Contact Electrapower Engineering today for a free consultation & quote. We're ready to power your next project!"
             }
         />
+        <meta 
+        name = "title"
+        content = {isMobile
+          ? "Contact Electrapower Engineering, A grade Electrical Contractor | Kerala"
+          : "Contact Electrapower Engineering, A grade Electrical Contractor | Kerala"}
+        />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGGQC38182"></script>
         <script>
           {`
@@ -58,6 +64,19 @@ function Enquire() {
             gtag('js', new Date());
             gtag('config', 'G-MGGQC38182');
           `}
+        </script>
+        <script type="application/ld+json">
+        {
+            JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "url": "https://electrapower.in/contactus",
+                "name": "Contact Us",
+                "description": "Need expert electrical solutions in Kerala? Contact Electrapower Engineering today for a free consultation & quote. We're ready to power your next project!"
+              }             
+            )
+        }
         </script>
         <link rel="canonical" href={window.location.href} />
         <meta 

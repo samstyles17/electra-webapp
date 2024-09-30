@@ -363,6 +363,12 @@ const ProjectSectorial = () => {
                     }
                 />
                 <meta 
+                name = "title"
+                content = {isMobile
+                    ? "Electrical Projects Showcase | Kerala's Top Contractor"
+                    : "Electrical Projects Showcase | Kerala's Top Contractor"}
+                />
+                <meta 
                     name="keywords"
                     content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, electrical projects, electrical, projects, electrical projects kerala, kia, hhys inframart, nippon toyota, luxon, commercial projects, commercial, rds "
                 />
@@ -374,6 +380,20 @@ const ProjectSectorial = () => {
                     gtag('js', new Date());
                     gtag('config', 'G-MGGQC38182');
                 `}
+                </script>
+                <script type="application/ld+json">
+                {
+                    JSON.stringify(
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            "url": "https://electrapower.in/portfolio-projects",
+                            "name": "Portfolio Projects",
+                            "description": "Electrapower Engineering powers Kerala's businesses. Our portfolio showcases successful projects across various industries, including India's largest Kia EV charging station."
+                          }
+                          
+                    )
+                }
                 </script>
                 <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={window.location.href} />

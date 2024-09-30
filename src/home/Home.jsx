@@ -52,6 +52,12 @@ function Home() {
           }
         />
         <meta 
+        name = "title"
+        content = {isMobile
+          ? "A Grade Electrical Contractors in Kerala | Electrapower Engineering"
+          : "A Grade Electrical Contractors in Kerala | Electrapower Engineering"}
+        />
+        <meta 
         name="keywords"
         content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, Home, Design and Consulting, panel board, control systems, electrical panel, custom panel design, panel fabrication, installation, commissioning, PCC, MCC, generator control panel, AMF panel, PLC panel, Rittal panel, APFC panel, control desk, VFD panel, metering panel, bus duct system, synchronization panel, Kerala, Electrapower, electrical contractor"
         />
@@ -66,6 +72,27 @@ function Home() {
             gtag('config', 'G-MGGQC38182');
           `}
         </script>
+        <script type="application/ld+json">
+        {
+          JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Electra Power",
+              "url": "https://electrapower.in/",
+              "sameAs": [
+                'https://www.linkedin.com/company/electrapower-engineering',
+                'https://www.facebook.com/ElectrapowerEngineering/',
+                'https://www.instagram.com/electrapowerengineering/',
+                'https://twitter.com/electrapowereng'
+              ]
+            }
+            
+          )
+        }
+        
+        </script>
+
       </Helmet>
       <Navbar />
       <div className="home">

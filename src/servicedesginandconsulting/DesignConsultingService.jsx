@@ -92,6 +92,12 @@ function DesignConsultingService() {
                     }
                 />
                 <meta 
+                name = "title"
+                content ={isMobile
+                    ? "Electrical Design & Consulting Services | Electrapower Engineering"
+                    : "Electrical Design & Consulting Services | Electrapower Engineering"} 
+                />
+                <meta 
                     name="keywords"
                     content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, panel board, control systems, electrical panel, custom panel design, panel fabrication, installation, commissioning, PCC, MCC, generator control panel, AMF panel, PLC panel, Rittal panel, APFC panel, control desk, VFD panel, metering panel, bus duct system, synchronization panel, Kerala, Electrapower, electrical contractor"
                 />
@@ -103,6 +109,26 @@ function DesignConsultingService() {
                     gtag('js', new Date());
                     gtag('config', 'G-MGGQC38182');
                     `}
+                </script>
+                <script type="application/ld+json">
+                {
+                JSON.stringify(
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Electrical Design & Consulting Services | Electrapower Engineering",
+                        "provider": {
+                          "@type": "Organization",
+                          "name": "Electra Power",
+                          "url": "https://electrapower.in/"
+                        },
+                        "url": "https://electrapower.in/services-design-consulting",
+                        "description": "Expert electrical design & consulting services in Kerala. Electrapower Engineering optimises your projects"
+                    }
+                                          
+                )
+                }
+                
                 </script>
                 <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={window.location.href} />

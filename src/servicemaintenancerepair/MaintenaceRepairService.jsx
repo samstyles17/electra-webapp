@@ -75,6 +75,12 @@ function MaintenaceRepairService () {
             }
           />
           <meta 
+          name = "title"
+          content = {isMobile
+            ? "Expert HT/LT Electrical Maintenance & Repair Services in Kerala"
+            : "Expert HT/LT Electrical Maintenance & Repair Services in Kerala"}
+          />
+          <meta 
             name="keywords"
             content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, electrical maintenance, repair services, preventive maintenance, corrective maintenance, emergency response, AMCs, electrical systems, panel boards, Kerala, Electrapower, electrical contractor"
         />
@@ -87,6 +93,26 @@ function MaintenaceRepairService () {
             gtag('config', 'G-MGGQC38182');
             `}
         </script>
+        <script type="application/ld+json">
+          {
+          JSON.stringify(
+              {
+                  "@context": "https://schema.org",
+                  "@type": "Service",
+                  "serviceType": "Expert HT/LT Electrical Maintenance & Repair Services in Kerala",
+                  "provider": {
+                    "@type": "Organization",
+                    "name": "Electra Power",
+                    "url": "https://electrapower.in/"
+                  },
+                  "url": "https://electrapower.in/services-maintenance-repairs",
+                  "description": "Electrapower Engineering offers electrical maintenance services includes preventive maintenance, corrective repairs & AMCs"
+              }
+                                    
+          )
+          }
+            
+          </script>
         <meta name="robots" content="index, follow" />
           <link rel="canonical" href={window.location.href} />
         </Helmet>

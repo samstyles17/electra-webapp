@@ -400,6 +400,12 @@ const AllProjects = () => {
                     }
                 />
                 <meta 
+                name = "title"
+                content = {isMobile
+                    ? "Completed Electrical Projects | Electrapower Engineering, Kerala"
+                    : "Completed Electrical Projects | Electrapower Engineering, Kerala"}
+                />
+                <meta 
                     name="keywords"
                     content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, electrical projects, electrical, projects, electrical projects kerala, kia, hhys inframart, nippon toyota, luxon, commercial projects, commercial"
                 />
@@ -411,6 +417,21 @@ const AllProjects = () => {
                     gtag('js', new Date());
                     gtag('config', 'G-MGGQC38182');
                 `}
+                </script>
+                <script type="application/ld+json">
+                {
+                    JSON.stringify(
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            "url": "https://electrapower.in/all-projects",
+                            "name": "All Projects",
+                            "description": "Explore Electrapower's diverse portfolio of completed electrical projects in Kerala. Witness our commitment to quality, innovation & client satisfaction stories."
+                          }
+                          
+                          
+                    )
+                }
                 </script>
                 <meta name="robots" content="index, follow" />
                 <link rel="canonical" href={window.location.href} />

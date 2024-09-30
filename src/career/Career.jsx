@@ -33,6 +33,20 @@ function Career() {
           gtag('config', 'G-MGGQC38182');
           `}
       </script>
+      <script type="application/ld+json">
+        {
+            JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "url": "https://electrapower.in/careers",
+                "name": "Careers at Electra Power",
+                "description": "Explore exciting career opportunities at Electrapower Engineering, a leading 'A' grade electrical engineering and contracting company in Kerala."
+              }
+                          
+            )
+        }
+        </script>
       <meta name="revisit-after" content="7 days" />
       <link rel="canonical" href={window.location.href} />
     </Helmet>

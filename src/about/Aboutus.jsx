@@ -72,6 +72,12 @@ function Aboutus() {
           }
         />
         <meta 
+        name = "title"
+        content = {isMobile
+          ? "Our Story & Expertise | Electrapower Engineering, Kochi"
+          : "Our Story & Expertise | Electrapower Engineering, Kochi"}
+        />
+        <meta 
         name="keywords"
         content= "Electrapower Engineering, Electrapower, Engineering, Our Story, About, Team, People"
       />
@@ -84,6 +90,20 @@ function Aboutus() {
           gtag('config', 'G-MGGQC38182');
           `}
       </script>
+      <script type="application/ld+json">
+        {
+          JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutusPage",
+              "name": "Our Story & Expertise | Electrapower Engineering, Kochi",
+              "url": "https://electrapower.in/aboutus"
+            }
+            
+          )
+        }
+        
+        </script>
       <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>

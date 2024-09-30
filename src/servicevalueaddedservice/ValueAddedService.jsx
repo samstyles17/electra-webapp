@@ -106,6 +106,12 @@ function MaintenaceRepairService () {
           }
         />
         <meta 
+        name = "title"
+        content = {isMobile
+          ? "Electrical Automation | Control Systems | Safety Audits & More"
+          : "Electrical Automation | Control Systems | Safety Audits & More"}
+        />
+        <meta 
             name="keywords"
             content= "Electrapower Engineering,Electrapower Engineering Kerala ,Electrical Contractors , electrical, contractors ,Electrapower, Engineering, electrapower, engineering, electrapower engineering kerala, energy management systems (EMS), power quality analysis, automation, control systems, building management systems (BMS), electrical safety training, electrical safety audits, Kerala, Electrapower, electrical contractor"
         />
@@ -118,6 +124,26 @@ function MaintenaceRepairService () {
             gtag('config', 'G-MGGQC38182');
             `}
         </script>
+        <script type="application/ld+json">
+          {
+          JSON.stringify(
+              {
+                  "@context": "https://schema.org",
+                  "@type": "Service",
+                  "serviceType": "Electrical Automation | Control Systems | Safety Audits & More",
+                  "provider": {
+                    "@type": "Organization",
+                    "name": "Electra Power",
+                    "url": "https://electrapower.in/"
+                  },
+                  "url": "https://electrapower.in/services-valueadded",
+                  "description": "Optimize energy use, reduce costs, & ensure safety with Electrapower Engineering's expert electrical services."
+              }
+                                    
+          )
+          }
+            
+          </script>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
