@@ -60,8 +60,8 @@ function Aboutus() {
       <Helmet>
         <title>
           {isMobile
-            ? "Aboutus"
-            : "Aboutus"}
+            ? "About Us"
+            : "About Us"}
         </title>
         <meta
           name="description"

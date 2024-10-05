@@ -39,8 +39,8 @@ function Enquire() {
       <Helmet>
         <title>
             {isMobile
-                ? "Contactus"
-                : "Contactus"}
+                ? "Contact Us"
+                : "Contact Us"}
         </title>
         <meta
             name="description"
