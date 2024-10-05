@@ -40,8 +40,8 @@ function Home() {
       <Helmet>
         <title>
           {isMobile
-            ? "A Grade Electrical Contractors in Kerala | Electrapower Engineering"
-            : "A Grade Electrical Contractors in Kerala | Electrapower Engineering"}
+            ? "Electrapower Engineering"
+            : "Electrapower Engineering"}
         </title>
         <meta
           name="description"

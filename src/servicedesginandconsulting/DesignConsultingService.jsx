@@ -80,8 +80,8 @@ function DesignConsultingService() {
             <Helmet>
                 <title>
                     {isMobile
-                        ? "Electrical Design & Consulting Services | Electrapower Engineering"
-                        : "Electrical Design & Consulting Services | Electrapower Engineering"}
+                        ? "Services - Design & Consulting"
+                        : "Services - Design & Consulting"}
                 </title>
                 <meta
                     name="description"

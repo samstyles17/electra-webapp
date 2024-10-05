@@ -388,8 +388,8 @@ const AllProjects = () => {
         <Helmet>
                 <title>
                     {isMobile
-                        ? "Completed Electrical Projects | Electrapower Engineering, Kerala"
-                        : "Completed Electrical Projects | Electrapower Engineering, Kerala"}
+                        ? "All Projects"
+                        : "All Projects"}
                 </title>
                 <meta
                     name="description"

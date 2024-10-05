@@ -94,8 +94,8 @@ function MaintenaceRepairService () {
       <Helmet>
         <title>
           {isMobile
-            ? "Electrical Automation | Control Systems | Safety Audits & More"
-            : "Electrical Automation | Control Systems | Safety Audits & More"}
+            ? "Services - Value added service"
+            : "Services - Value added service"}
         </title>
         <meta
           name="description"

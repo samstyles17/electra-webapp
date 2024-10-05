@@ -10,7 +10,7 @@ function Career() {
     <>
     <Helmet>
       <title>
-        Electrapower Engineering Careers: Join Our Team for a Powerful Future
+        Careers
       </title>
       <meta 
         name = "description"
@@ -20,6 +20,7 @@ function Career() {
         name="keywords"
         content= "Electrapower, Electrapower Engineering,Jobs, Electrical, Engineering, Contractor"
       />
+      <meta name = "title" content = "Electrapower Engineering Careers: Join Our Team for a Powerful Future"/>
       <meta name="robots" content="index, follow" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content="English" />

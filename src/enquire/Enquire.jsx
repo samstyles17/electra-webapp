@@ -39,8 +39,8 @@ function Enquire() {
       <Helmet>
         <title>
             {isMobile
-                ? "Contact Electrapower Engineering, A grade Electrical Contractor | Kerala"
-                : "Contact Electrapower Engineering, A grade Electrical Contractor | Kerala"}
+                ? "Contactus"
+                : "Contactus"}
         </title>
         <meta
             name="description"
