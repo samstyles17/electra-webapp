@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from '../components/Navbar'
 import CareerHeader from '../components/CareerHeader'
 import JobApplication from '../components/JobApplication'

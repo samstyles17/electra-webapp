@@ -1,4 +1,3 @@
-import React from "react";
 import webBanner from "../assets/img/Career_Banner_Web.webp";
 import mobileBanner from "../assets/img/EPE_Career_page_mob.webp";
 import { useMediaQuery } from "@mui/material";

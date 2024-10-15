@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import JobAccordion from "./JobAccordion";
 import ApplyForm from "./ApplyForm";
 
