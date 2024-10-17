@@ -1,7 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import ImageSlider from '../ImageSlider';
+import { useEffect, useRef } from 'react';
 import "./ProjectRow.css";
-import img1 from "../../assets/img/image1601.jpg"
 import ProjectSlider from '../ProjectSlider/ProjectSlider';
 
 const ProjectRow = ({ data }) => {
