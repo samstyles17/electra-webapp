@@ -1,23 +1,12 @@
-// import React from 'react';
+import axios from 'axios';
 import Carousel from 'react-multi-carousel';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from "@mui/material";
 import styled from 'styled-components';
 import 'react-multi-carousel/lib/styles.css';
 
-// Web banner images
-import banner1 from "../assets/img/banner_webimage1.webp";
-// import banner2 from "../assets/img/banner_b.png";
-import banner3 from "../assets/img/banner_webimage2.webp";
-import banner4 from "../assets/img/banner_webimage3.webp";
-import banner5 from "../assets/img/banner_webimage4.webp";
-
-// Mobile banner images (replace these with your actual mobile banner images)
-import mobileBanner1 from "../assets/img/BANER POSTER-01.png";
-import mobileBanner2 from "../assets/img/BANER POSTER-02.png";
-import mobileBanner3 from "../assets/img/BANER POSTER-03.png";
-import mobileBanner4 from "../assets/img/BANER POSTER-04.png";
-
+// Styled components for banner container and image
 const BannerContainer = styled.div`
   width: 100%;
   margin-top: 2rem; // Adjust this value as needed for desktop
@@ -54,23 +43,37 @@ const responsive = {
   }
 };
 
-
 function Banner() {
   const isMobile = useMediaQuery("(max-width:960px)");
+  const [webImages, setWebImages] = useState([]);
+  const [mobileImages, setMobileImages] = useState([]);
 
-  const webImages = [
-    { src: banner1, route: '/contactus' , alt: 'Welcome to Electrapower Engineering.A-grade electrical contractors in Kerala.'},
-    { src: banner3, route: '/services-design-consulting', alt:'24/7 Emergency Electrical Services in Kerala. Electrapower Engineering experts are available around the clock for immediate response.' },
-    { src: banner4, route: '/all-projects', alt:"Showcasing Electrapower's diverse electrical projects: Kerala's first TATA EV Showroom, Imaging Lily, and Napier Heritage resort & more" },
-    { src: banner5, route: "/portfolio-projects", alt:"Explore Electrapower's transformative portfolio projects: RDS Legacy Apartments, KIA " },
-  ];
+  // Fetch images from API
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get('https://1a2fagymd7.execute-api.ap-south-1.amazonaws.com/v2/fetchBannerImageDetails');
+        const imageData = response.data;
 
-  const mobileImages = [
-    { src: mobileBanner1, route: '/contactus' , alt: 'Welcome to Electrapower Engineering. A-grade electrical contractors in Kerala.'},
-    { src: mobileBanner2, route: '/services-design-consulting', alt:'24/7 Emergency Electrical Services in Kerala. Electrapower Engineering experts are available around the clock for immediate response.' },
-    { src: mobileBanner3, route: '/all-projects', alt:"Showcasing Electrapower's diverse electrical projects: Kerala's first TATA EV Showroom, Imaging Lily, and Napier Heritage resort & more"},
-    { src: mobileBanner4, route: '/portfolio-projects', alt:"Explore Electrapower's transformative portfolio projects: RDS Legacy Apartments, KIA Showrooms, and Eastern's Electrifying Factories" },
-  ];
+        // Filter web and mobile images based on the mode field
+        const webImages = imageData
+          .filter(img => img.mode === 'Desktop')
+          .sort((a, b) => a.position_index - b.position_index);
+
+        const mobileImages = imageData
+          .filter(img => img.mode === 'Mobile')
+          .sort((a, b) => a.position_index - b.position_index);
+
+        // Set state
+        setWebImages(webImages);
+        setMobileImages(mobileImages);
+      } catch (error) {
+        console.error("Error fetching images from API:", error);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   const images = isMobile ? mobileImages : webImages;
 
@@ -93,9 +96,9 @@ function Banner() {
       >
         {images.map((image, index) => (
           <div key={index}>
-            <Link to={image.route}>
+            <Link to={image.link}>
               <BannerImage 
-                src={image.src} 
+                src={image.image_url} 
                 alt={image.alt}
               />
             </Link>

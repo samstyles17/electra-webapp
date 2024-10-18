@@ -1,32 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Box, Typography, useMediaQuery } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import DividerImage from '../assets/img/client_divider.png';
-
-// Import all client images
-import Eastern_Condiments from '../assets/img/cl1.png';
-import HHYS_Inframart from '../assets/img/cl2.png';
-import Nippon_Toyota from '../assets/img/cl3.png';
-import Kia_Motors from '../assets/img/cl4.png';
-import Chungath_Jewellery from '../assets/img/cl5.png';
-import Luxon_Tata from '../assets/img/cl6.png';
-import VKL_seasoning from '../assets/img/cl7.png';
-import Catholic_Syrian_Bank from '../assets/img/cl8.png';
-import Codepoint_Softwares  from '../assets/img/cl9.png';
-import Assisi_Hospital from '../assets/img/cl10.png';
-import PS_mission_hospital from '../assets/img/cl11.png';
-import RDS_realties from '../assets/img/cl12.png';
-import Travancore_Cocotuft from '../assets/img/cl14.png';
-import Revolt from '../assets/img/cl16.png';
-import Marymatha_Infrastructure from '../assets/img/cl17.png';
-import Ejyothi_services from '../assets/img/cl18.png';
-import Nirmala_College from '../assets/img/cl19.png';
-import Puc_Bank from '../assets/img/cl20.png';
-import Accity from '../assets/img/cl211.png';
-import Imaging_Lily from '../assets/img/cl222.png';
-import Kinder_Hospital from '../assets/img/cl233.png';
+import axios from 'axios';
 
 const theme = createTheme({
   breakpoints: {
@@ -43,44 +21,30 @@ const theme = createTheme({
   },
 });
 
-// Create an array of client image objects
-const clients = [
-  { src: Eastern_Condiments, alt: 'Eastern Condiments Logo' },
-  { src: HHYS_Inframart, alt: 'HHYS Inframart Logo' },
-  { src: Nippon_Toyota, alt: 'Nippon Toyota Logo' },
-  { src: Kia_Motors, alt: 'Kia Motors logo' },
-  { src: Chungath_Jewellery, alt: 'Chungath Jewellery logo' },
-  { src: Luxon_Tata, alt: 'Luxon Tata Logo' },
-  { src: VKL_seasoning, alt: 'VKL seasoning logo' },
-  { src: Catholic_Syrian_Bank, alt: 'Catholic Syrian Bank logo' },
-  { src: Codepoint_Softwares, alt: 'Codepoint Softwares Pvt. Ltd Logo' },
-  { src: Assisi_Hospital, alt: 'Assisi Hospital logo' },
-  { src: PS_mission_hospital, alt: 'PS mission hospital logo' },
-  { src: RDS_realties, alt: 'RDS rds realties logo' },
-  { src: Travancore_Cocotuft, alt: 'Travancore Cocotuft logo' },
-  { src: Revolt, alt: 'Revolt logo' },
-  { src: Marymatha_Infrastructure, alt: 'Marymatha Infrastructure Private Limited logo' },
-  { src: Ejyothi_services, alt: 'Ejyothi services logo' },
-  { src: Nirmala_College, alt: 'Nirmala College Muvattupuzha logo' },
-  { src: Puc_Bank, alt: 'PUCBANK logo' },
-  { src: Accity, alt: 'Accity Logo' },
-  { src: Imaging_Lily, alt: 'Imaging Lily Logo' },
-  { src: Kinder_Hospital, alt: 'Kinder Hospital Logo' },
-];
-
-const animationDuration = clients.length * 2;
-
-const scroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-200%); }
-`;
-
-
 const ClientsCarousel = () => {
+  const [clients, setClients] = useState([]);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const scrollerRef = useRef(null);
   const scrollerInnerRef = useRef(null);
+
+  useEffect(() => {
+    const fetchClientLogos = async () => {
+      try {
+        const response = await axios.get('https://4m6h7psse2.execute-api.ap-south-1.amazonaws.com/v1/getClientLogoURLs');
+        const logoUrls = response.data;
+        const clientData = logoUrls.map(url => ({
+          src: url,
+          alt: 'Client Logo'
+        }));
+        setClients(clientData);
+      } catch (error) {
+        console.error('Error fetching client logos:', error);
+      }
+    };
+
+    fetchClientLogos();
+  }, []);
 
   useEffect(() => {
     if (!scrollerRef.current || !scrollerInnerRef.current) return;
@@ -91,7 +55,7 @@ const ClientsCarousel = () => {
       scrollerInnerRef.current.appendChild(duplicatedItem);
     });
 
-    const scrollSpeed = isMobile ? 50 : 30; // Adjust these values to change speed
+    const scrollSpeed = isMobile ? 50 : 30;
 
     const scroll = () => {
       if (scrollerRef.current.scrollLeft >= scrollerInnerRef.current.scrollWidth / 2) {
@@ -104,7 +68,7 @@ const ClientsCarousel = () => {
     const scrollInterval = setInterval(scroll, scrollSpeed);
 
     return () => clearInterval(scrollInterval);
-  }, [isMobile]);
+  }, [isMobile, clients]);
 
   const carouselContent = (
     <Box

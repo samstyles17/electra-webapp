@@ -1,27 +1,13 @@
-import React, { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Box, Card, CardContent, CardMedia, Typography, IconButton, Divider } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from 'react-router-dom';
-// Import your images
-import designImage from '../assets/img/service1_webimage.webp';
-import installationImage from '../assets/img/service2_webimage.webp';
-import panelImage from '../assets/img/service3_webimage.webp';
-import auditImage from '../assets/img/service4_webimage.webp';
-import testingImage from '../assets/img/service5_webimage.webp';
-import maintenanceImage from '../assets/img/service6_webimage.webp';
+import axios from 'axios';
 
-const cards = [
-  { id: 1, title: 'Design & Consulting', image: designImage, description: 'More About' , route:'/services-design-consulting', alt:"Electrapower Engineering: Engineers discussing expert design and consulting services for electrical projects in Kerala."},
-  { id: 2, title: 'Installation And Commissioning', image: installationImage, description: 'More About', route:'/services-installation-commisioning', alt:"Electrapower engineer using a clamp meter to test electrical installations during commissioning in Kerala." },
-  { id: 3, title: 'Panel Board And Control Systems', image: panelImage, description: 'More About', route:'/services-panelboard-control-systems', alt:"Electrician's hands working on an electrical panel, showcasing Electrapower Engineering's expertise in panel board and control systems" },
-  { id: 4, title: 'Statuory Approval and Compliance', image: auditImage, description: 'More About' , route:'/services-statutory-approvals', alt:"Electrapower Engineering team reviewing legal documents for compliance."},
-  { id: 5, title: 'Maintenance and Repair', image: testingImage, description: 'More About', route:'/services-maintenance-repairs', alt:"Maintenance and Repair Technician Conducting Works at Electrapower Engineering" },
-  { id: 6, title: 'Value-Added Services', image: maintenanceImage, description: 'More About' , route:'/services-valueadded', alt:"Electrapower Engineering technician providing electrical value-added services"},
-];
-
+// Theme configuration
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -53,8 +39,8 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Card 
-      sx={{ 
+    <Card
+      sx={{
         width: 'auto',
         height: 369,
         position: 'relative',
@@ -67,7 +53,7 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
     >
       <CardMedia
         component="img"
-        image={card.image}
+        image={card.image_url}
         alt={card.alt}
         sx={{
           width: '100%',
@@ -109,16 +95,18 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
               fontSize: '1rem',
             }}
           >
-            {card.id}
+            {card.position_index}
           </Box>
-          <Typography variant="string" sx={{ flexGrow: 1 }}>{card.title}</Typography>
+          <Typography variant="string" sx={{ flexGrow: 1 }}>
+            {card.alt}
+          </Typography>
         </Box>
         {isHovered && (
           <>
             <Divider sx={{ bgcolor: 'white', width: '70%', ml: 6.5 }} />
             <Box sx={{ display: 'flex', alignItems: 'center', ml: 6.5, mb: 6, paddingTop: 2 }}>
-              <Link to={card.route} style={{ textDecoration: 'none', color: 'white' }}>
-                <Typography variant="body1">{card.description}</Typography>
+              <Link to={card.link} style={{ textDecoration: 'none', color: 'white' }}>
+                <Typography variant="body1">More About</Typography>
               </Link>
               <ChevronRight fontSize="small" sx={{ ml: 1 }} />
             </Box>
@@ -132,6 +120,7 @@ const CarouselCard = ({ card, isFullyVisible, isOverlappingButton, isMobile }) =
 const Carousel = () => {
   const theme = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cards, setCards] = useState([]);
   const cardWidth = 327;
   const cardSpacing = 40;
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -140,6 +129,19 @@ const Carousel = () => {
   const containerRef = useRef(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+
+  // Fetch data from API
+  useEffect(() => {
+    axios
+      .get('https://4xdfart5e0.execute-api.ap-south-1.amazonaws.com/v1/getServiceCarouselDetailsDynamoDB')
+      .then((response) => {
+        const sortedData = response.data.sort((a, b) => a.position_index - b.position_index);
+        setCards(sortedData);
+      })
+      .catch((error) => {
+        console.error('Error fetching carousel data:', error);
+      });
+  }, []);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
@@ -175,10 +177,10 @@ const Carousel = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box 
+      <Box
         ref={containerRef}
-        sx={{ 
-          position: 'relative', 
+        sx={{
+          position: 'relative',
           width: 'auto',
           marginTop: isMobile ? 1 : 0,
           marginBottom: isMobile ? 1 : 0,
@@ -194,18 +196,18 @@ const Carousel = () => {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <Box 
-          sx={{ 
-            display: 'flex', 
+        <Box
+          sx={{
+            display: 'flex',
             transition: 'transform 0.3s ease-in-out',
             transform: `translateX(-${currentIndex * (cardWidth + cardSpacing)}px)`,
-            gap: `${cardSpacing}px`
+            gap: `${cardSpacing}px`,
           }}
         >
           {cards.map((card, index) => (
             <Box key={card.id} sx={{ flexShrink: 0, width: cardWidth }}>
-              <CarouselCard 
-                card={card} 
+              <CarouselCard
+                card={card}
                 isFullyVisible={index >= currentIndex && index < currentIndex + visibleCards}
                 isOverlappingButton={
                   (showLeftArrow && showRightArrow && index === currentIndex) ||
@@ -217,12 +219,12 @@ const Carousel = () => {
           ))}
         </Box>
         {!isMobile && showLeftArrow && (
-          <IconButton 
+          <IconButton
             onClick={handlePrev}
-            sx={{ 
-              position: 'absolute', 
-              left: 10, 
-              top: '50%', 
+            sx={{
+              position: 'absolute',
+              left: 10,
+              top: '50%',
               transform: 'translateY(-50%)',
               zIndex: 1,
               bgcolor: 'black',
@@ -236,12 +238,12 @@ const Carousel = () => {
           </IconButton>
         )}
         {!isMobile && showRightArrow && (
-          <IconButton 
+          <IconButton
             onClick={handleNext}
-            sx={{ 
-              position: 'absolute', 
-              right: 10, 
-              top: '50%', 
+            sx={{
+              position: 'absolute',
+              right: 10,
+              top: '50%',
               transform: 'translateY(-50%)',
               zIndex: 1,
               bgcolor: 'black',

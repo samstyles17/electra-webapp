@@ -1,17 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios'; // Import Axios
 import { Box, Typography, Avatar, Card, CardContent, IconButton, useMediaQuery } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Link } from 'react-router-dom';
 
 // Import images
 import mapWithAvatars from '../assets/img/tetimonial_map_webimage.webp';
-import mrShaji from '../assets/img/home_testimonial_profile_pic_1.png';
-import mrReji from '../assets/img/home_testimonial_profile_pic_2.png';
-import mrYaseem from '../assets/img/home_testimonial_profile_pic_3.png';
-import cardDivider from  '../assets/img/home_testimonial_card_divider.png';
+import cardDivider from '../assets/img/home_testimonial_card_divider.png';
 
 const theme = createTheme({
   breakpoints: {
@@ -40,33 +37,31 @@ const theme = createTheme({
   },
 });
 
-const testimonials = [
-  {
-    name: "Mr. Shaji",
-    position: "Project Manager, Luxon Motos Pvt. Ltd.",
-    image: mrShaji,
-    text: "\"Electra Power Engineering's team displayed remarkable professionalism, technical expertise, and a deep understanding of our vision for the EV showroom. Their commitment to delivering a world-class electrical solution within an ambitious timeline was truly impressive. We are extremely satisfied with their work and highly recommend their services.\""
-  },
-  {
-    name: "Mr. Reji",
-    position: "VP Operations, Incheon Motors Pvt. Ltd",
-    image: mrReji,
-    text: "\"Electra Power Engineering's team surpassed our expectations in every aspect of this project. Their expertise, dedication to quality, and ability to meet challenging timelines were truly remarkable. The charging station they installed has become a major attraction for our customers, and we are confident that it will play a key role in driving EV adoption in Kerala.\""
-  },
-  {
-    name: "Mr. Yaseen",
-    position: "GM, HHYS Inframart.",
-    image: mrYaseem,
-    text: "\"Electra Power Engineering proved to be a reliable and efficient partner throughout the entire project. Their expertise in electrical engineering, coupled with their commitment to quality and timely delivery, exceeded our expectations. We are highly satisfied with the results and confident that our upgraded electrical infrastructure will support our growth for years to come.\""
-  }
-];
-
 const PowerfulInsights = () => {
+  const [testimonials, setTestimonials] = useState([]); // State to hold testimonials
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const isTabletLandscape = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const carouselRef = useRef(null);
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+
+  // Fetch testimonials data from the API
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await axios.get('https://qenb25ilw8.execute-api.ap-south-1.amazonaws.com/v1/getTestimonial');
+        if (response.status === 200) {
+          // Sort testimonials by index field
+          const sortedTestimonials = response.data.data.sort((a, b) => a.index - b.index);
+          setTestimonials(sortedTestimonials); // Set the testimonials state with sorted data
+        }
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
 
   const handleNext = () => {
     setCurrentTestimonial((prev) => Math.min(prev + 1, testimonials.length - 1));
@@ -189,7 +184,7 @@ const PowerfulInsights = () => {
           >
             {testimonials.map((testimonial, index) => (
               <Card 
-                key={index} 
+                key={testimonial.id} 
                 elevation={3} 
                 sx={{ 
                   borderRadius: 2, 
@@ -201,13 +196,13 @@ const PowerfulInsights = () => {
                 }}
               >
                 <CardContent sx={{ display: 'flex', gap: 2, height: '100%' }}>
-                  <Avatar src={testimonial.image} sx={{ width: 34, height: 34 }} />
+                  <Avatar src={testimonial.profile_icon_url} sx={{ width: 34, height: 34 }} />
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, overflow: 'hidden' }}>
                     <Typography variant={isMobile || isTabletLandscape ? "body2" : "body1"} className="montserrat-regular">{testimonial.name}</Typography>
                     <Typography variant="body2" sx={{ color: '#555' }} className="montserrat-regular">{testimonial.position}</Typography>
                     <img src={cardDivider} alt="Divider" style={{ width: '100%', height: 'auto', margin: '8px 0' }} />
                     <Typography variant={isMobile || isTabletLandscape ? "caption" : "body2"} className="montserrat-regular" sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                      {testimonial.text}
+                      {testimonial.description}
                     </Typography>
                   </Box>
                 </CardContent>
@@ -223,14 +218,13 @@ const PowerfulInsights = () => {
             justifyContent: 'center', 
             alignItems: 'center',
             marginTop: 2,
-            order: 2,
+            order: 1
           }}>
             <img 
               src={mapWithAvatars} 
-              alt="World Map with Avatars" 
+              alt="Electrapower Engineering: Highlighting Customer feedback through testimonials." 
               style={{ 
-                width: '100%',
-                maxWidth: isTabletLandscape ? '800px' : '545.6px',
+                width: '80%',
                 height: 'auto',
                 objectFit: 'contain'
               }} 

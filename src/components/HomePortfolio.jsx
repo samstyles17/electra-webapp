@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Card, CardContent, CardMedia, IconButton } from '@mui/material';
+import { Box, Typography, IconButton } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -7,21 +7,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled } from '@mui/material/styles';
 import { HashLink } from 'react-router-hash-link';
-
-// Import your images
-import backgroundImage from '../assets/img/portfolio_bg.png';
-import kiaShowroom from '../assets/img/kia1_webimage.webp';
-import hardwareTrading from '../assets/img/hhys_webimage1.webp';
-import luxuryLiving from '../assets/img/apartment_webimage1.webp';
-import healthcareCenter from '../assets/img/hospital/hos1.png';
-import transformingMobility from '../assets/img/ip5_webimage.webp';
-import spicingProduction from "../assets/img/ip3_webimage.webp";
-import preservingHeritage from "../assets/img/apartment_webimage2.webp";
-import evTata from "../assets/img/tata1_webimage.webp";
+import axios from "axios";
 
 // Import your divider and separator images
 import textDivider from '../assets/img/portfolio_text_divider.png';
 import textSeparator from '../assets/img/portfolio_text_separator.png';
+import backgroundImage from '../assets/img/portfolio_bg.png';
 
 const theme = createTheme({
   breakpoints: {
@@ -48,26 +39,7 @@ const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(','),
   },
-  
 });
-
-const cards = [
-  { image: kiaShowroom, description: "Kerala's largest Kia showroom and workshop by Incheon Motors, featuring India's largest EV charging station." , alt:"Kerala's largest Kia showroom and workshop by Incheon Motors, featuring India's largest EV charging station."},
-  
-  { image: hardwareTrading, description: "Revolutionising hardware trading with scalable electrical solutions for HHYS Inframart.", alt:"Modern storefront of HHYS Inframart in Kayamkulam, Kerala, featuring scalable electrical solutions for hardware trading."},
-  
-  { image: luxuryLiving, description: "Luxury living redefined through reliable electrical innovations with RDS Legacy Apartments.", alt:"Modern high-rise apartment building, RDS Legacy, offering luxury living with innovative electrical solutions." },
-  
-  { image: healthcareCenter, description:"Empowering healthcare with cutting-edge electrical infrastructure for Kerala's First Nuclear Medicine Center." , alt:"Exterior of Kerala's first Nuclear Medicine Center, featuring Imaging Lily and South Indian Bank ATM."},
-  
-  { image: transformingMobility, description: "Transforming mat manufacturing with advanced electrical upgrades for Travancore Cocotuft.", alt:"Modern factory building of Travancore Cocotuft in Cherthala, Kerala, showcasing advanced electrical upgrades for efficient mat manufacturing." },
-  
-  { image: spicingProduction, description: " Spicing up production with enhanced electrical infrastructure for Eastern Condiments", alt:"Eastern Condiments factory in Kothamangalam, Kerala, featuring upgraded electrical infrastructure to boost production." },
-  
-  { image: preservingHeritage, description: "Preserving heritage with electrifying solutions at Chungath Group's luxury resort, Napier Heritage." , alt:"The elegant facade of Napier Heritage, a luxury resort in Fort Kochi, Kerala, showcasing the blend of heritage architecture and modern electrical solutions."},
-  
-  { image: evTata, description: " Driving Kerala forward with TATA Motors' first exclusive EV showroom with Luxon Motors pvt Ltd", alt:"Illuminated exterior of TATA Motors' first exclusive EV showroom in Palarivattom, Kerala, established in partnership with Luxon Motors Pvt Ltd." },
-];
 
 const headlines = [
   "Proven Track Record of Success", "24/7 Support and Emergency Services", "Cutting-Edge Technology Integration",
@@ -83,11 +55,12 @@ const CircularIconButton = styled(IconButton)(({ theme }) => ({
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
-  margin: '0 10px', // Add margin to create space between buttons
+  margin: '0 10px',
 }));
 
 const PortfolioSection = () => {
-  const [cardIndex, setCardIndex] = useState(2);
+  const [cards, setCards] = useState([]);
+  const [cardIndex, setCardIndex] = useState(0);
   const isSmallScreen = useMediaQuery('(max-width:900px)');
   const isMediumScreen = useMediaQuery('(max-width:1280px)');
   const [touchStart, setTouchStart] = useState(null);
@@ -100,8 +73,28 @@ const PortfolioSection = () => {
   const imageHeight = 315;
   const textHeight = 98;
   const cardSpacing = 20;
-  const partialCardWidth = 50;
-  const borderRadius = '15px'; 
+  const borderRadius = '15px';
+
+  useEffect(() => {
+    const fetchPortfolioProjects = async () => {
+      try {
+        const response = await axios.get('https://syyfm3xz1k.execute-api.ap-south-1.amazonaws.com/v1/getPortfolioProject');
+        if (response.data && response.data.data) {
+          const sortedProjects = response.data.data.sort((a, b) => a.project_position - b.project_position);
+          const mappedCards = sortedProjects.map(project => ({
+            description: project.title,
+            image: project.images[0].url,
+            alt: project.images[0].alt
+          }));
+          setCards(mappedCards);
+        }
+      } catch (error) {
+        console.error('Error fetching portfolio projects:', error);
+      }
+    };
+
+    fetchPortfolioProjects();
+  }, []);
 
   const handleCardNav = (direction) => {
     if (direction === 'next') {
@@ -178,7 +171,7 @@ const PortfolioSection = () => {
             We deliver comprehensive electrical solutions that encompass innovative design, seamless installation, robust liaisoning, and proactive maintenance. Our projects highlight our technical excellence, reliability, and adherence to the highest industry standards, ensuring safety and sustainability. Trust us to empower your industry with tailored, cutting-edge electrical solutions that surpass expectations.
           </Typography>
           {!isSmallScreen && (
-            <Box sx={{marginLeft: '120px', display: 'flex'}}> {/* Added display: 'flex' */}
+            <Box sx={{marginLeft: '120px', display: 'flex'}}>
               <CircularIconButton onClick={() => handleCardNav('prev')}>
                 <ArrowBackIosNewIcon />
               </CircularIconButton>
@@ -204,7 +197,9 @@ const PortfolioSection = () => {
           <Box sx={{
             display: 'flex',
             transition: 'transform 0.5s ease-in-out',
-            transform: `translateX(calc(${-cardIndex * (cardWidth + cardSpacing)}px + ${(window.innerWidth - cardWidth) / 2}px))`,
+            transform: isSmallScreen
+              ? `translateX(calc(${-cardIndex * (cardWidth + cardSpacing)}px + ${(window.innerWidth - cardWidth) / 2}px))`
+              : `translateX(calc(${-cardIndex * (cardWidth + cardSpacing)}px))`,
           }}>
             {cards.map((card, index) => (
               <HashLink key={index} smooth to={`/portfolio-projects#${index}`} >
