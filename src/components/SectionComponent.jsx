@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Grid, Box, Typography, Divider, useMediaQuery, useTheme } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { keyframes } from '@emotion/react';
+import axios from "axios";
 
 const customTheme = createTheme({
   typography: {
@@ -56,6 +57,38 @@ function SectionComponent() {
   const isSmallScreen = isMobile || isTablet;
   const animate = useAnimateNumbers();
 
+  const [statistics, setStatistics] = useState({
+    experience: { value: '', title: '' },
+    projects: { value: '', title: '' },
+    clients: { value: '', title: '' },
+  });
+
+
+  useEffect(() => {
+    // Fetch the API data on component mount
+    const fetchStatistics = async () => {
+      try {
+        const response = await axios.get('https://dd87lvmo4f.execute-api.ap-south-1.amazonaws.com/v1/getAboutUsStatistics');
+        const data = response.data.data;
+
+        // Parse the response and set the state based on the position value
+        const experience = data.find(item => item.position === 1.0);
+        const projects = data.find(item => item.position === 2.0);
+        const clients = data.find(item => item.position === 3.0);
+
+        setStatistics({
+          experience: { value: experience.value, title: experience.title },
+          projects: { value: projects.value, title: projects.title },
+          clients: { value: clients.value, title: clients.title },
+        });
+      } catch (error) {
+        console.error('Error fetching statistics:', error);
+      }
+    };
+
+    fetchStatistics();
+  }, []);
+
   const animatedTypographyStyle = {
     animation: animate ? `${fadeInOutAnimation} 4s ease-in-out infinite` : 'none',
   };
@@ -87,28 +120,28 @@ function SectionComponent() {
             <Box sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', marginLeft: isSmallScreen ? '-10px' : '35px', flexWrap: isSmallScreen ? 'wrap' : 'nowrap' }}>
               <Box sx={{ textAlign: 'left', margin: isSmallScreen ? '0 10px 10px' : '0 25px', flex: isSmallScreen ? '1 0 45%' : 'none', padding: isSmallScreen ? '10px' : '0', backgroundColor: isSmallScreen ? '#f5f5f5' : 'transparent', borderRadius: isSmallScreen ? '10px' : '0' }}>
                 <Typography variant="h2" sx={{ ...animatedTypographyStyle, color: '#007bff', margin: 0, fontWeight: 500 }}>
-                  12+
+                  {statistics.experience.value}
                 </Typography>
                 <Typography variant="body2" sx={{ fontSize: isSmallScreen ? '12px' : '16px', margin: 0, color: '#333' }}>
-                  Years of Experience
+                  {statistics.experience.title}
                 </Typography>
               </Box>
               {!isSmallScreen && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
               <Box sx={{ textAlign: 'left', margin: isSmallScreen ? '0 -4px 10px' : '0 25px', flex: isSmallScreen ? '1 0 45%' : 'none', padding: isSmallScreen ? '10px' : '0', backgroundColor: isSmallScreen ? '#f5f5f5' : 'transparent', borderRadius: isSmallScreen ? '10px' : '0' }}>
                 <Typography variant="h2" sx={{ ...animatedTypographyStyle, color: '#ff6600', margin: 0, fontWeight: 500 }}>
-                  300+
+                  {statistics.projects.value}
                 </Typography>
                 <Typography variant="body2" sx={{ fontSize: isSmallScreen ? '12px' : '16px', margin: 0, color: '#333' }}>
-                  Projects Delivered
+                  {statistics.projects.title}
                 </Typography>
               </Box>
               {!isSmallScreen && <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />}
               <Box sx={{ textAlign: 'left', margin: isSmallScreen ? '0 5px 10px' : '0 25px', flex: isSmallScreen ? '1 0 100%' : 'none', padding: isSmallScreen ? '10px' : '0', backgroundColor: isSmallScreen ? '#f5f5f5' : 'transparent', borderRadius: isSmallScreen ? '10px' : '0' }}>
                 <Typography variant="h2" sx={{ ...animatedTypographyStyle, color: '#007bff', margin: 0, fontWeight: 500 }}>
-                  250+
+                  {statistics.clients.value}
                 </Typography>
                 <Typography variant="body2" sx={{ fontSize: isSmallScreen ? '12px' : '16px', margin: 0, color: '#333' }}>
-                  Happy Clients
+                  {statistics.clients.title}
                 </Typography>
               </Box>
             </Box>
