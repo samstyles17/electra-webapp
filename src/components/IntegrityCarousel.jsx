@@ -1,58 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import axios from 'axios';
 import '../styles.css';
 
-// Import images directly
-import image1 from "../assets/img/expertise_webimage.webp";
-import image2 from "../assets/img/agility_webimage.webp";
-import image3 from "../assets/img/integrity_webimage.webp";
-import image4 from "../assets/img/innovation_webimage.webp";
-import image5 from "../assets/img/clientcentric_webimage.webp";
-import image6 from "../assets/img/collaboration_webimage.webp";
-
-const slides = [
-  {
-    title: "Expertise",
-    image: image1,
-    description: "Benefit from our team's extensive knowledge and skills in electrical engineering, ensuring proficient and reliable solutions.",
-    alt:"Skilled Electrapower Engineering technician at work, demonstrating expertise, reflecting company values."
-  },
-  { title: "Agility", 
-    image: image2, 
-    description: "Experience our quick and flexible response to your needs, adapting swiftly to changing project requirements and timelines.", 
-    alt:"Team collaboration around a table, adapting to project needs, showcasing Electrapower Engineering’s Agility."},
-  { 
-    title: "Integrity", 
-    image: image3, 
-    description: "Trust in our commitment to honesty, transparency,and ethical conduct in all aspects of our work,fostering long-term partnerships based on integrity.",
-    alt:"Diverse team in open discussion with clients, reflecting Electrapower Engineering’s core value of Integrity." 
-  },
-  { 
-    title: "Innovation", 
-    image: image4, 
-    description: "Access cutting-edge solutions and technologies as we continuously explore new ideas and approaches to enhance efficiency and effectiveness.",
-    alt:"Engineer working on intricate machinery, symbolizing Electrapower Engineering’s commitment to Innovation." 
-  },
-  { 
-    title: "Client centric", 
-    image: image5, 
-    description: "Enjoy personalised attention and tailored solutions that prioritise your unique requirements, ensuring your satisfaction and success.",
-    alt:"Electrapower Engineering team celebrating with happy clients, showcasing their Client Centric approach."
-  },
-  { 
-    title: "Collaboration", 
-    image: image6, 
-    description: "We believe in teamwork and foster a collaborative environment where everyone's ideas are valued." ,
-    alt:"Electrapower Engineering team and clients collaborating closely, highlighting the company's core value of Collaboration."
-  },
-];
-
 const IntegrityCarousel = () => {
+  const [slides, setSlides] = useState([]); // State to store the fetched slides
   const [activeIndex, setActiveIndex] = useState(0);
   const [updateEvent, setUpdateEvent] = useState(false);
   const [viewMode, setViewMode] = useState('desktop');
   const carouselRef = useRef(null);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -78,14 +36,30 @@ const IntegrityCarousel = () => {
     }
   };
 
-
   const handleAfterChange = (currentSlide) => {
-    if(!updateEvent) setActiveIndex((prev) => prev + 1 === slides.length ? 0 : prev + 1);
+    if (!updateEvent) setActiveIndex((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
+  };
+
+  // Fetch the slides data from API and sort by 'position' field
+  const fetchSlidesData = async () => {
+    try {
+      const response = await axios.get('https://j00adwkd1b.execute-api.ap-south-1.amazonaws.com/v1/getAboutUsCarousel');
+      if (response.data.status_code === 200) {
+        const sortedSlides = response.data.data.sort((a, b) => a.position - b.position);
+        setSlides(sortedSlides);
+      }
+    } catch (error) {
+      console.error("Error fetching carousel data:", error);
+    }
   };
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     handleResize();
+    
+    // Fetch carousel data when component mounts
+    fetchSlidesData();
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -105,7 +79,7 @@ const IntegrityCarousel = () => {
         <div className="integrity-card-container">
           {slides.map((slide, index) => (
             <div key={index} className="integrity-card">
-              <img src={slide.image} alt={slide.alt} className="card-image" />
+              <img src={slide.url} alt={slide.title} className="card-image" />
               <div className="card-description montserrat-regular">
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>
@@ -120,7 +94,7 @@ const IntegrityCarousel = () => {
               <div
                 key={index}
                 className={`integrity-item ${activeIndex === index ? 'active' : ''}`}
-                onClick={() => { handleEventUpdation(index)}}
+                onClick={() => handleEventUpdation(index)}
               >
                 {slide.title}
                 <hr />
@@ -136,16 +110,15 @@ const IntegrityCarousel = () => {
             containerClass="integrity-carousel"
             afterChange={handleAfterChange}
             customTransition="transform 500ms ease-in-out"
-            
             keyBoardControl
             ref={carouselRef}
           >
             {slides.map((slide, index) => (
               <div key={index} className="carousel-slide">
-                <img src={slide.image} alt={slide.title} className="carousel-image" />
+                <img src={slide.url} alt={slide.title} className="carousel-image" />
                 <div className="carousel-description">
                   <h2>{slide.title}</h2>
-                  <p style = {{ fontSize: '18px', lineHeight: '2.4rem' }}>{slide.description}</p>
+                  <p style={{ fontSize: '18px', lineHeight: '2.4rem' }}>{slide.description}</p>
                 </div>
               </div>
             ))}
