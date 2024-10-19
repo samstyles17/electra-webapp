@@ -26,7 +26,7 @@ const Services = ({ data, panel }) => {
                 if (ref) observer.unobserve(ref);
             });
         }
-    }, []);
+    }, [data]);
     return (
         data.map((e, i) => {
             return (
