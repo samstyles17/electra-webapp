@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import { Box, Typography, Grid, Button, Container, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
@@ -40,14 +41,14 @@ const IconColumn = styled(Box)({
   alignItems: 'center',
   marginRight: '16px',
   justifyContent: 'space-between',
-  height: '144px', // Adjust the height to match the total height of the text
+  height: '144px',
 });
 
 const TextColumn = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-between', // Ensure spacing between elements
-  height: '100px', // Adjust the height to match the total height of the text
+  justifyContent: 'space-between',
+  height: '100px',
 });
 
 const IconWrapper = styled(Box)({
@@ -59,13 +60,112 @@ const IconWrapper = styled(Box)({
 });
 
 const Footer = () => {
+  const [emailAdresses, setEmailAddresses] = useState([]);
+  const [phoneNumbers, setPhoneNumbers] = useState([]);
+  const [address, setAddress] = useState([]);
+  const [socialLinks, setSocialLinks] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://lb0vi80xj8.execute-api.ap-south-1.amazonaws.com/v1/getEmailAddress')
+      .then((response) => {
+        if (response.data.status_code === 200) {
+          setEmailAddresses(response.data.data.slice(0, 1));
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    axios
+      .get('https://7rj41dy3tc.execute-api.ap-south-1.amazonaws.com/v1/getContactNumber')
+      .then((response) => {
+        if (response.data.status_code === 200) {
+          setPhoneNumbers(response.data.data.slice(0, 2));
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    axios
+      .get('https://as783pagq9.execute-api.ap-south-1.amazonaws.com/v1/getAddress')
+      .then((response) => {
+        if (response.data.status_code === 200) {
+          setAddress(response.data.data.slice(0, 1));
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    axios
+      .get('https://1kwvd6de1e.execute-api.ap-south-1.amazonaws.com/v1/getSocialMedia')
+      .then((response) => {
+        if (response.data.status_code === 200) {
+          setSocialLinks(response.data.data);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  const splitAddress = (address) => {
+    const addressParts = address.split(',');
+    const companyName = addressParts[0].trim();
+    const companyDescription = addressParts[1].trim();
+    const addressLine = addressParts.slice(2, addressParts.length - 2).join(',').trim();
+    const cityStateCountryPostal = addressParts.slice(-2).join(',').trim();
+
+    return {
+      companyName,
+      companyDescription,
+      addressLine,
+      cityStateCountryPostal
+    };
+  };
+
+  const getSocialIcon = (socialMedia) => {
+    switch (socialMedia.toLowerCase()) {
+      case 'linkedin':
+        return LinkedInIcon;
+      case 'facebook':
+        return FacebookIcon;
+      case 'instagram':
+        return InstagramIcon;
+      case 'x':
+        return TwitterIcon;
+      default:
+        return null;
+    }
+  };
+
+  const renderSocialMediaIcons = () => (
+    <>
+      <StyledTypography variant="body2" component="span" sx={{ mr: 2, display: { xs: 'inline', md: 'none' } }}>
+        Connect with us
+      </StyledTypography>
+      {socialLinks.map((item) => {
+        const icon = getSocialIcon(item.SocialMedia);
+        return icon ? (
+          <IconButton key={item.id} size="small" sx={{ color: 'white' }}>
+            <a href={item.Link} target="_blank" rel="noopener noreferrer">
+              <Box component="img" src={icon} alt={`${item.SocialMedia} Icon`} />
+            </a>
+          </IconButton>
+        ) : null;
+      })}
+    </>
+  );
+
   return (
     <Box sx={{ backgroundColor: '#333', color: 'white', py: 4, width: '100%', boxSizing: 'border-box' }} className="montserrat-regular">
       <Container maxWidth="lg" sx={{ 
         px: { 
           xs: 1, 
           '@media (min-width: 910px) and (max-width: 1440px)': {
-            px: 6, // 32px padding for screens between 910px and 1440px
+            px: 6,
           },
           lg: 0.5 
         } 
@@ -80,7 +180,7 @@ const Footer = () => {
               />
             </Box>
             <StyledTypography variant="body2">
-            Electra Power Engineering founded in 2013 is the brainchild of a group of skilled and experienced engineers who are proven game changers in the electrical engineering Industry.
+              Electra Power Engineering founded in 2013 is the brainchild of a group of skilled and experienced engineers who are proven game changers in the electrical engineering Industry.
             </StyledTypography>
           </Grid>
 
@@ -107,15 +207,24 @@ const Footer = () => {
                   <OrangeTypography variant="subtitle1" className="montserrat-medium">
                     Phone number
                   </OrangeTypography>
-                  <StyledTypography variant="body2">+91 940 098 9363</StyledTypography>
-                  <StyledTypography variant="body2">+91 920 738 9111</StyledTypography>
+                  {
+                    phoneNumbers.map((phoneObj) => (
+                      <StyledTypography key={phoneObj.id} variant="body2"> {phoneObj.Contact} </StyledTypography>
+                    ))
+                  }
                 </Box>
                 
                 <Box mt={4}>
                   <OrangeTypography variant="subtitle1" className="montserrat-medium">
                     For Enquiries
                   </OrangeTypography>
-                  <StyledTypography variant="body2">office@electrapower.in</StyledTypography>
+                  {
+                    emailAdresses.map((emailObj) => (
+                      <StyledTypography key={emailObj.id} variant='body2'>
+                        {emailObj.email}
+                      </StyledTypography>
+                    ))
+                  }
                 </Box>
               </TextColumn>
             </ContactInfoContainer>
@@ -134,10 +243,20 @@ const Footer = () => {
                 <OrangeTypography variant="subtitle1" className="montserrat-medium">
                   Address
                 </OrangeTypography>
-                <StyledTypography variant="body2">Electra Power Engineering</StyledTypography>
-                <StyledTypography variant="body2">'A' grade Electrical Engineers & Contractors </StyledTypography>
-                <StyledTypography variant="body2">33/1305-A1, Chalikkavattom, Vennala P.O,</StyledTypography>
-                <StyledTypography variant="body2" gutterBottom>Kochi, Kerala, INDIA - 682028</StyledTypography>
+                {
+                  address.map((addressObj) => {
+                    const split = splitAddress(addressObj.address);
+                    
+                    return (
+                      <>
+                        <StyledTypography variant="body2">{split.companyName}</StyledTypography>
+                        <StyledTypography variant="body2">{split.companyDescription}</StyledTypography>
+                        <StyledTypography variant="body2">{split.addressLine}</StyledTypography>
+                        <StyledTypography variant="body2" gutterBottom>{split.cityStateCountryPostal}</StyledTypography>
+                      </>
+                    );
+                  })
+                }
                 <a href='https://maps.app.goo.gl/Yc7AaeZD7PgbSzwr6'>
                 <Button 
                   variant="outlined" 
@@ -164,22 +283,8 @@ const Footer = () => {
         </Box>
 
         <Grid item sx={{ display: { xs: 'block', md: 'none' }, paddingTop:2, paddingLeft:1 }}>
-            <StyledTypography variant="body2" component="span" sx={{ mr: 2, display: { xs: 'inline', md: 'none' } }}>
-              Connect with us
-            </StyledTypography>
-            {[
-            { icon: LinkedInIcon, link: 'https://www.linkedin.com/company/electrapower-engineering', alt: 'LinkedIn' },
-            { icon: FacebookIcon, link: 'https://www.facebook.com/ElectrapowerEngineering/', alt: 'Facebook' },
-            { icon: InstagramIcon, link: 'https://www.instagram.com/electrapowerengineering/', alt: 'Instagram' },
-            { icon: TwitterIcon, link: 'https://twitter.com/electrapowereng', alt: 'Twitter' }
-          ].map((item, index) => (
-            <IconButton key={index} size="small" sx={{ color: 'white' }}>
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <Box component="img" src={item.icon} alt={`${item.alt} Icon`} />
-              </a>
-            </IconButton>
-          ))}
-          </Grid>
+          {renderSocialMediaIcons()}
+        </Grid>
 
         <Box sx={{mb:4, mt:2 }}>
           <img src={HorizontalDivider} style={{ width: '100%' }} alt="Horizontal Divider" />
@@ -215,36 +320,7 @@ const Footer = () => {
             </Box>
           </Grid>
           <Grid item sx={{ display: { xs: 'none', md: 'block' } }}>
-            <StyledTypography variant="body2" component="span" sx={{ mr: 2, display: { xs: 'none', md: 'inline' } }}>
-              Connect with us
-            </StyledTypography>
-            {/* LinkedIn */}
-            <IconButton size="small" sx={{ color: 'white' }}>
-              <a href="https://www.linkedin.com/company/electrapower-engineering" target="_blank" rel="noopener noreferrer">
-                <Box component="img" src={LinkedInIcon} alt="LinkedIn Icon" />
-              </a>
-            </IconButton>
-
-            {/* Facebook */}
-            <IconButton size="small" sx={{ color: 'white' }}>
-              <a href="https://www.facebook.com/ElectrapowerEngineering/" target="_blank" rel="noopener noreferrer">
-                <Box component="img" src={FacebookIcon} alt="Facebook Icon" />
-              </a>
-            </IconButton>
-
-            {/* Instagram */}
-            <IconButton size="small" sx={{ color: 'white' }}>
-              <a href="https://www.instagram.com/electrapowerengineering/" target="_blank" rel="noopener noreferrer">
-                <Box component="img" src={InstagramIcon} alt="Instagram Icon" />
-              </a>
-            </IconButton>
-
-            {/* Twitter */}
-            <IconButton size="small" sx={{ color: 'white' }}>
-              <a href="https://twitter.com/electrapowereng" target="_blank" rel="noopener noreferrer">
-                <Box component="img" src={TwitterIcon} alt="Twitter Icon" />
-              </a>
-            </IconButton>
+            {renderSocialMediaIcons()}
           </Grid>
         </Grid>
       </Container>
