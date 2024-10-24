@@ -19,12 +19,24 @@ function MaintenaceRepairService () {
               const response = await axios.get('https://tn962s9r5i.execute-api.ap-south-1.amazonaws.com/v1//getService?service=value-added-service')
               const result = response.data;
 
-              if (result.status_code == 200){
-                  const sortData = result.data.sort((a,b) => a.position - b.position);
-                  setSections(sortData);
-              }else{
-                  console.log(result.status_code);
-              }
+              if (result.status_code == 200) {
+                const sortData = result.data.sort((a, b) => {
+                    // Compare by position first
+                    if (a.position !== b.position) {
+                        return a.position - b.position;
+                    }
+                    
+                    // If positions are the same, compare by updated_at
+                    const aUpdatedAt = a.updated_at ? new Date(a.updated_at).getTime() : 0;
+                    const bUpdatedAt = b.updated_at ? new Date(b.updated_at).getTime() : 0;
+
+                    return bUpdatedAt - aUpdatedAt; // Most recent first
+                });
+
+                setSections(sortData);
+            } else {
+                console.log(result.status_code);
+            }
           } catch(error){
               console.error(error)
           }
