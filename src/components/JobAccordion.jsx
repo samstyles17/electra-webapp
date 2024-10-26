@@ -8,21 +8,36 @@ const JobAccordion = ({ onJobTitlesChange }) => {
   // Fetch jobs from API and filter by 'Open' status
   const fetchJobDetails = async () => {
     try {
-      const response = await axios.get("https://o6ahie1f44.execute-api.ap-south-1.amazonaws.com/v1/getJobs");
-      if (response.status === 200) {
-        const openJobs = response.data.data.filter(job => job.job_status === "Open");
-        setJobDetails(openJobs);
+        const response = await axios.get("https://o6ahie1f44.execute-api.ap-south-1.amazonaws.com/v1/getJobs");
+        if (response.status === 200) {
+            // Filter jobs with status "Open"
+            const openJobs = response.data.data.filter(job => job.job_status === "Open");
+            
+            // Sort by job_priority and then by updated_at (recent to least recent)
+            openJobs.sort((a, b) => {
+                // Sort by job_priority (High first, then Normal)
+                if (a.job_priority === "High" && b.job_priority !== "High") return -1;
+                if (a.job_priority !== "High" && b.job_priority === "High") return 1;
+                
+                // Sort by updated_at (most recent to least recent)
+                const dateA = new Date(a.updated_at);
+                const dateB = new Date(b.updated_at);
+                return dateB - dateA; // Descending order
+            });
 
-        // Send job titles to parent component via prop function
-        const titles = openJobs.map(job => job.title);
-        onJobTitlesChange(titles);
-      } else {
-        console.error("Error fetching jobs:", response.status);
-      }
+            setJobDetails(openJobs);
+
+            // Send job titles to parent component via prop function
+            const titles = openJobs.map(job => job.title);
+            onJobTitlesChange(titles);
+        } else {
+            console.error("Error fetching jobs:", response.status);
+        }
     } catch (error) {
-      console.error("Error fetching jobs:", error);
+        console.error("Error fetching jobs:", error);
     }
-  };
+};
+
 
   useEffect(() => {
     fetchJobDetails();
