@@ -70,9 +70,9 @@ const Footer = () => {
       .get('https://lb0vi80xj8.execute-api.ap-south-1.amazonaws.com/v1/getEmailAddress')
       .then((response) => {
         if (response.data.status_code === 200) {
-          if(response.data.data.id === 'id101'){
+          console.log(response.data.data.id)
             setEmailAddresses(response.data.data.slice(0, 1));
-          }          
+               
         }
       })
       .catch((error) => {
