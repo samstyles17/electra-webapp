@@ -64,8 +64,8 @@ function MaintenaceRepairService () {
         <Helmet>
           <title>
             {isMobile
-              ? "Services - Approvals & Compliance"
-              : "Services - Approvals & Compliance"}
+              ? "KSEB & Electrical Inspectorate Approvals on time | HT/LT Projects"
+              : "KSEB & Electrical Inspectorate Approvals on time | HT/LT Projects"}
           </title>
           <meta
             name="description"

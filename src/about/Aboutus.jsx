@@ -60,8 +60,8 @@ function Aboutus() {
       <Helmet>
         <title>
           {isMobile
-            ? "About Us"
-            : "About Us"}
+            ? "Our Story & Expertise | Electrapower Engineering, Kochi"
+            : "Our Story & Expertise | Electrapower Engineering, Kochi"}
         </title>
         <meta
           name="description"

@@ -59,8 +59,8 @@ function PanelBoardControlSystemService() {
       <Helmet>
         <title>
           {isMobile
-            ? "Services - Panel Board & Control System"
-            : "Services - Panel Board & Control System"}
+            ? "Electrical Panels & Control Systems in Kerala | Design & Fabrication"
+            : "Electrical Panels & Control Systems in Kerala | Design & Fabrication"}
         </title>
         <meta
           name="description"

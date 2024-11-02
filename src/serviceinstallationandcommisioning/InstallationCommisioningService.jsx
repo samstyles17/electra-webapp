@@ -60,8 +60,8 @@ function InstallationCommisioningService() {
       <Helmet>
         <title>
           {isMobile
-            ? "Services - Installation & Commissioning"
-            : "Services - Installation & Commissioning"}
+            ? "Electrical Installation & Commissioning | Electrapower Engineering"
+            : "Electrical Installation & Commissioning | Electrapower Engineering"}
         </title>
         <meta
           name="description"

@@ -9,7 +9,7 @@ function Career() {
     <>
     <Helmet>
       <title>
-        Careers
+      Electrapower Engineering Careers: Join Our Team for a Powerful Future
       </title>
       <meta 
         name = "description"

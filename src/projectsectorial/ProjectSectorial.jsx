@@ -46,8 +46,8 @@ const ProjectSectorial = () => {
         <Helmet>
                 <title>
                     {isMobile
-                        ? "Portfolio Projects"
-                        : "Portfolio Projects"}
+                        ? "Electrical Projects Showcase | Kerala's Top Contractor"
+                        : "Electrical Projects Showcase | Kerala's Top Contractor"}
                 </title>
                 <meta
                     name="description"

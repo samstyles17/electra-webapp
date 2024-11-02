@@ -57,8 +57,8 @@ function MaintenaceRepairService () {
         <Helmet>
           <title>
             {isMobile
-              ? "Services - Maintenace & Repair"
-              : "Services - Maintenace & Repair"}
+              ? "Expert HT/LT Electrical Maintenance & Repair Services in Kerala"
+              : "Expert HT/LT Electrical Maintenance & Repair Services in Kerala"}
           </title>
           <meta
             name="description"
